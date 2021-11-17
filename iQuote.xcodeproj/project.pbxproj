@@ -99,7 +99,10 @@
 			children = (
 				93BF89702745A05700EF386A /* AppDelegate.swift */,
 				93BF89722745A05700EF386A /* SceneDelegate.swift */,
-				93BF89A02745A3B400EF386A /* MainViewController.swift */,
+				93BF89A52745A54900EF386A /* Extensions */,
+				93BF89A22745A51700EF386A /* Model */,
+				93BF89A32745A52200EF386A /* View */,
+				93BF89A42745A52800EF386A /* Controller */,
 				93BF89792745A05A00EF386A /* Assets.xcassets */,
 				93BF897B2745A05A00EF386A /* LaunchScreen.storyboard */,
 				93BF897E2745A05A00EF386A /* Info.plist */,
@@ -122,6 +125,35 @@
 				93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */,
 			);
 			path = iQuoteUITests;
+			sourceTree = "<group>";
+		};
+		93BF89A22745A51700EF386A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		93BF89A32745A52200EF386A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93BF89A42745A52800EF386A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				93BF89A02745A3B400EF386A /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		93BF89A52745A54900EF386A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
