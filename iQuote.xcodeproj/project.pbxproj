@@ -15,6 +15,7 @@
 		93BF89922745A05A00EF386A /* iQuoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89912745A05A00EF386A /* iQuoteUITests.swift */; };
 		93BF89942745A05A00EF386A /* iQuoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */; };
 		93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A02745A3B400EF386A /* MainViewController.swift */; };
+		93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A62746220E00EF386A /* UIColor+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		93BF89912745A05A00EF386A /* iQuoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuoteUITests.swift; sourceTree = "<group>"; };
 		93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93BF89A02745A3B400EF386A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		93BF89A62746220E00EF386A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		93BF89A52745A54900EF386A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				93BF89A62746220E00EF386A /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */,
+				93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */,
 				93BF89712745A05700EF386A /* AppDelegate.swift in Sources */,
 				93BF89732745A05700EF386A /* SceneDelegate.swift in Sources */,
 			);
