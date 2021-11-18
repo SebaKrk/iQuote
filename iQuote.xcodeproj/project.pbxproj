@@ -16,6 +16,7 @@
 		93BF89942745A05A00EF386A /* iQuoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */; };
 		93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A02745A3B400EF386A /* MainViewController.swift */; };
 		93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A62746220E00EF386A /* UIColor+Ext.swift */; };
+		93F6B8C527465EA5005181C0 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6B8C427465EA5005181C0 /* QuoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93BF89A02745A3B400EF386A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		93BF89A62746220E00EF386A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		93F6B8C427465EA5005181C0 /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		93BF89A32745A52200EF386A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				93F6B8C327465E93005181C0 /* ViewControllers */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +160,14 @@
 				93BF89A62746220E00EF386A /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		93F6B8C327465E93005181C0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				93F6B8C427465EA5005181C0 /* QuoteViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +304,7 @@
 				93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */,
 				93BF89712745A05700EF386A /* AppDelegate.swift in Sources */,
 				93BF89732745A05700EF386A /* SceneDelegate.swift in Sources */,
+				93F6B8C527465EA5005181C0 /* QuoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

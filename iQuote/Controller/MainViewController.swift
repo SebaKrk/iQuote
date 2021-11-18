@@ -25,10 +25,13 @@ class MainViewController : UIViewController {
         view.backgroundColor = .white
          configureNavigationItem()
     }
+//    MARK: - OBJC Func
+    
     @objc func handleLeftBarButton() {
         print("DEBUG: Menu button pressed")
     }
     
+//    MARK: - Navigation Item
     
     private func configureNavigationItem() {
         
