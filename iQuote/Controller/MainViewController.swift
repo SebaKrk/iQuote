@@ -23,6 +23,19 @@ class MainViewController : UIViewController {
     
     private func setupView() {
         view.backgroundColor = .white
+         configureNavigationItem()
+    }
+    @objc func handleLeftBarButton() {
+        print("DEBUG: Menu button pressed")
+    }
+    
+    
+    private func configureNavigationItem() {
+        
+        let configuration = UIImage.SymbolConfiguration(paletteColors: [.white])
+        let leftImage = UIImage(systemName: "text.justify", withConfiguration: configuration)
+        leftImage?.withTintColor(.white)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: leftImage, style: .done, target: self, action: #selector(handleLeftBarButton))
     }
     
     //    MARK: - Constraints
@@ -36,9 +49,9 @@ class MainViewController : UIViewController {
         authorContainer.translatesAutoresizingMaskIntoConstraints = false
         navigationContainer.translatesAutoresizingMaskIntoConstraints = false
         
-        quoteContainer.backgroundColor = .blue
+        quoteContainer.backgroundColor = .red
         authorContainer.backgroundColor = .green
-        navigationContainer.backgroundColor = .red
+        navigationContainer.backgroundColor = .blue
         
         NSLayoutConstraint.activate([
             quoteContainer.topAnchor.constraint(equalTo: view.topAnchor),
@@ -67,6 +80,5 @@ class MainViewController : UIViewController {
         childVC.view.frame = containerView.bounds
         childVC.didMove(toParent: self)
     }
-    
 }
 
