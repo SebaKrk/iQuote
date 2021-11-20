@@ -22,16 +22,17 @@ class MainViewController : UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = .white
-         configureNavigationItem()
+//        view.backgroundColor = .white
+        configureNavigationItem()
+        add(childVC: QuoteViewController(), to: quoteContainer)
     }
-//    MARK: - OBJC Func
+    //    MARK: - OBJC Func
     
     @objc func handleLeftBarButton() {
         print("DEBUG: Menu button pressed")
     }
     
-//    MARK: - Navigation Item
+    //    MARK: - Navigation Item
     
     private func configureNavigationItem() {
         
@@ -52,7 +53,7 @@ class MainViewController : UIViewController {
         authorContainer.translatesAutoresizingMaskIntoConstraints = false
         navigationContainer.translatesAutoresizingMaskIntoConstraints = false
         
-        quoteContainer.backgroundColor = .red
+//        quoteContainer.backgroundColor = .red
         authorContainer.backgroundColor = .green
         navigationContainer.backgroundColor = .blue
         
@@ -84,4 +85,5 @@ class MainViewController : UIViewController {
         childVC.didMove(toParent: self)
     }
 }
+
 
