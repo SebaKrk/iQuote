@@ -25,6 +25,7 @@ class MainViewController : UIViewController {
 //        view.backgroundColor = .white
         configureNavigationItem()
         add(childVC: QuoteViewController(), to: quoteContainer)
+        add(childVC: AuthorViewController(), to: authorContainer)
     }
     //    MARK: - OBJC Func
     
