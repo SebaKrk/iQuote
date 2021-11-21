@@ -19,6 +19,8 @@
 		93BF89942745A05A00EF386A /* iQuoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */; };
 		93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A02745A3B400EF386A /* MainViewController.swift */; };
 		93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A62746220E00EF386A /* UIColor+Ext.swift */; };
+		93EE8D00274A4BB1000A8964 /* AuthorImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE8CFF274A4BB1000A8964 /* AuthorImageView.swift */; };
+		93EE8D02274A4E7C000A8964 /* CostumAuthorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE8D01274A4E7C000A8964 /* CostumAuthorLabel.swift */; };
 		93F6B8C527465EA5005181C0 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6B8C427465EA5005181C0 /* QuoteViewController.swift */; };
 		93FF7C072746BA5100064E83 /* CostumBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FF7C062746BA5100064E83 /* CostumBackground.swift */; };
 		93FF7C092746BE4700064E83 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FF7C082746BE4700064E83 /* UIView+Ext.swift */; };
@@ -58,6 +60,8 @@
 		93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93BF89A02745A3B400EF386A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		93BF89A62746220E00EF386A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		93EE8CFF274A4BB1000A8964 /* AuthorImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorImageView.swift; sourceTree = "<group>"; };
+		93EE8D01274A4E7C000A8964 /* CostumAuthorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumAuthorLabel.swift; sourceTree = "<group>"; };
 		93F6B8C427465EA5005181C0 /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 		93FF7C062746BA5100064E83 /* CostumBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumBackground.swift; sourceTree = "<group>"; };
 		93FF7C082746BE4700064E83 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				93BDB9C62748D44900E4B928 /* CostumQuoteLebel.swift */,
+				93EE8D01274A4E7C000A8964 /* CostumAuthorLabel.swift */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -168,8 +173,8 @@
 		93BF89A32745A52200EF386A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				93BDB9C52748D43800E4B928 /* UILabel */,
 				93F6B8C327465E93005181C0 /* ViewControllers */,
+				93BDB9C52748D43800E4B928 /* UILabel */,
 				93FF7C0A2746C02A00064E83 /* UIImageView */,
 			);
 			path = View;
@@ -205,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				93FF7C062746BA5100064E83 /* CostumBackground.swift */,
+				93EE8CFF274A4BB1000A8964 /* AuthorImageView.swift */,
 			);
 			path = UIImageView;
 			sourceTree = "<group>";
@@ -347,6 +353,8 @@
 				93FF7C092746BE4700064E83 /* UIView+Ext.swift in Sources */,
 				93FF7C072746BA5100064E83 /* CostumBackground.swift in Sources */,
 				93BDB9C72748D44900E4B928 /* CostumQuoteLebel.swift in Sources */,
+				93EE8D02274A4E7C000A8964 /* CostumAuthorLabel.swift in Sources */,
+				93EE8D00274A4BB1000A8964 /* AuthorImageView.swift in Sources */,
 				93F6B8C527465EA5005181C0 /* QuoteViewController.swift in Sources */,
 				93BDB9CA2748DDF100E4B928 /* Constants.swift in Sources */,
 			);

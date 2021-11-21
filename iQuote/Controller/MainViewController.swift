@@ -55,7 +55,7 @@ class MainViewController : UIViewController {
         navigationContainer.translatesAutoresizingMaskIntoConstraints = false
         
 //        quoteContainer.backgroundColor = .red
-        authorContainer.backgroundColor = .green
+//        authorContainer.backgroundColor = .green
         navigationContainer.backgroundColor = .blue
         
         NSLayoutConstraint.activate([

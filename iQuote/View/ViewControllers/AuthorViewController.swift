@@ -11,8 +11,8 @@ import UIKit
 class AuthorViewController : UIViewController {
     
     let authorButton = UIButton() // button or pinGesture ?
-    let authorImage = UIImageView()
-    let authorLabel = UILabel()
+    let authorImage = AuthorImageView(frame: .zero)
+    let authorLabel = CostumAuthorLabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class AuthorViewController : UIViewController {
     
     @objc func handleAuthorButton() {
         print("DEBUG: AuthorButton pressed")
-    }
+    }       
     
 //    MARK: - Constraints & Configuration
     
@@ -34,21 +34,19 @@ class AuthorViewController : UIViewController {
         view.addSubview(authorButton)
         authorButton.translatesAutoresizingMaskIntoConstraints = false
         
-        authorButton.backgroundColor = .red
         authorButton.addTarget(self, action: #selector(handleAuthorButton), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            authorButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            authorButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            authorButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 25),
             authorButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            authorButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
-            authorButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.9)
+            authorButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            authorButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)
         ])
     }
     private func configureAuthorImage() {
         authorButton.addSubview(authorImage)
         authorImage.translatesAutoresizingMaskIntoConstraints = false
-        authorImage.backgroundColor = .blue
-        authorImage.layer.cornerRadius = 60
         
         NSLayoutConstraint.activate([
             authorImage.centerYAnchor.constraint(equalTo: authorButton.centerYAnchor),
@@ -60,7 +58,6 @@ class AuthorViewController : UIViewController {
     private func configureAuthorLabel() {
         authorButton.addSubview(authorLabel)
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
-        authorLabel.backgroundColor = .yellow
         authorLabel.text = Constants.exampleAuthor
         
         NSLayoutConstraint.activate([

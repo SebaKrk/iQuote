@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "800px-Steve_Jobs_Headshot_2010-CROP2.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
