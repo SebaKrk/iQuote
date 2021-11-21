@@ -8,6 +8,6 @@
 import Foundation
 
 enum Constants {
-    static let exampleQute = "Be fearful when others are greedy and to be greedy only when others are fearful."
-    static let exampleAuthor = "Warren Buffet"
+    static let exampleQute = "The people who are crazy enough to think they can change the world are the ones who do"
+    static let exampleAuthor = "Steve Jobs "
 }

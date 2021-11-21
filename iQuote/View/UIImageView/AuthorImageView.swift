@@ -23,7 +23,7 @@ class AuthorImageView : UIImageView {
     private func configure() {
         image = placeholder
         
-        layer.cornerRadius = 50
+        layer.cornerRadius = 40
         layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 1
         layer.masksToBounds = true

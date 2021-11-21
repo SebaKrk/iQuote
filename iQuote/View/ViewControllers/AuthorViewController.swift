@@ -33,11 +33,10 @@ class AuthorViewController : UIViewController {
     private func configureAuthorButton() {
         view.addSubview(authorButton)
         authorButton.translatesAutoresizingMaskIntoConstraints = false
-        
+    
         authorButton.addTarget(self, action: #selector(handleAuthorButton), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-//            authorButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             authorButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 25),
             authorButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             authorButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
@@ -47,12 +46,12 @@ class AuthorViewController : UIViewController {
     private func configureAuthorImage() {
         authorButton.addSubview(authorImage)
         authorImage.translatesAutoresizingMaskIntoConstraints = false
-        
+    
         NSLayoutConstraint.activate([
             authorImage.centerYAnchor.constraint(equalTo: authorButton.centerYAnchor),
             authorImage.leadingAnchor.constraint(equalTo: authorButton.leadingAnchor),
-            authorImage.widthAnchor.constraint(equalTo: authorButton.heightAnchor),
-            authorImage.heightAnchor.constraint(equalTo: authorButton.heightAnchor)
+            authorImage.widthAnchor.constraint(equalToConstant: 85),
+            authorImage.heightAnchor.constraint(equalToConstant: 85)
         ])
     }
     private func configureAuthorLabel() {

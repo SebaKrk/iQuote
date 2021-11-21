@@ -22,7 +22,6 @@ class MainViewController : UIViewController {
     }
     
     private func setupView() {
-//        view.backgroundColor = .white
         configureNavigationItem()
         add(childVC: QuoteViewController(), to: quoteContainer)
         add(childVC: AuthorViewController(), to: authorContainer)
