@@ -25,6 +25,7 @@ class MainViewController : UIViewController {
         configureNavigationItem()
         add(childVC: QuoteViewController(), to: quoteContainer)
         add(childVC: AuthorViewController(), to: authorContainer)
+        add(childVC: NavigationViewController(), to: navigationContainer)
     }
     //    MARK: - OBJC Func
     

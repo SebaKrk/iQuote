@@ -19,6 +19,8 @@
 		93BF89942745A05A00EF386A /* iQuoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */; };
 		93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A02745A3B400EF386A /* MainViewController.swift */; };
 		93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A62746220E00EF386A /* UIColor+Ext.swift */; };
+		93CE1CDB274ACB0D004FD559 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */; };
+		93CE1CDE274ACC0A004FD559 /* CostumQuoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE1CDD274ACC0A004FD559 /* CostumQuoteButton.swift */; };
 		93EE8D00274A4BB1000A8964 /* AuthorImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE8CFF274A4BB1000A8964 /* AuthorImageView.swift */; };
 		93EE8D02274A4E7C000A8964 /* CostumAuthorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE8D01274A4E7C000A8964 /* CostumAuthorLabel.swift */; };
 		93F6B8C527465EA5005181C0 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6B8C427465EA5005181C0 /* QuoteViewController.swift */; };
@@ -60,6 +62,8 @@
 		93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93BF89A02745A3B400EF386A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		93BF89A62746220E00EF386A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		93CE1CDD274ACC0A004FD559 /* CostumQuoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumQuoteButton.swift; sourceTree = "<group>"; };
 		93EE8CFF274A4BB1000A8964 /* AuthorImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorImageView.swift; sourceTree = "<group>"; };
 		93EE8D01274A4E7C000A8964 /* CostumAuthorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumAuthorLabel.swift; sourceTree = "<group>"; };
 		93F6B8C427465EA5005181C0 /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				93F6B8C327465E93005181C0 /* ViewControllers */,
 				93BDB9C52748D43800E4B928 /* UILabel */,
 				93FF7C0A2746C02A00064E83 /* UIImageView */,
+				93CE1CDC274ACB78004FD559 /* UIButton */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,11 +202,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		93CE1CDC274ACB78004FD559 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				93CE1CDD274ACC0A004FD559 /* CostumQuoteButton.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
 		93F6B8C327465E93005181C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				93F6B8C427465EA5005181C0 /* QuoteViewController.swift */,
 				93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */,
+				93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -346,7 +360,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */,
+				93CE1CDB274ACB0D004FD559 /* NavigationViewController.swift in Sources */,
 				93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */,
+				93CE1CDE274ACC0A004FD559 /* CostumQuoteButton.swift in Sources */,
 				93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */,
 				93BF89712745A05700EF386A /* AppDelegate.swift in Sources */,
 				93BF89732745A05700EF386A /* SceneDelegate.swift in Sources */,

@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         MainViewController()
 //        AuthorViewController()
 //        QuoteViewController()
+//        NavigationViewController()
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = UINavigationController(rootViewController: desVC)
         window?.makeKeyAndVisible() 
