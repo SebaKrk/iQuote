@@ -37,7 +37,7 @@ class CostumeQuoteButton  : UIButton {
         animate()
     }
     private func animate() {
-        UIView.animate(withDuration: 0.1, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             let newImg = self.buttonIsOn ? self.onButton : self.offButton
             self.scaleAnimation()
             self.setImage(newImg, for: .normal)
@@ -48,6 +48,6 @@ class CostumeQuoteButton  : UIButton {
         })
     }
     private func scaleAnimation() {
-        transform = CGAffineTransform(scaleX: 2, y: 2)
+        transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
     }
 }

@@ -56,7 +56,7 @@ class MainViewController : UIViewController {
         
 //        quoteContainer.backgroundColor = .red
 //        authorContainer.backgroundColor = .green
-        navigationContainer.backgroundColor = .blue
+//        navigationContainer.backgroundColor = .blue
         
         NSLayoutConstraint.activate([
             quoteContainer.topAnchor.constraint(equalTo: view.topAnchor),

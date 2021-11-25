@@ -24,11 +24,35 @@ class NavigationViewController : UIViewController {
         configureQuoteMenuContainer()
         configureMainButton()
         configureMenuButtons()
+        
     }
-//    MARK: - OBJC Func
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        closeMenu()
+    }
+    //    MARK: - OBJC Func
     
     @objc func handleMainButton() {
-        mainQuoteButton.flipLikeState()
+        
+        UIView.animate(withDuration: 0.3) {
+            if self.quoteMenuContainer.transform == .identity {
+                self.mainQuoteButton.flipLikeState()
+                self.closeMenu()
+            } else {
+                self.mainQuoteButton.flipLikeState()
+                self.quoteMenuContainer.transform = .identity
+            }
+        }
+        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+            if self.quoteMenuContainer.transform == .identity {
+                self.heartButton.transform = .identity
+                self.nextButton.transform = .identity
+                self.exportButton.transform = .identity
+                self.listButton.transform = .identity
+            }
+        })
+        
+        
     }
     @objc func handleHeartButton() {
         heartButton.flipLikeState()
@@ -46,13 +70,24 @@ class NavigationViewController : UIViewController {
         nextButton.flipLikeState()
     }
     
-//    MARK: - Constraints
+    //   MARK: - Close Menu
+    
+    private func closeMenu() {
+        quoteMenuContainer.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        
+        nextButton.transform = CGAffineTransform(translationX: 30, y: 0)
+        exportButton.transform = CGAffineTransform(translationX: -30, y: 0)
+        heartButton.transform = CGAffineTransform(translationX: 0, y: 30)
+        listButton.transform = CGAffineTransform(translationX: 0, y: -30)
+    }
+    
+    
+    //    MARK: - Constraints
     
     private func configureQuoteMenuContainer(){
         view.addSubview(quoteMenuContainer)
         quoteMenuContainer.translatesAutoresizingMaskIntoConstraints = false
-//        quoteMenuContainer.backgroundColor = .white
-
+        
         NSLayoutConstraint.activate([
             quoteMenuContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             quoteMenuContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -71,7 +106,7 @@ class NavigationViewController : UIViewController {
             mainQuoteButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
-
+    
     private func configureMenuButtons() {
         quoteMenuContainer.addSubview(heartButton)
         quoteMenuContainer.addSubview(nextButton)
