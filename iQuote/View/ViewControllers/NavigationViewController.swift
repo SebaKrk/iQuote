@@ -13,6 +13,7 @@ class NavigationViewController : UIViewController {
     let quoteMenuContainer = UIView()
     
     var mainQuoteButton = CostumeQuoteButton()
+    var quoteButtonIsOpen = false
     
     var heartButton = CostumTransButton(imageOne: "heartButton", imageTwo: "heartButton2")
     var listButton = CostumTransButton(imageOne: "listButton", imageTwo: "listButton2")
@@ -24,8 +25,8 @@ class NavigationViewController : UIViewController {
         configureQuoteMenuContainer()
         configureMainButton()
         configureMenuButtons()
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         closeMenu()
@@ -36,10 +37,14 @@ class NavigationViewController : UIViewController {
         
         UIView.animate(withDuration: 0.3) {
             if self.quoteMenuContainer.transform == .identity {
+                self.quoteButtonIsOpen = false
                 self.mainQuoteButton.flipLikeState()
                 self.closeMenu()
+                
             } else {
+                self.quoteButtonIsOpen = true
                 self.mainQuoteButton.flipLikeState()
+                self.swipeGestureRecognizer()
                 self.quoteMenuContainer.transform = .identity
             }
         }
@@ -51,24 +56,12 @@ class NavigationViewController : UIViewController {
                 self.listButton.transform = .identity
             }
         })
-        
-        
-    }
-    @objc func handleHeartButton() {
-        heartButton.flipLikeState()
     }
     
-    @objc func handleListButton() {
-        listButton.flipLikeState()
-    }
-    
-    @objc func handleExportButton() {
-        exportButton.flipLikeState()
-    }
-    
-    @objc func handleNextButton() {
-        nextButton.flipLikeState()
-    }
+    @objc func handleHeartButton() { heartButton.flipLikeState() }
+    @objc func handleListButton() { listButton.flipLikeState() }
+    @objc func handleExportButton() { exportButton.flipLikeState() }
+    @objc func handleNextButton() { nextButton.flipLikeState() }
     
     //   MARK: - Close Menu
     
@@ -80,7 +73,38 @@ class NavigationViewController : UIViewController {
         heartButton.transform = CGAffineTransform(translationX: 0, y: 30)
         listButton.transform = CGAffineTransform(translationX: 0, y: -30)
     }
+    //    MARK: - SwipeGestureRecognizer
     
+    @objc func handleSwipeUp() {
+        quoteButtonIsOpen == true ?  heartButton.flipLikeState() : nil
+    }
+    @objc func handleSwipeDown() {
+        quoteButtonIsOpen == true ?  listButton.flipLikeState() : nil
+    }
+    @objc func handleSwipeLeft() {
+        quoteButtonIsOpen == true ?  exportButton.flipLikeState() : nil
+    }
+    @objc func handleSwipeRight() {
+        quoteButtonIsOpen == true ?  nextButton.flipLikeState() : nil
+    }
+    
+    private func swipeGestureRecognizer() {
+        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeUp))
+        swipeUpGesture.direction = .up
+        view.addGestureRecognizer(swipeUpGesture)
+        
+        let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeDown))
+        swipeDownGesture.direction = .down
+        view.addGestureRecognizer(swipeDownGesture)
+        
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeft))
+        swipeLeftGesture.direction = .left
+        view.addGestureRecognizer(swipeLeftGesture)
+        
+        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRight))
+        swipeRightGesture.direction = .right
+        view.addGestureRecognizer(swipeRightGesture)
+    }
     
     //    MARK: - Constraints
     
@@ -133,6 +157,5 @@ class NavigationViewController : UIViewController {
             listButton.centerXAnchor.constraint(equalTo: mainQuoteButton.centerXAnchor)
         ])
     }
-    
 }
 

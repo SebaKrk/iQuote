@@ -10,7 +10,7 @@ import UIKit
 
 class CostumeQuoteButton  : UIButton {
     
-    var buttonIsOn = false
+    var isLike = false
     var offButton = UIImage(named: "QuoteButton")
     var onButton = UIImage(named: "QuoteButton2")
     let buttonSize: CGFloat = 80
@@ -33,12 +33,12 @@ class CostumeQuoteButton  : UIButton {
         animate()
     }
     public func  flipLikeState() {
-        buttonIsOn = !buttonIsOn
+        isLike = !isLike
         animate()
     }
     private func animate() {
         UIView.animate(withDuration: 0.3, animations: {
-            let newImg = self.buttonIsOn ? self.onButton : self.offButton
+            let newImg = self.isLike ? self.onButton : self.offButton
             self.scaleAnimation()
             self.setImage(newImg, for: .normal)
         }, completion: { _ in
