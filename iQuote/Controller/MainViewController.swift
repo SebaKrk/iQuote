@@ -19,6 +19,7 @@ class MainViewController : UIViewController {
         super.viewDidLoad()
         setupView()
         setupConstraints()
+        getJasonData()
     }
     
     private func setupView() {
@@ -43,6 +44,23 @@ class MainViewController : UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: leftImage, style: .done, target: self, action: #selector(handleLeftBarButton))
     }
     
+    //    MARK: - GetJasonData
+    
+    func getJasonData() {
+        NetworkManager.shered.getRandomQuote { result in
+            switch result {
+                
+            case .success( let quote):
+                DispatchQueue.main.async {
+                    dump(quote)
+                }
+            case .failure( let error):
+                print(error.rawValue)
+        
+            }
+        }
+    }
+    
     //    MARK: - Constraints
     
     private func setupConstraints() {
@@ -53,10 +71,6 @@ class MainViewController : UIViewController {
         quoteContainer.translatesAutoresizingMaskIntoConstraints = false
         authorContainer.translatesAutoresizingMaskIntoConstraints = false
         navigationContainer.translatesAutoresizingMaskIntoConstraints = false
-        
-//        quoteContainer.backgroundColor = .red
-//        authorContainer.backgroundColor = .green
-//        navigationContainer.backgroundColor = .blue
         
         NSLayoutConstraint.activate([
             quoteContainer.topAnchor.constraint(equalTo: view.topAnchor),
