@@ -14,19 +14,34 @@ class AuthorViewController : UIViewController {
     let authorImage = AuthorImageView(frame: .zero)
     let authorLabel = CostumAuthorLabel()
     
+    var quote : [Quote] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureUiElements()
         configureAuthorButton()
         configureAuthorImage()
         configureAuthorLabel()
+    }
+    
+    init(quote: [Quote]){
+        super.init(nibName: nil, bundle: nil)
+        self.quote = quote
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 //    MARK: - OBJC
     
     @objc func handleAuthorButton() {
         print("DEBUG: AuthorButton pressed")
-    }       
+    }
+    
+    private func configureUiElements() {
+        authorLabel.text = quote[0].a
+    }
     
 //    MARK: - Constraints & Configuration
     
@@ -57,7 +72,7 @@ class AuthorViewController : UIViewController {
     private func configureAuthorLabel() {
         authorButton.addSubview(authorLabel)
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
-        authorLabel.text = Constants.exampleAuthor
+//        authorLabel.text = Constants.exampleAuthor
         
         NSLayoutConstraint.activate([
             authorLabel.centerYAnchor.constraint(equalTo: authorButton.centerYAnchor),

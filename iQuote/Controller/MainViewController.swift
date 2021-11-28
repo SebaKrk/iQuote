@@ -25,7 +25,7 @@ class MainViewController : UIViewController {
     private func setupView() {
         configureNavigationItem()
         getJasonData()
-        add(childVC: AuthorViewController(), to: authorContainer)
+        
         add(childVC: NavigationViewController(), to: navigationContainer)
     }
     //    MARK: - OBJC Func
@@ -53,7 +53,7 @@ class MainViewController : UIViewController {
             case .success( let quote):
                 DispatchQueue.main.async {
                     self.add(childVC: QuoteViewController(quote: quote), to: self.quoteContainer)
-                    
+                    self.add(childVC: AuthorViewController(quote: quote), to: self.authorContainer)
                 }
             case .failure( let error):
                 print(error.rawValue)
