@@ -15,6 +15,8 @@ class QuoteViewController : UIViewController {
     let quoteImage = CostumBackground(placehodler: "halfQuote")
     let quoteLabel = CostumQuoteLabel()
     
+    var quote : [Quote] = []
+    
     let padding : CGFloat = 20
     
     override func viewDidLoad() {
@@ -25,12 +27,27 @@ class QuoteViewController : UIViewController {
         super.viewDidLayoutSubviews()
         backgroundImage.setGradien(colorOne: UIColor.clear, colorTwo: UIColor.black)
     }
+    
+    init(quote : [Quote]) {
+        super.init(nibName: nil, bundle: nil)
+        self.quote = quote
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     //    MARK: - View
     
     private func setupView() {
+        configureUiElements()
         configureBackgroundImage()
         configureQuoteImage()
         configureQuoteLabel()
+        
+    }
+    //     MARK: - UI Element
+    func configureUiElements() {
+        quoteLabel.text = quote[0].q
     }
     
     //    MARK: - Constraints
@@ -60,7 +77,7 @@ class QuoteViewController : UIViewController {
     private func configureQuoteLabel () {
         view.addSubview(quoteLabel)
         quoteLabel.translatesAutoresizingMaskIntoConstraints = false
-        quoteLabel.text = Constants.exampleQute
+        //        quoteLabel.text = Constants.exampleQute
         
         NSLayoutConstraint.activate([
             quoteLabel.topAnchor.constraint(equalTo: quoteImage.bottomAnchor,constant: padding),

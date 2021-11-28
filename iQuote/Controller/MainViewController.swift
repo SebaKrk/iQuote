@@ -19,12 +19,12 @@ class MainViewController : UIViewController {
         super.viewDidLoad()
         setupView()
         setupConstraints()
-        getJasonData()
+        
     }
     
     private func setupView() {
         configureNavigationItem()
-        add(childVC: QuoteViewController(), to: quoteContainer)
+        getJasonData()
         add(childVC: AuthorViewController(), to: authorContainer)
         add(childVC: NavigationViewController(), to: navigationContainer)
     }
@@ -52,7 +52,8 @@ class MainViewController : UIViewController {
                 
             case .success( let quote):
                 DispatchQueue.main.async {
-                    dump(quote)
+                    self.add(childVC: QuoteViewController(quote: quote), to: self.quoteContainer)
+                    
                 }
             case .failure( let error):
                 print(error.rawValue)
