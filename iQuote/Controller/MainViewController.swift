@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 class MainViewController : UIViewController {
     
     let quoteContainer = UIView()
@@ -49,15 +50,27 @@ class MainViewController : UIViewController {
     func getJasonData() {
         NetworkManager.shered.getRandomQuote { result in
             switch result {
-                
             case .success( let quote):
                 DispatchQueue.main.async {
                     self.add(childVC: QuoteViewController(quote: quote), to: self.quoteContainer)
-                    self.add(childVC: AuthorViewController(quote: quote), to: self.authorContainer)
+                    let authorName = quote[0].a
+                    print(authorName)
+                    self.getJsonDataFromWiki(authorName: authorName)
                 }
             case .failure( let error):
                 print(error.rawValue)
-        
+            }
+        }
+    }
+    func getJsonDataFromWiki(authorName: String) {
+        NetworkManager.shered.getAuthorImage(name: authorName) { result in
+            switch result {
+            case .success(let author):
+                DispatchQueue.main.async {
+                    self.add(childVC: AuthorViewController(wiki: author), to: self.authorContainer)
+                }
+            case .failure(let error):
+                print(error.rawValue)
             }
         }
     }
