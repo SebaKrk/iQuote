@@ -13,3 +13,9 @@ enum ZenQuoteError : String,Error {
     case inavlidResponse = "Invalid response from server. Please try again."
     case incalidData = "The data received from the server was invalid. Please try again."
 }
+
+enum WikiError : String, Error {
+    case unableToCompleted = "Unable to completed your request. Please check your internet connection"
+    case inavlidResponse = "Invalid response from server. Please try again."
+    case incalidData = "The data received from the server was invalid. Please try again."
+}

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 class AuthorViewController : UIViewController {
     
@@ -14,7 +15,7 @@ class AuthorViewController : UIViewController {
     let authorImage = AuthorImageView(frame: .zero)
     let authorLabel = CostumAuthorLabel()
     
-    var quote : [Quote] = []
+    var wiki : Wikipedia!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,9 @@ class AuthorViewController : UIViewController {
         configureAuthorLabel()
     }
     
-    init(quote: [Quote]){
+    init(wiki: Wikipedia){
         super.init(nibName: nil, bundle: nil)
-        self.quote = quote
+        self.wiki = wiki
     }
     
     required init?(coder: NSCoder) {
@@ -36,11 +37,19 @@ class AuthorViewController : UIViewController {
 //    MARK: - OBJC
     
     @objc func handleAuthorButton() {
-        print("DEBUG: AuthorButton pressed")
+        
+        let name = wiki.query.pages[0].title
+        let authorName = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        guard let url = URL(string: "https://en.wikipedia.org/wiki/\(authorName)") else { return }
+        
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
     }
-    
     private func configureUiElements() {
-        authorLabel.text = quote[0].a
+        authorLabel.text = wiki.query.pages[0].title
+        let avatarImages = wiki.query.pages[0].thumbnail.source
+        authorImage.dowloadImage(from: avatarImages)
+
     }
     
 //    MARK: - Constraints & Configuration
