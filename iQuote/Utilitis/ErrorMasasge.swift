@@ -19,3 +19,8 @@ enum WikiError : String, Error {
     case inavlidResponse = "Invalid response from server. Please try again."
     case incalidData = "The data received from the server was invalid. Please try again."
 }
+
+enum Messages : String {
+    case sucesffulyFavorited = "You've sucesffuly favorited this Quote"
+    case alleredyInFavorites = "You've allredy favorited this Quote. You must very like it!"
+}

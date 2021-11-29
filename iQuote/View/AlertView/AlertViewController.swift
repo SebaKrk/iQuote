@@ -46,7 +46,6 @@ class AlertViewController : UIViewController {
     }
 //    MARK: - OBJC Func
     @objc func handleDissmisButton() {
-        print("Dis")
         dismiss(animated: true, completion: nil)
     }
     
@@ -56,7 +55,7 @@ class AlertViewController : UIViewController {
         view.addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
         container.backgroundColor = .darkGray()
-        container.layer.borderColor = UIColor.primaryOrange().cgColor
+        container.layer.borderColor = UIColor.white.cgColor //UIColor.primaryOrange().cgColor
         container.layer.borderWidth = 0.5
         
         NSLayoutConstraint.activate([
@@ -99,6 +98,7 @@ class AlertViewController : UIViewController {
         container.addSubview(messageLabel)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        messageLabel.font = UIFont(name: "Baskerville", size: 28)
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 4
         messageLabel.textAlignment = .center
