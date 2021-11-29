@@ -19,13 +19,15 @@ class CostumAuthorLabel : UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     private func configure() {
+        font = UIFont(name: "Baskerville", size: 30)
         textColor = .white
         textAlignment = .left
         numberOfLines = 1
+        minimumScaleFactor = 0.5
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.9
+        
         lineBreakMode = .byTruncatingTail
-        font = UIFont(name: "Baskerville", size: 30)
+        
         
     }
 }

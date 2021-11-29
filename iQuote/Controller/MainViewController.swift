@@ -71,7 +71,6 @@ class MainViewController : UIViewController {
             case .failure(let error):
                 print(error.rawValue) // handle error 
                 self.showEmptyStateAuthor(with: authorName, in: self.authorContainer)
-                
             }
         }
     }
