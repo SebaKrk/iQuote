@@ -10,6 +10,7 @@
 		93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */; };
 		939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A352754AF500079DF97 /* EmptyAuthorView.swift */; };
 		939A3A382754CF010079DF97 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A372754CF010079DF97 /* UIViewController+Ext.swift */; };
+		939A3A3B2754FC680079DF97 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A3A2754FC680079DF97 /* AlertViewController.swift */; };
 		93A9FB5327536D7000442A91 /* NetwokManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB5227536D7000442A91 /* NetwokManager.swift */; };
 		93A9FB5527536E5E00442A91 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB5427536E5E00442A91 /* Quote.swift */; };
 		93A9FB5727536F5600442A91 /* ErrorMasasge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB5627536F5600442A91 /* ErrorMasasge.swift */; };
@@ -56,6 +57,7 @@
 		93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		939A3A352754AF500079DF97 /* EmptyAuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAuthorView.swift; sourceTree = "<group>"; };
 		939A3A372754CF010079DF97 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		939A3A3A2754FC680079DF97 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		93A9FB5227536D7000442A91 /* NetwokManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwokManager.swift; sourceTree = "<group>"; };
 		93A9FB5427536E5E00442A91 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		93A9FB5627536F5600442A91 /* ErrorMasasge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMasasge.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 				939A3A352754AF500079DF97 /* EmptyAuthorView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		939A3A392754FC390079DF97 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				939A3A3A2754FC680079DF97 /* AlertViewController.swift */,
+			);
+			path = AlertView;
 			sourceTree = "<group>";
 		};
 		93A9FB5127536D5F00442A91 /* Manager */ = {
@@ -212,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				939A3A342754AF3E0079DF97 /* View */,
+				939A3A392754FC390079DF97 /* AlertView */,
 				93F6B8C327465E93005181C0 /* ViewControllers */,
 				93BDB9C52748D43800E4B928 /* UILabel */,
 				93FF7C0A2746C02A00064E83 /* UIImageView */,
@@ -403,6 +414,7 @@
 				93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */,
 				93CE1CDE274ACC0A004FD559 /* CostumQuoteButton.swift in Sources */,
 				93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */,
+				939A3A3B2754FC680079DF97 /* AlertViewController.swift in Sources */,
 				93BF89712745A05700EF386A /* AppDelegate.swift in Sources */,
 				93BF89732745A05700EF386A /* SceneDelegate.swift in Sources */,
 				93FF7C092746BE4700064E83 /* UIView+Ext.swift in Sources */,

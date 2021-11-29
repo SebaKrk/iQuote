@@ -19,13 +19,14 @@ class CostumQuoteLabel : UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     private func configure() {
+        font = UIFont(name: "Baskerville", size: 36)
         textColor = .white
         textAlignment = .center
         numberOfLines = 0
+        minimumScaleFactor = 0.5
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.9
         lineBreakMode = .byTruncatingTail
-        font = UIFont(name: "Baskerville", size: 36)
+     
         // Baskerville URW
     }
 }
