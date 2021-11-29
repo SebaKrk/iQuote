@@ -10,7 +10,7 @@ import UIKit
 
 class AuthorImageView : UIImageView {
     
-    let placeholder = UIImage(named: "person")?.withRenderingMode(.alwaysOriginal)
+    let placeholder = UIImage(named: "EmptyPerson")?.withRenderingMode(.alwaysOriginal)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

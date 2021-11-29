@@ -54,11 +54,10 @@ class MainViewController : UIViewController {
                 DispatchQueue.main.async {
                     self.add(childVC: QuoteViewController(quote: quote), to: self.quoteContainer)
                     let authorName = quote[0].a
-                    print(authorName)
                     self.getJsonDataFromWiki(authorName: authorName)
                 }
             case .failure( let error):
-                print(error.rawValue)
+                print(error.rawValue) // handle error
             }
         }
     }
@@ -70,7 +69,7 @@ class MainViewController : UIViewController {
                     self.add(childVC: AuthorViewController(wiki: author), to: self.authorContainer)
                 }
             case .failure(let error):
-                print(error.rawValue)
+                print(error.rawValue) // handle error 
                 self.showEmptyStateAuthor(with: authorName, in: self.authorContainer)
                 
             }

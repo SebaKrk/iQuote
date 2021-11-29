@@ -53,7 +53,7 @@ class NetworkManager {
     func getAuthorImage(name: String, completed: @escaping  (Result<Wikipedia,WikiError>) -> Void) {
         let authorName = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let endPoint = wikiURL + authorName
-        print(endPoint)
+        
         guard let url = URL(string: endPoint) else {
             completed(.failure(.unableToCompleted))
             return

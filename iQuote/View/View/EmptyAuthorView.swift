@@ -35,7 +35,8 @@ class EmptyAuthorView : UIView {
     }
 
     func configure() {
-        authorImage.image = UIImage(named: "person")?.withRenderingMode(.alwaysOriginal)
+        authorImage.image = UIImage(named: "EmptyPerson")?.withRenderingMode(.alwaysOriginal)
+        authorImage.backgroundColor = .white
     }
     func configureAuthorImage() {
         addSubview(authorImage)
