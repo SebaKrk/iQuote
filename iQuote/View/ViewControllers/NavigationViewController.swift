@@ -58,7 +58,10 @@ class NavigationViewController : UIViewController {
         })
     }
     
-    @objc func handleHeartButton() { heartButton.flipLikeState() }
+    @objc func handleHeartButton() {
+        heartButton.flipLikeState()
+        presentAlertOnMainThred(title: "Succes!", message: Messages.sucesffulyFavorited.rawValue)
+    }
     @objc func handleListButton() { listButton.flipLikeState() }
     @objc func handleExportButton() { exportButton.flipLikeState() }
     @objc func handleNextButton() { nextButton.flipLikeState() }

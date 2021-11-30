@@ -98,7 +98,7 @@ class AlertViewController : UIViewController {
         container.addSubview(messageLabel)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        messageLabel.font = UIFont(name: "Baskerville", size: 28)
+        messageLabel.font = UIFont(name: "Baskerville", size: 24)
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 4
         messageLabel.textAlignment = .center

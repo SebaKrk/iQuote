@@ -57,7 +57,7 @@ class MainViewController : UIViewController {
                     self.getJsonDataFromWiki(authorName: authorName)
                 }
             case .failure( let error):
-                print(error.rawValue) // handle error
+                self.presentAlertOnMainThred(title: "Upsss...", message: error.rawValue)
             }
         }
     }
@@ -68,8 +68,7 @@ class MainViewController : UIViewController {
                 DispatchQueue.main.async {
                     self.add(childVC: AuthorViewController(wiki: author), to: self.authorContainer)
                 }
-            case .failure(let error):
-                print(error.rawValue) // handle error 
+            case .failure(_):
                 self.showEmptyStateAuthor(with: authorName, in: self.authorContainer)
             }
         }
