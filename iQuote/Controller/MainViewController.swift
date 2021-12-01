@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+var quoteToFavorites = ""
+var authorToFavorites = ""
 
 class MainViewController : UIViewController {
     
@@ -15,12 +17,10 @@ class MainViewController : UIViewController {
     let authorContainer = UIView()
     let navigationContainer = UIView()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupConstraints()
-        
     }
     
     private func setupView() {
@@ -53,8 +53,9 @@ class MainViewController : UIViewController {
             case .success( let quote):
                 DispatchQueue.main.async {
                     self.add(childVC: QuoteViewController(quote: quote), to: self.quoteContainer)
-                    let authorName = quote[0].a
-                    self.getJsonDataFromWiki(authorName: authorName)
+                    quoteToFavorites = quote[0].q
+                    authorToFavorites = quote[0].a
+                    self.getJsonDataFromWiki(authorName: authorToFavorites)
                 }
             case .failure( let error):
                 self.presentAlertOnMainThred(title: "Upsss...", message: error.rawValue)

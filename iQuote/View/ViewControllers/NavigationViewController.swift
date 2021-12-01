@@ -60,7 +60,18 @@ class NavigationViewController : UIViewController {
     
     @objc func handleHeartButton() {
         heartButton.flipLikeState()
-        presentAlertOnMainThred(title: "Succes!", message: Messages.sucesffulyFavorited.rawValue)
+        print("NavigationViewController: \(quoteToFavorites), \(authorToFavorites)")
+        
+        let favorite = Quote(q: quoteToFavorites, a: authorToFavorites)
+        PersistenceManager.uppdateWith(favorite: favorite, actionType: .add) { error in
+            guard let error = error else {
+                self.presentAlertOnMainThred(title: "Succes!", message: Messages.sucesffulyFavorited.rawValue)
+                return
+            }
+            self.presentAlertOnMainThred(title: "Upss", message: error.rawValue)
+        }
+        
+        
     }
     @objc func handleListButton() { listButton.flipLikeState() }
     @objc func handleExportButton() { exportButton.flipLikeState() }
