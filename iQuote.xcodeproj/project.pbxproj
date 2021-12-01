@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9305BA012757570F003E91F7 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA002757570F003E91F7 /* PersistenceManager.swift */; };
 		93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */; };
 		939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A352754AF500079DF97 /* EmptyAuthorView.swift */; };
 		939A3A382754CF010079DF97 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A372754CF010079DF97 /* UIViewController+Ext.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9305BA002757570F003E91F7 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		939A3A352754AF500079DF97 /* EmptyAuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAuthorView.swift; sourceTree = "<group>"; };
 		939A3A372754CF010079DF97 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				93A9FB5227536D7000442A91 /* NetwokManager.swift */,
+				9305BA002757570F003E91F7 /* PersistenceManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				93BF89712745A05700EF386A /* AppDelegate.swift in Sources */,
 				93BF89732745A05700EF386A /* SceneDelegate.swift in Sources */,
 				93FF7C092746BE4700064E83 /* UIView+Ext.swift in Sources */,
+				9305BA012757570F003E91F7 /* PersistenceManager.swift in Sources */,
 				939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */,
 				93FF7C072746BA5100064E83 /* CostumBackground.swift in Sources */,
 				93A9FB5727536F5600442A91 /* ErrorMasasge.swift in Sources */,
