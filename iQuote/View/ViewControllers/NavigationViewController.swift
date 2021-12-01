@@ -70,10 +70,18 @@ class NavigationViewController : UIViewController {
             }
             self.presentAlertOnMainThred(title: "Upss", message: error.rawValue)
         }
-        
-        
     }
-    @objc func handleListButton() { listButton.flipLikeState() }
+    
+    @objc func handleListButton() { listButton.flipLikeState()
+        
+        let desVC = FavoritesListViewController()
+        desVC.modalPresentationStyle = .overFullScreen
+        desVC.modalTransitionStyle = .crossDissolve
+        present(desVC, animated: true, completion: nil)
+        
+    
+    }
+    
     @objc func handleExportButton() { exportButton.flipLikeState() }
     @objc func handleNextButton() { nextButton.flipLikeState() }
     
