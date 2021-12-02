@@ -26,6 +26,7 @@ class FavoritesListViewController : UIViewController {
         setupTableView()
         configureSwipeLinie()
         configureTabeleView()
+        swipeUpGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +68,18 @@ class FavoritesListViewController : UIViewController {
             }
         }
     }
+//    MARK: SwipeGesture
+    @objc func handleSwipeUpGesture() {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    private func swipeUpGesture() {
+        let swipeUP = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeUpGesture))
+        swipeUP.direction = .up
+        view.addGestureRecognizer(swipeUP)
+    }
+    
     
     //     MARK: - Constraints
     private func configureContainer() {
