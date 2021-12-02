@@ -54,8 +54,8 @@ class FavoritesListViewController : UIViewController {
             case .success(let favorite):
                 
                 if favorite.isEmpty {
-//                    let massage = "No favorites?\nAdd one on the quote screean"
-//                    handle Emoty table view
+                    //                    let massage = "No favorites?\nAdd one on the quote screean"
+                    //                    handle Emoty table view
                 } else {
                     self.favoritesItems = favorite
                     DispatchQueue.main.async {
@@ -68,9 +68,8 @@ class FavoritesListViewController : UIViewController {
             }
         }
     }
-//    MARK: SwipeGesture
+    //    MARK: SwipeGesture
     @objc func handleSwipeUpGesture() {
-        
         dismiss(animated: true, completion: nil)
     }
     
@@ -131,6 +130,37 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let contextItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
+            print("share")
+        }
+        contextItem.backgroundColor = .white
+        contextItem.image = UIImage(named: "cellExport")
+        let swipeAction = UISwipeActionsConfiguration(actions: [contextItem])
+        return swipeAction
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+      let contextItem = UIContextualAction(style: .destructive, title: "Del") {  (contextualAction, view, boolValue) in
+          let favorite = self.favoritesItems[indexPath.row]
+          self.favoritesItems.remove(at: indexPath.row)
+          self.tableView.deleteRows(at: [indexPath], with: .automatic)
+          
+          PersistenceManager.uppdateWith(favorite: favorite, actionType: .remove) {  error in
+              guard let error = error  else {return}
+              self.presentAlertOnMainThred(title: "Unable to remove", message: error.rawValue)
+          }
+      }
+        contextItem.backgroundColor = .white
+        contextItem.image = UIImage(named: "cellDeleted")
+      let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
+      return swipeActions
+  }
 }
