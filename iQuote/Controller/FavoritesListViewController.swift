@@ -137,30 +137,37 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         return true
     }
     
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let contextItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
-            print("share")
-        }
-        contextItem.backgroundColor = .white
-        contextItem.image = UIImage(named: "cellExport")
-        let swipeAction = UISwipeActionsConfiguration(actions: [contextItem])
-        return swipeAction
-    }
+//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let contextItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
+//            print("share")
+//        }
+//        contextItem.backgroundColor = .white
+//        contextItem.image = UIImage(named: "cellExport")
+//        let swipeAction = UISwipeActionsConfiguration(actions: [contextItem])
+//        return swipeAction
+//    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-      let contextItem = UIContextualAction(style: .destructive, title: "Del") {  (contextualAction, view, boolValue) in
-          let favorite = self.favoritesItems[indexPath.row]
-          self.favoritesItems.remove(at: indexPath.row)
-          self.tableView.deleteRows(at: [indexPath], with: .automatic)
-          
-          PersistenceManager.uppdateWith(favorite: favorite, actionType: .remove) {  error in
-              guard let error = error  else {return}
-              self.presentAlertOnMainThred(title: "Unable to remove", message: error.rawValue)
-          }
-      }
-        contextItem.backgroundColor = .white
-        contextItem.image = UIImage(named: "cellDeleted")
-      let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
-      return swipeActions
-  }
+        let deletedItem = UIContextualAction(style: .destructive, title: "Del") {  (contextualAction, view, boolValue) in
+            let favorite = self.favoritesItems[indexPath.row]
+            self.favoritesItems.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            PersistenceManager.uppdateWith(favorite: favorite, actionType: .remove) {  error in
+                guard let error = error  else {return}
+                self.presentAlertOnMainThred(title: "Unable to remove", message: error.rawValue)
+            }
+        }
+        deletedItem.backgroundColor = .white
+        deletedItem.image = UIImage(named: "cellDeleted")
+        
+        let shareItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
+            print("share")
+        }
+        shareItem.backgroundColor = .white
+        shareItem.image = UIImage(named: "cellExport")
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [deletedItem, shareItem])
+        return swipeActions
+    }
 }
