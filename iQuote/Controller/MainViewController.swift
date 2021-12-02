@@ -17,19 +17,20 @@ class MainViewController : UIViewController {
     let authorContainer = UIView()
     let navigationContainer = UIView()
     
-    let favoriteQuoteListContainer = UIView()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupConstraints()
-        configureFarovireQuotListContainer()
+
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        favoriteQuoteListContainer.layer.cornerRadius = 15
+
     }
-//    MARK: - SetupView
+    
+    //    MARK: - SetupView
     
     
     private func setupView() {
@@ -37,9 +38,8 @@ class MainViewController : UIViewController {
         getJasonData()
         
         add(childVC: NavigationViewController(), to: navigationContainer)
-        add(childVC: FavoritesListViewController(), to: favoriteQuoteListContainer)
+
         
-        expandList()
     }
     //    MARK: - OBJC Func
     
@@ -117,20 +117,6 @@ class MainViewController : UIViewController {
         ])
     }
     
-    private func configureFarovireQuotListContainer() {
-        view.addSubview(favoriteQuoteListContainer)
-        favoriteQuoteListContainer.translatesAutoresizingMaskIntoConstraints = false
-        favoriteQuoteListContainer.backgroundColor = .white
-        
-        NSLayoutConstraint.activate([
-            favoriteQuoteListContainer.bottomAnchor.constraint(equalTo: view.topAnchor),
-            favoriteQuoteListContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            favoriteQuoteListContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            favoriteQuoteListContainer.heightAnchor.constraint(equalToConstant: view.layer.bounds.height / 1.2)
-        ])
-    }
-    
-    
     // MARK: - Helpers
     
     func add(childVC: UIViewController, to containerView: UIView) {
@@ -139,20 +125,4 @@ class MainViewController : UIViewController {
         childVC.view.frame = containerView.bounds
         childVC.didMove(toParent: self)
     }
-    
-//
-    func expandList() {
-        let listViewHeight = view.layer.bounds.height / 1.3
-        if favoriteQuoteListContainer.transform == .identity {
-            UIView.animate(withDuration: 0.5) {
-                self.favoriteQuoteListContainer.transform = CGAffineTransform(translationX: 0, y: listViewHeight)
-            }
-        } else {
-            UIView.animate(withDuration: 0.5) {
-                self.favoriteQuoteListContainer.transform = .identity
-            }
-        }
-    }
 }
-
-

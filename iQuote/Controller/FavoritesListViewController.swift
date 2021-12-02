@@ -10,6 +10,8 @@ import UIKit
 
 class FavoritesListViewController : UIViewController {
     
+    
+    private let container = UIView()
     private let tableView = UITableView()
     private let swipeLine = SwipeLine()
     
@@ -20,6 +22,7 @@ class FavoritesListViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        configureContainer()
         setupTableView()
         configureSwipeLinie()
         configureTabeleView()
@@ -28,11 +31,12 @@ class FavoritesListViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getFavorities()
+        container.layer.cornerRadius = 15
     }
     //    MARK: - SetupView & TableView
     
     private func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.7)
     }
     
     private func setupTableView() {
@@ -65,26 +69,38 @@ class FavoritesListViewController : UIViewController {
     }
     
     //     MARK: - Constraints
-    
+    private func configureContainer() {
+        view.addSubview(container)
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.backgroundColor = .white
+        
+        NSLayoutConstraint.activate([
+            container.topAnchor.constraint(equalTo: view.topAnchor),
+            container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            container.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7)
+        ])
+        
+    }
     private func configureSwipeLinie() {
-        view.addSubview(swipeLine)
+        container.addSubview(swipeLine)
         swipeLine.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            swipeLine.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
-            swipeLine.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            swipeLine.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4)
+            swipeLine.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -15),
+            swipeLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.4)
         ])
     }
     
     private func configureTabeleView() {
-        view.addSubview(tableView)
-        tableView.backgroundColor = .white
+        container.addSubview(tableView)
+        tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 20),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -10),
+            tableView.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor,constant: 20),
+            tableView.leadingAnchor.constraint(equalTo: container.leadingAnchor,constant: 10),
+            tableView.trailingAnchor.constraint(equalTo: container.trailingAnchor,constant: -10),
             tableView.bottomAnchor.constraint(equalTo: swipeLine.topAnchor, constant: -40)
         ])
     }
@@ -100,5 +116,8 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         let quoteData = favoritesItems[indexPath.row]
         cell.setData(quoteData: quoteData)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }

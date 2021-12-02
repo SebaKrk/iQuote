@@ -72,14 +72,13 @@ class NavigationViewController : UIViewController {
         }
     }
     
-    @objc func handleListButton() { listButton.flipLikeState()
+    @objc func handleListButton() {
+        listButton.flipLikeState()
         
         let desVC = FavoritesListViewController()
         desVC.modalPresentationStyle = .overFullScreen
-        desVC.modalTransitionStyle = .crossDissolve
+        desVC.modalTransitionStyle = .flipHorizontal //.coverVertical //.crossDissolve
         present(desVC, animated: true, completion: nil)
-        
-    
     }
     
     @objc func handleExportButton() { exportButton.flipLikeState() }
@@ -181,3 +180,6 @@ class NavigationViewController : UIViewController {
     }
 }
 
+// stworzylem 3 segmenty widoku i osadzilem je w 1 view kongtrolerze
+// w ostatnim segmencie stworzylem button do zarzadzania cala aplikacja
+// jak komunikowac sie z tymi przyciskami ?
