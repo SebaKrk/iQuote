@@ -81,7 +81,14 @@ class NavigationViewController : UIViewController {
         present(desVC, animated: true, completion: nil)
     }
     
-    @objc func handleExportButton() { exportButton.flipLikeState() }
+    @objc func handleExportButton() {
+        exportButton.flipLikeState()
+        
+        let desVC = SharedViewController()
+        desVC.modalPresentationStyle = .overFullScreen
+        desVC.modalTransitionStyle = .coverVertical
+        present(desVC, animated: true, completion: nil)
+    }
     @objc func handleNextButton() { nextButton.flipLikeState() }
     
     //   MARK: - Close Menu

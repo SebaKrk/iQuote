@@ -127,6 +127,8 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesTableViewCell.identifier) as! FavoritesTableViewCell
         let quoteData = favoritesItems[indexPath.row]
         cell.setData(quoteData: quoteData)
+        
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -137,15 +139,15 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         return true
     }
     
-//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let contextItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
-//            print("share")
-//        }
-//        contextItem.backgroundColor = .white
-//        contextItem.image = UIImage(named: "cellExport")
-//        let swipeAction = UISwipeActionsConfiguration(actions: [contextItem])
-//        return swipeAction
-//    }
+    //    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    //        let contextItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
+    //            print("share")
+    //        }
+    //        contextItem.backgroundColor = .white
+    //        contextItem.image = UIImage(named: "cellExport")
+    //        let swipeAction = UISwipeActionsConfiguration(actions: [contextItem])
+    //        return swipeAction
+    //    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deletedItem = UIContextualAction(style: .destructive, title: "Del") {  (contextualAction, view, boolValue) in
@@ -161,9 +163,14 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         deletedItem.backgroundColor = .white
         deletedItem.image = UIImage(named: "cellDeleted")
         
+        
         let shareItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
-            print("share")
+            let desVC = SharedViewController()
+            desVC.modalPresentationStyle = .overFullScreen
+            desVC.modalTransitionStyle = .coverVertical
+            self.present(desVC, animated: true, completion: nil)
         }
+        
         shareItem.backgroundColor = .white
         shareItem.image = UIImage(named: "cellExport")
         
