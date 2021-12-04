@@ -21,7 +21,14 @@ class SocialViewController : UIViewController {
         super.viewDidLoad()
         setupStackView()
         configureStackView()
+        configureButtons()
     }
+    
+    @objc func handleInstagramButton() {print("DEBUG: handleInstagramButton")}
+    @objc func handleFacebookButton() { print("DEBUG: handleFacebookButton") }
+    @objc func handleTwiterButton() { print("DEBUG: handleTwiterButton")}
+    @objc func handleLinkedInButton() { print("DEBUG: handleLinkedInButton")}
+    
     private func setupStackView() {
         stackView = UIStackView(arrangedSubviews: [instagramButton,facebookButton,twiterButton,linkedInButton])
         stackView.axis = .horizontal
@@ -37,6 +44,13 @@ class SocialViewController : UIViewController {
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             stackView.heightAnchor.constraint(equalToConstant: 100)
         ])
+    }
+    
+    private func configureButtons() {
+        instagramButton.addTarget(self, action: #selector(handleInstagramButton), for: .touchUpInside)
+        facebookButton.addTarget(self, action: #selector(handleFacebookButton), for: .touchUpInside)
+        twiterButton.addTarget(self, action: #selector(handleTwiterButton), for: .touchUpInside)
+        linkedInButton.addTarget(self, action: #selector(handleLinkedInButton), for: .touchUpInside)
     }
     
 }

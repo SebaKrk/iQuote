@@ -34,8 +34,8 @@ class CostumTransButton : UIButton {
         translatesAutoresizingMaskIntoConstraints = false
    
         layer.masksToBounds = true
-        widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
-        heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
+//        widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
+//        heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
         animate()
     }
     public func  flipLikeState() {
