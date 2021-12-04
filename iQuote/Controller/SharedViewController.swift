@@ -23,6 +23,8 @@ class SharedViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        add(childVC: SocialViewController(), to: socialContainer)
+        
     }
     
     private func setupView() {
@@ -53,7 +55,7 @@ class SharedViewController : UIViewController {
     private func configureSocialContainer() {
         container.addSubview(socialContainer)
         socialContainer.translatesAutoresizingMaskIntoConstraints = false
-        socialContainer.backgroundColor = .green
+//        socialContainer.backgroundColor = .green
         
         NSLayoutConstraint.activate([
             socialContainer.bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor),
@@ -102,6 +104,13 @@ class SharedViewController : UIViewController {
             imageContainer.bottomAnchor.constraint(equalTo: optionContainer.topAnchor, constant: -padding)
         ])
     }
+    // MARK: - Helpers
     
+    func add(childVC: UIViewController, to containerView: UIView) {
+        addChild(childVC)
+        containerView.addSubview(childVC.view)
+        childVC.view.frame = containerView.bounds
+        childVC.didMove(toParent: self)
+    }
     
 }

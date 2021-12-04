@@ -22,6 +22,8 @@
 		93A9FB5527536E5E00442A91 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB5427536E5E00442A91 /* Quote.swift */; };
 		93A9FB5727536F5600442A91 /* ErrorMasasge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB5627536F5600442A91 /* ErrorMasasge.swift */; };
 		93A9FB592753F7B400442A91 /* Wikipedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB582753F7B400442A91 /* Wikipedia.swift */; };
+		93B4ED04275B388D00C6E5E9 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */; };
+		93B4ED06275B38E800C6E5E9 /* CostumeSocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED05275B38E800C6E5E9 /* CostumeSocialButton.swift */; };
 		93BDB9C72748D44900E4B928 /* CostumQuoteLebel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDB9C62748D44900E4B928 /* CostumQuoteLebel.swift */; };
 		93BDB9CA2748DDF100E4B928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDB9C92748DDF100E4B928 /* Constants.swift */; };
 		93BF89712745A05700EF386A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89702745A05700EF386A /* AppDelegate.swift */; };
@@ -76,6 +78,8 @@
 		93A9FB5427536E5E00442A91 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		93A9FB5627536F5600442A91 /* ErrorMasasge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMasasge.swift; sourceTree = "<group>"; };
 		93A9FB582753F7B400442A91 /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
+		93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
+		93B4ED05275B38E800C6E5E9 /* CostumeSocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeSocialButton.swift; sourceTree = "<group>"; };
 		93BDB9C62748D44900E4B928 /* CostumQuoteLebel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumQuoteLebel.swift; sourceTree = "<group>"; };
 		93BDB9C92748DDF100E4B928 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		93BF896D2745A05700EF386A /* iQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +162,24 @@
 				9305BA002757570F003E91F7 /* PersistenceManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		93B4ED01275B36B400C6E5E9 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				93F6B8C427465EA5005181C0 /* QuoteViewController.swift */,
+				93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */,
+				93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		93B4ED02275B36E100C6E5E9 /* SharedVC */ = {
+			isa = PBXGroup;
+			children = (
+				93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */,
+			);
+			path = SharedVC;
 			sourceTree = "<group>";
 		};
 		93BDB9C52748D43800E4B928 /* UILabel */ = {
@@ -283,6 +305,7 @@
 			children = (
 				93CE1CDD274ACC0A004FD559 /* CostumQuoteButton.swift */,
 				93E1CE31274FF73B0089ECF1 /* CostumTransButton.swift */,
+				93B4ED05275B38E800C6E5E9 /* CostumeSocialButton.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -290,9 +313,8 @@
 		93F6B8C327465E93005181C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				93F6B8C427465EA5005181C0 /* QuoteViewController.swift */,
-				93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */,
-				93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */,
+				93B4ED01275B36B400C6E5E9 /* MainVC */,
+				93B4ED02275B36E100C6E5E9 /* SharedVC */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -451,10 +473,12 @@
 				93BF89712745A05700EF386A /* AppDelegate.swift in Sources */,
 				93BF89732745A05700EF386A /* SceneDelegate.swift in Sources */,
 				93FF7C092746BE4700064E83 /* UIView+Ext.swift in Sources */,
+				93B4ED04275B388D00C6E5E9 /* SocialViewController.swift in Sources */,
 				9305BA012757570F003E91F7 /* PersistenceManager.swift in Sources */,
 				939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */,
 				93FF7C072746BA5100064E83 /* CostumBackground.swift in Sources */,
 				93A9FB5727536F5600442A91 /* ErrorMasasge.swift in Sources */,
+				93B4ED06275B38E800C6E5E9 /* CostumeSocialButton.swift in Sources */,
 				9305BA0A2757D697003E91F7 /* CellQuoteLabel.swift in Sources */,
 				93BDB9C72748D44900E4B928 /* CostumQuoteLebel.swift in Sources */,
 				93A9FB5527536E5E00442A91 /* Quote.swift in Sources */,
