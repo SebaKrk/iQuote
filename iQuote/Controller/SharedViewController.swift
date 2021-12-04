@@ -24,6 +24,7 @@ class SharedViewController : UIViewController {
         super.viewDidLoad()
         setupView()
         add(childVC: SocialViewController(), to: socialContainer)
+        add(childVC: ImageConfigurationVC(), to: optionContainer)
         
     }
     
@@ -79,7 +80,7 @@ class SharedViewController : UIViewController {
     private func configureOptionsContainer() {
         container.addSubview(optionContainer)
         optionContainer.translatesAutoresizingMaskIntoConstraints = false
-        optionContainer.backgroundColor = .green
+//        optionContainer.backgroundColor = .green
         
         NSLayoutConstraint.activate([
             optionContainer.bottomAnchor.constraint(equalTo: breakLine.topAnchor,constant: -10),

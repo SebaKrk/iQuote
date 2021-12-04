@@ -24,6 +24,7 @@
 		93A9FB592753F7B400442A91 /* Wikipedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB582753F7B400442A91 /* Wikipedia.swift */; };
 		93B4ED04275B388D00C6E5E9 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */; };
 		93B4ED06275B38E800C6E5E9 /* CostumeSocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED05275B38E800C6E5E9 /* CostumeSocialButton.swift */; };
+		93B4ED08275B3BB700C6E5E9 /* ImageConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */; };
 		93BDB9C72748D44900E4B928 /* CostumQuoteLebel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDB9C62748D44900E4B928 /* CostumQuoteLebel.swift */; };
 		93BDB9CA2748DDF100E4B928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDB9C92748DDF100E4B928 /* Constants.swift */; };
 		93BF89712745A05700EF386A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89702745A05700EF386A /* AppDelegate.swift */; };
@@ -80,6 +81,7 @@
 		93A9FB582753F7B400442A91 /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
 		93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		93B4ED05275B38E800C6E5E9 /* CostumeSocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeSocialButton.swift; sourceTree = "<group>"; };
+		93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfigurationVC.swift; sourceTree = "<group>"; };
 		93BDB9C62748D44900E4B928 /* CostumQuoteLebel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumQuoteLebel.swift; sourceTree = "<group>"; };
 		93BDB9C92748DDF100E4B928 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		93BF896D2745A05700EF386A /* iQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */,
+				93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */,
 			);
 			path = SharedVC;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				93CE1CDE274ACC0A004FD559 /* CostumQuoteButton.swift in Sources */,
 				93992734275AA60A00E95481 /* SharedViewController.swift in Sources */,
 				9305BA0327575D62003E91F7 /* FavoritesListViewController.swift in Sources */,
+				93B4ED08275B3BB700C6E5E9 /* ImageConfigurationVC.swift in Sources */,
 				93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */,
 				9305BA08275760CB003E91F7 /* FavoritesTableViewCell.swift in Sources */,
 				939A3A3B2754FC680079DF97 /* AlertViewController.swift in Sources */,
