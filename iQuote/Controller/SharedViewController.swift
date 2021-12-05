@@ -16,6 +16,10 @@ class SharedViewController : UIViewController {
     let optionContainer = UIView()
     let imageContainer = UIView()
     
+    var backgroundIMG = CostumBackground(placehodler: "BackgroundImage")
+    var quoteLabel = CostumQuoteLabel()
+    
+    
     private let breakLine = SwipeLine()
     
     let padding : CGFloat = 20
@@ -25,6 +29,7 @@ class SharedViewController : UIViewController {
         setupView()
         add(childVC: SocialViewController(), to: socialContainer)
         add(childVC: ImageConfigurationVC(), to: optionContainer)
+        
         
     }
     
@@ -36,6 +41,8 @@ class SharedViewController : UIViewController {
         configureOptionsContainer()
         configureImageContainer()
         swpieDownGestureRecognizer()
+        configureQuoteBackground()
+        configureQuoteLabebel()
         
     }
     //    MARK: - GestureRecognizer
@@ -104,7 +111,7 @@ class SharedViewController : UIViewController {
     private func configureImageContainer() {
         container.addSubview(imageContainer)
         imageContainer.translatesAutoresizingMaskIntoConstraints = false
-        imageContainer.backgroundColor = .red
+        
         
         imageContainer.layer.cornerRadius = 5
         imageContainer.layer.masksToBounds = true
@@ -114,6 +121,31 @@ class SharedViewController : UIViewController {
             imageContainer.leadingAnchor.constraint(equalTo: container.leadingAnchor,constant: padding),
             imageContainer.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -padding),
             imageContainer.bottomAnchor.constraint(equalTo: optionContainer.topAnchor, constant: -padding)
+        ])
+    }
+    
+    private func configureQuoteBackground() {
+        imageContainer.addSubview(backgroundIMG)
+        backgroundIMG.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            backgroundIMG.topAnchor.constraint(equalTo: imageContainer.topAnchor),
+            backgroundIMG.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor),
+            backgroundIMG.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor),
+            backgroundIMG.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor)
+        ])
+    }
+    private func configureQuoteLabebel() {
+        imageContainer.addSubview(quoteLabel)
+        quoteLabel.translatesAutoresizingMaskIntoConstraints = false
+        quoteLabel.text = Constants.exampleQute
+        quoteLabel.numberOfLines = 3
+        
+        NSLayoutConstraint.activate([
+            quoteLabel.topAnchor.constraint(equalTo: imageContainer.topAnchor),
+            quoteLabel.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor),
+            quoteLabel.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor),
+            quoteLabel.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor)
         ])
     }
     // MARK: - Helpers
