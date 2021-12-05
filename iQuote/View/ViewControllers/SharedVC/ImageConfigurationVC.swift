@@ -24,7 +24,12 @@ class ImageConfigurationVC : UIViewController {
         configureButton()
     }
     
-    @objc func handleBackgroundButton() {print("DEBUG: handleBackgroundButton")}
+    @objc func handleBackgroundButton() {
+        print("DEBUG: handleBackgroundButton")
+        let desVC = UnsplashCollectionVC()
+        present(desVC, animated: true, completion: nil)
+    }
+    
     @objc func handleTextButton() { print("DEBUG: handleTextButton") }
     @objc func handleGradienButton() { print("DEBUG: handleGradienButton ")}
     @objc func handleAuthorButton() { print("DEBUG: handleAuthorButton")}
