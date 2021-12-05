@@ -29,8 +29,6 @@ class SharedViewController : UIViewController {
         setupView()
         add(childVC: SocialViewController(), to: socialContainer)
         add(childVC: ImageConfigurationVC(), to: optionContainer)
-        
-        
     }
     
     private func setupView() {
