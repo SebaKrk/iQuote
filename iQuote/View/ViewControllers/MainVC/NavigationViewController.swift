@@ -59,8 +59,7 @@ class NavigationViewController : UIViewController {
     }
     
     @objc func handleHeartButton() {
-        heartButton.flipLikeState()
-        print("NavigationViewController: \(quoteToFavorites), \(authorToFavorites)")
+        //heartButton.flipLikeState()
         
         let favorite = Quote(q: quoteToFavorites, a: authorToFavorites)
         PersistenceManager.uppdateWith(favorite: favorite, actionType: .add) { error in
@@ -73,7 +72,7 @@ class NavigationViewController : UIViewController {
     }
     
     @objc func handleListButton() {
-        listButton.flipLikeState()
+        // listButton.flipLikeState()
         
         let desVC = FavoritesListViewController()
         desVC.modalPresentationStyle = .overFullScreen
@@ -82,14 +81,16 @@ class NavigationViewController : UIViewController {
     }
     
     @objc func handleExportButton() {
-        exportButton.flipLikeState()
+        // exportButton.flipLikeState()
         
         let desVC = SharedViewController()
         desVC.modalPresentationStyle = .overFullScreen
         desVC.modalTransitionStyle = .coverVertical
         present(desVC, animated: true, completion: nil)
     }
-    @objc func handleNextButton() { nextButton.flipLikeState() }
+    @objc func handleNextButton() {
+        //nextButton.flipLikeState()
+    }
     
     //   MARK: - Close Menu
     

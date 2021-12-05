@@ -35,8 +35,21 @@ class SharedViewController : UIViewController {
         configureBreakLine()
         configureOptionsContainer()
         configureImageContainer()
+        swpieDownGestureRecognizer()
         
     }
+    //    MARK: - GestureRecognizer
+    
+    @objc func handleSwipeDown() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    private func swpieDownGestureRecognizer() {
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeDown))
+        swipeDown.direction = .down
+        container.addGestureRecognizer(swipeDown)
+    }
+    
     
     //    MARK: - Constraints
     
@@ -56,7 +69,6 @@ class SharedViewController : UIViewController {
     private func configureSocialContainer() {
         container.addSubview(socialContainer)
         socialContainer.translatesAutoresizingMaskIntoConstraints = false
-//        socialContainer.backgroundColor = .green
         
         NSLayoutConstraint.activate([
             socialContainer.bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor),
@@ -80,7 +92,6 @@ class SharedViewController : UIViewController {
     private func configureOptionsContainer() {
         container.addSubview(optionContainer)
         optionContainer.translatesAutoresizingMaskIntoConstraints = false
-//        optionContainer.backgroundColor = .green
         
         NSLayoutConstraint.activate([
             optionContainer.bottomAnchor.constraint(equalTo: breakLine.topAnchor,constant: -10),
