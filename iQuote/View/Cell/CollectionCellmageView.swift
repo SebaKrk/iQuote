@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionCellmageView : UIImageView {
     
-    let placeholderImage = UIImage(named: "")
+    let placeholderImage = UIImage(named: "BackgroundImage")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
