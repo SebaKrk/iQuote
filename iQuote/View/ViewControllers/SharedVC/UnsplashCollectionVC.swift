@@ -84,4 +84,12 @@ extension UnsplashCollectionVC : UICollectionViewDelegateFlowLayout , UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 200, height: 250)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionImageArray[indexPath.row]
+//        print(cell)
+        print(cell.urls)
+        print("collectionView: \(cell.id)")
+    }
 }
+

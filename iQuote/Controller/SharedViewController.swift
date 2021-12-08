@@ -154,5 +154,4 @@ class SharedViewController : UIViewController {
         childVC.view.frame = containerView.bounds
         childVC.didMove(toParent: self)
     }
-    
 }

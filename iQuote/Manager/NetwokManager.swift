@@ -129,5 +129,23 @@ class NetworkManager {
         }
         task.resume()
     }
+    
+//    MARK: Download Image
+    func dowloadImage(from urlString: String, completed: @escaping (UIImage) -> Void) {
+
+        guard let url = URL(string: urlString) else {return}
+
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {return}
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {return}
+            guard let data = data else {return}
+            guard let image = UIImage(data: data) else {return}
+
+            DispatchQueue.main.async {
+                completed(image)
+            }
+        }
+        task.resume()
+    }
 }
 

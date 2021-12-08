@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+
+
 class FavoritesTableViewCell : UITableViewCell {
     
     static let identifier = "FavoritesTableViewCell"
