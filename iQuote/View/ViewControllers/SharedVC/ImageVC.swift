@@ -20,10 +20,28 @@ class ImageVC : UIViewController {
         setupView()
         configureBackgroundIMG()
         configureQuoteLabel()
+        configureObservers()
     }
     private func setupView() {
         view.backgroundColor = .black
     }
+//    MARK: - Notification&Observers
+    
+    @objc func handleImageObserver(notification : NSNotification) {
+        let imgName = notification.userInfo?["imgURL"] as? String
+        guard let imgName = imgName else {return}
+        NetworkManager.shered.dowloadImage(from: imgName) { imgage in
+            self.backgroundIMG.image = imgage
+        }
+    }
+    
+    private func configureObservers() {
+        let imgObserver = Notification.Name("imgObserver")
+        NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)), name: imgObserver, object: nil)
+    }
+    
+    
+//    MARK: - Constraints
     private func configureBackgroundIMG() {
         view.addSubview(backgroundIMG)
         backgroundIMG.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +65,6 @@ class ImageVC : UIViewController {
             quoteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 50),
             quoteLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -50),
             quoteLabel.heightAnchor.constraint(equalTo: view.heightAnchor, constant: 0.5)
-            
         ])
     }
     

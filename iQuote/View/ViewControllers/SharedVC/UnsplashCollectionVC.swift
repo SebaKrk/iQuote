@@ -87,9 +87,11 @@ extension UnsplashCollectionVC : UICollectionViewDelegateFlowLayout , UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionImageArray[indexPath.row]
-//        print(cell)
-        print(cell.urls)
-        print("collectionView: \(cell.id)")
+        let imgURL = cell.urls.small
+        
+        let name = Notification.Name("imgObserver")
+        NotificationCenter.default.post(name: name, object: nil, userInfo: ["imgURL" : imgURL])
+        dismiss(animated: true, completion: nil)
     }
 }
 
