@@ -62,8 +62,8 @@ class ImageVC : UIViewController {
         
         NSLayoutConstraint.activate([
             quoteLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            quoteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 50),
-            quoteLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -50),
+            quoteLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            quoteLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
             quoteLabel.heightAnchor.constraint(equalTo: view.heightAnchor, constant: 0.5)
         ])
     }
