@@ -29,6 +29,7 @@ class SharedViewController : UIViewController {
         setupView()
         add(childVC: SocialViewController(), to: socialContainer)
         add(childVC: ImageConfigurationVC(), to: optionContainer)
+        add(childVC: ImageVC(), to: imageContainer)
     }
     
     private func setupView() {
@@ -39,8 +40,6 @@ class SharedViewController : UIViewController {
         configureOptionsContainer()
         configureImageContainer()
         swpieDownGestureRecognizer()
-        configureQuoteBackground()
-        configureQuoteLabebel()
         
     }
     //    MARK: - GestureRecognizer
@@ -121,31 +120,7 @@ class SharedViewController : UIViewController {
             imageContainer.bottomAnchor.constraint(equalTo: optionContainer.topAnchor, constant: -padding)
         ])
     }
-    
-    private func configureQuoteBackground() {
-        imageContainer.addSubview(backgroundIMG)
-        backgroundIMG.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            backgroundIMG.topAnchor.constraint(equalTo: imageContainer.topAnchor),
-            backgroundIMG.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor),
-            backgroundIMG.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor),
-            backgroundIMG.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor)
-        ])
-    }
-    private func configureQuoteLabebel() {
-        imageContainer.addSubview(quoteLabel)
-        quoteLabel.translatesAutoresizingMaskIntoConstraints = false
-        quoteLabel.text = Constants.exampleQute
-        quoteLabel.numberOfLines = 3
-        
-        NSLayoutConstraint.activate([
-            quoteLabel.topAnchor.constraint(equalTo: imageContainer.topAnchor),
-            quoteLabel.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor),
-            quoteLabel.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor),
-            quoteLabel.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor)
-        ])
-    }
+
     // MARK: - Helpers
     
     func add(childVC: UIViewController, to containerView: UIView) {

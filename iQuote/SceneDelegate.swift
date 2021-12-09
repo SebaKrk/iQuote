@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        NavigationViewController()
 //        SharedViewController()
 //        UnsplashCollectionVC()
+//        ImageVC()
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = UINavigationController(rootViewController: desVC)
         window?.makeKeyAndVisible()

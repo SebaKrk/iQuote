@@ -40,6 +40,7 @@
 		93BF89942745A05A00EF386A /* iQuoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */; };
 		93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A02745A3B400EF386A /* MainViewController.swift */; };
 		93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A62746220E00EF386A /* UIColor+Ext.swift */; };
+		93C3CFE22761E0F3009CD963 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C3CFE12761E0F3009CD963 /* ImageVC.swift */; };
 		93CE1CDB274ACB0D004FD559 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */; };
 		93CE1CDE274ACC0A004FD559 /* CostumQuoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE1CDD274ACC0A004FD559 /* CostumQuoteButton.swift */; };
 		93E1CE32274FF73B0089ECF1 /* CostumTransButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E1CE31274FF73B0089ECF1 /* CostumTransButton.swift */; };
@@ -105,6 +106,7 @@
 		93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93BF89A02745A3B400EF386A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		93BF89A62746220E00EF386A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		93C3CFE12761E0F3009CD963 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		93CE1CDD274ACC0A004FD559 /* CostumQuoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumQuoteButton.swift; sourceTree = "<group>"; };
 		93E1CE31274FF73B0089ECF1 /* CostumTransButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumTransButton.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */,
 				93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */,
+				93C3CFE12761E0F3009CD963 /* ImageVC.swift */,
 				93A5987F275CA67300FCC32B /* UnsplashCollectionVC.swift */,
 			);
 			path = SharedVC;
@@ -495,6 +498,7 @@
 				93B4ED04275B388D00C6E5E9 /* SocialViewController.swift in Sources */,
 				9305BA012757570F003E91F7 /* PersistenceManager.swift in Sources */,
 				939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */,
+				93C3CFE22761E0F3009CD963 /* ImageVC.swift in Sources */,
 				93FF7C072746BA5100064E83 /* CostumBackground.swift in Sources */,
 				93A9FB5727536F5600442A91 /* ErrorMasasge.swift in Sources */,
 				93B4ED06275B38E800C6E5E9 /* CostumeSocialButton.swift in Sources */,
