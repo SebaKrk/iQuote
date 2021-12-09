@@ -57,7 +57,7 @@ class ImageVC : UIViewController {
     private func configureQuoteLabel() {
         view.addSubview(quoteLabel)
         quoteLabel.translatesAutoresizingMaskIntoConstraints = false
-        quoteLabel.numberOfLines = 3
+        quoteLabel.numberOfLines = 4
         quoteLabel.text = Constants.exampleQute
         
         NSLayoutConstraint.activate([

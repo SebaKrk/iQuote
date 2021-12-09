@@ -31,7 +31,13 @@ class ImageConfigurationVC : UIViewController {
         present(desVC, animated: true, completion: nil)
     }
     
-    @objc func handleTextButton() { print("DEBUG: handleTextButton") }
+    @objc func handleTextButton() {
+        print("DEBUG: handleTextButton")
+        let desVC = TextConfigurationVC()
+        desVC.modalPresentationStyle = .overFullScreen
+        present(desVC,animated: true,completion: nil)
+    }
+    
     @objc func handleGradienButton() { print("DEBUG: handleGradienButton ")}
     @objc func handleAuthorButton() { print("DEBUG: handleAuthorButton")}
     
