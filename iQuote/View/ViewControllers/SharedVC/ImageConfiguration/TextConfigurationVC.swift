@@ -100,6 +100,12 @@ extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
         return fontArray[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        let fontName = fontArray[row]
+        let name = Notification.Name("fontQuote")
+        NotificationCenter.default.post(name: name, object: nil, userInfo: ["font" : fontName])
         print(fontArray[row])
+        print(fontName)
+        //dismiss(animated: true, completion: nil)
     }
 }

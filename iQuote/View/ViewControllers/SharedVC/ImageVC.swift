@@ -14,6 +14,10 @@ class ImageVC : UIViewController {
     var backgroundIMG = CostumBackground(placehodler: "BackgroundImage")
     var quoteLabel = CostumQuoteLabel()
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +29,7 @@ class ImageVC : UIViewController {
     private func setupView() {
         view.backgroundColor = .black
     }
-//    MARK: - Notification&Observers
+    //    MARK: - Notification&Observers
     
     @objc func handleImageObserver(notification : NSNotification) {
         let imgName = notification.userInfo?["imgURL"] as? String
@@ -35,13 +39,24 @@ class ImageVC : UIViewController {
         }
     }
     
+    @objc func handleFontQuoteObserver(notification : NSNotification) {
+        let fontQuoteName = notification.userInfo?["font"] as? String
+        guard let fontQuoteName = fontQuoteName else {return}
+        quoteLabel.font = UIFont(name: fontQuoteName, size: 36)
+        
+        print("notification: \(fontQuoteName)")
+    }
+    
     private func configureObservers() {
         let imgObserver = Notification.Name("imgObserver")
         NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)), name: imgObserver, object: nil)
+        
+        let fontObserver = Notification.Name("fontQuote")
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFontQuoteObserver(notification:)), name: fontObserver, object: nil)
     }
     
     
-//    MARK: - Constraints
+    //    MARK: - Constraints
     private func configureBackgroundIMG() {
         view.addSubview(backgroundIMG)
         backgroundIMG.translatesAutoresizingMaskIntoConstraints = false
