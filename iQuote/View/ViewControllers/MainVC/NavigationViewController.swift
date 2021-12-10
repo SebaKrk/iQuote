@@ -175,19 +175,23 @@ class NavigationViewController : UIViewController {
             
             nextButton.leadingAnchor.constraint(equalTo: mainQuoteButton.trailingAnchor,constant: 10),
             nextButton.centerYAnchor.constraint(equalTo: mainQuoteButton.centerYAnchor),
+            nextButton.widthAnchor.constraint(equalToConstant: 50),
+            nextButton.heightAnchor.constraint(equalToConstant: 50),
             
             exportButton.trailingAnchor.constraint(equalTo: mainQuoteButton.leadingAnchor,constant: -10),
             exportButton.centerYAnchor.constraint(equalTo: mainQuoteButton.centerYAnchor),
+            exportButton.widthAnchor.constraint(equalToConstant: 50),
+            exportButton.heightAnchor.constraint(equalToConstant: 50),
             
             heartButton.bottomAnchor.constraint(equalTo: mainQuoteButton.topAnchor,constant: -10),
             heartButton.centerXAnchor.constraint(equalTo: mainQuoteButton.centerXAnchor),
+            heartButton.widthAnchor.constraint(equalToConstant: 50),
+            heartButton.heightAnchor.constraint(equalToConstant: 50),
             
             listButton.topAnchor.constraint(equalTo: mainQuoteButton.bottomAnchor,constant: 10),
-            listButton.centerXAnchor.constraint(equalTo: mainQuoteButton.centerXAnchor)
+            listButton.centerXAnchor.constraint(equalTo: mainQuoteButton.centerXAnchor),
+            listButton.widthAnchor.constraint(equalToConstant: 50),
+            listButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }
-
-// stworzylem 3 segmenty widoku i osadzilem je w 1 view kongtrolerze
-// w ostatnim segmencie stworzylem button do zarzadzania cala aplikacja
-// jak komunikowac sie z tymi przyciskami ?

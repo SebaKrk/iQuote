@@ -154,6 +154,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		9399B1C62763CA5A0035021E /* SocialConfigurationVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SocialConfigurationVC;
+			sourceTree = "<group>";
+		};
 		939A3A342754AF3E0079DF97 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +204,7 @@
 				93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */,
 				93C3CFE72761EE85009CD963 /* ImageConfiguration */,
 				93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */,
+				9399B1C62763CA5A0035021E /* SocialConfigurationVC */,
 			);
 			path = SharedVC;
 			sourceTree = "<group>";
