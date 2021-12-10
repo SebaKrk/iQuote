@@ -10,8 +10,8 @@ import UIKit
 
 class TextConfigurationVC : UIViewController {
     
-    let fontArray = [ "Baskerville", "Baskerville-Bold", "Baskerville-BoldItalic", "Baskerville-Italic", "Baskerville-SemiBold", "Baskerville-SemiBoldItalic"]
-    
+    let fontArray = Constants.fontArray
+
     let container = UIView()
     let fontSizeSlider = UISlider()
     let fontPiker = UIPickerView()
@@ -28,6 +28,14 @@ class TextConfigurationVC : UIViewController {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
         swpieDownGestureRecognizer()
     }
+    //    MARK: - OBJC
+    
+    @objc func handleFontSizeSlider(sender: UISlider){
+        let roundedStepValue = CGFloat(Int(sender.value))
+        let name = Notification.Name("sizeFontObserver")
+        NotificationCenter.default.post(name: name, object: nil, userInfo: ["size" : roundedStepValue])
+    }
+    
     //    MARK: - GestureRecognizer
     
     @objc func handleSwipeDown() {
@@ -58,9 +66,13 @@ class TextConfigurationVC : UIViewController {
     private func configureFontSizeSlider() {
         container.addSubview(fontSizeSlider)
         fontSizeSlider.translatesAutoresizingMaskIntoConstraints = false
+        fontSizeSlider.addTarget(self, action: #selector(handleFontSizeSlider(sender:)), for: .touchUpInside)
         
         fontSizeSlider.tintColor = .white
-        fontSizeSlider.value = 0.5
+
+        fontSizeSlider.minimumValue = 12
+        fontSizeSlider.maximumValue = 48
+        fontSizeSlider.value = 30
         fontSizeSlider.thumbTintColor = .primaryOrange()
         
         NSLayoutConstraint.activate([
@@ -76,7 +88,7 @@ class TextConfigurationVC : UIViewController {
         fontPiker.translatesAutoresizingMaskIntoConstraints = false
         fontPiker.delegate = self
         fontPiker.dataSource = self
-
+        
         fontPiker.overrideUserInterfaceStyle = .dark
         
         NSLayoutConstraint.activate([
@@ -100,12 +112,11 @@ extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
         return fontArray[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         let fontName = fontArray[row]
         let name = Notification.Name("fontQuote")
         NotificationCenter.default.post(name: name, object: nil, userInfo: ["font" : fontName])
-        print(fontArray[row])
-        print(fontName)
-        //dismiss(animated: true, completion: nil)
     }
 }
+
+
+

@@ -23,7 +23,7 @@ class CostumQuoteLabel : UILabel {
         textColor = .white
         textAlignment = .center
         numberOfLines = 0
-        minimumScaleFactor = 0.5
+//        minimumScaleFactor = 0.5
         adjustsFontSizeToFitWidth = true
         lineBreakMode = .byTruncatingTail
      

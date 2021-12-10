@@ -13,4 +13,6 @@ enum Constants {
     
     static let exampleQute = "The people who are crazy enough to think they can change the world are the ones who do"
     static let exampleAuthor = "Steve Jobs "
+    
+    static let fontArray = ["Baskerville", "Baskerville-Bold", "Baskerville-BoldItalic", "Baskerville-Italic", "Baskerville-SemiBold", "Baskerville-SemiBoldItalic"]
 }
