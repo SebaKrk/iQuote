@@ -16,7 +16,7 @@ class ImageConfigurationVC : UIViewController {
     let backgroundImageButton  = CostumTransButton(imageOne: "BackgroundIcon", imageTwo: "BackgroundIcon2")
     let textButton  = CostumTransButton(imageOne: "TextIcon", imageTwo: "TextIcon2")
     let gradienButton = CostumTransButton(imageOne: "GradienIcon", imageTwo: "GradienIcon2")
-    let authorButton = CostumTransButton(imageOne: "AuthorIcon", imageTwo: "AuthorIcon2")
+    let logoButton = CostumTransButton(imageOne: "AuthorIcon", imageTwo: "AuthorIcon2")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,23 +26,26 @@ class ImageConfigurationVC : UIViewController {
     }
     
     @objc func handleBackgroundButton() {
-        print("DEBUG: handleBackgroundButton")
         let desVC = UnsplashCollectionVC()
         present(desVC, animated: true, completion: nil)
     }
     
     @objc func handleTextButton() {
-        print("DEBUG: handleTextButton")
         let desVC = TextConfigurationVC()
         desVC.modalPresentationStyle = .overFullScreen
         present(desVC,animated: true,completion: nil)
     }
     
     @objc func handleGradienButton() { print("DEBUG: handleGradienButton ")}
-    @objc func handleAuthorButton() { print("DEBUG: handleAuthorButton")}
+    
+    @objc func handleLogoButton() {
+        logoButton.flipLikeState()
+        let name = NSNotification.Name("logoObserver")
+        NotificationCenter.default.post(name: name, object: nil)
+    }
     
     private func setupStackView() {
-        stackView = UIStackView(arrangedSubviews: [backgroundImageButton,textButton,gradienButton,authorButton])
+        stackView = UIStackView(arrangedSubviews: [backgroundImageButton,textButton,gradienButton,logoButton])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
     }
@@ -62,7 +65,7 @@ class ImageConfigurationVC : UIViewController {
         backgroundImageButton.addTarget(self, action: #selector(handleBackgroundButton), for: .touchUpInside)
         textButton.addTarget(self, action: #selector(handleTextButton), for: .touchUpInside)
         gradienButton.addTarget(self, action: #selector(handleGradienButton), for: .touchUpInside)
-        authorButton.addTarget(self, action: #selector(handleAuthorButton), for: .touchUpInside)
+        logoButton.addTarget(self, action: #selector(handleLogoButton), for: .touchUpInside)
     }
     
 }

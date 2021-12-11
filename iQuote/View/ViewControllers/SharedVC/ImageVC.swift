@@ -55,6 +55,10 @@ class ImageVC : UIViewController {
         quoteLabel.font = quoteLabel.font.withSize(fontSize as! CGFloat)
     }
     
+    @objc func handleLogoObserver(notification: NSNotification) {
+        quoteLogo.isHidden = true
+    }
+    
     
     private func configureObservers() {
         let imgObserver = Notification.Name("imgObserver")
@@ -66,6 +70,8 @@ class ImageVC : UIViewController {
         let sizeFontObserver = Notification.Name("sizeFontObserver") 
         NotificationCenter.default.addObserver(self, selector: #selector(handleFontSizeObserver(notification:)), name: sizeFontObserver, object: nil)
         
+        let logoObserver = Notification.Name(rawValue: "logoObserver")
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)), name: logoObserver, object: nil)
     }
     
     
