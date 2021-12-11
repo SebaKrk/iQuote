@@ -14,11 +14,12 @@ class ImageVC : UIViewController {
     let backgroundIMG = CostumBackground(placehodler: "BackgroundImage")
     let quoteLabel = CostumQuoteLabel()
     let quoteLogo = UIImageView()
+
+    var logonIsOn = false
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,11 @@ class ImageVC : UIViewController {
         configureQuoteLogo()
         configureObservers()
     }
+    
     private func setupView() {
         view.backgroundColor = .black
     }
+    
     //    MARK: - Notification&Observers
     
     @objc func handleImageObserver(notification : NSNotification) {
@@ -56,7 +59,8 @@ class ImageVC : UIViewController {
     }
     
     @objc func handleLogoObserver(notification: NSNotification) {
-        quoteLogo.isHidden = true
+        logonIsOn = !logonIsOn
+        quoteLogo.isHidden = logonIsOn
     }
     
     
@@ -106,7 +110,7 @@ class ImageVC : UIViewController {
         quoteLogo.translatesAutoresizingMaskIntoConstraints = false
         
         quoteLogo.image = UIImage(named: "LogoForBackground")
-        quoteLogo.isHidden = false
+        quoteLogo.isHidden = logonIsOn
         
         NSLayoutConstraint.activate([
             quoteLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 5),

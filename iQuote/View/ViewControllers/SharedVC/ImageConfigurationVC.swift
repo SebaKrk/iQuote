@@ -38,6 +38,7 @@ class ImageConfigurationVC : UIViewController {
     }
     
     @objc func handleGradienButton() {
+        
         let desVC = GradientConfigurationVC()
         desVC.modalPresentationStyle = .overFullScreen
         present(desVC,animated: true,completion: nil)

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class p : UIViewController {
+class GradientConfigurationVC : UIViewController {
     
     let container = UIView()
     
