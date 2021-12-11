@@ -16,10 +16,13 @@ class TextConfigurationVC : UIViewController {
     let fontSizeSlider = UISlider()
     let fontPiker = UIPickerView()
     
+    private let swipeLine = SwipeLine()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         configureContainer()
+        configureSwipeLinie()
         configureFontSizeSlider()
         configureFontPiker()
     }
@@ -60,6 +63,16 @@ class TextConfigurationVC : UIViewController {
             container.leftAnchor.constraint(equalTo: view.leftAnchor),
             container.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             container.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3)
+        ])
+    }
+    private func configureSwipeLinie() {
+        container.addSubview(swipeLine)
+        swipeLine.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            swipeLine.topAnchor.constraint(equalTo: container.topAnchor, constant: 15),
+            swipeLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.2)
         ])
     }
     

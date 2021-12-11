@@ -15,6 +15,7 @@
 		9305BA0C2757D6DB003E91F7 /* CellAuthorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */; };
 		93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */; };
 		93992734275AA60A00E95481 /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93992733275AA60A00E95481 /* SharedViewController.swift */; };
+		9399B1C82764823A0035021E /* GradientConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399B1C72764823A0035021E /* GradientConfigurationVC.swift */; };
 		939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A352754AF500079DF97 /* EmptyAuthorView.swift */; };
 		939A3A382754CF010079DF97 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A372754CF010079DF97 /* UIViewController+Ext.swift */; };
 		939A3A3B2754FC680079DF97 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A3A2754FC680079DF97 /* AlertViewController.swift */; };
@@ -78,6 +79,7 @@
 		9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAuthorLabel.swift; sourceTree = "<group>"; };
 		93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		93992733275AA60A00E95481 /* SharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewController.swift; sourceTree = "<group>"; };
+		9399B1C72764823A0035021E /* GradientConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientConfigurationVC.swift; sourceTree = "<group>"; };
 		939A3A352754AF500079DF97 /* EmptyAuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAuthorView.swift; sourceTree = "<group>"; };
 		939A3A372754CF010079DF97 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		939A3A3A2754FC680079DF97 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 			children = (
 				93A5987F275CA67300FCC32B /* UnsplashCollectionVC.swift */,
 				93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */,
+				9399B1C72764823A0035021E /* GradientConfigurationVC.swift */,
 			);
 			path = ImageConfiguration;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				9305BA0527575FCF003E91F7 /* SwipeLine.swift in Sources */,
 				93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */,
 				93A9FB5327536D7000442A91 /* NetwokManager.swift in Sources */,
+				9399B1C82764823A0035021E /* GradientConfigurationVC.swift in Sources */,
 				939A3A382754CF010079DF97 /* UIViewController+Ext.swift in Sources */,
 				93A59884275CA7CE00FCC32B /* CollectionCell.swift in Sources */,
 				93A59882275CA77500FCC32B /* CollectionCellmageView.swift in Sources */,

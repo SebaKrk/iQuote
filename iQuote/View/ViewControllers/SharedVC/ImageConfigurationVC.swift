@@ -25,6 +25,7 @@ class ImageConfigurationVC : UIViewController {
         configureButton()
     }
     
+    
     @objc func handleBackgroundButton() {
         let desVC = UnsplashCollectionVC()
         present(desVC, animated: true, completion: nil)
@@ -36,7 +37,11 @@ class ImageConfigurationVC : UIViewController {
         present(desVC,animated: true,completion: nil)
     }
     
-    @objc func handleGradienButton() { print("DEBUG: handleGradienButton ")}
+    @objc func handleGradienButton() {
+        let desVC = GradientConfigurationVC()
+        desVC.modalPresentationStyle = .overFullScreen
+        present(desVC,animated: true,completion: nil)
+    }
     
     @objc func handleLogoButton() {
         logoButton.flipLikeState()
