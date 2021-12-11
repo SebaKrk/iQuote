@@ -172,7 +172,6 @@ class NavigationViewController : UIViewController {
         nextButton.addTarget(self, action: #selector(handleNextButton), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            
             nextButton.leadingAnchor.constraint(equalTo: mainQuoteButton.trailingAnchor,constant: 10),
             nextButton.centerYAnchor.constraint(equalTo: mainQuoteButton.centerYAnchor),
             nextButton.widthAnchor.constraint(equalToConstant: 50),

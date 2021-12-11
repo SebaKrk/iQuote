@@ -11,8 +11,9 @@ import UIKit
 
 class ImageVC : UIViewController {
     
-    var backgroundIMG = CostumBackground(placehodler: "BackgroundImage")
-    var quoteLabel = CostumQuoteLabel()
+    let backgroundIMG = CostumBackground(placehodler: "BackgroundImage")
+    let quoteLabel = CostumQuoteLabel()
+    let quoteLogo = UIImageView()
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -24,6 +25,7 @@ class ImageVC : UIViewController {
         setupView()
         configureBackgroundIMG()
         configureQuoteLabel()
+        configureQuoteLogo()
         configureObservers()
     }
     private func setupView() {
@@ -93,5 +95,18 @@ class ImageVC : UIViewController {
             quoteLabel.heightAnchor.constraint(equalTo: view.heightAnchor, constant: 0.5)
         ])
     }
-    
+    private func configureQuoteLogo() {
+        view.addSubview(quoteLogo)
+        quoteLogo.translatesAutoresizingMaskIntoConstraints = false
+        
+        quoteLogo.image = UIImage(named: "LogoForBackground")
+        quoteLogo.isHidden = false
+        
+        NSLayoutConstraint.activate([
+            quoteLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 5),
+            quoteLogo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
+            quoteLogo.widthAnchor.constraint(equalToConstant: 35),
+            quoteLogo.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
 }
