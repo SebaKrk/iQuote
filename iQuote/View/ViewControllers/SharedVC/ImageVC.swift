@@ -62,8 +62,7 @@ class ImageVC : UIViewController {
         logonIsOn = !logonIsOn
         quoteLogo.isHidden = logonIsOn
     }
-    
-    
+
     private func configureObservers() {
         let imgObserver = Notification.Name("imgObserver")
         NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)), name: imgObserver, object: nil)
@@ -76,8 +75,9 @@ class ImageVC : UIViewController {
         
         let logoObserver = Notification.Name(rawValue: "logoObserver")
         NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)), name: logoObserver, object: nil)
+        
     }
-    
+
     
     //    MARK: - Constraints
     private func configureBackgroundIMG() {

@@ -21,6 +21,7 @@ class SharedViewController : UIViewController {
     
     
     private let breakLine = SwipeLine()
+    private let swipeLine = SwipeLine()
     
     let padding : CGFloat = 20
     
@@ -39,6 +40,7 @@ class SharedViewController : UIViewController {
         configureBreakLine()
         configureOptionsContainer()
         configureImageContainer()
+        configureSwipeLinie()
         swpieDownGestureRecognizer()
         
     }
@@ -108,8 +110,7 @@ class SharedViewController : UIViewController {
     private func configureImageContainer() {
         container.addSubview(imageContainer)
         imageContainer.translatesAutoresizingMaskIntoConstraints = false
-        
-        
+    
         imageContainer.layer.cornerRadius = 5
         imageContainer.layer.masksToBounds = true
         
@@ -118,6 +119,17 @@ class SharedViewController : UIViewController {
             imageContainer.leadingAnchor.constraint(equalTo: container.leadingAnchor,constant: padding),
             imageContainer.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -padding),
             imageContainer.bottomAnchor.constraint(equalTo: optionContainer.topAnchor, constant: -padding)
+        ])
+    }
+    
+    private func configureSwipeLinie() {
+        container.addSubview(swipeLine)
+        swipeLine.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            swipeLine.topAnchor.constraint(equalTo: container.topAnchor, constant: 15),
+            swipeLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.4)
         ])
     }
 

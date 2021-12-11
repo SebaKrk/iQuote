@@ -123,12 +123,12 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoritesItems.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesTableViewCell.identifier) as! FavoritesTableViewCell
         let quoteData = favoritesItems[indexPath.row]
         cell.setData(quoteData: quoteData)
-        
-        
+    
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -150,6 +150,7 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
     //    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
         let deletedItem = UIContextualAction(style: .destructive, title: "Del") {  (contextualAction, view, boolValue) in
             let favorite = self.favoritesItems[indexPath.row]
             self.favoritesItems.remove(at: indexPath.row)
@@ -168,6 +169,7 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
             let desVC = SharedViewController()
             desVC.modalPresentationStyle = .overFullScreen
             desVC.modalTransitionStyle = .coverVertical
+            
             self.present(desVC, animated: true, completion: nil)
         }
         
@@ -175,6 +177,7 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         shareItem.image = UIImage(named: "cellExport")
         
         let swipeActions = UISwipeActionsConfiguration(actions: [deletedItem, shareItem])
+        
         return swipeActions
     }
 }
