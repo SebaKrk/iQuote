@@ -10,6 +10,7 @@ import UIKit
 
 var quoteToFavorites = ""
 var authorToFavorites = ""
+var quoteTextToShare : String? = ""
 
 class MainViewController : UIViewController {
     
@@ -17,34 +18,37 @@ class MainViewController : UIViewController {
     let authorContainer = UIView()
     let navigationContainer = UIView()
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupObservers()
         setupView()
         setupConstraints()
-
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
     }
     
     //    MARK: - SetupView
     
-    
     private func setupView() {
         configureNavigationItem()
         getJasonData()
-        
         add(childVC: NavigationViewController(), to: navigationContainer)
-
-        
     }
     //    MARK: - OBJC Func
     
     @objc func handleLeftBarButton() {
         print("DEBUG: Menu button pressed")
+    }
+    
+    @objc func handleTextObserver(notofication: NSNotification) {
+        quoteTextToShare = notofication.userInfo?["text"] as? String
+    }
+    //    MARK: - QuotTextObserver
+    
+    func setupObservers() {
+        let textObserver = Notification.Name("quoteToShare")
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTextObserver(notofication:)), name: textObserver, object: nil)
     }
     
     //    MARK: - Navigation Item
@@ -67,6 +71,9 @@ class MainViewController : UIViewController {
                     self.add(childVC: QuoteViewController(quote: quote), to: self.quoteContainer)
                     quoteToFavorites = quote[0].q
                     authorToFavorites = quote[0].a
+                    quoteTextToShare = quoteToFavorites
+                    let name = Notification.Name("quoteToShare")
+                    NotificationCenter.default.post(name:name , object: nil, userInfo: ["text": quoteTextToShare!])
                     self.getJsonDataFromWiki(authorName: authorToFavorites)
                 }
             case .failure( let error):

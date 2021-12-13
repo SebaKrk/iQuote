@@ -57,7 +57,7 @@ class ImageVC : UIViewController {
 
         quoteLabel.font = quoteLabel.font.withSize(fontSize as! CGFloat)
     }
-    
+  
     @objc func handleLogoObserver(notification: NSNotification) {
         logonIsOn = !logonIsOn
         quoteLogo.isHidden = logonIsOn
@@ -75,7 +75,6 @@ class ImageVC : UIViewController {
         
         let logoObserver = Notification.Name(rawValue: "logoObserver")
         NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)), name: logoObserver, object: nil)
-        
     }
 
     
@@ -96,7 +95,7 @@ class ImageVC : UIViewController {
         view.addSubview(quoteLabel)
         quoteLabel.translatesAutoresizingMaskIntoConstraints = false
         quoteLabel.numberOfLines = 0
-        quoteLabel.text = Constants.exampleQute
+        quoteLabel.text =  quoteTextToShare
         
         NSLayoutConstraint.activate([
             quoteLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),

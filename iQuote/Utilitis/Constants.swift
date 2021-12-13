@@ -12,7 +12,7 @@ enum Constants {
     static let accessKey = "an5tkxA_i2xrre0psghsbWkntbm-d0QvBXoLfcAH7IY"
     
     static let exampleQute = "The people who are crazy enough to think they can change the world are the ones who do"
-    static let exampleAuthor = "Steve Jobs "
+    static let exampleAuthor = "Steve Jobs"
     
     static let fontArray = ["Baskerville", "Baskerville-Bold", "Baskerville-BoldItalic", "Baskerville-Italic", "Baskerville-SemiBold", "Baskerville-SemiBoldItalic"]
 }

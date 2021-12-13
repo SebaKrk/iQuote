@@ -77,14 +77,12 @@ class QuoteViewController : UIViewController {
     private func configureQuoteLabel () {
         view.addSubview(quoteLabel)
         quoteLabel.translatesAutoresizingMaskIntoConstraints = false
-        //        quoteLabel.text = Constants.exampleQute
         
         NSLayoutConstraint.activate([
             quoteLabel.topAnchor.constraint(equalTo: quoteImage.bottomAnchor,constant: padding),
             quoteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: padding),
             quoteLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -padding),
             quoteLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
         ])
     }
 }

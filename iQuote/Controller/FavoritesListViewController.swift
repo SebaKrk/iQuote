@@ -139,16 +139,6 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         return true
     }
     
-    //    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-    //        let contextItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
-    //            print("share")
-    //        }
-    //        contextItem.backgroundColor = .white
-    //        contextItem.image = UIImage(named: "cellExport")
-    //        let swipeAction = UISwipeActionsConfiguration(actions: [contextItem])
-    //        return swipeAction
-    //    }
-    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deletedItem = UIContextualAction(style: .destructive, title: "Del") {  (contextualAction, view, boolValue) in
@@ -159,17 +149,21 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
             PersistenceManager.uppdateWith(favorite: favorite, actionType: .remove) {  error in
                 guard let error = error  else {return}
                 self.presentAlertOnMainThred(title: "Unable to remove", message: error.rawValue)
-            }
+            } // usuwa,
         }
         deletedItem.backgroundColor = .white
         deletedItem.image = UIImage(named: "cellDeleted")
         
-        
+
         let shareItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
             let desVC = SharedViewController()
             desVC.modalPresentationStyle = .overFullScreen
             desVC.modalTransitionStyle = .coverVertical
             
+            quoteTextToShare = self.favoritesItems[indexPath.row].q
+            let name = Notification.Name("quoteToShare")
+            NotificationCenter.default.post(name:name , object: nil, userInfo: ["text": quoteTextToShare!])
+
             self.present(desVC, animated: true, completion: nil)
         }
         

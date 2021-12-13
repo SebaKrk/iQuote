@@ -81,7 +81,6 @@ class AuthorViewController : UIViewController {
     private func configureAuthorLabel() {
         authorButton.addSubview(authorLabel)
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
-//        authorLabel.text = Constants.exampleAuthor
         
         NSLayoutConstraint.activate([
             authorLabel.centerYAnchor.constraint(equalTo: authorButton.centerYAnchor),
