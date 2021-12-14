@@ -11,6 +11,7 @@ import UIKit
 class TextConfigurationVC : UIViewController {
     
     let fontArray = Constants.fontArray
+    let colorArray = Constants.colorArray
 
     let container = UIView()
     let fontSizeSlider = UISlider()
@@ -115,17 +116,28 @@ class TextConfigurationVC : UIViewController {
 
 extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return fontArray.count
+        
+        return component == 0 ? fontArray.count : colorArray.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return fontArray[row]
+        
+        return component == 0 ? fontArray[row] : colorArray[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let fontName = fontArray[row]
+        let colorName = colorArray[row]
+        
+        component == 0 ? postFont(fontName: fontName) : postFontColor(fontColor: colorName)
+    
+    }
+    private func postFont(fontName : String) {
         NotificationCenter.default.post(name: .fontQuote, object: nil, userInfo: ["font" : fontName])
+    }
+    private func postFontColor(fontColor : String) {
+        NotificationCenter.default.post(name: .fontColor, object: nil, userInfo: ["color" : fontColor])
     }
 }
 
