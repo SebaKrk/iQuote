@@ -14,6 +14,7 @@ extension NSNotification.Name {
     static let sizeFontObserver = Notification.Name("sizeFontObserver")
     static let logoObserver = Notification.Name("logoObserver")
     static let gradientObserver = Notification.Name("gradientObserver")
+    static let fontColor = Notification.Name("fontColor")
     
     
     static let quoteToShare = Notification.Name("quoteToShare")

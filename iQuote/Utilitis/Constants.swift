@@ -15,4 +15,7 @@ enum Constants {
     static let exampleAuthor = "Steve Jobs"
     
     static let fontArray = ["Baskerville", "Baskerville-Bold", "Baskerville-BoldItalic", "Baskerville-Italic", "Baskerville-SemiBold", "Baskerville-SemiBoldItalic"]
+    
+    
+    static let colorArray = ["black", "white", "red", "blue", "green", "orange"]
 }
