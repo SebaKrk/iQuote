@@ -13,7 +13,7 @@ class SearchImageVC : UIViewController {
     
     let container = UIView()
     let swipeLine = SwipeLine()
-    let searchText = UITextField()
+    let searchText = ImageSearchTF()
     let searchButton = CostumeQuoteButton()
     
     var isSearchTextFieldIsEmpty : Bool { return !searchText.text!.isEmpty }
@@ -97,10 +97,10 @@ class SearchImageVC : UIViewController {
         view.addSubview(searchText)
         searchText.translatesAutoresizingMaskIntoConstraints = false
         
-        searchText.backgroundColor = .white
-        searchText.textColor = .black
-        searchText.textAlignment = .center
-        searchText.layer.cornerRadius = 15
+//        searchText.backgroundColor = .white
+//        searchText.textColor = .black
+//        searchText.textAlignment = .center
+//        searchText.layer.cornerRadius = 15
         
         NSLayoutConstraint.activate([
             searchText.centerXAnchor.constraint(equalTo: container.centerXAnchor),
