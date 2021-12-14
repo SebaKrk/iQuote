@@ -15,7 +15,7 @@ class TextConfigurationVC : UIViewController {
 
     let container = UIView()
     let fontSizeSlider = UISlider()
-    let fontPiker = UIPickerView()
+    let fontAndColorPiker = UIPickerView()
     
     private let swipeLine = SwipeLine()
     
@@ -24,8 +24,9 @@ class TextConfigurationVC : UIViewController {
         setupView()
         configureContainer()
         configureSwipeLinie()
+        configureFontAndColorPiker()
         configureFontSizeSlider()
-        configureFontPiker()
+        
     }
     
     private func setupView() {
@@ -76,6 +77,22 @@ class TextConfigurationVC : UIViewController {
         ])
     }
     
+    private func configureFontAndColorPiker() {
+        view.addSubview(fontAndColorPiker)
+        fontAndColorPiker.translatesAutoresizingMaskIntoConstraints = false
+        fontAndColorPiker.delegate = self
+        fontAndColorPiker.dataSource = self
+        
+        fontAndColorPiker.overrideUserInterfaceStyle = .dark
+        
+        NSLayoutConstraint.activate([
+            fontAndColorPiker.topAnchor.constraint(equalTo: container.topAnchor,constant: 10),
+            fontAndColorPiker.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            fontAndColorPiker.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.8),
+            fontAndColorPiker.heightAnchor.constraint(equalToConstant: 150)
+        ])
+    }
+    
     private func configureFontSizeSlider() {
         container.addSubview(fontSizeSlider)
         fontSizeSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -89,28 +106,14 @@ class TextConfigurationVC : UIViewController {
         fontSizeSlider.thumbTintColor = .primaryOrange()
         
         NSLayoutConstraint.activate([
-            fontSizeSlider.topAnchor.constraint(equalTo: container.topAnchor,constant: 50),
+            fontSizeSlider.topAnchor.constraint(equalTo: fontAndColorPiker.bottomAnchor),
             fontSizeSlider.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             fontSizeSlider.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.7),
             fontSizeSlider.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
-    private func configureFontPiker() {
-        view.addSubview(fontPiker)
-        fontPiker.translatesAutoresizingMaskIntoConstraints = false
-        fontPiker.delegate = self
-        fontPiker.dataSource = self
-        
-        fontPiker.overrideUserInterfaceStyle = .dark
-        
-        NSLayoutConstraint.activate([
-            fontPiker.topAnchor.constraint(equalTo: fontSizeSlider.bottomAnchor),
-            fontPiker.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            fontPiker.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.8),
-            fontPiker.heightAnchor.constraint(equalToConstant: 150)
-        ])
-    }
+ 
 }
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 

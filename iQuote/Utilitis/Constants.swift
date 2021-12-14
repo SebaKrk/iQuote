@@ -17,5 +17,5 @@ enum Constants {
     static let fontArray = ["Baskerville", "Baskerville-Bold", "Baskerville-BoldItalic", "Baskerville-Italic", "Baskerville-SemiBold", "Baskerville-SemiBoldItalic"]
     
     
-    static let colorArray = ["black", "white", "red", "blue", "green", "orange"]
+    static let colorArray = ["white", "black", "red", "blue", "green", "orange"]
 }
