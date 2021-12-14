@@ -27,8 +27,11 @@ class ImageConfigurationVC : UIViewController {
     
     
     @objc func handleBackgroundButton() {
-        let desVC = UnsplashCollectionVC()
-        present(desVC, animated: true, completion: nil)
+
+        
+        let desVC = SearchImageVC()
+        desVC.modalPresentationStyle = .overFullScreen
+        present(desVC,animated: true,completion: nil)
     }
     
     @objc func handleTextButton() {

@@ -14,7 +14,7 @@ class UnsplashCollectionVC : UIViewController {
     let collectionReuseIdentifier = "collectionReuseIdentifier"
     
     var collectionImageArray : [Results] = []
-    let category = "landscapes"
+    var category = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -86,7 +86,7 @@ class TextConfigurationVC : UIViewController {
         fontAndColorPiker.overrideUserInterfaceStyle = .dark
         
         NSLayoutConstraint.activate([
-            fontAndColorPiker.topAnchor.constraint(equalTo: container.topAnchor,constant: 10),
+            fontAndColorPiker.topAnchor.constraint(equalTo: container.topAnchor,constant: 30),
             fontAndColorPiker.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             fontAndColorPiker.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.8),
             fontAndColorPiker.heightAnchor.constraint(equalToConstant: 150)
