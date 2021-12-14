@@ -43,13 +43,11 @@ class ImageVC : UIViewController {
             self.backgroundIMG.image = imgage
         }
     }
-    
     @objc func handleFontQuoteObserver(notification : NSNotification) {
         let fontQuoteName = notification.userInfo?["font"] as? String
         guard let fontQuoteName = fontQuoteName else {return}
         quoteLabel.font = UIFont(name: fontQuoteName, size: 36)
     }
-    
     @objc func handleFontSizeObserver(notification : NSNotification) {
         let fontSize = notification.userInfo?["size"]
         guard let fontSize = fontSize else {return}
@@ -58,10 +56,8 @@ class ImageVC : UIViewController {
     @objc func handleFontColorObserver(notification: NSNotification) {
         let fontColor = notification.userInfo?["color"] as? String
         guard let fontColor = fontColor else {return}
-        print(fontColor)
         quoteLabel.textColor = UIColor(named: fontColor)
     }
-  
     @objc func handleLogoObserver(notification: NSNotification) {
         logonIsOn = !logonIsOn
         quoteLogo.isHidden = logonIsOn
@@ -70,9 +66,6 @@ class ImageVC : UIViewController {
         backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
     }
     
-
-    
-
     private func configureObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)), name: .imgObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFontQuoteObserver(notification:)), name: .fontQuote, object: nil)
