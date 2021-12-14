@@ -36,7 +36,7 @@ class SearchImageVC : UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
+        view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.1)
     }
     //    MARK: - OBJC Func
     
@@ -96,11 +96,6 @@ class SearchImageVC : UIViewController {
     private func configureSearchTextField() {
         view.addSubview(searchText)
         searchText.translatesAutoresizingMaskIntoConstraints = false
-        
-//        searchText.backgroundColor = .white
-//        searchText.textColor = .black
-//        searchText.textAlignment = .center
-//        searchText.layer.cornerRadius = 15
         
         NSLayoutConstraint.activate([
             searchText.centerXAnchor.constraint(equalTo: container.centerXAnchor),

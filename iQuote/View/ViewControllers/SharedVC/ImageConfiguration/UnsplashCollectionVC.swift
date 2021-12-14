@@ -18,10 +18,12 @@ class UnsplashCollectionVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupCollectionView()
         configureCollectionView()
         getJSON()
     }
+    
 //    MARK: - JSON
     
     private func getJSON() {
@@ -50,7 +52,7 @@ class UnsplashCollectionVC : UIViewController {
         unsplashCollection.register(CollectionCell.self, forCellWithReuseIdentifier: collectionReuseIdentifier)
         unsplashCollection.delegate = self
         unsplashCollection.dataSource = self
-        unsplashCollection.backgroundColor = .clear
+        
     }
     
 //    MARK: - Constraints
