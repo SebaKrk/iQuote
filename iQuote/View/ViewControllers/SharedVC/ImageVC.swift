@@ -60,12 +60,18 @@ class ImageVC : UIViewController {
         logonIsOn = !logonIsOn
         quoteLogo.isHidden = logonIsOn
     }
+    @objc func handleGradientObserver(notification: NSNotification) {
+        print("dziala")
+        backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
+    }
+    
 
     private func configureObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)), name: .imgObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFontQuoteObserver(notification:)), name: .fontQuote, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFontSizeObserver(notification:)), name: .sizeFontObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)), name: .logoObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleGradientObserver(notification:)), name: .gradientObserver, object: nil)
     }
 
     

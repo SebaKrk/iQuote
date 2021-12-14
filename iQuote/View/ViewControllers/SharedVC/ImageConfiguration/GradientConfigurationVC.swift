@@ -11,6 +11,7 @@ import UIKit
 class GradientConfigurationVC : UIViewController {
     
     let container = UIView()
+    let gradientButton = UIButton()
     
     private let swipeLine = SwipeLine()
     
@@ -19,17 +20,24 @@ class GradientConfigurationVC : UIViewController {
         setupView()
         configureContainer()
         configureSwipeLinie()
+        configureGradientButton()
         swpieDownGestureRecognizer()
     }
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
     }
+    //    MARK: - OBJC Func
+    
+    @objc func handleGradientButton() {
+        NotificationCenter.default.post(name: .gradientObserver, object: nil)
+    }
+    
     
     //    MARK: - GestureRecognizer
     
     @objc func handleSwipeDown() {
-      dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     private func swpieDownGestureRecognizer() {
@@ -61,6 +69,20 @@ class GradientConfigurationVC : UIViewController {
             swipeLine.topAnchor.constraint(equalTo: container.topAnchor, constant: 15),
             swipeLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.2)
+        ])
+    }
+    
+    private func configureGradientButton() {
+        container.addSubview(gradientButton)
+        gradientButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        gradientButton.setTitle("gradient", for: .normal)
+        gradientButton.setTitleColor(.white, for: .normal)
+        gradientButton.addTarget(self, action: #selector(handleGradientButton), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            gradientButton.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            gradientButton.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
 }
