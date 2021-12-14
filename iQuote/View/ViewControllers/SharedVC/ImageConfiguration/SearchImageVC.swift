@@ -28,8 +28,9 @@ class SearchImageVC : UIViewController {
         configureSearchButton()
         swpieDownGestureRecognizer()
         createDissmisKeybordTapgesture()
-        
+        self.searchText.delegate = self
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         searchText.text = ""
@@ -37,7 +38,9 @@ class SearchImageVC : UIViewController {
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.1)
+        
     }
+    
     //    MARK: - OBJC Func
     
     @objc func handleSearchButton() {
@@ -52,6 +55,7 @@ class SearchImageVC : UIViewController {
         desVC.category = searchText.text ?? "landscapes"
         present(desVC, animated: true, completion: nil)
     }
+    
     //    MARK: - GestureRecognizer
     
     @objc func handleSwipeDown() {
@@ -96,6 +100,8 @@ class SearchImageVC : UIViewController {
     private func configureSearchTextField() {
         view.addSubview(searchText)
         searchText.translatesAutoresizingMaskIntoConstraints = false
+        searchText.returnKeyType = UIReturnKeyType.go
+        
         
         NSLayoutConstraint.activate([
             searchText.centerXAnchor.constraint(equalTo: container.centerXAnchor),
@@ -114,7 +120,15 @@ class SearchImageVC : UIViewController {
             searchButton.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: 25)
         ])
     }
-    
-    
-    
+}
+extension SearchImageVC : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        let desVC = UnsplashCollectionVC()
+        desVC.category = searchText.text ?? "landscapes"
+        present(desVC, animated: true, completion: nil)
+        
+        return true
+    }
 }
