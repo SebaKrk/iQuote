@@ -48,13 +48,11 @@ class ImageVC : UIViewController {
         let fontQuoteName = notification.userInfo?["font"] as? String
         guard let fontQuoteName = fontQuoteName else {return}
         quoteLabel.font = UIFont(name: fontQuoteName, size: 36)
-    
     }
+    
     @objc func handleFontSizeObserver(notification : NSNotification) {
         let fontSize = notification.userInfo?["size"]
         guard let fontSize = fontSize else {return}
-        print("fontSize: \(fontSize)")
-
         quoteLabel.font = quoteLabel.font.withSize(fontSize as! CGFloat)
     }
   
@@ -64,17 +62,10 @@ class ImageVC : UIViewController {
     }
 
     private func configureObservers() {
-        let imgObserver = Notification.Name("imgObserver")
-        NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)), name: imgObserver, object: nil)
-        
-        let fontObserver = Notification.Name("fontQuote")
-        NotificationCenter.default.addObserver(self, selector: #selector(handleFontQuoteObserver(notification:)), name: fontObserver, object: nil)
-        
-        let sizeFontObserver = Notification.Name("sizeFontObserver") 
-        NotificationCenter.default.addObserver(self, selector: #selector(handleFontSizeObserver(notification:)), name: sizeFontObserver, object: nil)
-        
-        let logoObserver = Notification.Name(rawValue: "logoObserver")
-        NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)), name: logoObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)), name: .imgObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFontQuoteObserver(notification:)), name: .fontQuote, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFontSizeObserver(notification:)), name: .sizeFontObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)), name: .logoObserver, object: nil)
     }
 
     

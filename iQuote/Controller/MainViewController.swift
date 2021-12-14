@@ -47,8 +47,7 @@ class MainViewController : UIViewController {
     //    MARK: - QuotTextObserver
     
     func setupObservers() {
-        let textObserver = Notification.Name("quoteToShare")
-        NotificationCenter.default.addObserver(self, selector: #selector(handleTextObserver(notofication:)), name: textObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTextObserver(notofication:)), name: .quoteToShare, object: nil)
     }
     
     //    MARK: - Navigation Item
@@ -72,8 +71,8 @@ class MainViewController : UIViewController {
                     quoteToFavorites = quote[0].q
                     authorToFavorites = quote[0].a
                     quoteTextToShare = quoteToFavorites
-                    let name = Notification.Name("quoteToShare")
-                    NotificationCenter.default.post(name:name , object: nil, userInfo: ["text": quoteTextToShare!])
+
+                    NotificationCenter.default.post(name:.quoteToShare , object: nil, userInfo: ["text": quoteTextToShare!])
                     self.getJsonDataFromWiki(authorName: authorToFavorites)
                 }
             case .failure( let error):

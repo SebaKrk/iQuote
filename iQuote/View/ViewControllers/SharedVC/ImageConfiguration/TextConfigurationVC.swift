@@ -35,8 +35,7 @@ class TextConfigurationVC : UIViewController {
     
     @objc func handleFontSizeSlider(sender: UISlider){
         let roundedStepValue = CGFloat(Int(sender.value))
-        let name = Notification.Name("sizeFontObserver")
-        NotificationCenter.default.post(name: name, object: nil, userInfo: ["size" : roundedStepValue])
+        NotificationCenter.default.post(name: .sizeFontObserver, object: nil, userInfo: ["size" : roundedStepValue])
     }
     
     //    MARK: - GestureRecognizer
@@ -126,8 +125,7 @@ extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let fontName = fontArray[row]
-        let name = Notification.Name("fontQuote")
-        NotificationCenter.default.post(name: name, object: nil, userInfo: ["font" : fontName])
+        NotificationCenter.default.post(name: .fontQuote, object: nil, userInfo: ["font" : fontName])
     }
 }
 

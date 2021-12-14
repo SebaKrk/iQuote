@@ -149,7 +149,7 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
             PersistenceManager.uppdateWith(favorite: favorite, actionType: .remove) {  error in
                 guard let error = error  else {return}
                 self.presentAlertOnMainThred(title: "Unable to remove", message: error.rawValue)
-            } // usuwa,
+            }
         }
         deletedItem.backgroundColor = .white
         deletedItem.image = UIImage(named: "cellDeleted")
@@ -161,9 +161,9 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
             desVC.modalTransitionStyle = .coverVertical
             
             quoteTextToShare = self.favoritesItems[indexPath.row].q
-            let name = Notification.Name("quoteToShare")
-            NotificationCenter.default.post(name:name , object: nil, userInfo: ["text": quoteTextToShare!])
 
+            NotificationCenter.default.post(name:.quoteToShare , object: nil, userInfo: ["text": quoteTextToShare!])
+            
             self.present(desVC, animated: true, completion: nil)
         }
         

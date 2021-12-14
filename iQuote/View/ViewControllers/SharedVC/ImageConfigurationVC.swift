@@ -46,8 +46,7 @@ class ImageConfigurationVC : UIViewController {
     
     @objc func handleLogoButton() {
         logoButton.flipLikeState()
-        let name = NSNotification.Name("logoObserver")
-        NotificationCenter.default.post(name: name, object: nil)
+        NotificationCenter.default.post(name: .logoObserver, object: nil)
     }
     
     private func setupStackView() {
