@@ -24,7 +24,10 @@ class SocialViewController : UIViewController {
         configureButtons()
     }
     
-    @objc func handleInstagramButton() {print("DEBUG: handleInstagramButton")}
+    @objc func handleInstagramButton() {
+        print("DEBUG: handleInstagramButton")
+        NotificationCenter.default.post(name: .instagramObserver, object: nil)
+    }
     @objc func handleFacebookButton() { print("DEBUG: handleFacebookButton") }
     @objc func handleTwiterButton() { print("DEBUG: handleTwiterButton")}
     @objc func handleLinkedInButton() { print("DEBUG: handleLinkedInButton")}

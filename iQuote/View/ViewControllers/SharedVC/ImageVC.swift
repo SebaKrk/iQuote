@@ -65,6 +65,11 @@ class ImageVC : UIViewController {
     @objc func handleGradientObserver(notification: NSNotification) {
         backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
     }
+    @objc func handleInstagramObserver(notification: NSNotification) {
+        print("dzila inst")
+        shareToInstagram(image: backgroundIMG.image!)
+    }
+    
     
     private func configureObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)), name: .imgObserver, object: nil)
@@ -73,6 +78,7 @@ class ImageVC : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleFontSizeObserver(notification:)), name: .sizeFontObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)), name: .logoObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleGradientObserver(notification:)), name: .gradientObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleInstagramObserver(notification:)), name: .instagramObserver, object: nil)
     
     }
 
@@ -91,7 +97,7 @@ class ImageVC : UIViewController {
     }
     
     private func configureQuoteLabel() {
-        view.addSubview(quoteLabel)
+        backgroundIMG.addSubview(quoteLabel)
         quoteLabel.translatesAutoresizingMaskIntoConstraints = false
         quoteLabel.numberOfLines = 0
         quoteLabel.text =  quoteTextToShare
@@ -104,7 +110,7 @@ class ImageVC : UIViewController {
         ])
     }
     private func configureQuoteLogo() {
-        view.addSubview(quoteLogo)
+        backgroundIMG.addSubview(quoteLogo)
         quoteLogo.translatesAutoresizingMaskIntoConstraints = false
         
         quoteLogo.image = UIImage(named: "LogoForBackground")
@@ -116,5 +122,27 @@ class ImageVC : UIViewController {
             quoteLogo.widthAnchor.constraint(equalToConstant: 35),
             quoteLogo.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    //    MARK : - Hellpers func
+    
+    func shareToInstagram(image: UIImage) {
+        
+        if let urlScheme = URL(string: "instagram-stories://share") {
+            if UIApplication.shared.canOpenURL(urlScheme) {
+                
+                let imageData: Data = image.pngData()!
+                
+                let items = [[
+                    "com.instagram.sharedSticker.backgroundImage": imageData,
+                    "com.instagram.sharedSticker.backgroundTopColor": "#EA2F3F",
+                    "com.instagram.sharedSticker.backgroundBottomColor": "#8845B9",
+                ]]
+                let pasteboardOptions = [UIPasteboard.OptionsKey.expirationDate: Date().addingTimeInterval(60*5)]
+                UIPasteboard.general.setItems(items, options: pasteboardOptions)
+                UIApplication.shared.open(urlScheme, options: [:], completionHandler: nil)
+            } else {
+                presentAlertOnMainThred(title: "Upsss", message: "You dont have instagram app on your device")
+            }
+        }
     }
 }
