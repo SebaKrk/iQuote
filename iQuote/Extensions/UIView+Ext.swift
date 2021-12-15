@@ -16,4 +16,11 @@ extension UIView {
         gradientLayer.locations = [0.5, 1.0]
         layer.insertSublayer(gradientLayer, at: 1)
     }
+    
+    func asImage() -> UIImage? {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { graphicsImageRendererContext in
+            layer.render(in: graphicsImageRendererContext.cgContext)
+        }
+    }
 }

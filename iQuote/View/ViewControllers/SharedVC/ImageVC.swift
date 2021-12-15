@@ -11,6 +11,8 @@ import UIKit
 
 class ImageVC : UIViewController {
     
+    let contenToShare = UIView()
+    
     let backgroundIMG = CostumBackground(placehodler: "BackgroundImage")
     let quoteLabel = CostumQuoteLabel()
     let quoteLogo = UIImageView()
@@ -24,6 +26,7 @@ class ImageVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        configureContentToSgare()
         configureBackgroundIMG()
         configureQuoteLabel()
         configureQuoteLogo()
@@ -31,7 +34,7 @@ class ImageVC : UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = .black
+//        view.backgroundColor = .clear
     }
     
     //    MARK: - Notification&Observers
@@ -66,8 +69,9 @@ class ImageVC : UIViewController {
         backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
     }
     @objc func handleInstagramObserver(notification: NSNotification) {
-        print("dzila inst")
-        shareToInstagram(image: backgroundIMG.image!)
+        let image = contenToShare.asImage()
+        guard let image = image else {return}
+        shareToInstagram(image: image)
     }
     
     
@@ -84,15 +88,27 @@ class ImageVC : UIViewController {
 
     
     //    MARK: - Constraints
+    private func configureContentToSgare() {
+        view.addSubview(contenToShare)
+        contenToShare.translatesAutoresizingMaskIntoConstraints = false
+        contenToShare.layer.cornerRadius = 15
+        
+        NSLayoutConstraint.activate([
+            contenToShare.topAnchor.constraint(equalTo: view.topAnchor),
+            contenToShare.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            contenToShare.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            contenToShare.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
     private func configureBackgroundIMG() {
-        view.addSubview(backgroundIMG)
+        contenToShare.addSubview(backgroundIMG)
         backgroundIMG.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            backgroundIMG.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundIMG.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgroundIMG.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundIMG.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            backgroundIMG.topAnchor.constraint(equalTo: contenToShare.topAnchor),
+            backgroundIMG.leadingAnchor.constraint(equalTo: contenToShare.leadingAnchor),
+            backgroundIMG.trailingAnchor.constraint(equalTo: contenToShare.trailingAnchor),
+            backgroundIMG.bottomAnchor.constraint(equalTo: contenToShare.bottomAnchor)
         ])
     }
     
@@ -134,8 +150,8 @@ class ImageVC : UIViewController {
                 
                 let items = [[
                     "com.instagram.sharedSticker.backgroundImage": imageData,
-                    "com.instagram.sharedSticker.backgroundTopColor": "#EA2F3F",
-                    "com.instagram.sharedSticker.backgroundBottomColor": "#8845B9",
+                    //"com.instagram.sharedSticker.backgroundTopColor": "#EA2F3F",
+                    //"com.instagram.sharedSticker.backgroundBottomColor": "#8845B9",
                 ]]
                 let pasteboardOptions = [UIPasteboard.OptionsKey.expirationDate: Date().addingTimeInterval(60*5)]
                 UIPasteboard.general.setItems(items, options: pasteboardOptions)
