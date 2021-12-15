@@ -73,6 +73,15 @@ class ImageVC : UIViewController {
         guard let image = image else {return}
         shareToInstagram(image: image)
     }
+    @objc func handleFacebookObserver(notification: NSNotification) {
+        print("FB dziala")
+    }
+    @objc func handleTwiterObserver(notification: NSNotification) {
+        print("Twiter dziala")
+    }
+    @objc func handleLinkedInObserver(notification: NSNotification) {
+        print("LinkedIn dziala")
+    }
     
     
     private func configureObservers() {
@@ -83,7 +92,10 @@ class ImageVC : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)), name: .logoObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleGradientObserver(notification:)), name: .gradientObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleInstagramObserver(notification:)), name: .instagramObserver, object: nil)
-    
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFacebookObserver(notification:)), name: .facebookObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTwiterObserver(notification:)), name: .twiterObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLinkedInObserver(notification:)), name: .linkedinObserver, object: nil)
+        
     }
 
     
@@ -142,7 +154,6 @@ class ImageVC : UIViewController {
     //    MARK : - Hellpers func
     
     func shareToInstagram(image: UIImage) {
-        
         if let urlScheme = URL(string: "instagram-stories://share") {
             if UIApplication.shared.canOpenURL(urlScheme) {
                 

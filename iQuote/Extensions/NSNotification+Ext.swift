@@ -17,6 +17,9 @@ extension NSNotification.Name {
     static let fontColor = Notification.Name("fontColor")
     
     static let instagramObserver = Notification.Name("instagramObserver")
+    static let facebookObserver = Notification.Name("facebookObserver")
+    static let twiterObserver = Notification.Name("twiterObserver")
+    static let linkedinObserver = Notification.Name("linkedinObserver")
     
     static let quoteToShare = Notification.Name("quoteToShare")
     

@@ -28,9 +28,18 @@ class SocialViewController : UIViewController {
         print("DEBUG: handleInstagramButton")
         NotificationCenter.default.post(name: .instagramObserver, object: nil)
     }
-    @objc func handleFacebookButton() { print("DEBUG: handleFacebookButton") }
-    @objc func handleTwiterButton() { print("DEBUG: handleTwiterButton")}
-    @objc func handleLinkedInButton() { print("DEBUG: handleLinkedInButton")}
+    @objc func handleFacebookButton() {
+        print("DEBUG: handleFacebookButton")
+        NotificationCenter.default.post(name: .facebookObserver, object: nil)
+    }
+    @objc func handleTwiterButton() {
+        print("DEBUG: handleTwiterButton")
+        NotificationCenter.default.post(name: .twiterObserver, object: nil)
+    }
+    @objc func handleLinkedInButton() {
+        print("DEBUG: handleLinkedInButton")
+        NotificationCenter.default.post(name: .linkedinObserver, object: nil)
+    }
     
     private func setupStackView() {
         stackView = UIStackView(arrangedSubviews: [instagramButton,facebookButton,twiterButton,linkedInButton])
