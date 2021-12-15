@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+import Social
 
 class ImageVC : UIViewController {
     
@@ -16,7 +16,7 @@ class ImageVC : UIViewController {
     let backgroundIMG = CostumBackground(placehodler: "BackgroundImage")
     let quoteLabel = CostumQuoteLabel()
     let quoteLogo = UIImageView()
-
+    
     var logonIsOn = false
     
     deinit {
@@ -34,7 +34,7 @@ class ImageVC : UIViewController {
     }
     
     private func setupView() {
-//        view.backgroundColor = .clear
+        //        view.backgroundColor = .clear
     }
     
     //    MARK: - Notification&Observers
@@ -75,12 +75,26 @@ class ImageVC : UIViewController {
     }
     @objc func handleFacebookObserver(notification: NSNotification) {
         print("FB dziala")
+        if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
+            vc.add(contenToShare.asImage())
+            present(vc, animated: true, completion: nil)
+        } else {
+            presentAlertOnMainThred(title: "Upsss", message: "You dont have facebook app on your device")
+        }
     }
     @objc func handleTwiterObserver(notification: NSNotification) {
         print("Twiter dziala")
+        if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
+            vc.add(contenToShare.asImage())
+            present(vc, animated: true, completion: nil)
+        }
     }
     @objc func handleLinkedInObserver(notification: NSNotification) {
         print("LinkedIn dziala")
+        if let vc = SLComposeViewController(forServiceType: SLServiceTypeLinkedIn) {
+            vc.add(contenToShare.asImage())
+            present(vc, animated: true, completion: nil)
+        }
     }
     
     
@@ -97,7 +111,7 @@ class ImageVC : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleLinkedInObserver(notification:)), name: .linkedinObserver, object: nil)
         
     }
-
+    
     
     //    MARK: - Constraints
     private func configureContentToSgare() {
