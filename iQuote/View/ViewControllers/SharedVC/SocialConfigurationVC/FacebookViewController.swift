@@ -5,8 +5,9 @@
 //  Created by Sebastian Sciuba on 16/12/2021.
 //
 
-import Foundation
+
 import UIKit
+import FBSDKShareKit
 
 class FacebookViewController : UIViewController {
     
@@ -44,8 +45,24 @@ class FacebookViewController : UIViewController {
     }
     @objc func handleLinkButton() {
         print("handleLinkButton")
+        shareLink()
+        
     }
-    
+    // MARK: -
+    func shareLink() {
+        guard let url = URL(string: "https://www.apple.com") else {return}
+        
+        let content = ShareLinkContent()
+        content.contentURL = url
+        content.quote = "zajebsita aplikacja , polecam wszystkim warta tej jednej złotowki"
+        
+        let dialog = ShareDialog(
+            viewController: self,
+            content: content,
+            delegate: self
+        )
+        dialog.show()
+    }
     
     //    MARK: - GestureRecognizer
     
@@ -119,4 +136,10 @@ class FacebookViewController : UIViewController {
         linkButton.setTitle("link", for: .normal)
         linkButton.setTitleColor(.white, for: .normal)
     }
+}
+
+extension FacebookViewController : SharingDelegate {
+    func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {}
+    func sharer(_ sharer: Sharing, didFailWithError error: Error) {}
+    func sharerDidCancel(_ sharer: Sharing) {}
 }

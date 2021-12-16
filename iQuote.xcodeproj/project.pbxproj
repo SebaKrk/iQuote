@@ -19,6 +19,7 @@
 		939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A352754AF500079DF97 /* EmptyAuthorView.swift */; };
 		939A3A382754CF010079DF97 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A372754CF010079DF97 /* UIViewController+Ext.swift */; };
 		939A3A3B2754FC680079DF97 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A3A2754FC680079DF97 /* AlertViewController.swift */; };
+		939AC1F4276BEA0D001E7FA2 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 939AC1F3276BEA0D001E7FA2 /* FacebookShare */; };
 		939AD0482768D6F600F73FFE /* ImageSearchTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939AD0472768D6F600F73FFE /* ImageSearchTF.swift */; };
 		939AD04A27690F1000F73FFE /* UINavigationController +Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939AD04927690F1000F73FFE /* UINavigationController +Ext.swift */; };
 		939AD04D27692EFB00F73FFE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 939AD04C27692EFB00F73FFE /* IQKeyboardManagerSwift */; };
@@ -143,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939AC1F4276BEA0D001E7FA2 /* FacebookShare in Frameworks */,
 				939AD04D27692EFB00F73FFE /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +422,7 @@
 			name = iQuote;
 			packageProductDependencies = (
 				939AD04C27692EFB00F73FFE /* IQKeyboardManagerSwift */,
+				939AC1F3276BEA0D001E7FA2 /* FacebookShare */,
 			);
 			productName = iQuote;
 			productReference = 93BF896D2745A05700EF386A /* iQuote.app */;
@@ -495,6 +498,7 @@
 			mainGroup = 93BF89642745A05700EF386A;
 			packageReferences = (
 				939AD04B27692EFB00F73FFE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				939AC1F2276BEA0D001E7FA2 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 93BF896E2745A05700EF386A /* Products */;
 			projectDirPath = "";
@@ -942,6 +946,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		939AC1F2276BEA0D001E7FA2 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		939AD04B27692EFB00F73FFE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -953,6 +965,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		939AC1F3276BEA0D001E7FA2 /* FacebookShare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 939AC1F2276BEA0D001E7FA2 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookShare;
+		};
 		939AD04C27692EFB00F73FFE /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 939AD04B27692EFB00F73FFE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;

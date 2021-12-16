@@ -99,6 +99,10 @@ class ImageVC : UIViewController {
         }
     }
     
+    @objc func handleFaceBookLinkObserver(notification: NSNotification) {
+        print("dziala")
+    }
+    
     
     private func configureObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)),
@@ -121,6 +125,7 @@ class ImageVC : UIViewController {
                                                name: .twiterObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleLinkedInObserver(notification:)),
                                                name: .linkedinObserver, object: nil)
+        
     }
     
     
