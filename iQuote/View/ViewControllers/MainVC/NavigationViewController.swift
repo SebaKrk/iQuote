@@ -166,6 +166,11 @@ class NavigationViewController : UIViewController {
         quoteMenuContainer.addSubview(exportButton)
         quoteMenuContainer.addSubview(listButton)
         
+        heartButton.backgroundColor = .black
+        nextButton.backgroundColor = .black
+        exportButton.backgroundColor = .black
+        listButton.backgroundColor = .black
+    
         listButton.addTarget(self, action: #selector(handleListButton), for: .touchUpInside)
         heartButton.addTarget(self, action: #selector(handleHeartButton), for: .touchUpInside)
         exportButton.addTarget(self, action: #selector(handleExportButton), for: .touchUpInside)

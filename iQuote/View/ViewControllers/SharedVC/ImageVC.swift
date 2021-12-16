@@ -83,12 +83,16 @@ class ImageVC : UIViewController {
         }
     }
     @objc func handleTwiterObserver(notification: NSNotification) {
+        dismiss(animated: true, completion: nil)
+        
         if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
             vc.add(contenToShare.asImage())
             present(vc, animated: true, completion: nil)
         }
     }
     @objc func handleLinkedInObserver(notification: NSNotification) {
+        dismiss(animated: true, completion: nil)
+        
         if let vc = SLComposeViewController(forServiceType: SLServiceTypeLinkedIn) {
             vc.add(contenToShare.asImage())
             present(vc, animated: true, completion: nil)

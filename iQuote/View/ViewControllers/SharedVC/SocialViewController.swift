@@ -40,11 +40,17 @@ class SocialViewController : UIViewController {
     }
     @objc func handleTwiterButton() {
         print("DEBUG: handleTwiterButton")
-        NotificationCenter.default.post(name: .twiterObserver, object: nil)
+        
+        let desVC = TwiterViewController()
+        desVC.modalPresentationStyle = .overFullScreen
+        present(desVC,animated: true,completion: nil)
     }
     @objc func handleLinkedInButton() {
         print("DEBUG: handleLinkedInButton")
-        NotificationCenter.default.post(name: .linkedinObserver, object: nil)
+        
+        let desVC = LinkedInViewController()
+        desVC.modalPresentationStyle = .overFullScreen
+        present(desVC,animated: true,completion: nil)
     }
     
     private func setupStackView() {
