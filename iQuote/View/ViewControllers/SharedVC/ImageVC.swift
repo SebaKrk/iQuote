@@ -72,25 +72,23 @@ class ImageVC : UIViewController {
         let image = contenToShare.asImage()
         guard let image = image else {return}
         shareToInstagram(image: image)
+        
     }
     @objc func handleFacebookObserver(notification: NSNotification) {
-        print("FB dziala")
+        dismiss(animated: true, completion: nil)
+        
         if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
             vc.add(contenToShare.asImage())
             present(vc, animated: true, completion: nil)
-        } else {
-            presentAlertOnMainThred(title: "Upsss", message: "You dont have facebook app on your device")
         }
     }
     @objc func handleTwiterObserver(notification: NSNotification) {
-        print("Twiter dziala")
         if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
             vc.add(contenToShare.asImage())
             present(vc, animated: true, completion: nil)
         }
     }
     @objc func handleLinkedInObserver(notification: NSNotification) {
-        print("LinkedIn dziala")
         if let vc = SLComposeViewController(forServiceType: SLServiceTypeLinkedIn) {
             vc.add(contenToShare.asImage())
             present(vc, animated: true, completion: nil)
@@ -99,17 +97,26 @@ class ImageVC : UIViewController {
     
     
     private func configureObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)), name: .imgObserver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleFontQuoteObserver(notification:)), name: .fontQuote, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleFontColorObserver(notification:)), name: .fontColor, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleFontSizeObserver(notification:)), name: .sizeFontObserver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)), name: .logoObserver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleGradientObserver(notification:)), name: .gradientObserver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleInstagramObserver(notification:)), name: .instagramObserver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleFacebookObserver(notification:)), name: .facebookObserver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleTwiterObserver(notification:)), name: .twiterObserver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleLinkedInObserver(notification:)), name: .linkedinObserver, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)),
+                                               name: .imgObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFontQuoteObserver(notification:)),
+                                               name: .fontQuote, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFontColorObserver(notification:)),
+                                               name: .fontColor, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFontSizeObserver(notification:)),
+                                               name: .sizeFontObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)),
+                                               name: .logoObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleGradientObserver(notification:)),
+                                               name: .gradientObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleInstagramObserver(notification:)),
+                                               name: .instagramObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFacebookObserver(notification:)),
+                                               name: .facebookObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTwiterObserver(notification:)),
+                                               name: .twiterObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLinkedInObserver(notification:)),
+                                               name: .linkedinObserver, object: nil)
     }
     
     
@@ -186,4 +193,11 @@ class ImageVC : UIViewController {
             }
         }
     }
+//    Data for an image asset in a supported format (JPG, PNG). Minimum dimensions 720x1280. Recommended image ratios 9:16 or 9:18.
+//    com.instagram.photo
+    
+//    NSURL *instagramURL = [NSURL URLWithString:@"instagram://location?id=1"];
+//    if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+//        [[UIApplication sharedApplication] openURL:instagramURL];
+//    }
 }

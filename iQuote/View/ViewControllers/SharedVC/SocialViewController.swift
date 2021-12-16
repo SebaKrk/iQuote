@@ -26,11 +26,17 @@ class SocialViewController : UIViewController {
     
     @objc func handleInstagramButton() {
         print("DEBUG: handleInstagramButton")
-        NotificationCenter.default.post(name: .instagramObserver, object: nil)
+        
+        let desVC = InstagramViewController()
+        desVC.modalPresentationStyle = .overFullScreen
+        present(desVC,animated: true,completion: nil)
     }
     @objc func handleFacebookButton() {
         print("DEBUG: handleFacebookButton")
-        NotificationCenter.default.post(name: .facebookObserver, object: nil)
+        
+        let desVC = FacebookViewController()
+        desVC.modalPresentationStyle = .overFullScreen
+        present(desVC,animated: true,completion: nil)
     }
     @objc func handleTwiterButton() {
         print("DEBUG: handleTwiterButton")
