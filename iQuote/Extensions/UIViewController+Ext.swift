@@ -26,4 +26,20 @@ extension UIViewController {
             self.present(alertVC, animated: true, completion: nil)
         }
     }
+    //    MARK: - GestureRecognizer
+    
+    @objc func handleDissmisView() {
+        dismiss(animated: true, completion: nil)
+    }
+    func tapGestureRecognizerToDissmisView() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleDissmisView))
+        view.addGestureRecognizer(tap)
+    }
+    func swipeDownGestureRecognizerToDissmisView(container : UIView) {
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleDissmisView))
+        swipeDown.direction = .down
+        container.addGestureRecognizer(swipeDown)
+    }
+    
 }
+
