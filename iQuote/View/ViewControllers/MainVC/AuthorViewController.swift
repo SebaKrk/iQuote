@@ -19,6 +19,7 @@ class AuthorViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         configureUiElements()
         configureAuthorButton()
         configureAuthorImage()
@@ -32,6 +33,10 @@ class AuthorViewController : UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupView() {
+        view.backgroundColor = .black
     }
     
 //    MARK: - OBJC

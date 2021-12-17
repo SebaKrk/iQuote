@@ -22,6 +22,7 @@ class NavigationViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         configureQuoteMenuContainer()
         configureMainButton()
         configureMenuButtons()
@@ -31,6 +32,10 @@ class NavigationViewController : UIViewController {
         super.viewWillAppear(animated)
         closeMenu()
     }
+    private func setupView() {
+        view.backgroundColor = .black
+    }
+    
     //    MARK: - OBJC Func
     
     @objc func handleMainButton() {
