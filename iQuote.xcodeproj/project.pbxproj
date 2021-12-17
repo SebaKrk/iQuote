@@ -53,6 +53,13 @@
 		93C3CFE92761EED0009CD963 /* TextConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */; };
 		93CE1CDB274ACB0D004FD559 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */; };
 		93CE1CDE274ACC0A004FD559 /* CostumQuoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE1CDD274ACC0A004FD559 /* CostumQuoteButton.swift */; };
+		93D2289B276C649400D6AC18 /* ConstantsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2289A276C649400D6AC18 /* ConstantsSettings.swift */; };
+		93D2289D276C64F500D6AC18 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2289C276C64F500D6AC18 /* SettingsModel.swift */; };
+		93D228A0276C662300D6AC18 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 93D2289F276C662300D6AC18 /* SideMenu */; };
+		93D228A3276C666300D6AC18 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D228A2276C666300D6AC18 /* SideMenuViewController.swift */; };
+		93D228A5276C66C300D6AC18 /* CostumTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D228A4276C66C300D6AC18 /* CostumTitleLabel.swift */; };
+		93D228A7276C66F700D6AC18 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D228A6276C66F700D6AC18 /* SettingsTableViewCell.swift */; };
+		93D228A9276C6D3600D6AC18 /* AppVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D228A8276C6D3600D6AC18 /* AppVersionViewController.swift */; };
 		93E1CE32274FF73B0089ECF1 /* CostumTransButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E1CE31274FF73B0089ECF1 /* CostumTransButton.swift */; };
 		93ECBB5B2768603D00E1BB67 /* NSNotification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ECBB5A2768603D00E1BB67 /* NSNotification+Ext.swift */; };
 		93ECBB5D2768A4CA00E1BB67 /* SearchImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ECBB5C2768A4CA00E1BB67 /* SearchImageVC.swift */; };
@@ -129,6 +136,12 @@
 		93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextConfigurationVC.swift; sourceTree = "<group>"; };
 		93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		93CE1CDD274ACC0A004FD559 /* CostumQuoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumQuoteButton.swift; sourceTree = "<group>"; };
+		93D2289A276C649400D6AC18 /* ConstantsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsSettings.swift; sourceTree = "<group>"; };
+		93D2289C276C64F500D6AC18 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		93D228A2276C666300D6AC18 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		93D228A4276C66C300D6AC18 /* CostumTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumTitleLabel.swift; sourceTree = "<group>"; };
+		93D228A6276C66F700D6AC18 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		93D228A8276C6D3600D6AC18 /* AppVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionViewController.swift; sourceTree = "<group>"; };
 		93E1CE31274FF73B0089ECF1 /* CostumTransButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumTransButton.swift; sourceTree = "<group>"; };
 		93ECBB5A2768603D00E1BB67 /* NSNotification+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Ext.swift"; sourceTree = "<group>"; };
 		93ECBB5C2768A4CA00E1BB67 /* SearchImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageVC.swift; sourceTree = "<group>"; };
@@ -145,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				939AC1F4276BEA0D001E7FA2 /* FacebookShare in Frameworks */,
+				93D228A0276C662300D6AC18 /* SideMenu in Frameworks */,
 				939AD04D27692EFB00F73FFE /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +186,7 @@
 				9305BA07275760CB003E91F7 /* FavoritesTableViewCell.swift */,
 				93A59881275CA77500FCC32B /* CollectionCellmageView.swift */,
 				93A59883275CA7CE00FCC32B /* CollectionCell.swift */,
+				93D228A6276C66F700D6AC18 /* SettingsTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -250,6 +265,7 @@
 				9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */,
 				93BDB9C62748D44900E4B928 /* CostumQuoteLebel.swift */,
 				93EE8D01274A4E7C000A8964 /* CostumAuthorLabel.swift */,
+				93D228A4276C66C300D6AC18 /* CostumTitleLabel.swift */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -259,6 +275,7 @@
 			children = (
 				93BDB9C92748DDF100E4B928 /* Constants.swift */,
 				93A9FB5627536F5600442A91 /* ErrorMasasge.swift */,
+				93D2289A276C649400D6AC18 /* ConstantsSettings.swift */,
 			);
 			path = Utilitis;
 			sourceTree = "<group>";
@@ -324,6 +341,7 @@
 				93A9FB5427536E5E00442A91 /* Quote.swift */,
 				93A9FB582753F7B400442A91 /* Wikipedia.swift */,
 				93A59885275CA8F800FCC32B /* Unsplash.swift */,
+				93D2289C276C64F500D6AC18 /* SettingsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -346,6 +364,7 @@
 		93BF89A42745A52800EF386A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				93D228A1276C665400D6AC18 /* SideMenu */,
 				93BF89A02745A3B400EF386A /* MainViewController.swift */,
 				9305BA0227575D62003E91F7 /* FavoritesListViewController.swift */,
 				93992733275AA60A00E95481 /* SharedViewController.swift */,
@@ -386,6 +405,15 @@
 			path = UIButton;
 			sourceTree = "<group>";
 		};
+		93D228A1276C665400D6AC18 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				93D228A2276C666300D6AC18 /* SideMenuViewController.swift */,
+				93D228A8276C6D3600D6AC18 /* AppVersionViewController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		93F6B8C327465E93005181C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +451,7 @@
 			packageProductDependencies = (
 				939AD04C27692EFB00F73FFE /* IQKeyboardManagerSwift */,
 				939AC1F3276BEA0D001E7FA2 /* FacebookShare */,
+				93D2289F276C662300D6AC18 /* SideMenu */,
 			);
 			productName = iQuote;
 			productReference = 93BF896D2745A05700EF386A /* iQuote.app */;
@@ -499,6 +528,7 @@
 			packageReferences = (
 				939AD04B27692EFB00F73FFE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				939AC1F2276BEA0D001E7FA2 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				93D2289E276C662300D6AC18 /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = 93BF896E2745A05700EF386A /* Products */;
 			projectDirPath = "";
@@ -542,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D2289B276C649400D6AC18 /* ConstantsSettings.swift in Sources */,
 				9305BA0527575FCF003E91F7 /* SwipeLine.swift in Sources */,
 				93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */,
 				93A9FB5327536D7000442A91 /* NetwokManager.swift in Sources */,
@@ -553,11 +584,13 @@
 				93CE1CDB274ACB0D004FD559 /* NavigationViewController.swift in Sources */,
 				93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */,
 				93CE1CDE274ACC0A004FD559 /* CostumQuoteButton.swift in Sources */,
+				93D2289D276C64F500D6AC18 /* SettingsModel.swift in Sources */,
 				93992734275AA60A00E95481 /* SharedViewController.swift in Sources */,
 				9305BA0327575D62003E91F7 /* FavoritesListViewController.swift in Sources */,
 				93C2564D276B57C300AACB94 /* InstagramViewController.swift in Sources */,
 				93B4ED08275B3BB700C6E5E9 /* ImageConfigurationVC.swift in Sources */,
 				93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */,
+				93D228A7276C66F700D6AC18 /* SettingsTableViewCell.swift in Sources */,
 				9305BA08275760CB003E91F7 /* FavoritesTableViewCell.swift in Sources */,
 				939A3A3B2754FC680079DF97 /* AlertViewController.swift in Sources */,
 				93A59886275CA8F800FCC32B /* Unsplash.swift in Sources */,
@@ -570,14 +603,17 @@
 				9305BA012757570F003E91F7 /* PersistenceManager.swift in Sources */,
 				939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */,
 				93C3CFE22761E0F3009CD963 /* ImageVC.swift in Sources */,
+				93D228A9276C6D3600D6AC18 /* AppVersionViewController.swift in Sources */,
 				93FF7C072746BA5100064E83 /* CostumBackground.swift in Sources */,
 				93A9FB5727536F5600442A91 /* ErrorMasasge.swift in Sources */,
 				93B4ED06275B38E800C6E5E9 /* CostumeSocialButton.swift in Sources */,
+				93D228A5276C66C300D6AC18 /* CostumTitleLabel.swift in Sources */,
 				9305BA0A2757D697003E91F7 /* CellQuoteLabel.swift in Sources */,
 				93C2564F276B5E5400AACB94 /* FacebookViewController.swift in Sources */,
 				93C25651276B60E000AACB94 /* TwiterViewController.swift in Sources */,
 				939AD04A27690F1000F73FFE /* UINavigationController +Ext.swift in Sources */,
 				93BDB9C72748D44900E4B928 /* CostumQuoteLebel.swift in Sources */,
+				93D228A3276C666300D6AC18 /* SideMenuViewController.swift in Sources */,
 				93A9FB5527536E5E00442A91 /* Quote.swift in Sources */,
 				93ECBB5B2768603D00E1BB67 /* NSNotification+Ext.swift in Sources */,
 				93E1CE32274FF73B0089ECF1 /* CostumTransButton.swift in Sources */,
@@ -962,6 +998,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		93D2289E276C662300D6AC18 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -974,6 +1018,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 939AD04B27692EFB00F73FFE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		93D2289F276C662300D6AC18 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93D2289E276C662300D6AC18 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
