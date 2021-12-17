@@ -26,11 +26,12 @@ class TwiterViewController : UIViewController {
         setupStackView()
         configureStackView()
         configureButtons()
-        swpieDownGestureRecognizer()
     }
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
+        swipeDownGestureRecognizerToDissmisView(container: container)
+        tapGestureRecognizerToDissmisView()
     }
     //    MARK: - OBJC Func
     
@@ -42,18 +43,6 @@ class TwiterViewController : UIViewController {
         print("handleLinkButton")
     }
     
-    
-    //    MARK: - GestureRecognizer
-    
-    @objc func handleSwipeDown() {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    private func swpieDownGestureRecognizer() {
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeDown))
-        swipeDown.direction = .down
-        container.addGestureRecognizer(swipeDown)
-    }
     //    MARK: - Constraints
     
     private func configureContainer() {

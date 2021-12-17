@@ -26,8 +26,6 @@ class SearchImageVC : UIViewController {
         configureSwipeLinie()
         configureSearchTextField()
         configureSearchButton()
-        swpieDownGestureRecognizer()
-        createDissmisKeybordTapgesture()
         self.searchText.delegate = self
     }
     
@@ -38,7 +36,9 @@ class SearchImageVC : UIViewController {
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.1)
-        
+        createDissmisKeybordTapgesture()
+        tapGestureRecognizerToDissmisView()
+        swipeDownGestureRecognizerToDissmisView(container: container)
     }
     
     //    MARK: - OBJC Func
@@ -58,19 +58,11 @@ class SearchImageVC : UIViewController {
     
     //    MARK: - GestureRecognizer
     
-    @objc func handleSwipeDown() {
-        dismiss(animated: true, completion: nil)
+    private func createDissmisKeybordTapgesture() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        container.addGestureRecognizer(tap)
     }
     
-    private func swpieDownGestureRecognizer() {
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeDown))
-        swipeDown.direction = .down
-        container.addGestureRecognizer(swipeDown)
-    }
-    func createDissmisKeybordTapgesture() {
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
-    }
     //    MARK: - Constraints
     
     private func configureContainer() {

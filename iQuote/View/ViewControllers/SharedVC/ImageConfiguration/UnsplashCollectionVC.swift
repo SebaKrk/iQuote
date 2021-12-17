@@ -24,7 +24,7 @@ class UnsplashCollectionVC : UIViewController {
         getJSON()
     }
     
-//    MARK: - JSON
+    //    MARK: - JSON
     
     private func getJSON() {
         NetworkManager.shered.getUnsplashImages(category: category) { result in
@@ -42,7 +42,7 @@ class UnsplashCollectionVC : UIViewController {
         }
     }
     
-//    MARK: - collectionViewSetup
+    //    MARK: - collectionViewSetup
     
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -55,7 +55,7 @@ class UnsplashCollectionVC : UIViewController {
         
     }
     
-//    MARK: - Constraints
+    //    MARK: - Constraints
     
     private func configureCollectionView() {
         view.addSubview(unsplashCollection)
@@ -95,30 +95,3 @@ extension UnsplashCollectionVC : UICollectionViewDelegateFlowLayout , UICollecti
         dismiss(animated: true, completion: nil)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

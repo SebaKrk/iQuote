@@ -12,7 +12,7 @@ class TextConfigurationVC : UIViewController {
     
     let fontArray = Constants.fontArray
     let colorArray = Constants.colorArray
-
+    
     let container = UIView()
     let fontSizeSlider = UISlider()
     let fontAndColorPiker = UIPickerView()
@@ -31,25 +31,15 @@ class TextConfigurationVC : UIViewController {
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
-        swpieDownGestureRecognizer()
+        
+        tapGestureRecognizerToDissmisView()
+        swipeDownGestureRecognizerToDissmisView(container: container)
     }
     //    MARK: - OBJC
     
     @objc func handleFontSizeSlider(sender: UISlider){
         let roundedStepValue = CGFloat(Int(sender.value))
         NotificationCenter.default.post(name: .sizeFontObserver, object: nil, userInfo: ["size" : roundedStepValue])
-    }
-    
-    //    MARK: - GestureRecognizer
-    
-    @objc func handleSwipeDown() {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    private func swpieDownGestureRecognizer() {
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeDown))
-        swipeDown.direction = .down
-        container.addGestureRecognizer(swipeDown)
     }
     
     //    MARK: - Constraints
@@ -99,7 +89,7 @@ class TextConfigurationVC : UIViewController {
         fontSizeSlider.addTarget(self, action: #selector(handleFontSizeSlider(sender:)), for: .touchUpInside)
         
         fontSizeSlider.tintColor = .white
-
+        
         fontSizeSlider.minimumValue = 12
         fontSizeSlider.maximumValue = 48
         fontSizeSlider.value = 30
@@ -113,7 +103,7 @@ class TextConfigurationVC : UIViewController {
         ])
     }
     
- 
+    
 }
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 
@@ -134,7 +124,7 @@ extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
         let colorName = colorArray[row]
         
         component == 0 ? postFont(fontName: fontName) : postFontColor(fontColor: colorName)
-    
+        
     }
     private func postFont(fontName : String) {
         NotificationCenter.default.post(name: .fontQuote, object: nil, userInfo: ["font" : fontName])

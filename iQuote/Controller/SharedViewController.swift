@@ -41,21 +41,10 @@ class SharedViewController : UIViewController {
         configureOptionsContainer()
         configureImageContainer()
         configureSwipeLinie()
-        swpieDownGestureRecognizer()
+        swipeDownGestureRecognizerToDissmisView(container: container)
+        tapGestureRecognizerToDissmisView()
         
     }
-    //    MARK: - GestureRecognizer
-    
-    @objc func handleSwipeDown() {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    private func swpieDownGestureRecognizer() {
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeDown))
-        swipeDown.direction = .down
-        container.addGestureRecognizer(swipeDown)
-    }
-    
     
     //    MARK: - Constraints
     
@@ -110,7 +99,7 @@ class SharedViewController : UIViewController {
     private func configureImageContainer() {
         container.addSubview(imageContainer)
         imageContainer.translatesAutoresizingMaskIntoConstraints = false
-    
+        
         imageContainer.layer.cornerRadius = 5
         imageContainer.layer.masksToBounds = true
         
@@ -132,7 +121,7 @@ class SharedViewController : UIViewController {
             swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.4)
         ])
     }
-
+    
     // MARK: - Helpers
     
     func add(childVC: UIViewController, to containerView: UIView) {

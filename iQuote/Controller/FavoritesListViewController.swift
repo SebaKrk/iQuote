@@ -26,7 +26,7 @@ class FavoritesListViewController : UIViewController {
         setupTableView()
         configureSwipeLinie()
         configureTabeleView()
-        swipeUpGesture()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +38,7 @@ class FavoritesListViewController : UIViewController {
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.7)
+        swipeUpGesture()
     }
     
     private func setupTableView() {
@@ -128,7 +129,7 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesTableViewCell.identifier) as! FavoritesTableViewCell
         let quoteData = favoritesItems[indexPath.row]
         cell.setData(quoteData: quoteData)
-    
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -154,14 +155,14 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         deletedItem.backgroundColor = .white
         deletedItem.image = UIImage(named: "cellDeleted")
         
-
+        
         let shareItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
             let desVC = SharedViewController()
             desVC.modalPresentationStyle = .overFullScreen
             desVC.modalTransitionStyle = .coverVertical
             
             quoteTextToShare = self.favoritesItems[indexPath.row].q
-
+            
             NotificationCenter.default.post(name:.quoteToShare , object: nil, userInfo: ["text": quoteTextToShare!])
             
             self.present(desVC, animated: true, completion: nil)

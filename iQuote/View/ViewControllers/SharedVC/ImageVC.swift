@@ -99,11 +99,6 @@ class ImageVC : UIViewController {
         }
     }
     
-    @objc func handleFaceBookLinkObserver(notification: NSNotification) {
-        print("dziala")
-    }
-    
-    
     private func configureObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)),
                                                name: .imgObserver, object: nil)
@@ -202,11 +197,11 @@ class ImageVC : UIViewController {
             }
         }
     }
-//    Data for an image asset in a supported format (JPG, PNG). Minimum dimensions 720x1280. Recommended image ratios 9:16 or 9:18.
-//    com.instagram.photo
+    //    Data for an image asset in a supported format (JPG, PNG). Minimum dimensions 720x1280. Recommended image ratios 9:16 or 9:18.
+    //    com.instagram.photo
     
-//    NSURL *instagramURL = [NSURL URLWithString:@"instagram://location?id=1"];
-//    if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
-//        [[UIApplication sharedApplication] openURL:instagramURL];
-//    }
+    //    NSURL *instagramURL = [NSURL URLWithString:@"instagram://location?id=1"];
+    //    if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+    //        [[UIApplication sharedApplication] openURL:instagramURL];
+    //    }
 }
