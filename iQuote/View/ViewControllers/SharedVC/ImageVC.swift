@@ -69,6 +69,7 @@ class ImageVC : UIViewController {
         backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
     }
     @objc func handleInstagramObserver(notification: NSNotification) {
+        
         let image = contenToShare.asImage()
         guard let image = image else {return}
         shareToInstagram(image: image)

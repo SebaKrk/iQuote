@@ -5,8 +5,8 @@
 //  Created by Sebastian Sciuba on 17/11/2021.
 //
 
-import Foundation
 import UIKit
+import SideMenu
 
 var quoteToFavorites = ""
 var authorToFavorites = ""
@@ -39,6 +39,10 @@ class MainViewController : UIViewController {
     
     @objc func handleLeftBarButton() {
         print("DEBUG: Menu button pressed")
+        let menu = SideMenuNavigationController(rootViewController: SideMenuViewController())
+        menu.leftSide = true
+        menu.setNavigationBarHidden(true, animated: false)
+        present(menu, animated: true, completion: nil)
     }
     
     @objc func handleTextObserver(notofication: NSNotification) {
