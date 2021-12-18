@@ -56,5 +56,11 @@
 	<string>CLIENT-TOKEN</string>
 	<key>FacebookDisplayName</key>
 	<string>APP-NAME</string>
+    
+    <key>FacebookAutoLogAppEventsEnabled</key>
+    <string>TRUE</string>
+    <key>FacebookAdvertiserIDCollectionEnabled</key>
+    <string>TRUE</string>
+    
 </dict>
 </plist>
