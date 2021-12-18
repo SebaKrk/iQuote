@@ -46,15 +46,15 @@ class AuthorViewController : UIViewController {
         let name = wiki.query.pages[0].title
         let authorName = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         guard let url = URL(string: "https://en.wikipedia.org/wiki/\(authorName)") else { return }
-        
         let vc = SFSafariViewController(url: url)
+        vc.preferredControlTintColor = .black
         present(vc, animated: true, completion: nil)
     }
+    
     private func configureUiElements() {
         authorLabel.text = wiki.query.pages[0].title
         let avatarImages = wiki.query.pages[0].thumbnail.source
         authorImage.dowloadImage(from: avatarImages)
-
     }
     
 //    MARK: - Constraints & Configuration

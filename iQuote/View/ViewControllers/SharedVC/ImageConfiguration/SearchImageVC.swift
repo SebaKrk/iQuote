@@ -53,6 +53,7 @@ class SearchImageVC : UIViewController {
         
         let desVC = UnsplashCollectionVC()
         desVC.category = searchText.text ?? "landscapes"
+        desVC.delegate = self
         present(desVC, animated: true, completion: nil)
     }
     
@@ -123,4 +124,17 @@ extension SearchImageVC : UITextFieldDelegate {
         
         return true
     }
+}
+extension SearchImageVC : UnsplashIsEmptyDelegate {
+    func arrayIsEmpty() {
+        DispatchQueue.main.async {
+            self.dismiss(animated: true) {
+                let message = "The data received from the server was invalid. Please try again."
+                self.presentAlertOnMainThred(title: "Upsss", message: message)
+            }
+        }
+      
+    }
+    
+    
 }

@@ -8,13 +8,21 @@
 import Foundation
 import UIKit
 
+protocol UnsplashIsEmptyDelegate {
+    func arrayIsEmpty()
+}
+
 class UnsplashCollectionVC : UIViewController {
+    
+    var delegate : UnsplashIsEmptyDelegate?
     
     var unsplashCollection : UICollectionView!
     let collectionReuseIdentifier = "collectionReuseIdentifier"
     
     var collectionImageArray : [Results] = []
     var category = ""
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +40,20 @@ class UnsplashCollectionVC : UIViewController {
             switch result {
                 
             case .success( let dataImage):
+                dump("DEBUG: \(dataImage)")
+                if dataImage.isEmpty {
+//                    let message = "The data received from the server was invalid. Please try again."
+//                    self.presentAlertOnMainThred(title: "Upsss", message: message)
+                    self.delegate?.arrayIsEmpty()
+                }
                 DispatchQueue.main.async {
                     self.collectionImageArray.append(contentsOf: dataImage)
                     self.unsplashCollection.reloadData()
                 }
             case .failure( let error):
-                print("\(error.rawValue)")
+                print("DEBUG: \(error.rawValue)")
+                self.presentAlertOnMainThred(title: "Upps", message: error.rawValue)
+                
             }
         }
     }
