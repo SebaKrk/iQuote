@@ -129,7 +129,7 @@ extension SearchImageVC : UnsplashIsEmptyDelegate {
     func arrayIsEmpty() {
         DispatchQueue.main.async {
             self.dismiss(animated: true) {
-                let message = "The data received from the server was invalid. Please try again."
+                let message = "The data entered for the search are incorrect. Please try again"
                 self.presentAlertOnMainThred(title: "Upsss", message: message)
             }
         }

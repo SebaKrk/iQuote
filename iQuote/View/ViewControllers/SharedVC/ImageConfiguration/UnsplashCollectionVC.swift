@@ -36,14 +36,9 @@ class UnsplashCollectionVC : UIViewController {
     
     private func getJSON() {
         NetworkManager.shered.getUnsplashImages(category: category) { result in
-            
             switch result {
-                
             case .success( let dataImage):
-                dump("DEBUG: \(dataImage)")
                 if dataImage.isEmpty {
-//                    let message = "The data received from the server was invalid. Please try again."
-//                    self.presentAlertOnMainThred(title: "Upsss", message: message)
                     self.delegate?.arrayIsEmpty()
                 }
                 DispatchQueue.main.async {
@@ -51,9 +46,7 @@ class UnsplashCollectionVC : UIViewController {
                     self.unsplashCollection.reloadData()
                 }
             case .failure( let error):
-                print("DEBUG: \(error.rawValue)")
                 self.presentAlertOnMainThred(title: "Upps", message: error.rawValue)
-                
             }
         }
     }
