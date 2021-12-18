@@ -116,12 +116,7 @@ class SearchImageVC : UIViewController {
 }
 extension SearchImageVC : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        let desVC = UnsplashCollectionVC()
-        desVC.category = searchText.text ?? "landscapes"
-        present(desVC, animated: true, completion: nil)
-        
+        handleSearchButton()
         return true
     }
 }
@@ -133,8 +128,5 @@ extension SearchImageVC : UnsplashIsEmptyDelegate {
                 self.presentAlertOnMainThred(title: "Upsss", message: message)
             }
         }
-      
     }
-    
-    
 }
