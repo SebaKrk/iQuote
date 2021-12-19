@@ -19,7 +19,7 @@ class EmptyAuthorView : UIView {
         super.init(frame: frame)
         
         configure()
-      
+        
     }
     
     required init?(coder: NSCoder) {
@@ -32,11 +32,13 @@ class EmptyAuthorView : UIView {
         configure()
         configureAuthorImage()
         configureAuthoreTextLabel()
+        
     }
 
     func configure() {
         authorImage.image = UIImage(named: "EmptyPerson")?.withRenderingMode(.alwaysOriginal)
         authorImage.backgroundColor = .white
+        backgroundColor = .black
     }
     func configureAuthorImage() {
         addSubview(authorImage)
@@ -52,7 +54,6 @@ class EmptyAuthorView : UIView {
     func configureAuthoreTextLabel() {
         addSubview(authorLabel)
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         
         NSLayoutConstraint.activate([
             authorLabel.centerYAnchor.constraint(equalTo: authorImage.centerYAnchor),

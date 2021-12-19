@@ -21,6 +21,7 @@ class QuoteViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
     }
     override func viewDidLayoutSubviews() {
@@ -39,11 +40,11 @@ class QuoteViewController : UIViewController {
     //    MARK: - View
     
     private func setupView() {
+        view.backgroundColor = .black
         configureUiElements()
         configureBackgroundImage()
         configureQuoteImage()
         configureQuoteLabel()
-        
     }
     //     MARK: - UI Element
     func configureUiElements() {

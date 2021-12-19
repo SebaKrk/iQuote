@@ -95,6 +95,7 @@ class NavigationViewController : UIViewController {
     }
     @objc func handleNextButton() {
         //nextButton.flipLikeState()
+        NotificationCenter.default.post(name: .nextQuote, object: nil)
     }
     
     //   MARK: - Close Menu

@@ -22,4 +22,5 @@ extension NSNotification.Name {
     static let linkedinObserver = Notification.Name("linkedinObserver")
     
     static let quoteToShare = Notification.Name("quoteToShare")
+    static let nextQuote = Notification.Name("nextQuote")
 }
