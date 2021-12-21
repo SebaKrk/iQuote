@@ -28,7 +28,7 @@ extension UIViewController {
             self.present(alertVC, animated: true, completion: nil)
         }
     }
-    //    MARK: - GestureRecognizer
+    //    MARK: - UITapGestureRecognizer
     
     @objc func handleDissmisView() {
         dismiss(animated: true, completion: nil)
@@ -42,6 +42,38 @@ extension UIViewController {
         swipeDown.direction = .down
         container.addGestureRecognizer(swipeDown)
     }
+    
+    //   MARK: - UIPanGestureRecognizer
+        
+        func panGestureRecognizerToHandleDragAndDissmisView(inCardView : UIView) {
+            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureExt(sender:)))
+            inCardView.addGestureRecognizer(panGesture)
+        }
+        @objc func handlePanGestureExt(sender: UIPanGestureRecognizer) {
+            
+            let translation = sender.translation(in: view)
+            let fileView = sender.view!
+            
+            guard translation.y >= 0 else { return }
+            
+            switch sender.state {
+            case .began, .changed:
+                fileView.center = CGPoint(x:fileView.center.x, y: fileView.center.y + translation.y)
+                sender.setTranslation(CGPoint.zero, in: view)
+                
+            case .ended:
+                let dragVelocity = sender.velocity(in: view)
+                if dragVelocity.y >= 1300 {
+                        dismiss(animated: false, completion: nil)
+                } else {
+                    UIView.animate(withDuration: 0.3) {
+                        self.view.frame.origin = CGPoint(x: 0.0, y: 646.0)
+                    }
+                }
+            default:
+                break
+            }
+        }
     //    MARK: - SafariService
     
     func showSafariService(with urlString: String) {
