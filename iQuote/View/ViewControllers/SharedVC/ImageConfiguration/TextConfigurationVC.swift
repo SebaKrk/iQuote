@@ -69,7 +69,7 @@ class TextConfigurationVC : UIViewController {
     }
     
     private func configureFontAndColorPiker() {
-        view.addSubview(fontAndColorPiker)
+        container.addSubview(fontAndColorPiker)
         fontAndColorPiker.translatesAutoresizingMaskIntoConstraints = false
         fontAndColorPiker.delegate = self
         fontAndColorPiker.dataSource = self
