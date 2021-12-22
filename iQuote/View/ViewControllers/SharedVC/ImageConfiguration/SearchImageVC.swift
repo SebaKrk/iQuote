@@ -38,7 +38,7 @@ class SearchImageVC : UIViewController {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.1)
         createDissmisKeybordTapgesture()
         tapGestureRecognizerToDissmisView()
-        //swipeDownGestureRecognizerToDissmisView(container: container)
+        swipeDownGestureRecognizerToDissmisView(container: container)
         panGestureRecognizerToHandleDragAndDissmisView(inCardView: container)
     }
     

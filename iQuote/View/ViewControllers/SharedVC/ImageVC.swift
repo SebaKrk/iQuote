@@ -31,6 +31,7 @@ class ImageVC : UIViewController {
         configureQuoteLabel()
         configureQuoteLogo()
         configureObservers()
+        
     }
     
     private func setupView() {

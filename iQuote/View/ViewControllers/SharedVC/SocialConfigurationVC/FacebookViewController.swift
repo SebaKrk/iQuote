@@ -32,8 +32,10 @@ class FacebookViewController : UIViewController {
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
-        swipeDownGestureRecognizerToDissmisView(container: container)
+        
         tapGestureRecognizerToDissmisView()
+        swipeDownGestureRecognizerToDissmisView(container: container)
+        panGestureRecognizerToHandleDragAndDissmisView(inCardView: container)
     }
     //    MARK: - OBJC Func
     

@@ -34,6 +34,7 @@ class TextConfigurationVC : UIViewController {
         
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
+        panGestureRecognizerToHandleDragAndDissmisView(inCardView: container)
     }
     //    MARK: - OBJC
     

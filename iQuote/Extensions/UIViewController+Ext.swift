@@ -45,35 +45,39 @@ extension UIViewController {
     
     //   MARK: - UIPanGestureRecognizer
         
-        func panGestureRecognizerToHandleDragAndDissmisView(inCardView : UIView) {
-            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureExt(sender:)))
-            inCardView.addGestureRecognizer(panGesture)
-        }
-        @objc func handlePanGestureExt(sender: UIPanGestureRecognizer) {
-            
-            let translation = sender.translation(in: view)
-            let fileView = sender.view!
-            
-            guard translation.y >= 0 else { return }
-            
-            switch sender.state {
-            case .began, .changed:
-                fileView.center = CGPoint(x:fileView.center.x, y: fileView.center.y + translation.y)
-                sender.setTranslation(CGPoint.zero, in: view)
-                
-            case .ended:
-                let dragVelocity = sender.velocity(in: view)
-                if dragVelocity.y >= 1300 {
-                        dismiss(animated: false, completion: nil)
-                } else {
-                    UIView.animate(withDuration: 0.3) {
-                        self.view.frame.origin = CGPoint(x: 0.0, y: 646.0)
-                    }
-                }
-            default:
-                break
+    func panGestureRecognizerToHandleDragAndDissmisView(inCardView : UIView) {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestExt(sender:)))
+        inCardView.addGestureRecognizer(panGesture)
+    }
+    
+    @objc func handlePanGestExt(sender: UIPanGestureRecognizer) {
+        let fileView = sender.view!
+
+        switch sender.state {
+        case .began, .changed:
+            moveViewWithPan(view: fileView, sender: sender)
+        case .ended:
+            let dragVelocity = sender.velocity(in: view)
+            if dragVelocity.y >= 1300 {
+                dismiss(animated: false, completion: nil)
+            } else {
+                returnViewToOrigin(view: fileView)
             }
+        default:
+            break
         }
+    }
+    func moveViewWithPan(view: UIView, sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+        guard translation.y >= 0 else { return }
+        view.center = CGPoint(x:view.center.x, y: view.center.y + translation.y)
+        sender.setTranslation(CGPoint.zero, in: view)
+    }
+    func returnViewToOrigin(view: UIView) {
+        UIView.animate(withDuration: 0.3) {
+            view.frame.origin = CGPoint(x: 0.0 , y: 646.0) //fileViewOrign
+        }
+    }
     //    MARK: - SafariService
     
     func showSafariService(with urlString: String) {
