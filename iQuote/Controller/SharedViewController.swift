@@ -19,14 +19,21 @@ class SharedViewController : UIViewController {
     var backgroundIMG = CostumBackground(placehodler: "BackgroundImage")
     var quoteLabel = CostumQuoteLabel()
     
-    
     private let breakLine = SwipeLine()
     private let swipeLine = SwipeLine()
     
     let padding : CGFloat = 20
+    var cardViewOrigin: CGFloat!
+    
+    override func viewDidLayoutSubviews() {
+        
+        cardOriginYext = container.frame.origin.y
+        panGestureRecognizerToHandleDragAndDissmisView(inCardView: container, cardOriginY: cardOriginYext)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
         setupView()
         add(childVC: SocialViewController(), to: socialContainer)
         add(childVC: ImageConfigurationVC(), to: optionContainer)
@@ -34,17 +41,21 @@ class SharedViewController : UIViewController {
     }
     
     private func setupView() {
+        print("setupView")
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.3)
+        
         configureContainer()
         configureSocialContainer()
         configureBreakLine()
         configureOptionsContainer()
         configureImageContainer()
         configureSwipeLinie()
-        swipeDownGestureRecognizerToDissmisView(container: container)
         tapGestureRecognizerToDissmisView()
+        swipeDownGestureRecognizerToDissmisView(container: container)
         
+//        panGestureRecognizerToHandleDragAndDissmisView(inCardView: container)
     }
+
     
     //    MARK: - Constraints
     

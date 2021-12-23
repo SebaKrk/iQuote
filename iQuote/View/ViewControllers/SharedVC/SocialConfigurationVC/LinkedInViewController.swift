@@ -26,12 +26,15 @@ class LinkedInViewController : UIViewController {
         configureStackView()
         configureButtons()
     }
+    override func viewDidLayoutSubviews() {
+        cardOriginYext = container.frame.origin.y
+        panGestureRecognizerToHandleDragAndDissmisView(inCardView: container, cardOriginY: cardOriginYext)
+    }
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
-        panGestureRecognizerToHandleDragAndDissmisView(inCardView: container)
     }
     //    MARK: - OBJC Func
     

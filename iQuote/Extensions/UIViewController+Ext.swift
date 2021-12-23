@@ -10,6 +10,8 @@ import UIKit
 import SafariServices
 import MessageUI
 
+public var cardOriginYext : CGFloat!
+
 extension UIViewController {
     
     func showEmptyStateAuthor(with authorName: String, in view: UIView) {
@@ -44,15 +46,18 @@ extension UIViewController {
     }
     
     //   MARK: - UIPanGestureRecognizer
+    
         
-    func panGestureRecognizerToHandleDragAndDissmisView(inCardView : UIView) {
+    func panGestureRecognizerToHandleDragAndDissmisView(inCardView : UIView,cardOriginY : CGFloat) {
+        cardOriginYext = cardOriginY
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestExt(sender:)))
         inCardView.addGestureRecognizer(panGesture)
     }
     
     @objc func handlePanGestExt(sender: UIPanGestureRecognizer) {
         let fileView = sender.view!
-
+        let cardOriginY = cardOriginYext!
+        
         switch sender.state {
         case .began, .changed:
             moveViewWithPan(view: fileView, sender: sender)
@@ -61,7 +66,7 @@ extension UIViewController {
             if dragVelocity.y >= 1300 {
                 dismiss(animated: false, completion: nil)
             } else {
-                returnViewToOrigin(view: fileView)
+                returnViewToOrigin(view: fileView, cardOriginY: cardOriginY)
             }
         default:
             break
@@ -73,9 +78,9 @@ extension UIViewController {
         view.center = CGPoint(x:view.center.x, y: view.center.y + translation.y)
         sender.setTranslation(CGPoint.zero, in: view)
     }
-    func returnViewToOrigin(view: UIView) {
+    func returnViewToOrigin(view: UIView, cardOriginY : CGFloat) {
         UIView.animate(withDuration: 0.3) {
-            view.frame.origin = CGPoint(x: 0.0 , y: 646.0) //fileViewOrign
+            view.frame.origin = CGPoint(x: 0.0 , y: cardOriginY) //fileViewOrign
         }
     }
     //    MARK: - SafariService

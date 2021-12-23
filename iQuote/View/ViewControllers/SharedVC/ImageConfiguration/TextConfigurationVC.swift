@@ -26,7 +26,10 @@ class TextConfigurationVC : UIViewController {
         configureSwipeLinie()
         configureFontAndColorPiker()
         configureFontSizeSlider()
-        
+    }
+    override func viewDidLayoutSubviews() {
+        cardOriginYext = container.frame.origin.y
+        panGestureRecognizerToHandleDragAndDissmisView(inCardView: container, cardOriginY: cardOriginYext)
     }
     
     private func setupView() {
@@ -34,7 +37,6 @@ class TextConfigurationVC : UIViewController {
         
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
-        panGestureRecognizerToHandleDragAndDissmisView(inCardView: container)
     }
     //    MARK: - OBJC
     
