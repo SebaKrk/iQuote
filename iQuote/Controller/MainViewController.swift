@@ -38,7 +38,6 @@ class MainViewController : UIViewController {
     //    MARK: - OBJC Func
     
     @objc func handleLeftBarButton() {
-        print("DEBUG: Menu button pressed")
         let menu = SideMenuNavigationController(rootViewController: SideMenuViewController())
         menu.leftSide = true
         menu.setNavigationBarHidden(true, animated: false)

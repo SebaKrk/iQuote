@@ -15,8 +15,8 @@ class PhotoLabViewController : UIViewController {
     
     var stackView = UIStackView()
     
-    let unsplashButton = UIButton()
-    let photoLibryButton = UIButton()
+    let unsplashButton = CostumTransButton(imageOne: "BackgroundIcon", imageTwo: "BackgroundIcon")
+    let photoLibryButton = CostumTransButton(imageOne: "BackgroundIcon", imageTwo: "BackgroundIcon2")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +43,27 @@ class PhotoLabViewController : UIViewController {
     
     @objc func handleUnsplashButton() {
         print("handleUnsplashButton")
+        let desVC = SearchImageVC()
+        desVC.modalPresentationStyle = .overFullScreen
+        present(desVC,animated: true,completion: nil)
     }
     @objc func handlePhotoLibryButton() {
         print("handlePhotoLibryButton")
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.modalPresentationStyle = .popover
+        
+        
+        if let popover = imagePicker.popoverPresentationController {
+            let sheet = popover.adaptiveSheetPresentationController
+            sheet.detents = [.medium(), .large()]
+            sheet.largestUndimmedDetentIdentifier = .medium
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+        }
+        present(imagePicker, animated: true, completion: nil)
     }
     
     //    MARK: - StackView
@@ -95,16 +113,15 @@ class PhotoLabViewController : UIViewController {
     }
     
     private func configureButtons() {
-        unsplashButton.backgroundColor = .red
-        photoLibryButton.backgroundColor = .green
-        
         unsplashButton.addTarget(self, action: #selector(handleUnsplashButton), for: .touchUpInside)
         photoLibryButton.addTarget(self, action: #selector(handlePhotoLibryButton), for: .touchUpInside)
+    }
+}
+
+extension PhotoLabViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        unsplashButton.setTitle("unsplashButton", for: .normal)
-        photoLibryButton.setTitleColor(.white, for: .normal)
-        
-        unsplashButton.setTitle("link", for: .normal)
-        photoLibryButton.setTitleColor(.white, for: .normal)
+  
+        dismiss(animated: true, completion: nil)
     }
 }

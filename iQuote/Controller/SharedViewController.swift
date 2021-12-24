@@ -33,7 +33,6 @@ class SharedViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
         setupView()
         add(childVC: SocialViewController(), to: socialContainer)
         add(childVC: ImageConfigurationVC(), to: optionContainer)
@@ -41,7 +40,6 @@ class SharedViewController : UIViewController {
     }
     
     private func setupView() {
-        print("setupView")
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.3)
         
         configureContainer()
