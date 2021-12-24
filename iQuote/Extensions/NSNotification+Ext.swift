@@ -15,6 +15,8 @@ extension NSNotification.Name {
     static let logoObserver = Notification.Name("logoObserver")
     static let gradientObserver = Notification.Name("gradientObserver")
     static let fontColor = Notification.Name("fontColor")
+    static let imgPickerObserver = Notification.Name("imgPickerObserver")
+    
     
     static let instagramObserver = Notification.Name("instagramObserver")
     static let facebookObserver = Notification.Name("facebookObserver")

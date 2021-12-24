@@ -66,12 +66,16 @@ class ImageVC : UIViewController {
     @objc func handleGradientObserver(notification: NSNotification) {
         backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
     }
+    @objc func handleImgPickerObserver(notification: NSNotification) {
+        let imgPicker = notification.userInfo?["imgPicker"] as? UIImage
+        guard let imgPicker = imgPicker else {return}
+        backgroundIMG.image = imgPicker
+    }
     @objc func handleInstagramObserver(notification: NSNotification) {
         
         let image = contenToShare.asImage()
         guard let image = image else {return}
         shareToInstagram(image: image)
-        
     }
     @objc func handleFacebookObserver(notification: NSNotification) {
         dismiss(animated: true, completion: nil)
@@ -111,6 +115,9 @@ class ImageVC : UIViewController {
                                                name: .logoObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleGradientObserver(notification:)),
                                                name: .gradientObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleImgPickerObserver(notification:)),
+                                               name: .imgPickerObserver, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(handleInstagramObserver(notification:)),
                                                name: .instagramObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFacebookObserver(notification:)),
