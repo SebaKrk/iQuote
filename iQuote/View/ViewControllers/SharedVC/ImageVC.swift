@@ -33,10 +33,7 @@ class ImageVC : UIViewController {
         configureObservers()
         
     }
-    
-    private func setupView() {
-        //        view.backgroundColor = .clear
-    }
+    private func setupView() { }
     
     //    MARK: - Notification&Observers
     

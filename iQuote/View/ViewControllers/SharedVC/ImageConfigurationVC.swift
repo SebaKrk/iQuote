@@ -27,9 +27,7 @@ class ImageConfigurationVC : UIViewController {
     
     
     @objc func handleBackgroundButton() {
-
-        
-        let desVC = SearchImageVC()
+        let desVC = PhotoLabViewController() //SearchImageVC()
         desVC.modalPresentationStyle = .overFullScreen
         present(desVC,animated: true,completion: nil)
     }
@@ -41,7 +39,6 @@ class ImageConfigurationVC : UIViewController {
     }
     
     @objc func handleGradienButton() {
-        
         let desVC = GradientConfigurationVC()
         desVC.modalPresentationStyle = .overFullScreen
         present(desVC,animated: true,completion: nil)

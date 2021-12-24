@@ -52,10 +52,7 @@ class SharedViewController : UIViewController {
         configureSwipeLinie()
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
-        
-//        panGestureRecognizerToHandleDragAndDissmisView(inCardView: container)
     }
-
     
     //    MARK: - Constraints
     
