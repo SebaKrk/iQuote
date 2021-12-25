@@ -35,7 +35,9 @@ class UnsplashCollectionVC : UIViewController {
     //    MARK: - JSON
     
     private func getJSON() {
+        showLoadingView()
         NetworkManager.shered.getUnsplashImages(category: category) { result in
+            self.dissmisLoadingView()
             switch result {
             case .success( let dataImage):
                 if dataImage.isEmpty {

@@ -34,6 +34,7 @@ class MainViewController : UIViewController {
         configureNavigationItem()
         getJasonData()
         add(childVC: NavigationViewController(), to: navigationContainer)
+        
     }
     //    MARK: - OBJC Func
     
@@ -70,9 +71,13 @@ class MainViewController : UIViewController {
     //    MARK: - GetJasonData
     
     func getJasonData() {
+        showLoadingView()
         NetworkManager.shered.getRandomQuote { result in
+            self.dissmisLoadingView()
+            
             switch result {
             case .success( let quote):
+                
                 DispatchQueue.main.async {
                     self.add(childVC: QuoteViewController(quote: quote), to: self.quoteContainer)
                     quoteToFavorites = quote[0].q

@@ -79,7 +79,6 @@ class ImageVC : UIViewController {
     }
     @objc func handleFacebookObserver(notification: NSNotification) {
         dismiss(animated: true, completion: nil)
-        
         if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
             vc.add(contenToShare.asImage())
             present(vc, animated: true, completion: nil)

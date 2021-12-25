@@ -42,18 +42,14 @@ class PhotoLabViewController : UIViewController {
     // MARK: - OBJC Func
     
     @objc func handleUnsplashButton() {
-        print("handleUnsplashButton")
         let desVC = SearchImageVC()
         desVC.modalPresentationStyle = .overFullScreen
         present(desVC,animated: true,completion: nil)
     }
     @objc func handlePhotoLibryButton() {
-        print("handlePhotoLibryButton")
-        
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.modalPresentationStyle = .popover
-        
         
         if let popover = imagePicker.popoverPresentationController {
             let sheet = popover.adaptiveSheetPresentationController
@@ -63,6 +59,7 @@ class PhotoLabViewController : UIViewController {
             sheet.prefersEdgeAttachedInCompactHeight = true
             sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
         }
+        
         present(imagePicker, animated: true, completion: nil)
     }
     
