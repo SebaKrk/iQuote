@@ -21,6 +21,7 @@ class FavoritesTableViewCell : UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureQuoteLabel()
         configureAuthorLabel()
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
