@@ -99,7 +99,7 @@ class NetworkManager {
     func getUnsplashImages(category: String, completed: @escaping (Result<[Results],ErrorMassage>) -> Void) {
         let endpoint = unsplashURL + category + "&client_id=" + Constants.accessKey
         
-        print("DEBUG: \(endpoint)")
+        //print("DEBUG: \(endpoint)")
         guard let url = URL(string: endpoint) else {
             completed(.failure(.unableToCompleted))
             return

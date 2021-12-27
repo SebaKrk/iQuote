@@ -20,6 +20,7 @@ class PhotoLabViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("PhotoLabViewController")
         
         setupView()
         configureContainer()
@@ -42,9 +43,16 @@ class PhotoLabViewController : UIViewController {
     // MARK: - OBJC Func
     
     @objc func handleUnsplashButton() {
+//        let desVC = SearchImageVC()
+//        desVC.modalPresentationStyle = .overFullScreen
+//        present(desVC,animated: true,completion: nil)
+        
         let desVC = SearchImageVC()
         desVC.modalPresentationStyle = .overFullScreen
-        present(desVC,animated: true,completion: nil)
+        desVC.modalTransitionStyle = .crossDissolve //.flipHorizontal //.coverVertical
+//        present(desVC,animated: true,completion: nil)
+//        navigationController?.present(desVC,animated: true)
+        navigationController?.pushViewController(desVC, animated: true)
     }
     
     @objc func handlePhotoLibryButton() {

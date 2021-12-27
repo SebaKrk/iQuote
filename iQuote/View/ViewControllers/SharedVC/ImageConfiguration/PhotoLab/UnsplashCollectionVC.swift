@@ -26,7 +26,7 @@ class UnsplashCollectionVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.isNavigationBarHidden = true
         setupCollectionView()
         configureCollectionView()
         getJSON()
@@ -104,5 +104,6 @@ extension UnsplashCollectionVC : UICollectionViewDelegateFlowLayout , UICollecti
         
         NotificationCenter.default.post(name: .imgObserver, object: nil, userInfo: ["imgURL" : imgURL])
         dismiss(animated: true, completion: nil)
+        // navigationController?.popToRootViewController(animated: true)
     }
 }

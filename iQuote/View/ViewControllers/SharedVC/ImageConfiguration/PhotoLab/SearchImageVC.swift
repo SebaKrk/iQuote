@@ -39,7 +39,10 @@ class SearchImageVC : UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.1)
+        print("SearchImageVC")
+        title = "SearchImageVC"
+//        navigationController?.isNavigationBarHidden = true
+        //view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.1)
         createDissmisKeybordTapgesture()
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
@@ -57,10 +60,20 @@ class SearchImageVC : UIViewController {
         }
         searchButton.flipLikeState()
         
+//        let desVC = UnsplashCollectionVC()
+//        desVC.category = searchText.text ?? "landscapes"
+//        desVC.delegate = self
+//        present(desVC, animated: true, completion: nil)
+        
         let desVC = UnsplashCollectionVC()
         desVC.category = searchText.text ?? "landscapes"
         desVC.delegate = self
-        present(desVC, animated: true, completion: nil)
+        
+        desVC.modalPresentationStyle = .overFullScreen
+        desVC.modalTransitionStyle = .coverVertical
+        navigationController?.pushViewController(desVC, animated: true)
+//        navigationController?.show(desVC, sender: nil)
+//        navigationController?.present(desVC, animated: true, completion: nil)
     }
     
     //    MARK: - GestureRecognizer
