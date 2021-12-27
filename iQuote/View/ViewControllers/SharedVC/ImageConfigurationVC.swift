@@ -26,15 +26,9 @@ class ImageConfigurationVC : UIViewController {
     }
     
     @objc func handleBackgroundButton() {
-//        let desVC = PhotoLabViewController()
-//        desVC.modalPresentationStyle = .overFullScreen
-//        present(desVC,animated: true,completion: nil)
-        
-        let rootVC = PhotoLabViewController()
-        rootVC.title = "PhotoLabViewController"
-        let navVC = UINavigationController(rootViewController: rootVC)
-        navVC.modalPresentationStyle = .overFullScreen
-        present(navVC, animated: true, completion: nil)
+        let desVC = PhotoLabViewController()
+        desVC.modalPresentationStyle = .overFullScreen
+        present(desVC,animated: true,completion: nil)
     }
     
     @objc func handleTextButton() {
