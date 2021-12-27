@@ -23,10 +23,15 @@ class AppVersionViewController : UIViewController {
         configureSwipeLinie()
         configureAppVersionLabel()
     }
+    override func viewDidLayoutSubviews() {
+        cardOriginYext = container.frame.origin.y
+        panGestureRecognizerToHandleDragAndDissmisView(inCardView: container, cardOriginY: cardOriginYext)
+    }
+    
     func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.3)
-        swipeDownGestureRecognizerToDissmisView(container: container)
         tapGestureRecognizerToDissmisView()
+        swipeDownGestureRecognizerToDissmisView(container: container)
     }
     
     func configureContainer() {

@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        UnsplashCollectionVC()
 //        ImageVC()
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = desVC //(rootViewController: desVC)
+        window?.rootViewController =  UINavigationController(rootViewController: desVC)
         window?.makeKeyAndVisible()
         window?.overrideUserInterfaceStyle = .dark
     }

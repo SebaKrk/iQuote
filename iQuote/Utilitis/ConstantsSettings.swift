@@ -28,7 +28,7 @@ enum SettingsMessage : String {
 }
 
 enum SettingsURL : String {
-    case share = "https://github.com/SebaKrk/ZenQuotesApp"
+    case share = "https://github.com/SebaKrk/iQuote"
     case review = "https://github.com"
     case website = "https://github.com/SebaKrk"
     case privacyPolicy = "https://premium.zenquotes.io/privacy-policy/"

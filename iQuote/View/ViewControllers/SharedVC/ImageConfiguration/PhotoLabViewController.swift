@@ -20,8 +20,6 @@ class PhotoLabViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("PhotoLabViewController")
-        
         setupView()
         configureContainer()
         configureSwipeLinie()
