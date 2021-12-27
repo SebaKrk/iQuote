@@ -102,6 +102,6 @@ extension UnsplashCollectionVC : UICollectionViewDelegateFlowLayout , UICollecti
         let imgURL = cell.urls.small
         
         NotificationCenter.default.post(name: .imgObserver, object: nil, userInfo: ["imgURL" : imgURL])
-        dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: .chooseImgObserver, object: nil)
     }
 }

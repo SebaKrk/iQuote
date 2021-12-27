@@ -123,6 +123,6 @@ extension PhotoLabViewController : UIImagePickerControllerDelegate, UINavigation
         if let image = info[.originalImage] as? UIImage {
             NotificationCenter.default.post(name: .imgPickerObserver, object: nil, userInfo: ["imgPicker" : image])
         }
-        dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: .chooseImgObserver, object: nil)
     }
 }

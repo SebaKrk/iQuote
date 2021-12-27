@@ -71,8 +71,11 @@ class ImageVC : UIViewController {
         guard let imgPicker = imgPicker else {return}
         backgroundIMG.image = imgPicker
     }
+    @objc func handleChooseImgObserver(notification: NSNotification) {
+         dismiss(animated: true, completion: nil)
+    }
+    
     @objc func handleInstagramObserver(notification: NSNotification) {
-        
         let image = contenToShare.asImage()
         guard let image = image else {return}
         shareToInstagram(image: image)
@@ -116,6 +119,8 @@ class ImageVC : UIViewController {
                                                name: .gradientObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleImgPickerObserver(notification:)),
                                                name: .imgPickerObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleChooseImgObserver(notification:)),
+                                               name: .chooseImgObserver, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleInstagramObserver(notification:)),
                                                name: .instagramObserver, object: nil)
