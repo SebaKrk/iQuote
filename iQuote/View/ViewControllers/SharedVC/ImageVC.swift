@@ -12,6 +12,7 @@ import Social
 class ImageVC : UIViewController {
     
     let contenToShare = UIView()
+    let quoteContainer = UIView()
     
     let backgroundIMG = CostumBackground(placehodler: "BackgroundImage")
     let quoteLabel = CostumQuoteLabel()
@@ -26,14 +27,16 @@ class ImageVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        configurePanGestureRevognizareToMoveQuoteLabel()
+    }
+    private func setupView() {
         configureContentToSgare()
         configureBackgroundIMG()
+        configureQuoteLabelContainer()
         configureQuoteLabel()
         configureQuoteLogo()
         configureObservers()
-        
     }
-    private func setupView() { }
     
     //    MARK: - Notification&Observers
     
@@ -132,9 +135,27 @@ class ImageVC : UIViewController {
                                                name: .linkedinObserver, object: nil)
         
     }
-    
+    //    MARK: - GestureRecogizare
+    @objc func handlePanGestureRecToMoveQuoteLabel(sender: UIPanGestureRecognizer) {
+        let fileView = sender.view!
+        let translation = sender.translation(in: view)
+        
+        switch sender.state {
+        case .began, .changed:
+            fileView.center = CGPoint(x: fileView.center.x + translation.x,
+                                      y: fileView.center.y + translation.y)
+            sender.setTranslation(CGPoint.zero, in: view)
+        default:
+            break
+        }
+    }
+    private func configurePanGestureRevognizareToMoveQuoteLabel() {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecToMoveQuoteLabel(sender:)))
+        quoteContainer.addGestureRecognizer(pan)
+    }
     
     //    MARK: - Constraints
+    
     private func configureContentToSgare() {
         view.addSubview(contenToShare)
         contenToShare.translatesAutoresizingMaskIntoConstraints = false
@@ -158,18 +179,29 @@ class ImageVC : UIViewController {
             backgroundIMG.bottomAnchor.constraint(equalTo: contenToShare.bottomAnchor)
         ])
     }
+    private func configureQuoteLabelContainer() {
+        contenToShare.addSubview(quoteContainer)
+        quoteContainer.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            quoteContainer.topAnchor.constraint(equalTo: contenToShare.topAnchor),
+            quoteContainer.leadingAnchor.constraint(equalTo: contenToShare.leadingAnchor),
+            quoteContainer.trailingAnchor.constraint(equalTo: contenToShare.trailingAnchor),
+            quoteContainer.bottomAnchor.constraint(equalTo: contenToShare.bottomAnchor)
+        ])
+    }
     
     private func configureQuoteLabel() {
-        backgroundIMG.addSubview(quoteLabel)
+        quoteContainer.addSubview(quoteLabel)
         quoteLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         quoteLabel.numberOfLines = 0
         quoteLabel.text =  quoteTextToShare
         
         NSLayoutConstraint.activate([
-            quoteLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            quoteLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            quoteLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-            quoteLabel.heightAnchor.constraint(equalTo: view.heightAnchor, constant: 0.5)
+            quoteLabel.centerYAnchor.constraint(equalTo: quoteContainer.centerYAnchor),
+            quoteLabel.centerXAnchor.constraint(equalTo: quoteContainer.centerXAnchor),
+            quoteLabel.widthAnchor.constraint(equalTo: quoteContainer.widthAnchor, multiplier: 0.8)
         ])
     }
     private func configureQuoteLogo() {

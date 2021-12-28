@@ -29,6 +29,7 @@ class UnsplashCollectionVC : UIViewController {
         setupCollectionView()
         configureCollectionView()
         getJSON()
+        
     }
     
     //    MARK: - JSON
