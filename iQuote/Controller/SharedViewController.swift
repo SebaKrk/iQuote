@@ -47,7 +47,7 @@ class SharedViewController : UIViewController {
         configureOptionsContainer()
         configureImageContainer()
         configureSwipeLinie()
-        tapGestureRecognizerToDissmisView()
+        //tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
     }
     
@@ -109,7 +109,7 @@ class SharedViewController : UIViewController {
         imageContainer.layer.masksToBounds = true
         
         NSLayoutConstraint.activate([
-            imageContainer.topAnchor.constraint(equalTo: container.topAnchor,constant: padding * 3),
+            imageContainer.topAnchor.constraint(equalTo: container.topAnchor,constant: 60),
             imageContainer.leadingAnchor.constraint(equalTo: container.leadingAnchor,constant: padding),
             imageContainer.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -padding),
             imageContainer.bottomAnchor.constraint(equalTo: optionContainer.topAnchor, constant: -padding)

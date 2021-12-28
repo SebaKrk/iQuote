@@ -23,6 +23,7 @@ class CostumBackground : UIImageView {
         let image = UIImage(named: placehodler)
         guard let image = image else {return}
         self.image = image
+        contentMode = .scaleAspectFill
     }
     
 }
