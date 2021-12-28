@@ -34,8 +34,8 @@ class MainViewController : UIViewController {
         configureNavigationItem()
         getJasonData()
         add(childVC: NavigationViewController(), to: navigationContainer)
-        
     }
+    
     //    MARK: - OBJC Func
     
     @objc func handleLeftBarButton() {

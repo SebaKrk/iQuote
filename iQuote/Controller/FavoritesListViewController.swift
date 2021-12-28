@@ -10,8 +10,7 @@ import UIKit
 
 class FavoritesListViewController : UIViewController {
     
-    
-    private let container = UIView()
+    private let tableViewContainer = UIView()
     private let tableView = UITableView()
     private let swipeLine = SwipeLine()
     
@@ -22,23 +21,23 @@ class FavoritesListViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        configureContainer()
         setupTableView()
-        configureSwipeLinie()
-        configureTabeleView()
-        
+        swipeUpGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getFavorities()
-        container.layer.cornerRadius = 15
+        tableViewContainer.layer.cornerRadius = 15
     }
+    
     //    MARK: - SetupView & TableView
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.7)
-        swipeUpGesture()
+        configureContainer()
+        configureSwipeLinie()
+        configureTabeleView()
     }
     
     private func setupTableView() {
@@ -81,39 +80,41 @@ class FavoritesListViewController : UIViewController {
     }
     
     
+    
     //     MARK: - Constraints
+    
     private func configureContainer() {
-        view.addSubview(container)
-        container.translatesAutoresizingMaskIntoConstraints = false
-        container.backgroundColor = .white
+        view.addSubview(tableViewContainer)
+        tableViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        tableViewContainer.backgroundColor = .white
         
         NSLayoutConstraint.activate([
-            container.topAnchor.constraint(equalTo: view.topAnchor),
-            container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            container.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7)
+            tableViewContainer.topAnchor.constraint(equalTo: view.topAnchor),
+            tableViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            tableViewContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            tableViewContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7)
         ])
         
     }
     private func configureSwipeLinie() {
-        container.addSubview(swipeLine)
+        tableViewContainer.addSubview(swipeLine)
         swipeLine.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            swipeLine.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -15),
-            swipeLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.4)
+            swipeLine.bottomAnchor.constraint(equalTo: tableViewContainer.bottomAnchor, constant: -15),
+            swipeLine.centerXAnchor.constraint(equalTo: tableViewContainer.centerXAnchor),
+            swipeLine.widthAnchor.constraint(equalTo: tableViewContainer.widthAnchor, multiplier: 0.4)
         ])
     }
     
     private func configureTabeleView() {
-        container.addSubview(tableView)
+        tableViewContainer.addSubview(tableView)
         tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor,constant: 20),
-            tableView.leadingAnchor.constraint(equalTo: container.leadingAnchor,constant: 10),
-            tableView.trailingAnchor.constraint(equalTo: container.trailingAnchor,constant: -10),
+            tableView.topAnchor.constraint(equalTo: tableViewContainer.safeAreaLayoutGuide.topAnchor,constant: 20),
+            tableView.leadingAnchor.constraint(equalTo: tableViewContainer.leadingAnchor,constant: 10),
+            tableView.trailingAnchor.constraint(equalTo: tableViewContainer.trailingAnchor,constant: -10),
             tableView.bottomAnchor.constraint(equalTo: swipeLine.topAnchor, constant: -40)
         ])
     }
