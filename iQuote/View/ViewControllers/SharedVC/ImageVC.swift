@@ -107,6 +107,8 @@ class ImageVC : UIViewController {
         }
     }
     
+//    MARK: - addObserver
+    
     private func configureObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)),
                                                name: .imgObserver, object: nil)
@@ -136,6 +138,7 @@ class ImageVC : UIViewController {
         
     }
     //    MARK: - GestureRecogizare
+    
     @objc func handlePanGestureRecToMoveQuoteLabel(sender: UIPanGestureRecognizer) {
         let fileView = sender.view!
         let translation = sender.translation(in: view)
@@ -216,7 +219,7 @@ class ImageVC : UIViewController {
             quoteLogo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
             quoteLogo.widthAnchor.constraint(equalToConstant: 35),
             quoteLogo.heightAnchor.constraint(equalToConstant: 50)
-        ])
+        ]) 
     }
     //    MARK : - Hellpers func
     
@@ -235,7 +238,18 @@ class ImageVC : UIViewController {
                 UIPasteboard.general.setItems(items, options: pasteboardOptions)
                 UIApplication.shared.open(urlScheme, options: [:], completionHandler: nil)
             } else {
-                presentAlertOnMainThred(title: "Upsss", message: "You dont have instagram app on your device")
+                self.presentAlertOnMainThred(title: "Upsss", message: "You dont have instagram app on your device")
+            }
+        }
+        func shareToInstagramFeed(image: UIImage) {
+            guard let instagramUrl = URL(string: "instagram://app") else {
+                return
+            }
+            if UIApplication.shared.canOpenURL(instagramUrl) {
+                print("share something on Instagram")
+                // share something on Instagram
+            } else {
+                // Instagram app is not installed or can't be opened, pop up an alert
             }
         }
     }
