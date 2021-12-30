@@ -15,6 +15,7 @@
 		9305BA0C2757D6DB003E91F7 /* CellAuthorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */; };
 		932AEFE92775860600211869 /* PhotoLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932AEFE82775860600211869 /* PhotoLabViewController.swift */; };
 		93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */; };
+		9377028D277E146100BF0AC4 /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9377028C277E146100BF0AC4 /* InstagramManager.swift */; };
 		93992734275AA60A00E95481 /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93992733275AA60A00E95481 /* SharedViewController.swift */; };
 		9399B1C82764823A0035021E /* GradientConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399B1C72764823A0035021E /* GradientConfigurationVC.swift */; };
 		939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A352754AF500079DF97 /* EmptyAuthorView.swift */; };
@@ -97,6 +98,7 @@
 		9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAuthorLabel.swift; sourceTree = "<group>"; };
 		932AEFE82775860600211869 /* PhotoLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLabViewController.swift; sourceTree = "<group>"; };
 		93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
+		9377028C277E146100BF0AC4 /* InstagramManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramManager.swift; sourceTree = "<group>"; };
 		93992733275AA60A00E95481 /* SharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewController.swift; sourceTree = "<group>"; };
 		9399B1C72764823A0035021E /* GradientConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientConfigurationVC.swift; sourceTree = "<group>"; };
 		939A3A352754AF500079DF97 /* EmptyAuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAuthorView.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				93A9FB5227536D7000442A91 /* NetwokManager.swift */,
 				9305BA002757570F003E91F7 /* PersistenceManager.swift */,
+				9377028C277E146100BF0AC4 /* InstagramManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				93EE8D00274A4BB1000A8964 /* AuthorImageView.swift in Sources */,
 				93C25653276B60EE00AACB94 /* LinkedInViewController.swift in Sources */,
 				93F6B8C527465EA5005181C0 /* QuoteViewController.swift in Sources */,
+				9377028D277E146100BF0AC4 /* InstagramManager.swift in Sources */,
 				93A9FB592753F7B400442A91 /* Wikipedia.swift in Sources */,
 				93BDB9CA2748DDF100E4B928 /* Constants.swift in Sources */,
 				9305BA0C2757D6DB003E91F7 /* CellAuthorLabel.swift in Sources */,

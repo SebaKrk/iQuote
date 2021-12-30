@@ -75,13 +75,15 @@ class ImageVC : UIViewController {
         backgroundIMG.image = imgPicker
     }
     @objc func handleChooseImgObserver(notification: NSNotification) {
-         dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func handleInstagramObserver(notification: NSNotification) {
+        print("dziala")
         let image = contenToShare.asImage()
         guard let image = image else {return}
-        shareToInstagram(image: image)
+        
+        InstagramManager.shered.shareToInstagramStories(image: image)
     }
     @objc func handleFacebookObserver(notification: NSNotification) {
         dismiss(animated: true, completion: nil)
@@ -107,7 +109,7 @@ class ImageVC : UIViewController {
         }
     }
     
-//    MARK: - addObserver
+    //    MARK: - addObserver
     
     private func configureObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleImageObserver(notification:)),
@@ -219,45 +221,8 @@ class ImageVC : UIViewController {
             quoteLogo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
             quoteLogo.widthAnchor.constraint(equalToConstant: 35),
             quoteLogo.heightAnchor.constraint(equalToConstant: 50)
-        ]) 
+        ])
     }
-    //    MARK : - Hellpers func
-    
-    func shareToInstagram(image: UIImage) {
-        if let urlScheme = URL(string: "instagram-stories://share") {
-            if UIApplication.shared.canOpenURL(urlScheme) {
-                
-                let imageData: Data = image.pngData()!
-                
-                let items = [[
-                    "com.instagram.sharedSticker.backgroundImage": imageData,
-                    //"com.instagram.sharedSticker.backgroundTopColor": "#EA2F3F",
-                    //"com.instagram.sharedSticker.backgroundBottomColor": "#8845B9",
-                ]]
-                let pasteboardOptions = [UIPasteboard.OptionsKey.expirationDate: Date().addingTimeInterval(60*5)]
-                UIPasteboard.general.setItems(items, options: pasteboardOptions)
-                UIApplication.shared.open(urlScheme, options: [:], completionHandler: nil)
-            } else {
-                self.presentAlertOnMainThred(title: "Upsss", message: "You dont have instagram app on your device")
-            }
-        }
-        func shareToInstagramFeed(image: UIImage) {
-            guard let instagramUrl = URL(string: "instagram://app") else {
-                return
-            }
-            if UIApplication.shared.canOpenURL(instagramUrl) {
-                print("share something on Instagram")
-                // share something on Instagram
-            } else {
-                // Instagram app is not installed or can't be opened, pop up an alert
-            }
-        }
-    }
-    //    Data for an image asset in a supported format (JPG, PNG). Minimum dimensions 720x1280. Recommended image ratios 9:16 or 9:18.
-    //    com.instagram.photo
-    
-    //    NSURL *instagramURL = [NSURL URLWithString:@"instagram://location?id=1"];
-    //    if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
-    //        [[UIApplication sharedApplication] openURL:instagramURL];
-    //    }
 }
+
+
