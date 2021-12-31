@@ -27,7 +27,6 @@ class ImageVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        configurePanGestureRevognizareToMoveQuoteLabel()
     }
     private func setupView() {
         configureContentToSgare()
@@ -78,7 +77,12 @@ class ImageVC : UIViewController {
     @objc func handleGradientObserver(notification: NSNotification) {
         backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
     }
-    
+    //
+    @objc func handleDragLabel(notification: NSNotification) {
+        quoteLabel.layer.borderColor = UIColor.red.cgColor
+        quoteLabel.layer.borderWidth = 0.5
+        configurePanGestureRevognizareToMoveQuoteLabel()
+    }
     // Logo
     @objc func handleLogoObserver(notification: NSNotification) {
         logonIsOn = !logonIsOn
@@ -129,6 +133,9 @@ class ImageVC : UIViewController {
                                                name: .sizeFontObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)),
                                                name: .logoObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDragLabel(notification:)),
+                                               name: .dragLabelObserver, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(handleGradientObserver(notification:)),
                                                name: .gradientObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleImgPickerObserver(notification:)),
@@ -209,6 +216,7 @@ class ImageVC : UIViewController {
         
         quoteLabel.numberOfLines = 0
         quoteLabel.text =  quoteTextToShare
+      
         
         NSLayoutConstraint.activate([
             quoteLabel.centerYAnchor.constraint(equalTo: quoteContainer.centerYAnchor),

@@ -17,7 +17,8 @@ class ImageConfigurationVC : UIViewController {
     let textButton  = CostumTransButton(imageOne: "TextIcon", imageTwo: "TextIcon2")
     let gradienButton = CostumTransButton(imageOne: "GradienIcon", imageTwo: "GradienIcon2")
     let logoButton = CostumTransButton(imageOne: "AuthorIcon", imageTwo: "AuthorIcon2")
-    
+    let dragLabelButton  = CostumTransButton(imageOne: "dragLabelButton1",imageTwo: "dragLabelButton2")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStackView()
@@ -42,6 +43,11 @@ class ImageConfigurationVC : UIViewController {
         desVC.modalPresentationStyle = .overFullScreen
         present(desVC,animated: true,completion: nil)
     }
+    @objc func handleDragLabelButton() {
+        dragLabelButton.flipLikeState()
+        NotificationCenter.default.post(name: .dragLabelObserver, object: nil)
+        print("handleDragLabelButton")
+    }
     
     @objc func handleLogoButton() {
         logoButton.flipLikeState()
@@ -49,7 +55,7 @@ class ImageConfigurationVC : UIViewController {
     }
     
     private func setupStackView() {
-        stackView = UIStackView(arrangedSubviews: [backgroundImageButton,textButton,gradienButton,logoButton])
+        stackView = UIStackView(arrangedSubviews: [backgroundImageButton,textButton,gradienButton,dragLabelButton,logoButton])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
     }
@@ -69,6 +75,7 @@ class ImageConfigurationVC : UIViewController {
         backgroundImageButton.addTarget(self, action: #selector(handleBackgroundButton), for: .touchUpInside)
         textButton.addTarget(self, action: #selector(handleTextButton), for: .touchUpInside)
         gradienButton.addTarget(self, action: #selector(handleGradienButton), for: .touchUpInside)
+        dragLabelButton.addTarget(self, action: #selector(handleDragLabelButton), for: .touchUpInside)
         logoButton.addTarget(self, action: #selector(handleLogoButton), for: .touchUpInside)
     }
     
