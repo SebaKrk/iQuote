@@ -43,6 +43,7 @@ class AlertViewController : UIViewController {
         configureTitleLabel()
         configureButton()
         configureMessageLabel()
+        tapGestureRecognizerToDissmisView()
     }
 //    MARK: - OBJC Func
     @objc func handleDissmisButton() {

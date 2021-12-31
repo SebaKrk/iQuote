@@ -40,6 +40,7 @@ class ImageVC : UIViewController {
     
     //    MARK: - Notification&Observers
     
+    // IMG
     @objc func handleImageObserver(notification : NSNotification) {
         let imgName = notification.userInfo?["imgURL"] as? String
         guard let imgName = imgName else {return}
@@ -47,6 +48,16 @@ class ImageVC : UIViewController {
             self.backgroundIMG.image = imgage
         }
     }
+    @objc func handleImgPickerObserver(notification: NSNotification) {
+        let imgPicker = notification.userInfo?["imgPicker"] as? UIImage
+        guard let imgPicker = imgPicker else {return}
+        backgroundIMG.image = imgPicker
+    }
+    @objc func handleChooseImgObserver(notification: NSNotification) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Font Size Color
     @objc func handleFontQuoteObserver(notification : NSNotification) {
         let fontQuoteName = notification.userInfo?["font"] as? String
         guard let fontQuoteName = fontQuoteName else {return}
@@ -62,24 +73,20 @@ class ImageVC : UIViewController {
         guard let fontColor = fontColor else {return}
         quoteLabel.textColor = UIColor(named: fontColor)
     }
+    
+    // Gradient
+    @objc func handleGradientObserver(notification: NSNotification) {
+        backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
+    }
+    
+    // Logo
     @objc func handleLogoObserver(notification: NSNotification) {
         logonIsOn = !logonIsOn
         quoteLogo.isHidden = logonIsOn
     }
-    @objc func handleGradientObserver(notification: NSNotification) {
-        backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
-    }
-    @objc func handleImgPickerObserver(notification: NSNotification) {
-        let imgPicker = notification.userInfo?["imgPicker"] as? UIImage
-        guard let imgPicker = imgPicker else {return}
-        backgroundIMG.image = imgPicker
-    }
-    @objc func handleChooseImgObserver(notification: NSNotification) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+
+    // Socials
     @objc func handleInstagramObserver(notification: NSNotification) {
-        print("dziala")
         let image = contenToShare.asImage()
         guard let image = image else {return}
         
