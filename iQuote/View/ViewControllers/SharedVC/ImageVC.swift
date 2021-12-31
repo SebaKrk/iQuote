@@ -19,6 +19,7 @@ class ImageVC : UIViewController {
     let quoteLogo = UIImageView()
     
     var logonIsOn = false
+    var dragIsOn = false
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -77,11 +78,17 @@ class ImageVC : UIViewController {
     @objc func handleGradientObserver(notification: NSNotification) {
         backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
     }
-    //
     @objc func handleDragLabel(notification: NSNotification) {
-        quoteLabel.layer.borderColor = UIColor.red.cgColor
-        quoteLabel.layer.borderWidth = 0.5
-        configurePanGestureRevognizareToMoveQuoteLabel()
+        dragIsOn = !dragIsOn
+        if dragIsOn == true {
+            quoteLabel.layer.borderColor = UIColor.red.cgColor
+            quoteLabel.layer.borderWidth = 0.5
+            configurePanGestureRevognizareToMoveQuoteLabel()
+        } else {
+            quoteLabel.layer.borderColor = UIColor.clear.cgColor
+            quoteLabel.layer.borderWidth = 0.0
+            quoteContainer.gestureRecognizers?.forEach(quoteContainer.removeGestureRecognizer)
+        }
     }
     // Logo
     @objc func handleLogoObserver(notification: NSNotification) {
