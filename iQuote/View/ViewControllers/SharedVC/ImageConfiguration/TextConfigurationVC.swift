@@ -15,6 +15,7 @@ class TextConfigurationVC : UIViewController {
     
     let container = UIView()
     let fontSizeSlider = UISlider()
+    let fontSizeLabel = CostumTitleLabel(textAligment: .center, fontSize: 14)
     let fontAndColorPiker = UIPickerView()
     
     private let swipeLine = SwipeLine()
@@ -26,6 +27,7 @@ class TextConfigurationVC : UIViewController {
         configureSwipeLinie()
         configureFontAndColorPiker()
         configureFontSizeSlider()
+        configureFontSizeLabel()
     }
     override func viewDidLayoutSubviews() {
         cardOriginYext = container.frame.origin.y
@@ -42,6 +44,7 @@ class TextConfigurationVC : UIViewController {
     
     @objc func handleFontSizeSlider(sender: UISlider){
         let roundedStepValue = CGFloat(Int(sender.value))
+        fontSizeLabel.text = "\(roundedStepValue)" //roundedStepValue
         NotificationCenter.default.post(name: .sizeFontObserver, object: nil, userInfo: ["size" : roundedStepValue])
     }
     
@@ -106,6 +109,19 @@ class TextConfigurationVC : UIViewController {
         ])
     }
     
+    private func configureFontSizeLabel() {
+        container.addSubview(fontSizeLabel)
+        fontSizeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        fontSizeLabel.text = "30.0"
+        fontSizeLabel.textColor = .darkGray
+        
+        NSLayoutConstraint.activate([
+            fontSizeLabel.centerYAnchor.constraint(equalTo: fontSizeSlider.centerYAnchor),
+            fontSizeLabel.leadingAnchor.constraint(equalTo: fontSizeSlider.trailingAnchor),
+            fontSizeLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor)
+        ])
+    }
     
 }
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
