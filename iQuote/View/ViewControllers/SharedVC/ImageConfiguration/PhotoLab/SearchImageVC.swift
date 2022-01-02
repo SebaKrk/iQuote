@@ -39,7 +39,7 @@ class SearchImageVC : UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.1)
+        view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
         createDissmisKeybordTapgesture()
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)

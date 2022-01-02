@@ -22,14 +22,11 @@ class UnsplashCollectionVC : UIViewController {
     var collectionImageArray : [Results] = []
     var category = ""
     
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         configureCollectionView()
         getJSON()
-        
     }
     
     //    MARK: - JSON
