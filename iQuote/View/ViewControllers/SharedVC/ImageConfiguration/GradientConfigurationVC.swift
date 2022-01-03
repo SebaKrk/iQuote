@@ -58,9 +58,9 @@ class GradientConfigurationVC : UIViewController {
     
     @objc func handleShadowSwitch(sender: UISwitch) {
         if sender.isOn {
-            container.backgroundColor = .blue
+            NotificationCenter.default.post(name: .shadowQuoteLabel, object: nil)
         } else {
-            container.backgroundColor = .black
+            NotificationCenter.default.post(name: .removeShadowQuoteLabel, object: nil)
         }
     }
     

@@ -80,14 +80,15 @@ class ImageVC : UIViewController {
     }
     
     // Gradient
-    @objc func handleGradientObserver(notification: NSNotification) {
-        gradientState(state: .on)
-        
+    @objc func handleGradientObserver(notification: NSNotification) { gradientState(state: .on)}
+    @objc func handleRemoveGradientObserver(notification: NSNotification) { gradientState(state: .off)}
+    @objc func handleShadowQuoteLabel(notification: NSNotification) {
+        quoteLabel.shadowColor = .red
     }
-    @objc func handleRemoveGradientObserver(notification: NSNotification) {
-        gradientState(state: .off)
+    @objc func handleRemoveShadowQuoteLabel(notification: NSNotification) {
+        quoteLabel.shadowColor = .clear
     }
- 
+    
     // Draf
     @objc func handleDragLabel(notification: NSNotification) {
         dragIsOn = !dragIsOn
@@ -158,6 +159,12 @@ class ImageVC : UIViewController {
                                                name: .gradientObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleRemoveGradientObserver(notification:)),
                                                name: .removeGradientObserver, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleShadowQuoteLabel(notification:)),
+                                               name: .shadowQuoteLabel, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRemoveShadowQuoteLabel(notification:)),
+                                               name: .removeShadowQuoteLabel, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(handleImgPickerObserver(notification:)),
                                                name: .imgPickerObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleChooseImgObserver(notification:)),
@@ -236,7 +243,7 @@ class ImageVC : UIViewController {
         
         quoteLabel.numberOfLines = 0
         quoteLabel.text =  quoteTextToShare
-      
+        //quoteLabel.shadowColor = .clear
         
         NSLayoutConstraint.activate([
             quoteLabel.centerYAnchor.constraint(equalTo: quoteContainer.centerYAnchor),

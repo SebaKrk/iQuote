@@ -16,6 +16,8 @@ extension NSNotification.Name {
     static let dragLabelObserver = Notification.Name("dragLabelObserver")
     static let gradientObserver = Notification.Name("gradientObserver")
     static let removeGradientObserver = Notification.Name("removeGradientObserver")
+    static let shadowQuoteLabel = Notification.Name("shadowQuoteLabel")
+    static let removeShadowQuoteLabel = Notification.Name("removeShadowQuoteLabel")
     static let fontColor = Notification.Name("fontColor")
     static let imgPickerObserver = Notification.Name("imgPickerObserver")
     static let chooseImgObserver = Notification.Name("chooseImgObserver")
