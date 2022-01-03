@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 import Social
 
+enum gradientState {
+    case on
+    case off
+}
+
 class ImageVC : UIViewController {
     
     let contenToShare = UIView()
@@ -76,8 +81,14 @@ class ImageVC : UIViewController {
     
     // Gradient
     @objc func handleGradientObserver(notification: NSNotification) {
-        backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
+        gradientState(state: .on)
+        
     }
+    @objc func handleRemoveGradientObserver(notification: NSNotification) {
+        gradientState(state: .off)
+    }
+ 
+    // Draf
     @objc func handleDragLabel(notification: NSNotification) {
         dragIsOn = !dragIsOn
         if dragIsOn == true {
@@ -145,6 +156,8 @@ class ImageVC : UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleGradientObserver(notification:)),
                                                name: .gradientObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRemoveGradientObserver(notification:)),
+                                               name: .removeGradientObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleImgPickerObserver(notification:)),
                                                name: .imgPickerObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleChooseImgObserver(notification:)),
@@ -244,6 +257,16 @@ class ImageVC : UIViewController {
             quoteLogo.widthAnchor.constraint(equalToConstant: 35),
             quoteLogo.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+//    MARK: - Helpers
+    
+    func gradientState(state: gradientState) {
+        switch state {
+        case .on:
+            backgroundIMG.setGradien(colorOne: .clear, colorTwo: .black)
+        case .off:
+            backgroundIMG.removeSublayer(backgroundIMG, layerIndex: 1)
+        }
     }
 }
 

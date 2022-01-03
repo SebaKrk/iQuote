@@ -50,10 +50,9 @@ class GradientConfigurationVC : UIViewController {
     
     @objc func handleGradientSwitch(sender: UISwitch) {
         if sender.isOn {
-            container.backgroundColor = .red
             NotificationCenter.default.post(name: .gradientObserver, object: nil)
         } else {
-            container.backgroundColor = .black
+            NotificationCenter.default.post(name: .removeGradientObserver, object: nil)
         }
     }
     
