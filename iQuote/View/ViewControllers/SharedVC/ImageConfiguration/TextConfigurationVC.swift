@@ -14,6 +14,12 @@ class TextConfigurationVC : UIViewController {
     let colorArray = Constants.colorArray
     
     let container = UIView()
+    var textAligmentStack = UIStackView()
+    
+    let textLeft = CostumTransButton(imageOne: "TextAligLeft1", imageTwo: "TextAligLeft2")
+    let textCenter = CostumTransButton(imageOne: "TextAligCenter1", imageTwo: "TextAligCenter2")
+    let textRight = CostumTransButton(imageOne: "TextAligRight1", imageTwo: "TextAligRight2")
+    
     let fontSizeSlider = UISlider()
     let fontSizeLabel = CostumTitleLabel(textAligment: .center, fontSize: 14)
     let fontAndColorPiker = UIPickerView()
@@ -23,8 +29,10 @@ class TextConfigurationVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupStackView()
         configureContainer()
         configureSwipeLinie()
+        configureTextAligmentStack()
         configureFontAndColorPiker()
         configureFontSizeSlider()
         configureFontSizeLabel()
@@ -36,7 +44,7 @@ class TextConfigurationVC : UIViewController {
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
-        
+        configureButtons()
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
     }
@@ -46,6 +54,33 @@ class TextConfigurationVC : UIViewController {
         let roundedStepValue = CGFloat(Int(sender.value))
         fontSizeLabel.text = "\(roundedStepValue)" //roundedStepValue
         NotificationCenter.default.post(name: .sizeFontObserver, object: nil, userInfo: ["size" : roundedStepValue])
+    }
+    @objc func handleTextLeft() {
+        textLeft.flipLikeState()
+        let left = NSTextAlignment(rawValue: 0)
+        NotificationCenter.default.post(name: .textAlignmentObserver, object: nil, userInfo: ["quoteTextAligment" : left!])
+    }
+    @objc func handleTextCenter() {
+        textCenter.flipLikeState()
+        let center = NSTextAlignment(rawValue: 1)
+        NotificationCenter.default.post(name: .textAlignmentObserver, object: nil, userInfo: ["quoteTextAligment" : center!])
+    }
+    @objc func handleTextRight() {
+        textRight.flipLikeState()
+        let right = NSTextAlignment(rawValue: 2)
+        NotificationCenter.default.post(name: .textAlignmentObserver, object: nil, userInfo: ["quoteTextAligment" : right!])
+    }
+    
+    private func setupStackView() {
+        textAligmentStack = UIStackView(arrangedSubviews: [textLeft,textCenter,textRight])
+        textAligmentStack.axis = .horizontal
+        textAligmentStack.distribution = .fillEqually
+    }
+    
+    private func configureButtons() {
+        textLeft.addTarget(self, action: #selector(handleTextLeft), for: .touchUpInside)
+        textCenter.addTarget(self, action: #selector(handleTextCenter), for: .touchUpInside)
+        textRight.addTarget(self, action: #selector(handleTextRight), for: .touchUpInside)
     }
     
     //    MARK: - Constraints
@@ -72,6 +107,17 @@ class TextConfigurationVC : UIViewController {
             swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.2)
         ])
     }
+    private func configureTextAligmentStack() {
+        container.addSubview(textAligmentStack)
+        textAligmentStack.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            textAligmentStack.topAnchor.constraint(equalTo: swipeLine.bottomAnchor,constant: 20),
+            textAligmentStack.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            textAligmentStack.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.5),
+            textAligmentStack.heightAnchor.constraint(equalToConstant: 20)
+        ])
+    }
     
     private func configureFontAndColorPiker() {
         container.addSubview(fontAndColorPiker)
@@ -82,10 +128,11 @@ class TextConfigurationVC : UIViewController {
         fontAndColorPiker.overrideUserInterfaceStyle = .dark
         
         NSLayoutConstraint.activate([
-            fontAndColorPiker.topAnchor.constraint(equalTo: container.topAnchor,constant: 30),
+            fontAndColorPiker.topAnchor.constraint(equalTo: textAligmentStack.bottomAnchor),
             fontAndColorPiker.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             fontAndColorPiker.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.8),
-            fontAndColorPiker.heightAnchor.constraint(equalToConstant: 150)
+            fontAndColorPiker.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.5)
+            //fontAndColorPiker.heightAnchor.constraint(equalToConstant: 150)
         ])
     }
     

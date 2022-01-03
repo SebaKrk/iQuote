@@ -11,6 +11,7 @@ import Foundation
 extension NSNotification.Name {
     static let imgObserver = Notification.Name("imgObserver")
     static let fontQuote = Notification.Name("fontQuote")
+    
     static let sizeFontObserver = Notification.Name("sizeFontObserver")
     static let logoObserver = Notification.Name("logoObserver")
     static let dragLabelObserver = Notification.Name("dragLabelObserver")
@@ -19,6 +20,8 @@ extension NSNotification.Name {
     static let shadowQuoteLabel = Notification.Name("shadowQuoteLabel")
     static let removeShadowQuoteLabel = Notification.Name("removeShadowQuoteLabel")
     static let fontColor = Notification.Name("fontColor")
+    static let textAlignmentObserver = Notification.Name("textAlignmentObserver")
+    
     static let imgPickerObserver = Notification.Name("imgPickerObserver")
     static let chooseImgObserver = Notification.Name("chooseImgObserver")
     

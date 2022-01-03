@@ -78,18 +78,19 @@ class ImageVC : UIViewController {
         guard let fontColor = fontColor else {return}
         quoteLabel.textColor = UIColor(named: fontColor)
     }
+    @objc func handleTextAligmentObserver(notification: NSNotification) {
+        let quoteTextAligment = notification.userInfo?["quoteTextAligment"]  as? NSTextAlignment
+        guard let quoteTextAligment = quoteTextAligment else {return}
+        quoteLabel.textAlignment = quoteTextAligment
+    }
     
     // Gradient
     @objc func handleGradientObserver(notification: NSNotification) { gradientState(state: .on)}
     @objc func handleRemoveGradientObserver(notification: NSNotification) { gradientState(state: .off)}
-    @objc func handleShadowQuoteLabel(notification: NSNotification) {
-        quoteLabel.shadowColor = .red
-    }
-    @objc func handleRemoveShadowQuoteLabel(notification: NSNotification) {
-        quoteLabel.shadowColor = .clear
-    }
+    @objc func handleShadowQuoteLabel(notification: NSNotification) { quoteLabel.shadowColor = .red }
+    @objc func handleRemoveShadowQuoteLabel(notification: NSNotification) { quoteLabel.shadowColor = .clear }
     
-    // Draf
+    // Drag
     @objc func handleDragLabel(notification: NSNotification) {
         dragIsOn = !dragIsOn
         if dragIsOn == true {
@@ -102,6 +103,7 @@ class ImageVC : UIViewController {
             quoteContainer.gestureRecognizers?.forEach(quoteContainer.removeGestureRecognizer)
         }
     }
+    
     // Logo
     @objc func handleLogoObserver(notification: NSNotification) {
         logonIsOn = !logonIsOn
@@ -112,7 +114,6 @@ class ImageVC : UIViewController {
     @objc func handleInstagramObserver(notification: NSNotification) {
         let image = contenToShare.asImage()
         guard let image = image else {return}
-        
         InstagramManager.shered.shareToInstagramStories(image: image)
     }
     @objc func handleFacebookObserver(notification: NSNotification) {
@@ -164,6 +165,8 @@ class ImageVC : UIViewController {
                                                name: .shadowQuoteLabel, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleRemoveShadowQuoteLabel(notification:)),
                                                name: .removeShadowQuoteLabel, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTextAligmentObserver(notification:)),
+                                               name: .textAlignmentObserver, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleImgPickerObserver(notification:)),
                                                name: .imgPickerObserver, object: nil)
@@ -243,7 +246,6 @@ class ImageVC : UIViewController {
         
         quoteLabel.numberOfLines = 0
         quoteLabel.text =  quoteTextToShare
-        //quoteLabel.shadowColor = .clear
         
         NSLayoutConstraint.activate([
             quoteLabel.centerYAnchor.constraint(equalTo: quoteContainer.centerYAnchor),
