@@ -50,6 +50,7 @@ extension UIViewController {
         
     func panGestureRecognizerToHandleDragAndDissmisView(inCardView : UIView,cardOriginY : CGFloat) {
         cardOriginYext = cardOriginY
+        
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestExt(sender:)))
         inCardView.addGestureRecognizer(panGesture)
     }
@@ -83,6 +84,44 @@ extension UIViewController {
             view.frame.origin = CGPoint(x: 0.0 , y: cardOriginY) //fileViewOrign
         }
     }
+    // 2
+    
+    func panGestureRecognizerToHandleDragAndDissmisView2(inCardView : UIView,cardOriginY : CGFloat) {
+        cardOriginYext = cardOriginY
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestExt2(sender:)))
+        inCardView.addGestureRecognizer(panGesture)
+    }
+    
+    @objc func handlePanGestExt2(sender: UIPanGestureRecognizer) {
+        let fileView = sender.view!
+        let cardOriginY = cardOriginYext!
+        
+        switch sender.state {
+        case .began, .changed:
+            moveViewWithPan2(view: fileView, sender: sender)
+        case .ended:
+            let dragVelocity = sender.velocity(in: view)
+            if dragVelocity.y >= 1300 {
+                dismiss(animated: false, completion: nil)
+            } else {
+                returnViewToOrigin(view: fileView, cardOriginY: cardOriginY)
+            }
+        default:
+            break
+        }
+    }
+    func moveViewWithPan2(view: UIView, sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+        view.center = CGPoint(x:view.center.x, y: view.center.y + translation.y)
+        sender.setTranslation(CGPoint.zero, in: view)
+    }
+    func returnViewToOrigin2(view: UIView, cardOriginY : CGFloat) {
+        UIView.animate(withDuration: 0.3) {
+            view.frame.origin = CGPoint(x: 0.0 , y: cardOriginY) //fileViewOrign
+        }
+    }
+    
     //    MARK: - Acitviti Indicator
     
     func showLoadingView() {

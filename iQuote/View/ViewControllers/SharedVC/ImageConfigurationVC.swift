@@ -46,7 +46,6 @@ class ImageConfigurationVC : UIViewController {
     @objc func handleDragLabelButton() {
         dragLabelButton.flipLikeState()
         NotificationCenter.default.post(name: .dragLabelObserver, object: nil)
-        print("handleDragLabelButton")
     }
     
     @objc func handleLogoButton() {

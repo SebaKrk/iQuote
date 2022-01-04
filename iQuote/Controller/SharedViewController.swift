@@ -28,7 +28,7 @@ class SharedViewController : UIViewController {
     override func viewDidLayoutSubviews() {
         
         cardOriginYext = container.frame.origin.y
-        panGestureRecognizerToHandleDragAndDissmisView(inCardView: container, cardOriginY: cardOriginYext)
+        panGestureRecognizerToHandleDragAndDissmisView2(inCardView: container, cardOriginY: cardOriginYext)
     }
     
     override func viewDidLoad() {

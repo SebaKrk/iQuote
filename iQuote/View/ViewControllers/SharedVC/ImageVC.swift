@@ -26,6 +26,7 @@ class ImageVC : UIViewController {
     var logonIsOn = false
     var dragIsOn = false
     
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -34,6 +35,7 @@ class ImageVC : UIViewController {
         super.viewDidLoad()
         setupView()
     }
+    
     private func setupView() {
         configureContentToSgare()
         configureBackgroundIMG()
@@ -184,6 +186,10 @@ class ImageVC : UIViewController {
         
     }
     //    MARK: - GestureRecogizare
+    private func configurePanGestureRevognizareToMoveQuoteLabel() {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecToMoveQuoteLabel(sender:)))
+        quoteContainer.addGestureRecognizer(pan)
+    }
     
     @objc func handlePanGestureRecToMoveQuoteLabel(sender: UIPanGestureRecognizer) {
         let fileView = sender.view!
@@ -198,11 +204,7 @@ class ImageVC : UIViewController {
             break
         }
     }
-    private func configurePanGestureRevognizareToMoveQuoteLabel() {
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecToMoveQuoteLabel(sender:)))
-        quoteContainer.addGestureRecognizer(pan)
-    }
-    
+
     //    MARK: - Constraints
     
     private func configureContentToSgare() {
