@@ -11,7 +11,6 @@ import UIKit
 class GradientConfigurationVC : UIViewController {
     
     let container = UIView()
-    let gradientButton = UIButton()
     
     let gradientBackgraoundLabel = UILabel()
     let shadowQuoteLabel = UILabel()
@@ -26,7 +25,6 @@ class GradientConfigurationVC : UIViewController {
         setupView()
         configureContainer()
         configureSwipeLinie()
-        //configureGradientButton()
         configureGradientLabel()
         configureGradientSwitch()
         configureShadowQuoteLabel()
@@ -90,26 +88,13 @@ class GradientConfigurationVC : UIViewController {
             swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.2)
         ])
     }
-    
-    private func configureGradientButton() {
-        container.addSubview(gradientButton)
-        gradientButton.translatesAutoresizingMaskIntoConstraints = false
         
-        gradientButton.setTitle("gradient", for: .normal)
-        gradientButton.setTitleColor(.white, for: .normal)
-        gradientButton.addTarget(self, action: #selector(handleGradientButton), for: .touchUpInside)
-        
-        NSLayoutConstraint.activate([
-            gradientButton.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            gradientButton.centerYAnchor.constraint(equalTo: container.centerYAnchor)
-        ])
-    }
-    
     private func configureGradientLabel() {
         container.addSubview(gradientBackgraoundLabel)
         gradientBackgraoundLabel.translatesAutoresizingMaskIntoConstraints = false
         
         gradientBackgraoundLabel.text = "Gradient Background"
+        gradientBackgraoundLabel.font = UIFont(name: "Baskerville", size: 24)
         
         NSLayoutConstraint.activate([
             gradientBackgraoundLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor,constant: -30),
@@ -121,6 +106,7 @@ class GradientConfigurationVC : UIViewController {
         container.addSubview(gradientBackgraoundSwitch)
         gradientBackgraoundSwitch.translatesAutoresizingMaskIntoConstraints = false
         gradientBackgraoundSwitch.addTarget(self, action: #selector(handleGradientSwitch(sender:)), for: .touchUpInside)
+        gradientBackgraoundSwitch.onTintColor = .primaryOrange()
         
         NSLayoutConstraint.activate([
             gradientBackgraoundSwitch.centerYAnchor.constraint(equalTo: gradientBackgraoundLabel.centerYAnchor),
@@ -133,6 +119,7 @@ class GradientConfigurationVC : UIViewController {
         shadowQuoteLabel.translatesAutoresizingMaskIntoConstraints = false
         
         shadowQuoteLabel.text = "Shadow Label"
+        shadowQuoteLabel.font = UIFont(name: "Baskerville", size: 24)
         
         NSLayoutConstraint.activate([
             shadowQuoteLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor,constant: 30),
@@ -143,6 +130,7 @@ class GradientConfigurationVC : UIViewController {
         container.addSubview(shadowQuoteSwitch)
         shadowQuoteSwitch.translatesAutoresizingMaskIntoConstraints = false
         shadowQuoteSwitch.addTarget(self, action: #selector(handleShadowSwitch(sender:)), for: .touchUpInside)
+        shadowQuoteSwitch.onTintColor = .primaryOrange()
         
         NSLayoutConstraint.activate([
             shadowQuoteSwitch.centerYAnchor.constraint(equalTo: shadowQuoteLabel.centerYAnchor),

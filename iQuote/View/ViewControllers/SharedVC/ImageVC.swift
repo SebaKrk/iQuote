@@ -100,7 +100,7 @@ class ImageVC : UIViewController {
         if dragIsOn == true {
             quoteLabel.layer.borderColor = UIColor.red.cgColor
             quoteLabel.layer.borderWidth = 0.5
-            dragQuoteLabel()
+            configurePanGestureRevognizareToMoveQuoteLabel()
 
         } else {
             quoteLabel.layer.borderColor = UIColor.clear.cgColor
@@ -188,42 +188,42 @@ class ImageVC : UIViewController {
                                                name: .linkedinObserver, object: nil)
         
     }
-    //    MARK: - GestureRecogizare
-//    private func configurePanGestureRevognizareToMoveQuoteLabel() {
-//        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecToMoveQuoteLabel(sender:)))
-//        quoteContainer.addGestureRecognizer(pan)
-//    }
-//
-//    @objc func handlePanGestureRecToMoveQuoteLabel(sender: UIPanGestureRecognizer) {
-//        let fileView = sender.view!
-//        let translation = sender.translation(in: view)
-//
-//        switch sender.state {
-//        case .began, .changed:
-//            fileView.center = CGPoint(x: fileView.center.x + translation.x,
-//                                      y: fileView.center.y + translation.y)
-//            sender.setTranslation(CGPoint.zero, in: view)
-//        default:
-//            break
-//        }
-//    }
-    func dragQuoteLabel() {
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(sender:)))
+//  MARK: - GestureRecogizare
+    private func configurePanGestureRevognizareToMoveQuoteLabel() {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecToMoveQuoteLabel(sender:)))
         quoteContainer.addGestureRecognizer(pan)
     }
-    @objc func handlePanGesture(sender: UIPanGestureRecognizer) {
+
+    @objc func handlePanGestureRecToMoveQuoteLabel(sender: UIPanGestureRecognizer) {
+        let fileView = sender.view!
+        let translation = sender.translation(in: view)
+
         switch sender.state {
         case .began, .changed:
-            let translation = sender.translation(in: quoteContainer)
-            quoteContainer.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
-        case .ended:
-            if !quoteContainer.frame.intersects(backgroundIMG.frame) {
-                UIView.animate(withDuration: 0.3, animations: { self.quoteContainer.transform = .identity })
-            }
+            fileView.center = CGPoint(x: fileView.center.x + translation.x,
+                                      y: fileView.center.y + translation.y)
+            sender.setTranslation(CGPoint.zero, in: view)
         default:
             break
         }
     }
+//    func dragQuoteLabel() {
+//        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(sender:)))
+//        quoteContainer.addGestureRecognizer(pan)
+//    }
+//    @objc func handlePanGesture(sender: UIPanGestureRecognizer) {
+//        switch sender.state {
+//        case .began, .changed:
+//            let translation = sender.translation(in: quoteContainer)
+//            quoteContainer.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
+//        case .ended:
+//            if !quoteContainer.frame.intersects(backgroundIMG.frame) {
+//                UIView.animate(withDuration: 0.3, animations: { self.quoteContainer.transform = .identity })
+//            }
+//        default:
+//            break
+//        }
+//    }
 
     //    MARK: - Constraints
     
