@@ -25,8 +25,7 @@ class ImageVC : UIViewController {
     
     var logonIsOn = false
     var dragIsOn = false
-    
-    
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -34,6 +33,9 @@ class ImageVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    override func viewDidLayoutSubviews() {
+
     }
     
     private func setupView() {
@@ -98,7 +100,8 @@ class ImageVC : UIViewController {
         if dragIsOn == true {
             quoteLabel.layer.borderColor = UIColor.red.cgColor
             quoteLabel.layer.borderWidth = 0.5
-            configurePanGestureRevognizareToMoveQuoteLabel()
+            dragQuoteLabel()
+
         } else {
             quoteLabel.layer.borderColor = UIColor.clear.cgColor
             quoteLabel.layer.borderWidth = 0.0
@@ -186,20 +189,37 @@ class ImageVC : UIViewController {
         
     }
     //    MARK: - GestureRecogizare
-    private func configurePanGestureRevognizareToMoveQuoteLabel() {
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecToMoveQuoteLabel(sender:)))
+//    private func configurePanGestureRevognizareToMoveQuoteLabel() {
+//        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecToMoveQuoteLabel(sender:)))
+//        quoteContainer.addGestureRecognizer(pan)
+//    }
+//
+//    @objc func handlePanGestureRecToMoveQuoteLabel(sender: UIPanGestureRecognizer) {
+//        let fileView = sender.view!
+//        let translation = sender.translation(in: view)
+//
+//        switch sender.state {
+//        case .began, .changed:
+//            fileView.center = CGPoint(x: fileView.center.x + translation.x,
+//                                      y: fileView.center.y + translation.y)
+//            sender.setTranslation(CGPoint.zero, in: view)
+//        default:
+//            break
+//        }
+//    }
+    func dragQuoteLabel() {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(sender:)))
         quoteContainer.addGestureRecognizer(pan)
     }
-    
-    @objc func handlePanGestureRecToMoveQuoteLabel(sender: UIPanGestureRecognizer) {
-        let fileView = sender.view!
-        let translation = sender.translation(in: view)
-        
+    @objc func handlePanGesture(sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .began, .changed:
-            fileView.center = CGPoint(x: fileView.center.x + translation.x,
-                                      y: fileView.center.y + translation.y)
-            sender.setTranslation(CGPoint.zero, in: view)
+            let translation = sender.translation(in: quoteContainer)
+            quoteContainer.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
+        case .ended:
+            if !quoteContainer.frame.intersects(backgroundIMG.frame) {
+                UIView.animate(withDuration: 0.3, animations: { self.quoteContainer.transform = .identity })
+            }
         default:
             break
         }
@@ -233,6 +253,7 @@ class ImageVC : UIViewController {
     private func configureQuoteLabelContainer() {
         contenToShare.addSubview(quoteContainer)
         quoteContainer.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate([
             quoteContainer.topAnchor.constraint(equalTo: contenToShare.topAnchor),
