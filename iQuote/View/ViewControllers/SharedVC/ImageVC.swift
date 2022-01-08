@@ -91,7 +91,11 @@ class ImageVC : UIViewController {
     // Gradient
     @objc func handleGradientObserver(notification: NSNotification) { gradientState(state: .on)}
     @objc func handleRemoveGradientObserver(notification: NSNotification) { gradientState(state: .off)}
-    @objc func handleShadowQuoteLabel(notification: NSNotification) { quoteLabel.shadowColor = .red }
+    @objc func handleShadowQuoteLabel(notification: NSNotification) {
+        quoteLabel.shadowColor = .black
+        quoteLabel.shadowOffset = .init(width: 2, height: 1)
+        
+    }
     @objc func handleRemoveShadowQuoteLabel(notification: NSNotification) { quoteLabel.shadowColor = .clear }
     
     // Drag
