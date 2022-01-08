@@ -25,6 +25,11 @@ extension NSNotification.Name {
     static let imgPickerObserver = Notification.Name("imgPickerObserver")
     static let chooseImgObserver = Notification.Name("chooseImgObserver")
     
+    
+    static let iMessageObserver = Notification.Name("iMessageObserver")
+    static let shareObserver = Notification.Name("shareObserver")
+    static let copyTextObserver = Notification.Name("copyTextObserver")
+    
     static let instagramObserver = Notification.Name("instagramObserver")
     static let facebookObserver = Notification.Name("facebookObserver")
     static let twiterObserver = Notification.Name("twiterObserver")

@@ -118,36 +118,47 @@ class ImageVC : UIViewController {
         logonIsOn = !logonIsOn
         quoteLogo.isHidden = logonIsOn
     }
+    // Share
+    
+    @objc func handleMessageObserver(notification: NSNotification) {
+        print("handleMessageObserver")
+    }
+    @objc func handleShareObserver(notification: NSNotification) {
+        print("handleShareObserver")
+    }
+    @objc func handleCopyTextObserver(notification: NSNotification) {
+        print("handleCopyTextObserver")
+    }
 
     // Socials
-    @objc func handleInstagramObserver(notification: NSNotification) {
-        let image = contenToShare.asImage()
-        guard let image = image else {return}
-        InstagramManager.shered.shareToInstagramStories(image: image)
-    }
-    @objc func handleFacebookObserver(notification: NSNotification) {
-        dismiss(animated: true, completion: nil)
-        if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
-            vc.add(contenToShare.asImage())
-            present(vc, animated: true, completion: nil)
-        }
-    }
-    @objc func handleTwiterObserver(notification: NSNotification) {
-        dismiss(animated: true, completion: nil)
-        
-        if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
-            vc.add(contenToShare.asImage())
-            present(vc, animated: true, completion: nil)
-        }
-    }
-    @objc func handleLinkedInObserver(notification: NSNotification) {
-        dismiss(animated: true, completion: nil)
-        
-        if let vc = SLComposeViewController(forServiceType: SLServiceTypeLinkedIn) {
-            vc.add(contenToShare.asImage())
-            present(vc, animated: true, completion: nil)
-        }
-    }
+//    @objc func handleInstagramObserver(notification: NSNotification) {
+//        let image = contenToShare.asImage()
+//        guard let image = image else {return}
+//        InstagramManager.shered.shareToInstagramStories(image: image)
+//    }
+//    @objc func handleFacebookObserver(notification: NSNotification) {
+//        dismiss(animated: true, completion: nil)
+//        if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
+//            vc.add(contenToShare.asImage())
+//            present(vc, animated: true, completion: nil)
+//        }
+//    }
+//    @objc func handleTwiterObserver(notification: NSNotification) {
+//        dismiss(animated: true, completion: nil)
+//
+//        if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
+//            vc.add(contenToShare.asImage())
+//            present(vc, animated: true, completion: nil)
+//        }
+//    }
+//    @objc func handleLinkedInObserver(notification: NSNotification) {
+//        dismiss(animated: true, completion: nil)
+//
+//        if let vc = SLComposeViewController(forServiceType: SLServiceTypeLinkedIn) {
+//            vc.add(contenToShare.asImage())
+//            present(vc, animated: true, completion: nil)
+//        }
+//    }
     
     //    MARK: - addObserver
     
@@ -182,14 +193,21 @@ class ImageVC : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleChooseImgObserver(notification:)),
                                                name: .chooseImgObserver, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleInstagramObserver(notification:)),
-                                               name: .instagramObserver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleFacebookObserver(notification:)),
-                                               name: .facebookObserver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleTwiterObserver(notification:)),
-                                               name: .twiterObserver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleLinkedInObserver(notification:)),
-                                               name: .linkedinObserver, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(handleInstagramObserver(notification:)),
+//                                               name: .instagramObserver, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(handleFacebookObserver(notification:)),
+//                                               name: .facebookObserver, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(handleTwiterObserver(notification:)),
+//                                               name: .twiterObserver, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(handleLinkedInObserver(notification:)),
+//                                               name: .linkedinObserver, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleMessageObserver(notification:)),
+                                               name: .iMessageObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleShareObserver(notification:)),
+                                               name: .shareObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleCopyTextObserver(notification:)),
+                                               name: .copyTextObserver, object: nil)
         
     }
 //  MARK: - GestureRecogizare
