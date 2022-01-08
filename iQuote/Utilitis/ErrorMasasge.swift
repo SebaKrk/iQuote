@@ -32,3 +32,9 @@ enum ErrorMassage : String,Error {
     case inavlidResponse = "Invalid response from server. Please try again."
     case incalidData = "The data received from the server was invalid. Please try again."
 }
+
+enum iMessage : String {
+    case unableToCompleted = "Unable to completed your request. Please check your internet connection"
+    case cantSendTextMessage = "Something goes wrong. We can't send iMessage"
+    case sucesffulySend = "You've sucesffuly send this Quote"
+}

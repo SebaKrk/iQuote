@@ -47,7 +47,7 @@ extension UIViewController {
     }
     
     //   MARK: - UIPanGestureRecognizer
-        
+    
     func panGestureRecognizerToHandleDragAndDissmisView(inCardView : UIView,cardOriginY : CGFloat) {
         cardOriginYext = cardOriginY
         
@@ -173,6 +173,24 @@ extension UIViewController {
             showSafariService(with: url)
         }
     }
+    // MARK: - iMassage
+    
+    func sendMessage(contenToShare: UIView) {
+        if MFMessageComposeViewController.canSendText() {
+            let messageVC = MFMessageComposeViewController()
+            messageVC.body = "Check out this amazing quote that I create on this awesome app!"
+            messageVC.recipients = ["Enter recipients here"]
+            
+            if let imgData = contenToShare.asImage()?.pngData() {
+                messageVC.addAttachmentData(imgData, typeIdentifier: "public.data", filename: "quoteToShare.png")
+            }
+            messageVC.messageComposeDelegate = self
+            self.present(messageVC, animated: true, completion: nil)
+        } else  {
+            self.presentAlertOnMainThred(title: "Upss", message: iMessage.cantSendTextMessage.rawValue)
+        }
+    }
+    
 }
 // MARK: - MFMailComposeViewControllerDelegate
 
@@ -199,3 +217,19 @@ extension UIViewController : MFMailComposeViewControllerDelegate {
     }
 }
 
+extension UIViewController : MFMessageComposeViewControllerDelegate {
+    public func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .cancelled:
+            dismiss(animated: true)
+        case .sent:
+            dismiss(animated: true)
+            self.presentAlertOnMainThred(title: "Succes!", message: iMessage.sucesffulySend.rawValue)
+        case .failed:
+            dismiss(animated: true)
+            self.presentAlertOnMainThred(title: "Upsss!", message: iMessage.unableToCompleted.rawValue)
+        default:
+            break
+        }
+    }
+}
