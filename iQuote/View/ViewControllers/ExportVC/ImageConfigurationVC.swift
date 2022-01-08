@@ -13,11 +13,11 @@ class ImageConfigurationVC : UIViewController {
 
     var stackView = UIStackView()
     
-    let backgroundImageButton  = CostumTransButton(imageOne: "BackgroundIcon", imageTwo: "BackgroundIcon2")
-    let textButton  = CostumTransButton(imageOne: "TextIcon", imageTwo: "TextIcon2")
-    let gradienButton = CostumTransButton(imageOne: "GradienIcon", imageTwo: "GradienIcon2")
-    let logoButton = CostumTransButton(imageOne: "AuthorIcon", imageTwo: "AuthorIcon2")
-    let dragLabelButton  = CostumTransButton(imageOne: "dragLabelButton1",imageTwo: "dragLabelButton2")
+    let backgroundImageButton  = CostumTransButton(imageOne: "PhotoButton1", imageTwo: "PhotoButton1")
+    let textButton  = CostumTransButton(imageOne: "TextButton1", imageTwo: "TextButton1")
+    let gradienButton = CostumTransButton(imageOne: "GradientButton1", imageTwo: "GradientButton1")
+    let logoButton = CostumTransButton(imageOne: "QuoteIconButton1", imageTwo: "QuoteIconButton1")
+    let dragLabelButton  = CostumTransButton(imageOne: "DragTextButton1",imageTwo: "DragTextButton1")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +27,21 @@ class ImageConfigurationVC : UIViewController {
     }
     
     @objc func handleBackgroundButton() {
+        backgroundImageButton.flipLikeState()
         let desVC = PhotoLabViewController()
         desVC.modalPresentationStyle = .overFullScreen
         present(desVC,animated: true,completion: nil)
     }
     
     @objc func handleTextButton() {
+        textButton.flipLikeState()
         let desVC = TextConfigurationVC()
         desVC.modalPresentationStyle = .overFullScreen
         present(desVC,animated: true,completion: nil)
     }
     
     @objc func handleGradienButton() {
+        gradienButton.flipLikeState()
         let desVC = GradientConfigurationVC()
         desVC.modalPresentationStyle = .overFullScreen
         present(desVC,animated: true,completion: nil)
