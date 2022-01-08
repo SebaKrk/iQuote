@@ -23,7 +23,7 @@ enum WikiError : String, Error {
 }
 
 enum Messages : String {
-    case sucesffulyFavorited = "You've sucesffuly favorited this Quote"
+    case sucesffulyFavorited = "You've successfully favorited this Quote"
     case alleredyInFavorites = "You've allredy favorited this Quote. You must very like it!"
 }
 
@@ -36,5 +36,9 @@ enum ErrorMassage : String,Error {
 enum iMessage : String {
     case unableToCompleted = "Unable to completed your request. Please check your internet connection"
     case cantSendTextMessage = "Something goes wrong. We can't send iMessage"
-    case sucesffulySend = "You've sucesffuly send this Quote"
+    case sucesffulySend = "You've successfully send this Quote"
+}
+
+enum shareMessage : String {
+    case sucesffulyCopy = "You've successfully copy this Quote"
 }
