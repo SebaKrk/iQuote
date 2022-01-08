@@ -12,9 +12,9 @@ class ShareViewController : UIViewController {
     
     var stackView = UIStackView()
     
-    let iMessageButton  = CostumTransButton(imageOne: "iMessageIcon1", imageTwo: "iMessageIcon2")
-    let shareButton  = CostumTransButton(imageOne: "exportIcon1", imageTwo: "exportIcon2")
-    let copyTextButton  = CostumTransButton(imageOne: "copyTextIcon1", imageTwo: "copyTextIcon2")
+    let iMessageButton  = CostumTransButton(imageOne: "iMessageIcon1", imageTwo: "iMessageIcon1")
+    let shareButton  = CostumTransButton(imageOne: "exportIcon1", imageTwo: "exportIcon1")
+    let copyTextButton  = CostumTransButton(imageOne: "copyTextIcon1", imageTwo: "copyTextIcon1")
     
     override func viewDidLoad() {
         super.viewDidLoad()

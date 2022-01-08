@@ -26,7 +26,7 @@ class ImageVC : UIViewController {
     
     var logonIsOn = false
     var dragIsOn = false
-
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -36,7 +36,7 @@ class ImageVC : UIViewController {
         setupView()
     }
     override func viewDidLayoutSubviews() {
-
+        
     }
     
     private func setupView() {
@@ -106,7 +106,7 @@ class ImageVC : UIViewController {
             quoteLabel.layer.borderColor = UIColor.red.cgColor
             quoteLabel.layer.borderWidth = 0.5
             configurePanGestureRevognizareToMoveQuoteLabel()
-
+            
         } else {
             quoteLabel.layer.borderColor = UIColor.clear.cgColor
             quoteLabel.layer.borderWidth = 0.0
@@ -127,40 +127,46 @@ class ImageVC : UIViewController {
     }
     @objc func handleShareObserver(notification: NSNotification) {
         print("handleShareObserver")
+        let image = contenToShare.asImage()
+        guard let image = image else {return}
+        let shareVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        shareVC.excludedActivityTypes = [.addToReadingList,.assignToContact,.copyToPasteboard,.markupAsPDF,.saveToCameraRoll, .message]
+        present(shareVC,animated: true)
     }
     @objc func handleCopyTextObserver(notification: NSNotification) {
         print("handleCopyTextObserver")
+        
     }
-
+    
     // Socials
-//    @objc func handleInstagramObserver(notification: NSNotification) {
-//        let image = contenToShare.asImage()
-//        guard let image = image else {return}
-//        InstagramManager.shered.shareToInstagramStories(image: image)
-//    }
-//    @objc func handleFacebookObserver(notification: NSNotification) {
-//        dismiss(animated: true, completion: nil)
-//        if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
-//            vc.add(contenToShare.asImage())
-//            present(vc, animated: true, completion: nil)
-//        }
-//    }
-//    @objc func handleTwiterObserver(notification: NSNotification) {
-//        dismiss(animated: true, completion: nil)
-//
-//        if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
-//            vc.add(contenToShare.asImage())
-//            present(vc, animated: true, completion: nil)
-//        }
-//    }
-//    @objc func handleLinkedInObserver(notification: NSNotification) {
-//        dismiss(animated: true, completion: nil)
-//
-//        if let vc = SLComposeViewController(forServiceType: SLServiceTypeLinkedIn) {
-//            vc.add(contenToShare.asImage())
-//            present(vc, animated: true, completion: nil)
-//        }
-//    }
+    //    @objc func handleInstagramObserver(notification: NSNotification) {
+    //        let image = contenToShare.asImage()
+    //        guard let image = image else {return}
+    //        InstagramManager.shered.shareToInstagramStories(image: image)
+    //    }
+    //    @objc func handleFacebookObserver(notification: NSNotification) {
+    //        dismiss(animated: true, completion: nil)
+    //        if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
+    //            vc.add(contenToShare.asImage())
+    //            present(vc, animated: true, completion: nil)
+    //        }
+    //    }
+    //    @objc func handleTwiterObserver(notification: NSNotification) {
+    //        dismiss(animated: true, completion: nil)
+    //
+    //        if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
+    //            vc.add(contenToShare.asImage())
+    //            present(vc, animated: true, completion: nil)
+    //        }
+    //    }
+    //    @objc func handleLinkedInObserver(notification: NSNotification) {
+    //        dismiss(animated: true, completion: nil)
+    //
+    //        if let vc = SLComposeViewController(forServiceType: SLServiceTypeLinkedIn) {
+    //            vc.add(contenToShare.asImage())
+    //            present(vc, animated: true, completion: nil)
+    //        }
+    //    }
     
     //    MARK: - addObserver
     
@@ -195,14 +201,14 @@ class ImageVC : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleChooseImgObserver(notification:)),
                                                name: .chooseImgObserver, object: nil)
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(handleInstagramObserver(notification:)),
-//                                               name: .instagramObserver, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(handleFacebookObserver(notification:)),
-//                                               name: .facebookObserver, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(handleTwiterObserver(notification:)),
-//                                               name: .twiterObserver, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(handleLinkedInObserver(notification:)),
-//                                               name: .linkedinObserver, object: nil)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(handleInstagramObserver(notification:)),
+        //                                               name: .instagramObserver, object: nil)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(handleFacebookObserver(notification:)),
+        //                                               name: .facebookObserver, object: nil)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(handleTwiterObserver(notification:)),
+        //                                               name: .twiterObserver, object: nil)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(handleLinkedInObserver(notification:)),
+        //                                               name: .linkedinObserver, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleMessageObserver(notification:)),
                                                name: .iMessageObserver, object: nil)
@@ -212,16 +218,16 @@ class ImageVC : UIViewController {
                                                name: .copyTextObserver, object: nil)
         
     }
-//  MARK: - GestureRecogizare
+    //  MARK: - GestureRecogizare
     private func configurePanGestureRevognizareToMoveQuoteLabel() {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecToMoveQuoteLabel(sender:)))
         quoteContainer.addGestureRecognizer(pan)
     }
-
+    
     @objc func handlePanGestureRecToMoveQuoteLabel(sender: UIPanGestureRecognizer) {
         let fileView = sender.view!
         let translation = sender.translation(in: view)
-
+        
         switch sender.state {
         case .began, .changed:
             fileView.center = CGPoint(x: fileView.center.x + translation.x,
@@ -231,24 +237,24 @@ class ImageVC : UIViewController {
             break
         }
     }
-//    func dragQuoteLabel() {
-//        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(sender:)))
-//        quoteContainer.addGestureRecognizer(pan)
-//    }
-//    @objc func handlePanGesture(sender: UIPanGestureRecognizer) {
-//        switch sender.state {
-//        case .began, .changed:
-//            let translation = sender.translation(in: quoteContainer)
-//            quoteContainer.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
-//        case .ended:
-//            if !quoteContainer.frame.intersects(backgroundIMG.frame) {
-//                UIView.animate(withDuration: 0.3, animations: { self.quoteContainer.transform = .identity })
-//            }
-//        default:
-//            break
-//        }
-//    }
-
+    //    func dragQuoteLabel() {
+    //        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(sender:)))
+    //        quoteContainer.addGestureRecognizer(pan)
+    //    }
+    //    @objc func handlePanGesture(sender: UIPanGestureRecognizer) {
+    //        switch sender.state {
+    //        case .began, .changed:
+    //            let translation = sender.translation(in: quoteContainer)
+    //            quoteContainer.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
+    //        case .ended:
+    //            if !quoteContainer.frame.intersects(backgroundIMG.frame) {
+    //                UIView.animate(withDuration: 0.3, animations: { self.quoteContainer.transform = .identity })
+    //            }
+    //        default:
+    //            break
+    //        }
+    //    }
+    
     //    MARK: - Constraints
     
     private func configureContentToSgare() {
@@ -314,7 +320,7 @@ class ImageVC : UIViewController {
             quoteLogo.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-//    MARK: - Helpers
+    //    MARK: - Helpers
     
     func gradientState(state: gradientState) {
         switch state {
