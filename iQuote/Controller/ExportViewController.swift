@@ -12,7 +12,8 @@ class ExportViewController : UIViewController {
     
     let container = UIView()
     
-    let socialContainer = UIView()
+    // let socialContainer = UIView() 
+    let shareContainer = UIView()
     let optionContainer = UIView()
     let imageContainer = UIView()
     
@@ -34,15 +35,15 @@ class ExportViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        add(childVC: SocialViewController(), to: socialContainer)
+        add(childVC: ShareViewController(), to: shareContainer)
         add(childVC: ImageConfigurationVC(), to: optionContainer)
         add(childVC: ImageVC(), to: imageContainer)
     }
     
     private func setupView() {
-        view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.3)
+        view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
         configureContainer()
-        configureSocialContainer()
+        configureShareContainer()
         configureBreakLine()
         configureOptionsContainer()
         configureImageContainer()
@@ -66,15 +67,16 @@ class ExportViewController : UIViewController {
             container.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.75)
         ])
     }
-    private func configureSocialContainer() {
-        container.addSubview(socialContainer)
-        socialContainer.translatesAutoresizingMaskIntoConstraints = false
+    private func configureShareContainer() {
+        container.addSubview(shareContainer)
+        shareContainer.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate([
-            socialContainer.bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor),
-            socialContainer.leadingAnchor.constraint(equalTo: container.leadingAnchor,constant: padding),
-            socialContainer.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -padding),
-            socialContainer.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.15)
+            shareContainer.bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor),
+            shareContainer.leadingAnchor.constraint(equalTo: container.leadingAnchor,constant: padding*2),
+            shareContainer.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -padding*2),
+            shareContainer.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.15)
         ])
     }
     
@@ -83,7 +85,7 @@ class ExportViewController : UIViewController {
         breakLine.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            breakLine.bottomAnchor.constraint(equalTo: socialContainer.topAnchor, constant: -10),
+            breakLine.bottomAnchor.constraint(equalTo: shareContainer.topAnchor, constant: -10),
             breakLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             breakLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.75)
         ])

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SocialViewController : UIViewController {
+class SocialViewController : UIViewController { // off
     
     var stackView = UIStackView()
     

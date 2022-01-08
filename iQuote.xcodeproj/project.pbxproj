@@ -14,7 +14,7 @@
 		9305BA0A2757D697003E91F7 /* CellQuoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA092757D696003E91F7 /* CellQuoteLabel.swift */; };
 		9305BA0C2757D6DB003E91F7 /* CellAuthorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */; };
 		932AEFE92775860600211869 /* PhotoLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932AEFE82775860600211869 /* PhotoLabViewController.swift */; };
-		932BF740278960020090F29A /* ShreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932BF73F278960020090F29A /* ShreViewController.swift */; };
+		932BF740278960020090F29A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932BF73F278960020090F29A /* ShareViewController.swift */; };
 		93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */; };
 		9377028D277E146100BF0AC4 /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9377028C277E146100BF0AC4 /* InstagramManager.swift */; };
 		93992734275AA60A00E95481 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93992733275AA60A00E95481 /* ExportViewController.swift */; };
@@ -98,7 +98,7 @@
 		9305BA092757D696003E91F7 /* CellQuoteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellQuoteLabel.swift; sourceTree = "<group>"; };
 		9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAuthorLabel.swift; sourceTree = "<group>"; };
 		932AEFE82775860600211869 /* PhotoLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLabViewController.swift; sourceTree = "<group>"; };
-		932BF73F278960020090F29A /* ShreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShreViewController.swift; sourceTree = "<group>"; };
+		932BF73F278960020090F29A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		9377028C277E146100BF0AC4 /* InstagramManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramManager.swift; sourceTree = "<group>"; };
 		93992733275AA60A00E95481 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +206,13 @@
 			path = PhotoLab;
 			sourceTree = "<group>";
 		};
+		932BF741278960E00090F29A /* ShareConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShareConfiguration;
+			sourceTree = "<group>";
+		};
 		9399B1C62763CA5A0035021E /* SocialConfigurationVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,17 +269,18 @@
 			path = MainVC;
 			sourceTree = "<group>";
 		};
-		93B4ED02275B36E100C6E5E9 /* SharedVC */ = {
+		93B4ED02275B36E100C6E5E9 /* ExportVC */ = {
 			isa = PBXGroup;
 			children = (
 				93C3CFE12761E0F3009CD963 /* ImageVC.swift */,
 				93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */,
 				93C3CFE72761EE85009CD963 /* ImageConfiguration */,
+				932BF73F278960020090F29A /* ShareViewController.swift */,
+				932BF741278960E00090F29A /* ShareConfiguration */,
 				93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */,
-				932BF73F278960020090F29A /* ShreViewController.swift */,
 				9399B1C62763CA5A0035021E /* SocialConfigurationVC */,
 			);
-			path = SharedVC;
+			path = ExportVC;
 			sourceTree = "<group>";
 		};
 		93BDB9C52748D43800E4B928 /* UILabel */ = {
@@ -435,7 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				93B4ED01275B36B400C6E5E9 /* MainVC */,
-				93B4ED02275B36E100C6E5E9 /* SharedVC */,
+				93B4ED02275B36E100C6E5E9 /* ExportVC */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -593,7 +601,7 @@
 				9305BA0527575FCF003E91F7 /* SwipeLine.swift in Sources */,
 				93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */,
 				93A9FB5327536D7000442A91 /* NetwokManager.swift in Sources */,
-				932BF740278960020090F29A /* ShreViewController.swift in Sources */,
+				932BF740278960020090F29A /* ShareViewController.swift in Sources */,
 				93ECBB5D2768A4CA00E1BB67 /* SearchImageVC.swift in Sources */,
 				9399B1C82764823A0035021E /* GradientConfigurationVC.swift in Sources */,
 				939A3A382754CF010079DF97 /* UIViewController+Ext.swift in Sources */,
