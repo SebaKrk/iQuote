@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Social
+import MessageUI
 
 enum gradientState {
     case on
@@ -122,6 +123,19 @@ class ImageVC : UIViewController {
     
     @objc func handleMessageObserver(notification: NSNotification) {
         print("handleMessageObserver")
+        if MFMessageComposeViewController.canSendText() {
+            let messageVC = MFMessageComposeViewController()
+            messageVC.body = "Check out this amazing quote that I create on this awesome app!"
+            messageVC.recipients = ["Enter recipients here"]
+            
+            if let imgData = contenToShare.asImage()?.pngData() {
+                messageVC.addAttachmentData(imgData, typeIdentifier: "public.data", filename: "quoteToShare.png")
+            }
+            messageVC.messageComposeDelegate = self
+            self.present(messageVC, animated: true, completion: nil)
+        } else  {
+            print("nie moge")
+        }
     }
     @objc func handleShareObserver(notification: NSNotification) {
         print("handleShareObserver")
@@ -325,3 +339,22 @@ class ImageVC : UIViewController {
 }
 
 
+extension ImageVC : MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .cancelled:
+            print("cancle")
+            dismiss(animated: true)
+        case .sent:
+            print("sent")
+            dismiss(animated: true)
+        case .failed:
+            print("failed")
+            dismiss(animated: true)
+        default:
+            break
+        }
+    }
+    
+    
+}
