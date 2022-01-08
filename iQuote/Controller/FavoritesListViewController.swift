@@ -158,7 +158,7 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         
         
         let shareItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
-            let desVC = SharedViewController()
+            let desVC = ExportViewController()
             desVC.modalPresentationStyle = .overFullScreen
             desVC.modalTransitionStyle = .coverVertical
             

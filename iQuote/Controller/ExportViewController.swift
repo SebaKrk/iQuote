@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SharedViewController : UIViewController {
+class ExportViewController : UIViewController {
     
     let container = UIView()
     

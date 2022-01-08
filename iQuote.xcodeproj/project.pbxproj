@@ -14,9 +14,10 @@
 		9305BA0A2757D697003E91F7 /* CellQuoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA092757D696003E91F7 /* CellQuoteLabel.swift */; };
 		9305BA0C2757D6DB003E91F7 /* CellAuthorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */; };
 		932AEFE92775860600211869 /* PhotoLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932AEFE82775860600211869 /* PhotoLabViewController.swift */; };
+		932BF740278960020090F29A /* ShreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932BF73F278960020090F29A /* ShreViewController.swift */; };
 		93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */; };
 		9377028D277E146100BF0AC4 /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9377028C277E146100BF0AC4 /* InstagramManager.swift */; };
-		93992734275AA60A00E95481 /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93992733275AA60A00E95481 /* SharedViewController.swift */; };
+		93992734275AA60A00E95481 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93992733275AA60A00E95481 /* ExportViewController.swift */; };
 		9399B1C82764823A0035021E /* GradientConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399B1C72764823A0035021E /* GradientConfigurationVC.swift */; };
 		939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A352754AF500079DF97 /* EmptyAuthorView.swift */; };
 		939A3A382754CF010079DF97 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A372754CF010079DF97 /* UIViewController+Ext.swift */; };
@@ -97,9 +98,10 @@
 		9305BA092757D696003E91F7 /* CellQuoteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellQuoteLabel.swift; sourceTree = "<group>"; };
 		9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAuthorLabel.swift; sourceTree = "<group>"; };
 		932AEFE82775860600211869 /* PhotoLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLabViewController.swift; sourceTree = "<group>"; };
+		932BF73F278960020090F29A /* ShreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShreViewController.swift; sourceTree = "<group>"; };
 		93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		9377028C277E146100BF0AC4 /* InstagramManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramManager.swift; sourceTree = "<group>"; };
-		93992733275AA60A00E95481 /* SharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewController.swift; sourceTree = "<group>"; };
+		93992733275AA60A00E95481 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		9399B1C72764823A0035021E /* GradientConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientConfigurationVC.swift; sourceTree = "<group>"; };
 		939A3A352754AF500079DF97 /* EmptyAuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAuthorView.swift; sourceTree = "<group>"; };
 		939A3A372754CF010079DF97 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */,
 				93C3CFE72761EE85009CD963 /* ImageConfiguration */,
 				93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */,
+				932BF73F278960020090F29A /* ShreViewController.swift */,
 				9399B1C62763CA5A0035021E /* SocialConfigurationVC */,
 			);
 			path = SharedVC;
@@ -381,7 +384,7 @@
 				93D228A1276C665400D6AC18 /* SideMenu */,
 				93BF89A02745A3B400EF386A /* MainViewController.swift */,
 				9305BA0227575D62003E91F7 /* FavoritesListViewController.swift */,
-				93992733275AA60A00E95481 /* SharedViewController.swift */,
+				93992733275AA60A00E95481 /* ExportViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				9305BA0527575FCF003E91F7 /* SwipeLine.swift in Sources */,
 				93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */,
 				93A9FB5327536D7000442A91 /* NetwokManager.swift in Sources */,
+				932BF740278960020090F29A /* ShreViewController.swift in Sources */,
 				93ECBB5D2768A4CA00E1BB67 /* SearchImageVC.swift in Sources */,
 				9399B1C82764823A0035021E /* GradientConfigurationVC.swift in Sources */,
 				939A3A382754CF010079DF97 /* UIViewController+Ext.swift in Sources */,
@@ -599,7 +603,7 @@
 				93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */,
 				93CE1CDE274ACC0A004FD559 /* CostumQuoteButton.swift in Sources */,
 				93D2289D276C64F500D6AC18 /* SettingsModel.swift in Sources */,
-				93992734275AA60A00E95481 /* SharedViewController.swift in Sources */,
+				93992734275AA60A00E95481 /* ExportViewController.swift in Sources */,
 				9305BA0327575D62003E91F7 /* FavoritesListViewController.swift in Sources */,
 				93C2564D276B57C300AACB94 /* InstagramViewController.swift in Sources */,
 				93B4ED08275B3BB700C6E5E9 /* ImageConfigurationVC.swift in Sources */,
