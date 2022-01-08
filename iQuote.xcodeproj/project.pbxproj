@@ -264,8 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				93C3CFE12761E0F3009CD963 /* ImageVC.swift */,
-				93C3CFE72761EE85009CD963 /* ImageConfiguration */,
 				93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */,
+				93C3CFE72761EE85009CD963 /* ImageConfiguration */,
 				93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */,
 				9399B1C62763CA5A0035021E /* SocialConfigurationVC */,
 			);
