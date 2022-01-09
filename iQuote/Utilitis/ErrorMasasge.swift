@@ -16,7 +16,7 @@ enum ZenQuoteError : String,Error {
     case alleredyInFavorites = "You've allredy favorited this Quote. You must very like it!"
 }
 
-enum WikiError : String, Error {
+enum WikiError : String, Error { 
     case unableToCompleted = "Unable to completed your request. Please check your internet connection"
     case inavlidResponse = "Invalid response from server. Please try again."
     case incalidData = "The data received from the server was invalid. Please try again."
