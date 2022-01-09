@@ -25,6 +25,7 @@ enum WikiError : String, Error {
 enum Messages : String {
     case sucesffulyFavorited = "You've successfully favorited this Quote"
     case alleredyInFavorites = "You've allredy favorited this Quote. You must very like it!"
+    case emptyList = "Your List is empty.\nYou haven't added anything yet"
 }
 
 enum ErrorMassage : String,Error {

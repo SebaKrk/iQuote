@@ -52,16 +52,10 @@ class FavoritesListViewController : UIViewController {
         PersistenceManager.retrieveFavorites { result in
             switch result {
             case .success(let favorite):
-                
-                if favorite.isEmpty {
-                    //                    let massage = "No favorites?\nAdd one on the quote screean"
-                    //                    handle Emoty table view
-                } else {
-                    self.favoritesItems = favorite
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                        self.view.bringSubviewToFront(self.tableView)
-                    }
+                self.favoritesItems = favorite
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.view.bringSubviewToFront(self.tableView)
                 }
             case .failure(let error):
                 self.presentAlertOnMainThred(title: "Error", message: error.rawValue)

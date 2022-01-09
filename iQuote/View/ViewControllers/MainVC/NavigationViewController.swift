@@ -78,11 +78,8 @@ class NavigationViewController : UIViewController {
     
     @objc func handleListButton() {
         // listButton.flipLikeState()
-        
-        let desVC = FavoritesListViewController()
-        desVC.modalPresentationStyle = .overFullScreen
-        desVC.modalTransitionStyle = .flipHorizontal //.coverVertical //.crossDissolve
-        present(desVC, animated: true, completion: nil)
+ 
+        checkIfFavListIsEmpty()
     }
     
     @objc func handleExportButton() {
@@ -141,6 +138,26 @@ class NavigationViewController : UIViewController {
         view.addGestureRecognizer(swipeRightGesture)
     }
     
+    //    MARK: - Helpers
+    
+    private func checkIfFavListIsEmpty() {
+        PersistenceManager.retrieveFavorites { result in
+            switch result {
+            case .success(let favorite):
+                if favorite.isEmpty {
+                    self.presentAlertOnMainThred(title: "Upss", message: Messages.emptyList.rawValue)
+                } else {
+                    let desVC = FavoritesListViewController()
+                    desVC.modalPresentationStyle = .overFullScreen
+                    desVC.modalTransitionStyle = .flipHorizontal
+                    self.present(desVC, animated: true, completion: nil)
+                }
+            case .failure:
+                break
+            }
+        }
+    }
+    
     //    MARK: - Constraints
     
     private func configureQuoteMenuContainer(){
@@ -176,7 +193,7 @@ class NavigationViewController : UIViewController {
         nextButton.backgroundColor = .black
         exportButton.backgroundColor = .black
         listButton.backgroundColor = .black
-    
+        
         listButton.addTarget(self, action: #selector(handleListButton), for: .touchUpInside)
         heartButton.addTarget(self, action: #selector(handleHeartButton), for: .touchUpInside)
         exportButton.addTarget(self, action: #selector(handleExportButton), for: .touchUpInside)
