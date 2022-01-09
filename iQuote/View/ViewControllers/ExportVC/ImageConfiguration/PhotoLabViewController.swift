@@ -15,7 +15,7 @@ class PhotoLabViewController : UIViewController {
     
     var stackView = UIStackView()
     
-    let unsplashButton = CostumTransButton(imageOne: "BackgroundIcon", imageTwo: "BackgroundIcon")
+    let unsplashButton = CostumTransButton(imageOne: "UnsplashImage1", imageTwo: "UnsplashImage2")
     let photoLibryButton = CostumTransButton(imageOne: "BackgroundIcon", imageTwo: "BackgroundIcon2")
     
     override func viewDidLoad() {
