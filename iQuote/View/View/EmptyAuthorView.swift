@@ -43,6 +43,10 @@ class EmptyAuthorView : UIView {
     func configureAuthorImage() {
         addSubview(authorImage)
         authorImage.translatesAutoresizingMaskIntoConstraints = false
+        //authorImage.layer.masksToBounds = true
+        //authorImage.contentMode = .scaleToFill
+        //layer.masksToBounds = true
+        //contentMode = .scaleAspectFill
         
         NSLayoutConstraint.activate([
             authorImage.centerYAnchor.constraint(equalTo: centerYAnchor),

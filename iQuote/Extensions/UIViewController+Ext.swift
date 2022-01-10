@@ -17,7 +17,7 @@ extension UIViewController {
     
     func showEmptyStateAuthor(with authorName: String, in view: UIView) {
         DispatchQueue.main.async {
-            let emptyStateView = EmptyAuthorView(name: authorName)
+            let emptyStateView = EmptyAuthorView2(name: authorName)
             emptyStateView.frame = view.bounds
             view.addSubview(emptyStateView)
         }

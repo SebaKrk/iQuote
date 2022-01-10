@@ -48,6 +48,7 @@
 		93BF89942745A05A00EF386A /* iQuoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */; };
 		93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A02745A3B400EF386A /* MainViewController.swift */; };
 		93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A62746220E00EF386A /* UIColor+Ext.swift */; };
+		93C10641278C170D00E4CAF8 /* EmptyAuthorView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C10640278C170D00E4CAF8 /* EmptyAuthorView2.swift */; };
 		93C2564D276B57C300AACB94 /* InstagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2564C276B57C300AACB94 /* InstagramViewController.swift */; };
 		93C2564F276B5E5400AACB94 /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2564E276B5E5400AACB94 /* FacebookViewController.swift */; };
 		93C25651276B60E000AACB94 /* TwiterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C25650276B60E000AACB94 /* TwiterViewController.swift */; };
@@ -134,6 +135,7 @@
 		93BF89932745A05A00EF386A /* iQuoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93BF89A02745A3B400EF386A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		93BF89A62746220E00EF386A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		93C10640278C170D00E4CAF8 /* EmptyAuthorView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAuthorView2.swift; sourceTree = "<group>"; };
 		93C2564C276B57C300AACB94 /* InstagramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramViewController.swift; sourceTree = "<group>"; };
 		93C2564E276B5E5400AACB94 /* FacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
 		93C25650276B60E000AACB94 /* TwiterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiterViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				939A3A352754AF500079DF97 /* EmptyAuthorView.swift */,
+				93C10640278C170D00E4CAF8 /* EmptyAuthorView2.swift */,
 				9305BA0427575FCF003E91F7 /* SwipeLine.swift */,
 			);
 			path = View;
@@ -647,6 +650,7 @@
 				93A59880275CA67300FCC32B /* UnsplashCollectionVC.swift in Sources */,
 				93EE8D02274A4E7C000A8964 /* CostumAuthorLabel.swift in Sources */,
 				93EE8D00274A4BB1000A8964 /* AuthorImageView.swift in Sources */,
+				93C10641278C170D00E4CAF8 /* EmptyAuthorView2.swift in Sources */,
 				93C25653276B60EE00AACB94 /* LinkedInViewController.swift in Sources */,
 				93F6B8C527465EA5005181C0 /* QuoteViewController.swift in Sources */,
 				9377028D277E146100BF0AC4 /* InstagramManager.swift in Sources */,
