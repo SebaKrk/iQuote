@@ -16,9 +16,9 @@ class TextConfigurationVC : UIViewController {
     let container = UIView()
     var textAligmentStack = UIStackView()
     
-    let textLeft = CostumTransButton(imageOne: "TextAligLeft1", imageTwo: "TextAligLeft2")
-    let textCenter = CostumTransButton(imageOne: "TextAligCenter1", imageTwo: "TextAligCenter2")
-    let textRight = CostumTransButton(imageOne: "TextAligRight1", imageTwo: "TextAligRight2")
+    let textLeft = CostumTransButton(imageOne: "alignLeft1", imageTwo: "alignLeft2")
+    let textCenter = CostumTransButton(imageOne: "alignCenter1", imageTwo: "alignCenter2")
+    let textRight = CostumTransButton(imageOne: "alignRight1", imageTwo: "alignRight2")
     
     let fontSizeSlider = UISlider()
     let fontSizeLabel = CostumTitleLabel(textAligment: .center, fontSize: 14)

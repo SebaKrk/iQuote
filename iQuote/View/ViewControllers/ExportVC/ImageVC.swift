@@ -311,7 +311,7 @@ class ImageVC : UIViewController {
         backgroundIMG.addSubview(quoteLogo)
         quoteLogo.translatesAutoresizingMaskIntoConstraints = false
         
-        quoteLogo.image = UIImage(named: "LogoForBackground")
+        quoteLogo.image = UIImage(named: "LogoBackground")
         quoteLogo.isHidden = logonIsOn
         
         NSLayoutConstraint.activate([
