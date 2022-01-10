@@ -39,6 +39,7 @@ class GradientConfigurationVC : UIViewController {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
+        
     }
     //    MARK: - OBJC Func
     
