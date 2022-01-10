@@ -82,20 +82,15 @@ class NavigationViewController : UIViewController {
     
     @objc func handleSwipeUp() {
         quoteButtonIsOpen == true ? heartButtonPressed() : nil
-        //heartButton.flipLikeState() : nil
     }
     @objc func handleSwipeDown() {
         quoteButtonIsOpen == true ? listButtonPressed() : nil
-        // listButton.flipLikeState() : nil
     }
     @objc func handleSwipeLeft() {
-        quoteButtonIsOpen == true ? nextButtonPressed() : nil
-        // nextButton.flipLikeState() : nil
+        quoteButtonIsOpen == true ? exportButtonPressed() : nil
     }
     @objc func handleSwipeRight() {
-        quoteButtonIsOpen == true ? exportButtonPressed() : nil
-        // exportButton.flipLikeState() : nil
-        
+        quoteButtonIsOpen == true ? nextButtonPressed() : nil
     }
     
     private func swipeGestureRecognizer() {
