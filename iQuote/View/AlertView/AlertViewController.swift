@@ -55,7 +55,7 @@ class AlertViewController : UIViewController {
     private func configureContainer() {
         view.addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
-        container.backgroundColor = .darkGray()
+        container.backgroundColor = .costumDarkGray()
         container.layer.borderColor = UIColor.white.cgColor //UIColor.primaryOrange().cgColor
         container.layer.borderWidth = 0.5
         
