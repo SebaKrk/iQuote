@@ -15,10 +15,10 @@ class NavigationViewController : UIViewController {
     var mainQuoteButton = CostumeQuoteButton()
     var quoteButtonIsOpen = false
     
-    var heartButton = CostumTransButton(imageOne: "heartButton", imageTwo: "heartButton2")
-    var listButton = CostumTransButton(imageOne: "listButton", imageTwo: "listButton2")
-    var nextButton = CostumTransButton(imageOne: "nextButton", imageTwo: "nextButton2")
-    var exportButton = CostumTransButton(imageOne: "exportButton", imageTwo: "exportButton2")
+    var heartButton = CostumTransButton(imageOne: "heartButton", imageTwo: "heartButton")
+    var listButton = CostumTransButton(imageOne: "listButton", imageTwo: "listButton")
+    var nextButton = CostumTransButton(imageOne: "nextButton", imageTwo: "nextButton")
+    var exportButton = CostumTransButton(imageOne: "exportButton", imageTwo: "exportButton")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,37 +63,10 @@ class NavigationViewController : UIViewController {
         })
     }
     
-    @objc func handleHeartButton() {
-        //heartButton.flipLikeState()
-        
-        let favorite = Quote(q: quoteToFavorites, a: authorToFavorites)
-        PersistenceManager.uppdateWith(favorite: favorite, actionType: .add) { error in
-            guard let error = error else {
-                self.presentAlertOnMainThred(title: "Succes!", message: Messages.sucesffulyFavorited.rawValue)
-                return
-            }
-            self.presentAlertOnMainThred(title: "Upss", message: error.rawValue)
-        }
-    }
-    
-    @objc func handleListButton() {
-        // listButton.flipLikeState()
- 
-        checkIfFavListIsEmpty()
-    }
-    
-    @objc func handleExportButton() {
-        // exportButton.flipLikeState()
-        
-        let desVC = ExportViewController()
-        desVC.modalPresentationStyle = .overFullScreen
-        desVC.modalTransitionStyle = .coverVertical
-        present(desVC, animated: true, completion: nil)
-    }
-    @objc func handleNextButton() {
-        //nextButton.flipLikeState()
-        NotificationCenter.default.post(name: .nextQuote, object: nil)
-    }
+    @objc func handleHeartButton() { heartButtonPressed() }
+    @objc func handleListButton() { listButtonPressed() }
+    @objc func handleExportButton() { exportButtonPressed() }
+    @objc func handleNextButton() { nextButtonPressed() }
     
     //   MARK: - Close Menu
     
@@ -108,16 +81,21 @@ class NavigationViewController : UIViewController {
     //    MARK: - SwipeGestureRecognizer
     
     @objc func handleSwipeUp() {
-        quoteButtonIsOpen == true ?  heartButton.flipLikeState() : nil
+        quoteButtonIsOpen == true ? heartButtonPressed() : nil
+        //heartButton.flipLikeState() : nil
     }
     @objc func handleSwipeDown() {
-        quoteButtonIsOpen == true ?  listButton.flipLikeState() : nil
+        quoteButtonIsOpen == true ? listButtonPressed() : nil
+        // listButton.flipLikeState() : nil
     }
     @objc func handleSwipeLeft() {
-        quoteButtonIsOpen == true ?  exportButton.flipLikeState() : nil
+        quoteButtonIsOpen == true ? nextButtonPressed() : nil
+        // nextButton.flipLikeState() : nil
     }
     @objc func handleSwipeRight() {
-        quoteButtonIsOpen == true ?  nextButton.flipLikeState() : nil
+        quoteButtonIsOpen == true ? exportButtonPressed() : nil
+        // exportButton.flipLikeState() : nil
+        
     }
     
     private func swipeGestureRecognizer() {
@@ -220,5 +198,36 @@ class NavigationViewController : UIViewController {
             listButton.widthAnchor.constraint(equalToConstant: 50),
             listButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+//    MARK: - Helpers
+    
+    private func heartButtonPressed() {
+        heartButton.flipLikeState()
+        
+        let favorite = Quote(q: quoteToFavorites, a: authorToFavorites)
+        PersistenceManager.uppdateWith(favorite: favorite, actionType: .add) { error in
+            guard let error = error else {
+                self.presentAlertOnMainThred(title: "Succes!", message: Messages.sucesffulyFavorited.rawValue)
+                return
+            }
+            self.presentAlertOnMainThred(title: "Upss", message: error.rawValue)
+        }
+    }
+    private func listButtonPressed() {
+        listButton.flipLikeState()
+        checkIfFavListIsEmpty()
+    }
+    private func nextButtonPressed() {
+        nextButton.flipLikeState()
+        NotificationCenter.default.post(name: .nextQuote, object: nil)
+    }
+    private func exportButtonPressed() {
+        exportButton.flipLikeState()
+        
+        let desVC = ExportViewController()
+        desVC.modalPresentationStyle = .overFullScreen
+        desVC.modalTransitionStyle = .coverVertical
+        present(desVC, animated: true, completion: nil)
     }
 }
