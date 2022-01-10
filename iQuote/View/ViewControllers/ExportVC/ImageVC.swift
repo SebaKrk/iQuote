@@ -317,8 +317,8 @@ class ImageVC : UIViewController {
         NSLayoutConstraint.activate([
             quoteLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 5),
             quoteLogo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
-            quoteLogo.widthAnchor.constraint(equalToConstant: 35),
-            quoteLogo.heightAnchor.constraint(equalToConstant: 50)
+            quoteLogo.widthAnchor.constraint(equalToConstant: 37),
+            quoteLogo.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     //    MARK: - Helpers

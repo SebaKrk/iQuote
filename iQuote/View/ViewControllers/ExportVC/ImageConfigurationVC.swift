@@ -28,7 +28,7 @@ class ImageConfigurationVC : UIViewController {
     
     @objc func handleBackgroundButton() {
         backgroundImageButton.flipLikeState()
-        let desVC = PhotoLabViewController()
+        let desVC = PhotoViewController() //PhotoLabViewController()
         desVC.modalPresentationStyle = .overFullScreen
         present(desVC,animated: true,completion: nil)
     }

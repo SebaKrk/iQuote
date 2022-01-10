@@ -26,6 +26,7 @@
 		939AD0482768D6F600F73FFE /* ImageSearchTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939AD0472768D6F600F73FFE /* ImageSearchTF.swift */; };
 		939AD04A27690F1000F73FFE /* UINavigationController +Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939AD04927690F1000F73FFE /* UINavigationController +Ext.swift */; };
 		939AD04D27692EFB00F73FFE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 939AD04C27692EFB00F73FFE /* IQKeyboardManagerSwift */; };
+		939E4A2F278CA8AE00A9A0E2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939E4A2E278CA8AE00A9A0E2 /* PhotoViewController.swift */; };
 		93A59880275CA67300FCC32B /* UnsplashCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5987F275CA67300FCC32B /* UnsplashCollectionVC.swift */; };
 		93A59882275CA77500FCC32B /* CollectionCellmageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A59881275CA77500FCC32B /* CollectionCellmageView.swift */; };
 		93A59884275CA7CE00FCC32B /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A59883275CA7CE00FCC32B /* CollectionCell.swift */; };
@@ -109,6 +110,7 @@
 		939A3A3A2754FC680079DF97 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		939AD0472768D6F600F73FFE /* ImageSearchTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchTF.swift; sourceTree = "<group>"; };
 		939AD04927690F1000F73FFE /* UINavigationController +Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController +Ext.swift"; sourceTree = "<group>"; };
+		939E4A2E278CA8AE00A9A0E2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		93A5987F275CA67300FCC32B /* UnsplashCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollectionVC.swift; sourceTree = "<group>"; };
 		93A59881275CA77500FCC32B /* CollectionCellmageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellmageView.swift; sourceTree = "<group>"; };
 		93A59883275CA7CE00FCC32B /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				932AEFE82775860600211869 /* PhotoLabViewController.swift */,
+				939E4A2E278CA8AE00A9A0E2 /* PhotoViewController.swift */,
 				932AEFEA277586B700211869 /* PhotoLab */,
 				93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */,
 				9399B1C72764823A0035021E /* GradientConfigurationVC.swift */,
@@ -629,6 +632,7 @@
 				93FF7C092746BE4700064E83 /* UIView+Ext.swift in Sources */,
 				939AD0482768D6F600F73FFE /* ImageSearchTF.swift in Sources */,
 				93B4ED04275B388D00C6E5E9 /* SocialViewController.swift in Sources */,
+				939E4A2F278CA8AE00A9A0E2 /* PhotoViewController.swift in Sources */,
 				93C3CFE92761EED0009CD963 /* TextConfigurationVC.swift in Sources */,
 				9305BA012757570F003E91F7 /* PersistenceManager.swift in Sources */,
 				939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */,
