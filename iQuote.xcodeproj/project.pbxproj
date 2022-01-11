@@ -13,7 +13,6 @@
 		9305BA08275760CB003E91F7 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA07275760CB003E91F7 /* FavoritesTableViewCell.swift */; };
 		9305BA0A2757D697003E91F7 /* CellQuoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA092757D696003E91F7 /* CellQuoteLabel.swift */; };
 		9305BA0C2757D6DB003E91F7 /* CellAuthorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */; };
-		932AEFE92775860600211869 /* PhotoLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932AEFE82775860600211869 /* PhotoLabViewController.swift */; };
 		932BF740278960020090F29A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932BF73F278960020090F29A /* ShareViewController.swift */; };
 		93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */; };
 		9377028D277E146100BF0AC4 /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9377028C277E146100BF0AC4 /* InstagramManager.swift */; };
@@ -67,7 +66,6 @@
 		93D228A9276C6D3600D6AC18 /* AppVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D228A8276C6D3600D6AC18 /* AppVersionViewController.swift */; };
 		93E1CE32274FF73B0089ECF1 /* CostumTransButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E1CE31274FF73B0089ECF1 /* CostumTransButton.swift */; };
 		93ECBB5B2768603D00E1BB67 /* NSNotification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ECBB5A2768603D00E1BB67 /* NSNotification+Ext.swift */; };
-		93ECBB5D2768A4CA00E1BB67 /* SearchImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ECBB5C2768A4CA00E1BB67 /* SearchImageVC.swift */; };
 		93EE8D00274A4BB1000A8964 /* AuthorImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE8CFF274A4BB1000A8964 /* AuthorImageView.swift */; };
 		93EE8D02274A4E7C000A8964 /* CostumAuthorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE8D01274A4E7C000A8964 /* CostumAuthorLabel.swift */; };
 		93F6B8C527465EA5005181C0 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6B8C427465EA5005181C0 /* QuoteViewController.swift */; };
@@ -99,7 +97,6 @@
 		9305BA07275760CB003E91F7 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		9305BA092757D696003E91F7 /* CellQuoteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellQuoteLabel.swift; sourceTree = "<group>"; };
 		9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAuthorLabel.swift; sourceTree = "<group>"; };
-		932AEFE82775860600211869 /* PhotoLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLabViewController.swift; sourceTree = "<group>"; };
 		932BF73F278960020090F29A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		9377028C277E146100BF0AC4 /* InstagramManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramManager.swift; sourceTree = "<group>"; };
@@ -154,7 +151,6 @@
 		93D228A8276C6D3600D6AC18 /* AppVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionViewController.swift; sourceTree = "<group>"; };
 		93E1CE31274FF73B0089ECF1 /* CostumTransButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumTransButton.swift; sourceTree = "<group>"; };
 		93ECBB5A2768603D00E1BB67 /* NSNotification+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Ext.swift"; sourceTree = "<group>"; };
-		93ECBB5C2768A4CA00E1BB67 /* SearchImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageVC.swift; sourceTree = "<group>"; };
 		93EE8CFF274A4BB1000A8964 /* AuthorImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorImageView.swift; sourceTree = "<group>"; };
 		93EE8D01274A4E7C000A8964 /* CostumAuthorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumAuthorLabel.swift; sourceTree = "<group>"; };
 		93F6B8C427465EA5005181C0 /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
@@ -204,7 +200,6 @@
 		932AEFEA277586B700211869 /* PhotoLab */ = {
 			isa = PBXGroup;
 			children = (
-				93ECBB5C2768A4CA00E1BB67 /* SearchImageVC.swift */,
 				93A5987F275CA67300FCC32B /* UnsplashCollectionVC.swift */,
 			);
 			path = PhotoLab;
@@ -417,7 +412,6 @@
 		93C3CFE72761EE85009CD963 /* ImageConfiguration */ = {
 			isa = PBXGroup;
 			children = (
-				932AEFE82775860600211869 /* PhotoLabViewController.swift */,
 				939E4A2E278CA8AE00A9A0E2 /* PhotoViewController.swift */,
 				932AEFEA277586B700211869 /* PhotoLab */,
 				93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */,
@@ -608,7 +602,6 @@
 				93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */,
 				93A9FB5327536D7000442A91 /* NetwokManager.swift in Sources */,
 				932BF740278960020090F29A /* ShareViewController.swift in Sources */,
-				93ECBB5D2768A4CA00E1BB67 /* SearchImageVC.swift in Sources */,
 				9399B1C82764823A0035021E /* GradientConfigurationVC.swift in Sources */,
 				939A3A382754CF010079DF97 /* UIViewController+Ext.swift in Sources */,
 				93A59884275CA7CE00FCC32B /* CollectionCell.swift in Sources */,
@@ -623,7 +616,6 @@
 				93B4ED08275B3BB700C6E5E9 /* ImageConfigurationVC.swift in Sources */,
 				93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */,
 				93D228A7276C66F700D6AC18 /* SettingsTableViewCell.swift in Sources */,
-				932AEFE92775860600211869 /* PhotoLabViewController.swift in Sources */,
 				9305BA08275760CB003E91F7 /* FavoritesTableViewCell.swift in Sources */,
 				939A3A3B2754FC680079DF97 /* AlertViewController.swift in Sources */,
 				93A59886275CA8F800FCC32B /* Unsplash.swift in Sources */,

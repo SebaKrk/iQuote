@@ -95,6 +95,7 @@ class PhotoViewController : UIViewController {
         
         let desVC = UnsplashCollectionVC()
         desVC.category = searchText.text ?? "landscapes"
+        desVC.delegate = self
         present(desVC, animated: true, completion: nil)
     }
     
@@ -189,5 +190,17 @@ extension PhotoViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         unsplashSearch()
         return true
+    }
+}
+// MARK: -  UnsplashIsEmptyDelegate
+
+extension PhotoViewController : UnsplashIsEmptyDelegate {
+    func arrayIsEmpty() {
+        DispatchQueue.main.async {
+            self.dismiss(animated: true) {
+                let message = "The data entered for the search are incorrect. Please try again"
+                self.presentAlertOnMainThred(title: "Upsss", message: message)
+            }
+        }
     }
 }
