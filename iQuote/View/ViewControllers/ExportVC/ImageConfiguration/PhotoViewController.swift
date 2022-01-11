@@ -27,7 +27,7 @@ class PhotoViewController : UIViewController {
         configureContainer()
         configureSwipeLinie()
         configureStackView()
-        
+        configureButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +50,20 @@ class PhotoViewController : UIViewController {
     
     @objc func handlePhotoLibryButton() {
         print("photoLibryButton")
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.modalPresentationStyle = .popover
+        
+        if let popover = imagePicker.popoverPresentationController {
+            let sheet = popover.adaptiveSheetPresentationController
+            sheet.detents = [.medium(), .large()]
+            sheet.largestUndimmedDetentIdentifier = .medium
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+        }
+        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @objc func handleUnsplashButton() {
@@ -106,5 +120,16 @@ class PhotoViewController : UIViewController {
     private func configureButtons() {
         unsplashButton.addTarget(self, action: #selector(handleUnsplashButton), for: .touchUpInside)
         photoLibryButton.addTarget(self, action: #selector(handlePhotoLibryButton), for: .touchUpInside)
+    }
+}
+//  MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
+extension PhotoViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[.originalImage] as? UIImage {
+            NotificationCenter.default.post(name: .imgPickerObserver, object: nil, userInfo: ["imgPicker" : image])
+        }
+        NotificationCenter.default.post(name: .chooseImgObserver, object: nil)
     }
 }
