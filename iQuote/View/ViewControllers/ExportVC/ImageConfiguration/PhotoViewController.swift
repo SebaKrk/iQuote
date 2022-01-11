@@ -120,8 +120,8 @@ class PhotoViewController : UIViewController {
         container.translatesAutoresizingMaskIntoConstraints = false
         container.backgroundColor = .black
         
-        container.layer.cornerRadius = 25
-        container.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        container.roundCorners(with: [.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 25)
+
         
         NSLayoutConstraint.activate([
             container.bottomAnchor.constraint(equalTo: view.bottomAnchor),

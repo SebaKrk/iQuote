@@ -30,5 +30,9 @@ extension UIView {
             layer.render(in: graphicsImageRendererContext.cgContext)
         }
     }
+    func roundCorners(with CACornerMask: CACornerMask, radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.maskedCorners = [CACornerMask]
+    }
     
 }
