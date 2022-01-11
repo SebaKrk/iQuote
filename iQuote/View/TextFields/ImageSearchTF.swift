@@ -21,6 +21,8 @@ class ImageSearchTF : UITextField {
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
         
+        overrideUserInterfaceStyle = .light
+        
         layer.cornerRadius = 15
         layer.borderWidth  = 1
         layer.borderColor = UIColor.darkGray.cgColor
@@ -35,8 +37,10 @@ class ImageSearchTF : UITextField {
         autocorrectionType = .no
         keyboardType = .default
         returnKeyType = .go
+        keyboardAppearance = .dark
     
         clearButtonMode = .whileEditing
         placeholder = "enter name view"
+        
     }
 }
