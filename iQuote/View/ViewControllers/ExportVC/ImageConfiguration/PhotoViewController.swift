@@ -74,7 +74,18 @@ class PhotoViewController : UIViewController {
     
     @objc func handleUnsplashButton() {
         unsplashButton.flipLikeState()
+        
         searchText.isHidden = false
+        
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: searchText.center.x - 10, y: searchText.center.y))
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: searchText.center.x + 10, y: searchText.center.y))
+        
+        searchText.layer.add(animation, forKey: "position")
+        
     }
     func unsplashSearch() {
         guard isSearchTextFieldIsEmpty else {
@@ -94,7 +105,7 @@ class PhotoViewController : UIViewController {
         container.addGestureRecognizer(tap)
     }
 
-    //    MARK: - StackView    
+    //    MARK: - StackView
     private func setupStackView() {
         stackView = UIStackView(arrangedSubviews: [photoLibryButton, unsplashButton])
         stackView.axis = .horizontal
@@ -108,7 +119,9 @@ class PhotoViewController : UIViewController {
         view.addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
         container.backgroundColor = .black
+        
         container.layer.cornerRadius = 25
+        container.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         NSLayoutConstraint.activate([
             container.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -156,7 +169,9 @@ class PhotoViewController : UIViewController {
         unsplashButton.addTarget(self, action: #selector(handleUnsplashButton), for: .touchUpInside)
         photoLibryButton.addTarget(self, action: #selector(handlePhotoLibryButton), for: .touchUpInside)
     }
+
 }
+
 //  MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 
 extension PhotoViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
