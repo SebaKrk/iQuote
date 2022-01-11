@@ -13,14 +13,21 @@ class PhotoViewController : UIViewController {
     let container = UIView()
     let swipeLine = SwipeLine()
     
+    var stackView = UIStackView()
+    
     let unsplashButton = CostumTransButton(imageOne: "UnsplashImage1", imageTwo: "UnsplashImage2")
     let photoLibryButton = CostumTransButton(imageOne: "GalleryButton1", imageTwo: "GalleryButton2")
+    
+    let searchText = ImageSearchTF()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupStackView()
         configureContainer()
         configureSwipeLinie()
+        configureStackView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +46,24 @@ class PhotoViewController : UIViewController {
         swipeDownGestureRecognizerToDissmisView(container: container)
     }
     
+    // MARK: - OBJC Func
+    
+    @objc func handlePhotoLibryButton() {
+        print("photoLibryButton")
+    }
+    
+    @objc func handleUnsplashButton() {
+       print("unsplashButton")
+    }
+    
+ 
+    //    MARK: - StackView
+    
+    private func setupStackView() {
+        stackView = UIStackView(arrangedSubviews: [photoLibryButton, unsplashButton])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+    }
     
     //    MARK: - Constraints
     
@@ -56,6 +81,7 @@ class PhotoViewController : UIViewController {
             container.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3)
         ])
     }
+    
     private func configureSwipeLinie() {
         container.addSubview(swipeLine)
         swipeLine.translatesAutoresizingMaskIntoConstraints = false
@@ -65,5 +91,20 @@ class PhotoViewController : UIViewController {
             swipeLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.2)
         ])
+    }
+    private func configureStackView() {
+        container.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            stackView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            stackView.heightAnchor.constraint(equalToConstant: 100)
+        ])
+    }
+    private func configureButtons() {
+        unsplashButton.addTarget(self, action: #selector(handleUnsplashButton), for: .touchUpInside)
+        photoLibryButton.addTarget(self, action: #selector(handlePhotoLibryButton), for: .touchUpInside)
     }
 }
