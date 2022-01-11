@@ -15,24 +15,29 @@ class PhotoViewController : UIViewController {
     
     var stackView = UIStackView()
     
-    let unsplashButton = CostumTransButton(imageOne: "UnsplashImage1", imageTwo: "UnsplashImage2")
-    let photoLibryButton = CostumTransButton(imageOne: "GalleryButton1", imageTwo: "GalleryButton2")
+    let unsplashButton = CostumTransButton(imageOne: "UnsplashImage1", imageTwo: "UnsplashImage1")
+    let photoLibryButton = CostumTransButton(imageOne: "GalleryButton1", imageTwo: "GalleryButton1")
     
     let searchText = ImageSearchTF()
+    var isSearchTextFieldIsEmpty : Bool { return !searchText.text!.isEmpty }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
         setupStackView()
         configureContainer()
         configureSwipeLinie()
         configureStackView()
         configureButtons()
+        configureSearchTextField()
+        self.searchText.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //searchText.text = ""
+        searchText.isHidden = true
+        searchText.text = ""
     }
     override func viewDidLayoutSubviews() {
         cardOriginYext = container.frame.origin.y
@@ -41,7 +46,7 @@ class PhotoViewController : UIViewController {
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
-        //createDissmisKeybordTapgesture()
+        createDissmisKeybordTapgesture()
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
     }
@@ -49,7 +54,8 @@ class PhotoViewController : UIViewController {
     // MARK: - OBJC Func
     
     @objc func handlePhotoLibryButton() {
-        print("photoLibryButton")
+        photoLibryButton.flipLikeState()
+        
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.modalPresentationStyle = .popover
@@ -67,12 +73,28 @@ class PhotoViewController : UIViewController {
     }
     
     @objc func handleUnsplashButton() {
-       print("unsplashButton")
+        unsplashButton.flipLikeState()
+        searchText.isHidden = false
+    }
+    func unsplashSearch() {
+        guard isSearchTextFieldIsEmpty else {
+            self.presentAlertOnMainThred(title: "Upss", message: "Please enter text. We need to know what to look for")
+            return
+        }
+        
+        let desVC = UnsplashCollectionVC()
+        desVC.category = searchText.text ?? "landscapes"
+        present(desVC, animated: true, completion: nil)
     }
     
- 
-    //    MARK: - StackView
+    //    MARK: - GestureRecognizer
     
+    private func createDissmisKeybordTapgesture() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        container.addGestureRecognizer(tap)
+    }
+
+    //    MARK: - StackView    
     private func setupStackView() {
         stackView = UIStackView(arrangedSubviews: [photoLibryButton, unsplashButton])
         stackView.axis = .horizontal
@@ -109,13 +131,26 @@ class PhotoViewController : UIViewController {
     private func configureStackView() {
         container.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
+    
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
             stackView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: 100)
+            stackView.heightAnchor.constraint(equalToConstant: 70)
         ])
+    }
+    private func configureSearchTextField() {
+        container.addSubview(searchText)
+        searchText.translatesAutoresizingMaskIntoConstraints = false
+        searchText.returnKeyType = UIReturnKeyType.go
+        
+        NSLayoutConstraint.activate([
+            searchText.topAnchor.constraint(equalTo: stackView.bottomAnchor),
+            searchText.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            searchText.heightAnchor.constraint(equalToConstant: 40),
+            searchText.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.7)
+        ])
+        
     }
     private func configureButtons() {
         unsplashButton.addTarget(self, action: #selector(handleUnsplashButton), for: .touchUpInside)
@@ -131,5 +166,13 @@ extension PhotoViewController : UIImagePickerControllerDelegate, UINavigationCon
             NotificationCenter.default.post(name: .imgPickerObserver, object: nil, userInfo: ["imgPicker" : image])
         }
         NotificationCenter.default.post(name: .chooseImgObserver, object: nil)
+    }
+}
+// MARK: - UITextFieldDelegate
+
+extension PhotoViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        unsplashSearch()
+        return true
     }
 }
