@@ -34,6 +34,7 @@ class MainViewController : UIViewController {
         configureNavigationItem()
         getJasonData()
         add(childVC: NavigationViewController(), to: navigationContainer)
+        UserDefManager.clearUserData()
     }
     
     //    MARK: - OBJC Func

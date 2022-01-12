@@ -26,6 +26,7 @@
 		939AD04A27690F1000F73FFE /* UINavigationController +Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939AD04927690F1000F73FFE /* UINavigationController +Ext.swift */; };
 		939AD04D27692EFB00F73FFE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 939AD04C27692EFB00F73FFE /* IQKeyboardManagerSwift */; };
 		939E4A2F278CA8AE00A9A0E2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939E4A2E278CA8AE00A9A0E2 /* PhotoViewController.swift */; };
+		93A064F1278ED46C0099412D /* UserDefManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A064F0278ED46C0099412D /* UserDefManager.swift */; };
 		93A59880275CA67300FCC32B /* UnsplashCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5987F275CA67300FCC32B /* UnsplashCollectionVC.swift */; };
 		93A59882275CA77500FCC32B /* CollectionCellmageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A59881275CA77500FCC32B /* CollectionCellmageView.swift */; };
 		93A59884275CA7CE00FCC32B /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A59883275CA7CE00FCC32B /* CollectionCell.swift */; };
@@ -108,6 +109,7 @@
 		939AD0472768D6F600F73FFE /* ImageSearchTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchTF.swift; sourceTree = "<group>"; };
 		939AD04927690F1000F73FFE /* UINavigationController +Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController +Ext.swift"; sourceTree = "<group>"; };
 		939E4A2E278CA8AE00A9A0E2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		93A064F0278ED46C0099412D /* UserDefManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefManager.swift; sourceTree = "<group>"; };
 		93A5987F275CA67300FCC32B /* UnsplashCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollectionVC.swift; sourceTree = "<group>"; };
 		93A59881275CA77500FCC32B /* CollectionCellmageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellmageView.swift; sourceTree = "<group>"; };
 		93A59883275CA7CE00FCC32B /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				93A9FB5227536D7000442A91 /* NetwokManager.swift */,
 				9305BA002757570F003E91F7 /* PersistenceManager.swift */,
+				93A064F0278ED46C0099412D /* UserDefManager.swift */,
 				9377028C277E146100BF0AC4 /* InstagramManager.swift */,
 			);
 			path = Manager;
@@ -636,6 +639,7 @@
 				93D228A5276C66C300D6AC18 /* CostumTitleLabel.swift in Sources */,
 				9305BA0A2757D697003E91F7 /* CellQuoteLabel.swift in Sources */,
 				93C2564F276B5E5400AACB94 /* FacebookViewController.swift in Sources */,
+				93A064F1278ED46C0099412D /* UserDefManager.swift in Sources */,
 				93C25651276B60E000AACB94 /* TwiterViewController.swift in Sources */,
 				939AD04A27690F1000F73FFE /* UINavigationController +Ext.swift in Sources */,
 				93BDB9C72748D44900E4B928 /* CostumQuoteLebel.swift in Sources */,
