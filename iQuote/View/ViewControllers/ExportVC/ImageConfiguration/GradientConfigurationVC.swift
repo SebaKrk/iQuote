@@ -39,7 +39,7 @@ class GradientConfigurationVC : UIViewController {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
-        checkGradienSwitch()
+        checkSwitchState()
     }
     //    MARK: - OBJC Func
     
@@ -55,8 +55,10 @@ class GradientConfigurationVC : UIViewController {
     
     @objc func handleShadowSwitch(sender: UISwitch) {
         if sender.isOn {
+            UserDefManager().shadowIsON = true
             NotificationCenter.default.post(name: .shadowQuoteLabel, object: nil)
         } else {
+            UserDefManager().shadowIsON = false
             NotificationCenter.default.post(name: .removeShadowQuoteLabel, object: nil)
         }
     }
@@ -137,14 +139,17 @@ class GradientConfigurationVC : UIViewController {
         ])
     }
 //    MARK: - HELPERS
-    private func checkGradienSwitch() {
+    private func checkSwitchState() {
         if UserDefManager().gradientIsON {
             gradientBackgraoundSwitch.setOn(true, animated: true)
-            print("jest wlaczony")
         } else {
             gradientBackgraoundSwitch.setOn(false, animated: true)
-            print("jest wylaczony")
         }
-        // usun state na poczatku uruchamiana aplikacji
-    }
+        
+        if UserDefManager().shadowIsON {
+            shadowQuoteSwitch.setOn(true, animated: true)
+        } else {
+            shadowQuoteSwitch.setOn(false, animated: true)
+        }
+    } // usun state na poczatku uruchamiana aplikacji
 }

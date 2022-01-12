@@ -32,7 +32,7 @@ class UserDefManager {
     }
     
     static func clearUserData(){
-        print("usuwa wszystekie user def")
-        // dodaj
+        UserDefManager().defaults.removeObject(forKey: UserDefManager.gradienViewIsON)
+        UserDefManager().defaults.removeObject(forKey: UserDefManager.shadowViewIsON)
     }
 }
