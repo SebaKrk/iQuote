@@ -117,6 +117,7 @@ class MainViewController : UIViewController {
         authorContainer.translatesAutoresizingMaskIntoConstraints = false
         navigationContainer.translatesAutoresizingMaskIntoConstraints = false
         
+        
         NSLayoutConstraint.activate([
             quoteContainer.topAnchor.constraint(equalTo: view.topAnchor),
             quoteContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),

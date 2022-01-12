@@ -57,6 +57,7 @@ class QuoteViewController : UIViewController {
         view.addSubview(backgroundImage)
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         
+        
         NSLayoutConstraint.activate([
             backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),

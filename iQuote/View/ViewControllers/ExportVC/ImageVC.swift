@@ -122,11 +122,9 @@ class ImageVC : UIViewController {
     // Share
     
     @objc func handleMessageObserver(notification: NSNotification) {
-        print("handleMessageObserver")
         sendMessage(contenToShare: contenToShare)
     }
     @objc func handleShareObserver(notification: NSNotification) {
-        print("handleShareObserver")
         let image = contenToShare.asImage()
         guard let image = image else {return}
         let shareVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
@@ -134,7 +132,6 @@ class ImageVC : UIViewController {
         present(shareVC,animated: true)
     }
     @objc func handleCopyTextObserver(notification: NSNotification) {
-        print("handleCopyTextObserver")
         UIPasteboard.general.string = quoteLabel.text
         presentAlertOnMainThred(title: "Sucess!", message: shareMessage.sucesffulyCopy.rawValue)
     }

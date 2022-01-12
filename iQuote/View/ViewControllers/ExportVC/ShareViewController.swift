@@ -24,17 +24,14 @@ class ShareViewController : UIViewController {
     }
     
     @objc func handleMessageButton() {
-        print("DEBUG: handleMessageButton")
         iMessageButton.flipLikeState()
         NotificationCenter.default.post(name: .iMessageObserver, object: nil)
     }
     @objc func handleShareButton() {
-        print("DEBUG: handleShareButton")
         shareButton.flipLikeState()
         NotificationCenter.default.post(name: .shareObserver, object: nil)
     }
     @objc func handleCopyTextButton() {
-        print("DEBUG: handleCopyTextButton")
         copyTextButton.flipLikeState()
         NotificationCenter.default.post(name: .copyTextObserver, object: nil)
     }

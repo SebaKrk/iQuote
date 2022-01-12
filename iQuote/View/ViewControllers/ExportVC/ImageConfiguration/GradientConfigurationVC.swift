@@ -43,10 +43,6 @@ class GradientConfigurationVC : UIViewController {
     }
     //    MARK: - OBJC Func
     
-    @objc func handleGradientButton() {
-        NotificationCenter.default.post(name: .gradientObserver, object: nil)
-    }
-    
     @objc func handleGradientSwitch(sender: UISwitch) {
         if sender.isOn {
             NotificationCenter.default.post(name: .gradientObserver, object: nil)
