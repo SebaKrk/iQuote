@@ -95,7 +95,7 @@ class GradientConfigurationVC : UIViewController {
         gradientBackgraoundLabel.translatesAutoresizingMaskIntoConstraints = false
         
         gradientBackgraoundLabel.text = "Gradient Background"
-        gradientBackgraoundLabel.font = UIFont(name: "Baskerville", size: 24)
+        gradientBackgraoundLabel.font = UIFont(name: "Roboto-Regular", size: 20)
         
         NSLayoutConstraint.activate([
             gradientBackgraoundLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor,constant: -30),
@@ -120,7 +120,7 @@ class GradientConfigurationVC : UIViewController {
         shadowQuoteLabel.translatesAutoresizingMaskIntoConstraints = false
         
         shadowQuoteLabel.text = "Shadow Label"
-        shadowQuoteLabel.font = UIFont(name: "Baskerville", size: 24)
+        shadowQuoteLabel.font = UIFont(name: "Roboto-Regular", size: 20)
         
         NSLayoutConstraint.activate([
             shadowQuoteLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor,constant: 30),
@@ -151,5 +151,5 @@ class GradientConfigurationVC : UIViewController {
         } else {
             shadowQuoteSwitch.setOn(false, animated: true)
         }
-    } // usun state na poczatku uruchamiana aplikacji
+    }
 }

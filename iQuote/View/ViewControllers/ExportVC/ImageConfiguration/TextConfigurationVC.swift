@@ -197,4 +197,3 @@ extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
         NotificationCenter.default.post(name: .fontColor, object: nil, userInfo: ["color" : fontColor])
     }
 }
-

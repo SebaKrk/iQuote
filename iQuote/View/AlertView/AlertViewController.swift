@@ -70,7 +70,7 @@ class AlertViewController : UIViewController {
         container.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.textColor = .primaryOrange()
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 34)
+        titleLabel.font = UIFont(name: "Roboto-Bold", size: 34)
         titleLabel.textAlignment = .center
         
         NSLayoutConstraint.activate([
@@ -99,7 +99,7 @@ class AlertViewController : UIViewController {
         container.addSubview(messageLabel)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        messageLabel.font = UIFont(name: "Baskerville", size: 24)
+        messageLabel.font = UIFont(name: "Roboto-Regular", size: 24)
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 4
         messageLabel.textAlignment = .center
