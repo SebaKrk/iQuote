@@ -17,6 +17,7 @@
 		93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */; };
 		9376472A2790201C00A5B4E9 /* CostumeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937647292790201C00A5B4E9 /* CostumeActionButton.swift */; };
 		9376472C279027B200A5B4E9 /* BottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9376472B279027B200A5B4E9 /* BottomLine.swift */; };
+		9376472E279034CC00A5B4E9 /* LogoForBackgroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9376472D279034CB00A5B4E9 /* LogoForBackgroundVC.swift */; };
 		9377028D277E146100BF0AC4 /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9377028C277E146100BF0AC4 /* InstagramManager.swift */; };
 		93992734275AA60A00E95481 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93992733275AA60A00E95481 /* ExportViewController.swift */; };
 		9399B1C82764823A0035021E /* GradientConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399B1C72764823A0035021E /* GradientConfigurationVC.swift */; };
@@ -116,6 +117,7 @@
 		93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		937647292790201C00A5B4E9 /* CostumeActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeActionButton.swift; sourceTree = "<group>"; };
 		9376472B279027B200A5B4E9 /* BottomLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLine.swift; sourceTree = "<group>"; };
+		9376472D279034CB00A5B4E9 /* LogoForBackgroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoForBackgroundVC.swift; sourceTree = "<group>"; };
 		9377028C277E146100BF0AC4 /* InstagramManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramManager.swift; sourceTree = "<group>"; };
 		93992733275AA60A00E95481 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		9399B1C72764823A0035021E /* GradientConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientConfigurationVC.swift; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				932AEFEA277586B700211869 /* PhotoLab */,
 				93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */,
 				9399B1C72764823A0035021E /* GradientConfigurationVC.swift */,
+				9376472D279034CB00A5B4E9 /* LogoForBackgroundVC.swift */,
 			);
 			path = ImageConfiguration;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				93A59882275CA77500FCC32B /* CollectionCellmageView.swift in Sources */,
 				93CE1CDB274ACB0D004FD559 /* NavigationViewController.swift in Sources */,
 				93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */,
+				9376472E279034CC00A5B4E9 /* LogoForBackgroundVC.swift in Sources */,
 				93CE1CDE274ACC0A004FD559 /* CostumQuoteButton.swift in Sources */,
 				93D2289D276C64F500D6AC18 /* SettingsModel.swift in Sources */,
 				93992734275AA60A00E95481 /* ExportViewController.swift in Sources */,

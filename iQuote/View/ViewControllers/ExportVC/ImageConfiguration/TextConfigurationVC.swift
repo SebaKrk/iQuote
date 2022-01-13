@@ -85,6 +85,7 @@ class TextConfigurationVC : UIViewController {
     }
     @objc func handleDoneButton() {
         print("handleDoneButton")
+        dismiss(animated: true)
     }
 //    MARK: - StackViews
     

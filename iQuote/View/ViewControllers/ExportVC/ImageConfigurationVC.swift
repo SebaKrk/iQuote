@@ -39,7 +39,7 @@ class ImageConfigurationVC : UIViewController {
         desVC.modalPresentationStyle = .overFullScreen
         present(desVC,animated: true,completion: nil)
     }
-    
+
     @objc func handleGradienButton() {
         gradienButton.flipLikeState()
         let desVC = GradientConfigurationVC()
@@ -53,7 +53,9 @@ class ImageConfigurationVC : UIViewController {
     
     @objc func handleLogoButton() {
         logoButton.flipLikeState()
-        NotificationCenter.default.post(name: .logoObserver, object: nil)
+        let desVC = LogoForBackground()
+        desVC.modalPresentationStyle = .overFullScreen
+        present(desVC,animated: true,completion: nil)
     }
     
     private func setupStackView() {

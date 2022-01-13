@@ -114,6 +114,7 @@ class PhotoViewController : UIViewController {
     }
     @objc func handleDoneButton() {
         print("handleDoneButton")
+        dismiss(animated: true)
     }
     //    MARK: - ConfigureButtons
     
