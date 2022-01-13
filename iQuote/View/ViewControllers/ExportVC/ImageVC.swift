@@ -119,6 +119,14 @@ class ImageVC : UIViewController {
         logonIsOn = !logonIsOn
         quoteLogo.isHidden = logonIsOn
     }
+    @objc func handleLogoImgObserver(notification: NSNotification) {
+        logonIsOn = false
+        quoteLogo.isHidden = logonIsOn
+        let logoIMG = notification.userInfo?["logoImg"]  as? UIImage
+        guard let logoIMG = logoIMG else {return}
+        quoteLogo.image = logoIMG
+    }
+    
     // Share
     
     @objc func handleMessageObserver(notification: NSNotification) {
@@ -179,6 +187,8 @@ class ImageVC : UIViewController {
                                                name: .sizeFontObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleLogoObserver(notification:)),
                                                name: .logoObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLogoImgObserver(notification:)),
+                                               name: .logoImgObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleDragLabel(notification:)),
                                                name: .dragLabelObserver, object: nil)
         
