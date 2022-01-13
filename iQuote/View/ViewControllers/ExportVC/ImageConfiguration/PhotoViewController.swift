@@ -12,29 +12,35 @@ class PhotoViewController : UIViewController {
     
     let container = UIView()
     let swipeLine = SwipeLine()
+    let bottomLine = BottomLine()
     
-    var stackView = UIStackView()
+    var bottomStackView = UIStackView()
     
     let unsplashButton = CostumTransButton(imageOne: "UnsplashImage1", imageTwo: "UnsplashImage2")
     let photoLibryButton = CostumTransButton(imageOne: "GalleryButton1", imageTwo: "GalleryButton1")
+    
+    let cancleButton = CostumeActionButton(name: "CANCEL")
+    let doneButton = CostumeActionButton(name: "DONE")
     
     var unsplashButtonIsON = false
     
     let searchText = ImageSearchTF()
     var isSearchTextFieldIsEmpty : Bool { return !searchText.text!.isEmpty }
     
+    //    MARK: - ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
-        //setupStackView()
+        setupBottomStackView()
         configureContainer()
         configureSwipeLinie()
-        //configureStackView()
         configurePhotoLibryButton()
         configureUnsplashButton()
         configureButtons()
         configureSearchTextField()
+        configureBottomStackView()
+        configureBottomLinie()
         self.searchText.delegate = self
     }
     
@@ -90,7 +96,6 @@ class PhotoViewController : UIViewController {
         }
     }
     
-    
     func unsplashSearch() {
         guard isSearchTextFieldIsEmpty else {
             self.presentAlertOnMainThred(title: "Upss", message: "Please enter text. We need to know what to look for")
@@ -104,6 +109,21 @@ class PhotoViewController : UIViewController {
         present(desVC, animated: true, completion: nil)
     }
     
+    @objc func handleCancleButton() {
+        print("handleCancleButton")
+    }
+    @objc func handleDoneButton() {
+        print("handleDoneButton")
+    }
+    //    MARK: - ConfigureButtons
+    
+    private func configureButtons() {
+        unsplashButton.addTarget(self, action: #selector(handleUnsplashButton), for: .touchUpInside)
+        photoLibryButton.addTarget(self, action: #selector(handlePhotoLibryButton), for: .touchUpInside)
+        cancleButton.addTarget(self, action: #selector(handleCancleButton), for: .touchUpInside)
+        doneButton.addTarget(self, action: #selector(handleDoneButton), for: .touchUpInside)
+    }
+    
     //    MARK: - GestureRecognizer
     
     private func createDissmisKeybordTapgesture() {
@@ -112,16 +132,16 @@ class PhotoViewController : UIViewController {
     }
     
     //    MARK: - StackView
-    //    private func setupStackView() {
-    //        stackView = UIStackView(arrangedSubviews: [photoLibryButton, unsplashButton])
-    //        stackView.axis = .horizontal
-    //        stackView.distribution = .fillEqually
-    //    }
+    
+    private func setupBottomStackView() {
+        bottomStackView = UIStackView(arrangedSubviews: [cancleButton,doneButton])
+        bottomStackView.axis = .horizontal
+        bottomStackView.distribution = .fillEqually
+    }
     
     //    MARK: - Constraints
     
     private func configureContainer() {
-        
         view.addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
         container.backgroundColor = .black
@@ -146,24 +166,14 @@ class PhotoViewController : UIViewController {
             swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.2)
         ])
     }
-    //    private func configureStackView() {
-    //        container.addSubview(stackView)
-    //        stackView.translatesAutoresizingMaskIntoConstraints = false
-    //
-    //        NSLayoutConstraint.activate([
-    //            stackView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
-    //            stackView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-    //            stackView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-    //            stackView.heightAnchor.constraint(equalToConstant: 70)
-    //        ])
-    //    }
+    
     private func configurePhotoLibryButton() {
         container.addSubview(photoLibryButton)
         photoLibryButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             photoLibryButton.centerXAnchor.constraint(equalTo: container.centerXAnchor, constant: -50),
-            photoLibryButton.centerYAnchor.constraint(equalTo: container.centerYAnchor)
+            photoLibryButton.centerYAnchor.constraint(equalTo: container.centerYAnchor,constant: -30)
         ])
     }
     private func configureUnsplashButton() {
@@ -172,7 +182,7 @@ class PhotoViewController : UIViewController {
         
         NSLayoutConstraint.activate([
             unsplashButton.centerXAnchor.constraint(equalTo: container.centerXAnchor,constant: 50),
-            unsplashButton.centerYAnchor.constraint(equalTo: container.centerYAnchor)
+            unsplashButton.centerYAnchor.constraint(equalTo: container.centerYAnchor,constant: -30)
         ])
     }
     
@@ -187,13 +197,30 @@ class PhotoViewController : UIViewController {
             searchText.heightAnchor.constraint(equalToConstant: 40),
             searchText.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.7)
         ])
+    }
+    
+    private func configureBottomStackView() {
+        container.addSubview(bottomStackView)
+        bottomStackView.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([
+            bottomStackView.bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor),
+            bottomStackView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            bottomStackView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            bottomStackView.heightAnchor.constraint(equalToConstant: 40)
+        ])
     }
-    private func configureButtons() {
-        unsplashButton.addTarget(self, action: #selector(handleUnsplashButton), for: .touchUpInside)
-        photoLibryButton.addTarget(self, action: #selector(handlePhotoLibryButton), for: .touchUpInside)
+    private func configureBottomLinie() {
+        container.addSubview(bottomLine)
+        bottomLine.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            bottomLine.bottomAnchor.constraint(equalTo: bottomStackView.topAnchor),
+            bottomLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            bottomLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.9)
+        ])
     }
-//    MARK: - Animation
+    //    MARK: - Animation
     
     private func animateTextField() {
         let animation = CABasicAnimation(keyPath: "position")

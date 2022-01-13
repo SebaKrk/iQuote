@@ -15,6 +15,7 @@ class TextConfigurationVC : UIViewController {
     
     let container = UIView()
     var textAligmentStack = UIStackView()
+    var bottomStackView = UIStackView()
     
     let textLeft = CostumTransButton(imageOne: "alignLeft1", imageTwo: "alignLeft1")
     let textCenter = CostumTransButton(imageOne: "alignCenter1", imageTwo: "alignCenter1")
@@ -24,18 +25,27 @@ class TextConfigurationVC : UIViewController {
     let fontSizeLabel = CostumTitleLabel(textAligment: .center, fontSize: 14)
     let fontAndColorPiker = UIPickerView()
     
+    let cancleButton = CostumeActionButton(name: "CANCEL")
+    let doneButton = CostumeActionButton(name: "DONE")
+    
     private let swipeLine = SwipeLine()
+    private let bottomLine = BottomLine()
+    
+//    MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupStackView()
+        setupBottomStackView()
         configureContainer()
         configureSwipeLinie()
         configureTextAligmentStack()
         configureFontAndColorPiker()
         configureFontSizeSlider()
         configureFontSizeLabel()
+        configureBottomStackView()
+        configureBottomLinie()
     }
     override func viewDidLayoutSubviews() {
         cardOriginYext = container.frame.origin.y
@@ -70,6 +80,13 @@ class TextConfigurationVC : UIViewController {
         let right = NSTextAlignment(rawValue: 2)
         NotificationCenter.default.post(name: .textAlignmentObserver, object: nil, userInfo: ["quoteTextAligment" : right!])
     }
+    @objc func handleCancleButton() {
+        print("handleCancleButton")
+    }
+    @objc func handleDoneButton() {
+        print("handleDoneButton")
+    }
+//    MARK: - StackViews
     
     private func setupStackView() {
         textAligmentStack = UIStackView(arrangedSubviews: [textLeft,textCenter,textRight])
@@ -77,10 +94,19 @@ class TextConfigurationVC : UIViewController {
         textAligmentStack.distribution = .fillEqually
     }
     
+    private func setupBottomStackView() {
+        bottomStackView = UIStackView(arrangedSubviews: [cancleButton,doneButton])
+        bottomStackView.axis = .horizontal
+        bottomStackView.distribution = .fillEqually
+    }
+//    MARK: ConfigureButtons
+    
     private func configureButtons() {
         textLeft.addTarget(self, action: #selector(handleTextLeft), for: .touchUpInside)
         textCenter.addTarget(self, action: #selector(handleTextCenter), for: .touchUpInside)
         textRight.addTarget(self, action: #selector(handleTextRight), for: .touchUpInside)
+        cancleButton.addTarget(self, action: #selector(handleCancleButton), for: .touchUpInside)
+        doneButton.addTarget(self, action: #selector(handleDoneButton), for: .touchUpInside)
     }
     
     //    MARK: - Constraints
@@ -94,7 +120,7 @@ class TextConfigurationVC : UIViewController {
             container.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             container.leftAnchor.constraint(equalTo: view.leftAnchor),
             container.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            container.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3)
+            container.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
         ])
     }
     private func configureSwipeLinie() {
@@ -149,7 +175,7 @@ class TextConfigurationVC : UIViewController {
         fontSizeSlider.thumbTintColor = .primaryOrange()
         
         NSLayoutConstraint.activate([
-            fontSizeSlider.topAnchor.constraint(equalTo: fontAndColorPiker.bottomAnchor),
+            fontSizeSlider.topAnchor.constraint(equalTo: fontAndColorPiker.bottomAnchor,constant: -25),
             fontSizeSlider.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             fontSizeSlider.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.7),
             fontSizeSlider.heightAnchor.constraint(equalToConstant: 50)
@@ -169,7 +195,28 @@ class TextConfigurationVC : UIViewController {
             fontSizeLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor)
         ])
     }
+
+    private func configureBottomStackView() {
+        container.addSubview(bottomStackView)
+        bottomStackView.translatesAutoresizingMaskIntoConstraints = false
     
+        NSLayoutConstraint.activate([
+            bottomStackView.bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor),
+            bottomStackView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            bottomStackView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            bottomStackView.heightAnchor.constraint(equalToConstant: 40)
+        ])
+    }
+    private func configureBottomLinie() {
+        container.addSubview(bottomLine)
+        bottomLine.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            bottomLine.bottomAnchor.constraint(equalTo: bottomStackView.topAnchor),
+            bottomLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            bottomLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.9)
+        ])
+    }
 }
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 
