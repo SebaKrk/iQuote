@@ -16,9 +16,9 @@ class TextConfigurationVC : UIViewController {
     let container = UIView()
     var textAligmentStack = UIStackView()
     
-    let textLeft = CostumTransButton(imageOne: "alignLeft1", imageTwo: "alignLeft2")
-    let textCenter = CostumTransButton(imageOne: "alignCenter1", imageTwo: "alignCenter2")
-    let textRight = CostumTransButton(imageOne: "alignRight1", imageTwo: "alignRight2")
+    let textLeft = CostumTransButton(imageOne: "alignLeft1", imageTwo: "alignLeft1")
+    let textCenter = CostumTransButton(imageOne: "alignCenter1", imageTwo: "alignCenter1")
+    let textRight = CostumTransButton(imageOne: "alignRight1", imageTwo: "alignRight1")
     
     let fontSizeSlider = UISlider()
     let fontSizeLabel = CostumTitleLabel(textAligment: .center, fontSize: 14)
@@ -52,7 +52,7 @@ class TextConfigurationVC : UIViewController {
     
     @objc func handleFontSizeSlider(sender: UISlider){
         let roundedStepValue = CGFloat(Int(sender.value))
-        fontSizeLabel.text = "\(roundedStepValue)" //roundedStepValue
+        fontSizeLabel.text = "\(roundedStepValue)"
         NotificationCenter.default.post(name: .sizeFontObserver, object: nil, userInfo: ["size" : roundedStepValue])
     }
     @objc func handleTextLeft() {
@@ -178,19 +178,17 @@ extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
         return 2
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
+    
         return component == 0 ? fontArray.count : colorArray.count
     }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         return component == 0 ? fontArray[row] : colorArray[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let fontName = fontArray[row]
-        let colorName = colorArray[row]
         
-        component == 0 ? postFont(fontName: fontName) : postFontColor(fontColor: colorName)
-        
+        component == 0 ? postFont(fontName: fontArray[row]) : postFontColor(fontColor: colorArray[row])
     }
     private func postFont(fontName : String) {
         NotificationCenter.default.post(name: .fontQuote, object: nil, userInfo: ["font" : fontName])
@@ -199,6 +197,4 @@ extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
         NotificationCenter.default.post(name: .fontColor, object: nil, userInfo: ["color" : fontColor])
     }
 }
-
-
 

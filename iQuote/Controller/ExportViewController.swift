@@ -57,7 +57,7 @@ class ExportViewController : UIViewController {
     private func configureContainer() {
         view.addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
-        container.backgroundColor = .costumeGray()
+        container.backgroundColor = .costumDarkGray() // .costumeGray()
         container.layer.cornerRadius = 25
         
         NSLayoutConstraint.activate([

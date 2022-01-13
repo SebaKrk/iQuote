@@ -15,8 +15,10 @@ class PhotoViewController : UIViewController {
     
     var stackView = UIStackView()
     
-    let unsplashButton = CostumTransButton(imageOne: "UnsplashImage1", imageTwo: "UnsplashImage1")
+    let unsplashButton = CostumTransButton(imageOne: "UnsplashImage1", imageTwo: "UnsplashImage2")
     let photoLibryButton = CostumTransButton(imageOne: "GalleryButton1", imageTwo: "GalleryButton1")
+    
+    var unsplashButtonIsON = false
     
     let searchText = ImageSearchTF()
     var isSearchTextFieldIsEmpty : Bool { return !searchText.text!.isEmpty }
@@ -25,10 +27,12 @@ class PhotoViewController : UIViewController {
         super.viewDidLoad()
         
         setupView()
-        setupStackView()
+        //setupStackView()
         configureContainer()
         configureSwipeLinie()
-        configureStackView()
+        //configureStackView()
+        configurePhotoLibryButton()
+        configureUnsplashButton()
         configureButtons()
         configureSearchTextField()
         self.searchText.delegate = self
@@ -73,25 +77,26 @@ class PhotoViewController : UIViewController {
     }
     
     @objc func handleUnsplashButton() {
-        unsplashButton.flipLikeState()
+        unsplashButtonIsON = !unsplashButtonIsON
         
-        searchText.isHidden = false
-        
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = 0.07
-        animation.repeatCount = 4
-        animation.autoreverses = true
-        animation.fromValue = NSValue(cgPoint: CGPoint(x: searchText.center.x - 10, y: searchText.center.y))
-        animation.fromValue = NSValue(cgPoint: CGPoint(x: searchText.center.x + 10, y: searchText.center.y))
-        
-        searchText.layer.add(animation, forKey: "position")
-        
+        if unsplashButtonIsON == true {
+            unsplashButton.flipLikeState()
+            searchText.isHidden = false
+            //animateTextField()
+            searchText.becomeFirstResponder()
+        } else {
+            unsplashButton.flipLikeState()
+            searchText.isHidden = true
+        }
     }
+    
+    
     func unsplashSearch() {
         guard isSearchTextFieldIsEmpty else {
             self.presentAlertOnMainThred(title: "Upss", message: "Please enter text. We need to know what to look for")
             return
         }
+        unsplashButton.flipLikeState()
         
         let desVC = UnsplashCollectionVC()
         desVC.category = searchText.text ?? "landscapes"
@@ -105,13 +110,13 @@ class PhotoViewController : UIViewController {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         container.addGestureRecognizer(tap)
     }
-
+    
     //    MARK: - StackView
-    private func setupStackView() {
-        stackView = UIStackView(arrangedSubviews: [photoLibryButton, unsplashButton])
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-    }
+    //    private func setupStackView() {
+    //        stackView = UIStackView(arrangedSubviews: [photoLibryButton, unsplashButton])
+    //        stackView.axis = .horizontal
+    //        stackView.distribution = .fillEqually
+    //    }
     
     //    MARK: - Constraints
     
@@ -122,7 +127,6 @@ class PhotoViewController : UIViewController {
         container.backgroundColor = .black
         
         container.roundCorners(with: [.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 25)
-
         
         NSLayoutConstraint.activate([
             container.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -142,24 +146,43 @@ class PhotoViewController : UIViewController {
             swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.2)
         ])
     }
-    private func configureStackView() {
-        container.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-    
+    //    private func configureStackView() {
+    //        container.addSubview(stackView)
+    //        stackView.translatesAutoresizingMaskIntoConstraints = false
+    //
+    //        NSLayoutConstraint.activate([
+    //            stackView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+    //            stackView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+    //            stackView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+    //            stackView.heightAnchor.constraint(equalToConstant: 70)
+    //        ])
+    //    }
+    private func configurePhotoLibryButton() {
+        container.addSubview(photoLibryButton)
+        photoLibryButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            stackView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: 70)
+            photoLibryButton.centerXAnchor.constraint(equalTo: container.centerXAnchor, constant: -50),
+            photoLibryButton.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
+    private func configureUnsplashButton() {
+        container.addSubview(unsplashButton)
+        unsplashButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            unsplashButton.centerXAnchor.constraint(equalTo: container.centerXAnchor,constant: 50),
+            unsplashButton.centerYAnchor.constraint(equalTo: container.centerYAnchor)
+        ])
+    }
+    
     private func configureSearchTextField() {
         container.addSubview(searchText)
         searchText.translatesAutoresizingMaskIntoConstraints = false
         searchText.returnKeyType = UIReturnKeyType.go
         
         NSLayoutConstraint.activate([
-            searchText.topAnchor.constraint(equalTo: stackView.bottomAnchor),
+            searchText.topAnchor.constraint(equalTo: photoLibryButton.bottomAnchor, constant: 20),
             searchText.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             searchText.heightAnchor.constraint(equalToConstant: 40),
             searchText.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.7)
@@ -170,7 +193,19 @@ class PhotoViewController : UIViewController {
         unsplashButton.addTarget(self, action: #selector(handleUnsplashButton), for: .touchUpInside)
         photoLibryButton.addTarget(self, action: #selector(handlePhotoLibryButton), for: .touchUpInside)
     }
-
+//    MARK: - Animation
+    
+    private func animateTextField() {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: searchText.center.x - 10, y: searchText.center.y))
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: searchText.center.x + 10, y: searchText.center.y))
+        
+        searchText.layer.add(animation, forKey: "position")
+    }
+    
 }
 
 //  MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate

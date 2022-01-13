@@ -39,7 +39,7 @@ class GradientConfigurationVC : UIViewController {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
-        checkSwitchState()
+        checkGradienSwitch()
     }
     //    MARK: - OBJC Func
     
@@ -139,7 +139,7 @@ class GradientConfigurationVC : UIViewController {
         ])
     }
 //    MARK: - HELPERS
-    private func checkSwitchState() {
+    private func checkGradienSwitch() {
         if UserDefManager().gradientIsON {
             gradientBackgraoundSwitch.setOn(true, animated: true)
         } else {
