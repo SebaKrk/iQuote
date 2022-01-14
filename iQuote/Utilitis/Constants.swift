@@ -21,4 +21,46 @@ enum Constants {
 }
 
 
-        
+enum Icons {
+    // Main Logo
+    static let iQuoteMainButton = "iQuoteLogo"
+    static let iQuoteMainButtonWhite = "iQuoteLogoWhite"
+    
+    // Expand Buttons
+    static let nextButtonMain = "NewNextButton"
+    static let nextButtonMain2 = "NewNextButton2"
+    static let shareButtonMain = "NewShareButton"
+    static let shareButtonMain2 = "NewShareButton2"
+    static let heartButton = "newHeartButton"
+    static let heartButton2 = "newHeartButton2"
+    static let listButtonMain = "newListButton"
+    static let listButtonMain2 = "newListButton2"
+    
+    
+    // Photo Options Buttons
+    static let dragTextButton = "NewDragTextButton1"
+    static let dragTextButton2 = "NewDragTextButton2"
+    static let gradientButton = "NewGradientButton1"
+    static let gradientButton2 = "NewGradientButton2"
+    static let photoButton = "NewPhotoButton1"
+    static let photoButton2 = "NewPhotoButton2"
+    static let quoteIconButton = "NewQuoteIconButton1"
+    static let quoteIconButton2 = "NewQuoteIconButton2"
+    static let textButton = "NewTextButton1"
+    static let textButton2 = "NewTextButton2"
+    
+    //Share Option Buttons
+    
+    static let iMessageButton = "newiMasageIcon1"
+    static let iMessageButton2 = "newiMasageIcon2"
+    static let shareButton = "NewExportButton"
+    static let shareButton2 = "NewExportButton2"
+    static let copyTextButton = "newCopyTextIcon1"
+    static let copyTextButton2 = "newCopyTextIcon2"
+}
+
+
+
+
+
+

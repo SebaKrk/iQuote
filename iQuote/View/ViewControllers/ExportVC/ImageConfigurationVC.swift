@@ -13,11 +13,11 @@ class ImageConfigurationVC : UIViewController {
 
     var stackView = UIStackView()
     
-    let backgroundImageButton  = CostumTransButton(imageOne: "PhotoButton1", imageTwo: "PhotoButton1")
-    let textButton  = CostumTransButton(imageOne: "TextButton1", imageTwo: "TextButton1")
-    let gradienButton = CostumTransButton(imageOne: "GradientButton1", imageTwo: "GradientButton1")
-    let logoButton = CostumTransButton(imageOne: "QuoteIconButton1", imageTwo: "QuoteIconButton1")
-    let dragLabelButton  = CostumTransButton(imageOne: "DragTextButton1",imageTwo: "DragTextButton1")
+    let backgroundImageButton  = CostumTransButton(imageOne: Icons.photoButton, imageTwo:  Icons.photoButton)
+    let textButton  = CostumTransButton(imageOne: Icons.textButton, imageTwo: Icons.textButton)
+    let gradienButton = CostumTransButton(imageOne: Icons.gradientButton, imageTwo: Icons.gradientButton)
+    let logoButton = CostumTransButton(imageOne: Icons.quoteIconButton, imageTwo: Icons.quoteIconButton )
+    let dragLabelButton  = CostumTransButton(imageOne: Icons.dragTextButton,imageTwo: Icons.dragTextButton)
 
     override func viewDidLoad() {
         super.viewDidLoad()

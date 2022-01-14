@@ -14,11 +14,11 @@ class NavigationViewController : UIViewController {
     
     var mainQuoteButton = CostumeQuoteButton()
     var quoteButtonIsOpen = false
-    
-    var heartButton = CostumTransButton(imageOne: "heartButton", imageTwo: "heartButton")
-    var listButton = CostumTransButton(imageOne: "listButton", imageTwo: "listButton")
-    var nextButton = CostumTransButton(imageOne: "nextButton", imageTwo: "nextButton")
-    var exportButton = CostumTransButton(imageOne: "exportButton", imageTwo: "exportButton")
+        
+    var heartButton = CostumTransButton(imageOne: Icons.heartButton, imageTwo: Icons.heartButton)
+    var listButton = CostumTransButton(imageOne: Icons.listButtonMain, imageTwo: Icons.listButtonMain)
+    var nextButton = CostumTransButton(imageOne: Icons.nextButtonMain, imageTwo: Icons.nextButtonMain)
+    var exportButton = CostumTransButton(imageOne: Icons.shareButtonMain, imageTwo: Icons.shareButtonMain)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,7 +123,7 @@ class NavigationViewController : UIViewController {
                     let desVC = FavoritesListViewController()
                     desVC.modalPresentationStyle = .overFullScreen
                     desVC.modalTransitionStyle = .flipHorizontal
-                    self.present(desVC, animated: true, completion: nil)
+                    self.present(desVC, animated: false, completion: nil)
                 }
             case .failure:
                 break
