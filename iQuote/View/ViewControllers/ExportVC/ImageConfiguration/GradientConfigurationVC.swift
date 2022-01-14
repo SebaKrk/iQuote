@@ -11,6 +11,7 @@ import UIKit
 class GradientConfigurationVC : UIViewController {
     
     let container = UIView()
+    var bottomStackView = UIStackView()
     
     let gradientBackgraoundLabel = UILabel()
     let shadowQuoteLabel = UILabel()
@@ -18,17 +19,27 @@ class GradientConfigurationVC : UIViewController {
     let gradientBackgraoundSwitch = UISwitch()
     let shadowQuoteSwitch = UISwitch()
     
+    let cancleButton = CostumeActionButton(name: "CANCEL")
+    let doneButton = CostumeActionButton(name: "DONE")
+    
     private let swipeLine = SwipeLine()
+    private let bottomLine = BottomLine()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupBottomStackView()
+        configureButtons()
         configureContainer()
         configureSwipeLinie()
         configureGradientLabel()
         configureGradientSwitch()
         configureShadowQuoteLabel()
         configureShadoSwitch()
+        configureBottomStackView()
+        configureBottomLinie()
+        
     }
     override func viewDidLayoutSubviews() {
         cardOriginYext = container.frame.origin.y
@@ -62,6 +73,28 @@ class GradientConfigurationVC : UIViewController {
             NotificationCenter.default.post(name: .removeShadowQuoteLabel, object: nil)
         }
     }
+    @objc func handleCancleButton() {
+        print("handleCancleButton")
+    }
+    @objc func handleDoneButton() {
+        print("handleDoneButton")
+        dismiss(animated: true)
+    }
+    //    MARK: - StackViews
+    
+    
+    private func setupBottomStackView() {
+        bottomStackView = UIStackView(arrangedSubviews: [cancleButton,doneButton])
+        bottomStackView.axis = .horizontal
+        bottomStackView.distribution = .fillEqually
+    }
+    //    MARK: ConfigureButtons
+    
+    private func configureButtons() {
+        cancleButton.addTarget(self, action: #selector(handleCancleButton), for: .touchUpInside)
+        doneButton.addTarget(self, action: #selector(handleDoneButton), for: .touchUpInside)
+    }
+    
     
     //    MARK: - Constraints
     
@@ -89,20 +122,20 @@ class GradientConfigurationVC : UIViewController {
             swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.2)
         ])
     }
-        
+    
     private func configureGradientLabel() {
         container.addSubview(gradientBackgraoundLabel)
         gradientBackgraoundLabel.translatesAutoresizingMaskIntoConstraints = false
         
         gradientBackgraoundLabel.text = "Gradient Background"
-        gradientBackgraoundLabel.font = UIFont(name: "Roboto-Regular", size: 20)
+        gradientBackgraoundLabel.font = UIFont(name: "Roboto-Regular", size: 16)
         
         NSLayoutConstraint.activate([
-            gradientBackgraoundLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor,constant: -30),
+            gradientBackgraoundLabel.topAnchor.constraint(equalTo: swipeLine.bottomAnchor, constant: 50),
             gradientBackgraoundLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor,constant: 30)
         ])
     }
-
+    
     private func configureGradientSwitch() {
         container.addSubview(gradientBackgraoundSwitch)
         gradientBackgraoundSwitch.translatesAutoresizingMaskIntoConstraints = false
@@ -120,10 +153,10 @@ class GradientConfigurationVC : UIViewController {
         shadowQuoteLabel.translatesAutoresizingMaskIntoConstraints = false
         
         shadowQuoteLabel.text = "Shadow Label"
-        shadowQuoteLabel.font = UIFont(name: "Roboto-Regular", size: 20)
+        shadowQuoteLabel.font = UIFont(name: "Roboto-Regular", size: 16)
         
         NSLayoutConstraint.activate([
-            shadowQuoteLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor,constant: 30),
+            shadowQuoteLabel.topAnchor.constraint(equalTo: gradientBackgraoundLabel.bottomAnchor, constant: 40),
             shadowQuoteLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor,constant: 30)
         ])
     }
@@ -138,7 +171,29 @@ class GradientConfigurationVC : UIViewController {
             shadowQuoteSwitch.trailingAnchor.constraint(equalTo: container.trailingAnchor,constant: -30)
         ])
     }
-//    MARK: - HELPERS
+    
+    private func configureBottomStackView() {
+        container.addSubview(bottomStackView)
+        bottomStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            bottomStackView.bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor),
+            bottomStackView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            bottomStackView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            bottomStackView.heightAnchor.constraint(equalToConstant: 40)
+        ])
+    }
+    private func configureBottomLinie() {
+        container.addSubview(bottomLine)
+        bottomLine.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            bottomLine.bottomAnchor.constraint(equalTo: bottomStackView.topAnchor),
+            bottomLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            bottomLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.9)
+        ])
+    }
+    //    MARK: - HELPERS
     private func checkGradienSwitch() {
         if UserDefManager().gradientIsON {
             gradientBackgraoundSwitch.setOn(true, animated: true)
