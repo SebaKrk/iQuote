@@ -19,8 +19,8 @@ class GradientConfigurationVC : UIViewController {
     let gradientBackgraoundSwitch = UISwitch()
     let shadowQuoteSwitch = UISwitch()
     
-    let cancleButton = CostumeActionButton(name: "CANCEL")
-    let doneButton = CostumeActionButton(name: "DONE")
+    let cancleButton = CancleButton()
+    let doneButton = ActionButton()
     
     private let swipeLine = SwipeLine()
     private let bottomLine = BottomLine()

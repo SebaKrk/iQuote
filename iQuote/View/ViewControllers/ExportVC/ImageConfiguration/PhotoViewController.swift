@@ -19,8 +19,8 @@ class PhotoViewController : UIViewController {
     let unsplashButton = CostumTransButton(imageOne: Icons.unsplashIcon, imageTwo: Icons.unsplashIcon2)
     let photoLibryButton = CostumTransButton(imageOne: Icons.galleryButton, imageTwo: Icons.galleryButton)
     
-    let cancleButton = CostumeActionButton(name: "CANCEL")
-    let doneButton = CostumeActionButton(name: "DONE")
+    let cancleButton = CancleButton()
+    let doneButton = ActionButton()
     
     var unsplashButtonIsON = false
     

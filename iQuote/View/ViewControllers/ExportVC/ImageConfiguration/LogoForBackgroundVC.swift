@@ -17,8 +17,8 @@ class LogoForBackground : UIViewController {
     let whiteLogobutton = CostumTransButton(imageOne: Icons.LogoButton2, imageTwo: Icons.LogoButton2)
     let emptyLogoButton = CostumTransButton(imageOne: Icons.LogoButton3, imageTwo: Icons.LogoButton3)
     
-    let cancleButton = CostumeActionButton(name: "CANCLE")
-    let doneButton = CostumeActionButton(name: "DONE")
+    let cancleButton = CancleButton()
+    let doneButton = ActionButton()
     
     private let swipeLine = SwipeLine()
     private let bottomLine = BottomLine()
