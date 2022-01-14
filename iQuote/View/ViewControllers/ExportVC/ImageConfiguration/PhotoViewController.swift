@@ -17,7 +17,7 @@ class PhotoViewController : UIViewController {
     var bottomStackView = UIStackView()
     
     let unsplashButton = CostumTransButton(imageOne: Icons.unsplashIcon, imageTwo: Icons.unsplashIcon2)
-    let photoLibryButton = CostumTransButton(imageOne: Icons.galleryButton, imageTwo: Icons.galleryButton2)
+    let photoLibryButton = CostumTransButton(imageOne: Icons.galleryButton, imageTwo: Icons.galleryButton)
     
     let cancleButton = CostumeActionButton(name: "CANCEL")
     let doneButton = CostumeActionButton(name: "DONE")
