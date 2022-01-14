@@ -29,6 +29,6 @@ class CostumeActionButton : UIButton {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .black
         setTitleColor(.white, for: .normal)
-        titleLabel?.font = UIFont(name: "Roboto-Regular", size: 14)
+        titleLabel?.font = UIFont(name: fontText.doneButton, size: 14)
     }
 }

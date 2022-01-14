@@ -11,8 +11,8 @@ import UIKit
 class CostumeQuoteButton  : UIButton {
     
     var isLike = false
-    var offButton = UIImage(named: "QuoteButton")
-    var onButton = UIImage(named: "QuoteButton2")
+    var offButton = UIImage(named: Icons.iQuoteMainButtonWhite)
+    var onButton = UIImage(named: Icons.iQuoteMainButton)
     let buttonSize: CGFloat = 80
     
     override init(frame: CGRect) {

@@ -19,7 +19,7 @@ class CostumQuoteLabel : UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     private func configure() {
-        font = UIFont(name: "Baskerville", size: 36)
+        font = UIFont(name: fontText.mainQuote, size: 36)
         textColor = .white
         textAlignment = .center
         numberOfLines = 0

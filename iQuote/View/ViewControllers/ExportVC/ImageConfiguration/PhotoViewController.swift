@@ -16,8 +16,8 @@ class PhotoViewController : UIViewController {
     
     var bottomStackView = UIStackView()
     
-    let unsplashButton = CostumTransButton(imageOne: "UnsplashImage1", imageTwo: "UnsplashImage2")
-    let photoLibryButton = CostumTransButton(imageOne: "GalleryButton1", imageTwo: "GalleryButton1")
+    let unsplashButton = CostumTransButton(imageOne: Icons.unsplashIcon, imageTwo: Icons.unsplashIcon2)
+    let photoLibryButton = CostumTransButton(imageOne: Icons.galleryButton, imageTwo: Icons.galleryButton2)
     
     let cancleButton = CostumeActionButton(name: "CANCEL")
     let doneButton = CostumeActionButton(name: "DONE")
@@ -98,7 +98,7 @@ class PhotoViewController : UIViewController {
     
     func unsplashSearch() {
         guard isSearchTextFieldIsEmpty else {
-            self.presentAlertOnMainThred(title: "Upss", message: "Please enter text. We need to know what to look for")
+            self.presentAlertOnMainThred(title: "Upss", message: ErrorMassage.invalidText.rawValue)
             return
         }
         unsplashButton.flipLikeState()
@@ -261,8 +261,7 @@ extension PhotoViewController : UnsplashIsEmptyDelegate {
     func arrayIsEmpty() {
         DispatchQueue.main.async {
             self.dismiss(animated: true) {
-                let message = "The data entered for the search are incorrect. Please try again"
-                self.presentAlertOnMainThred(title: "Upsss", message: message)
+                self.presentAlertOnMainThred(title: "Upsss", message: ErrorMassage.wrongString.rawValue)
             }
         }
     }

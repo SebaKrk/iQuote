@@ -11,8 +11,8 @@ import UIKit
 class QuoteViewController : UIViewController {
     
     
-    let backgroundImage = CostumBackground(placehodler: "BackgroundImage")
-    let quoteImage = CostumBackground(placehodler: "halfQuote")
+    let backgroundImage = CostumBackground(placehodler: Constants.backgroundIMG)
+    let quoteImage = CostumBackground(placehodler: Constants.halfQuoteIMG)
     let quoteLabel = CostumQuoteLabel()
     
     var quote : [Quote] = []

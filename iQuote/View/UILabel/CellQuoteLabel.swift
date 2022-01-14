@@ -19,7 +19,7 @@ class CellQuoteLabel : UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     private func configure() {
-        font = UIFont(name: "Baskerville", size: 20)
+        font = UIFont(name: fontText.listQuote, size: 20)
         textColor = .black
         textAlignment = .left
         numberOfLines = 1

@@ -13,9 +13,9 @@ class LogoForBackground : UIViewController {
     var stackView = UIStackView()
     var bottomStackView = UIStackView()
     
-    let mainLogoButton = CostumTransButton(imageOne: "LogoButton1", imageTwo: "LogoButton1")
-    let whiteLogobutton = CostumTransButton(imageOne: "LogoButton2", imageTwo: "LogoButton2")
-    let emptyLogoButton = CostumTransButton(imageOne: "LogoButton3", imageTwo: "LogoButton3")
+    let mainLogoButton = CostumTransButton(imageOne: Icons.LogoButton1, imageTwo: Icons.LogoButton1)
+    let whiteLogobutton = CostumTransButton(imageOne: Icons.LogoButton2, imageTwo: Icons.LogoButton2)
+    let emptyLogoButton = CostumTransButton(imageOne: Icons.LogoButton3, imageTwo: Icons.LogoButton3)
     
     let cancleButton = CostumeActionButton(name: "CANCLE")
     let doneButton = CostumeActionButton(name: "DONE")
@@ -61,11 +61,11 @@ class LogoForBackground : UIViewController {
 //  MARK: - OBJC Func
     
     @objc func handleMainLogoButton() {
-        let logoIMG = UIImage(named: "LogoBackground")
+        let logoIMG = UIImage(named: Icons.LogoForBackground)
         NotificationCenter.default.post(name: .logoImgObserver, object: nil, userInfo: ["logoImg" : logoIMG!])
     }
     @objc func handleWhiteLogoButton() {
-        let logoIMG  = UIImage(named: "LogoForBackgroundWhite")
+        let logoIMG  = UIImage(named: Icons.LogoForBackgroundWhite)
         NotificationCenter.default.post(name: .logoImgObserver, object: nil, userInfo: ["logoImg" : logoIMG!])
     }
     @objc func handleEmptyLogoButton() {

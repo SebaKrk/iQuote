@@ -70,7 +70,7 @@ class AlertViewController : UIViewController {
         container.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.textColor = .primaryOrange()
-        titleLabel.font = UIFont(name: "Roboto-Bold", size: 34)
+        titleLabel.font = UIFont(name: fontText.popupTitle, size: 34)
         titleLabel.textAlignment = .center
         
         NSLayoutConstraint.activate([
@@ -84,7 +84,7 @@ class AlertViewController : UIViewController {
         container.addSubview(dissmisButton)
         dissmisButton.translatesAutoresizingMaskIntoConstraints = false
         
-        dissmisButton.setImage(UIImage(named: "QuoteButton2"), for: .normal)
+        dissmisButton.setImage(UIImage(named: Icons.iQuoteMainButton), for: .normal)
         dissmisButton.layer.masksToBounds = true
         dissmisButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
         dissmisButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
@@ -99,7 +99,7 @@ class AlertViewController : UIViewController {
         container.addSubview(messageLabel)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        messageLabel.font = UIFont(name: "Roboto-Regular", size: 24)
+        messageLabel.font = UIFont(name: fontText.popupMessage, size: 24)
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 4
         messageLabel.textAlignment = .center

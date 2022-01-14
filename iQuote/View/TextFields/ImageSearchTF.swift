@@ -29,7 +29,7 @@ class ImageSearchTF : UITextField {
         
         textColor = .black
         textAlignment = .center
-        font = UIFont.preferredFont(forTextStyle: .title2)
+        font = UIFont(name: fontText.fontLabel , size: 16)
         adjustsFontSizeToFitWidth = true
         minimumFontSize = 12
         

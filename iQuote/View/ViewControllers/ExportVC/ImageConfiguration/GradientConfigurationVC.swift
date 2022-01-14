@@ -128,7 +128,7 @@ class GradientConfigurationVC : UIViewController {
         gradientBackgraoundLabel.translatesAutoresizingMaskIntoConstraints = false
         
         gradientBackgraoundLabel.text = "Gradient Background"
-        gradientBackgraoundLabel.font = UIFont(name: "Roboto-Regular", size: 16)
+        gradientBackgraoundLabel.font = UIFont(name: fontText.fontLabel, size: 16)
         
         NSLayoutConstraint.activate([
             gradientBackgraoundLabel.topAnchor.constraint(equalTo: swipeLine.bottomAnchor, constant: 50),
@@ -153,7 +153,7 @@ class GradientConfigurationVC : UIViewController {
         shadowQuoteLabel.translatesAutoresizingMaskIntoConstraints = false
         
         shadowQuoteLabel.text = "Shadow Label"
-        shadowQuoteLabel.font = UIFont(name: "Roboto-Regular", size: 16)
+        shadowQuoteLabel.font = UIFont(name: fontText.fontLabel, size: 16)
         
         NSLayoutConstraint.activate([
             shadowQuoteLabel.topAnchor.constraint(equalTo: gradientBackgraoundLabel.bottomAnchor, constant: 40),

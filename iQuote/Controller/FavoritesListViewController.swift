@@ -149,7 +149,7 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
             }
         }
         deletedItem.backgroundColor = .white
-        deletedItem.image = UIImage(named: "cellDeleted")
+        deletedItem.image = UIImage(named: Icons.cellDeleted)
         
         
         let shareItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
@@ -165,7 +165,7 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         }
         
         shareItem.backgroundColor = .white
-        shareItem.image = UIImage(named: "cellExport")
+        shareItem.image = UIImage(named: Icons.cellExport)
         
         let swipeActions = UISwipeActionsConfiguration(actions: [deletedItem, shareItem])
         

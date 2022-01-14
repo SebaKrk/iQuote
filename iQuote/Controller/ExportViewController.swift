@@ -17,7 +17,7 @@ class ExportViewController : UIViewController {
     let optionContainer = UIView()
     let imageContainer = UIView()
     
-    var backgroundIMG = CostumBackground(placehodler: "BackgroundImage")
+    var backgroundIMG = CostumBackground(placehodler: Constants.backgroundIMG)
     var quoteLabel = CostumQuoteLabel()
     
     private let breakLine = SwipeLine()

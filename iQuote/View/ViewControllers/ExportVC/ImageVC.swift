@@ -20,7 +20,7 @@ class ImageVC : UIViewController {
     let contenToShare = UIView()
     let quoteContainer = UIView()
     
-    let backgroundIMG = CostumBackground(placehodler: "BackgroundImage")
+    let backgroundIMG = CostumBackground(placehodler: Constants.backgroundIMG)
     let quoteLabel = CostumQuoteLabel()
     let quoteLogo = UIImageView()
     
@@ -318,7 +318,7 @@ class ImageVC : UIViewController {
         backgroundIMG.addSubview(quoteLogo)
         quoteLogo.translatesAutoresizingMaskIntoConstraints = false
         
-        quoteLogo.image = UIImage(named: "LogoBackground")
+        quoteLogo.image = UIImage(named: Icons.LogoForBackground)
         quoteLogo.isHidden = logonIsOn
         
         NSLayoutConstraint.activate([

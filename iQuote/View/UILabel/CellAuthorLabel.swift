@@ -19,7 +19,7 @@ class CellAuthorLabel : UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     private func configure() {
-        font = UIFont(name: "Baskerville", size: 12)
+        font = UIFont(name: fontText.listAuthor, size: 12)
         textColor = .black
         textAlignment = .left
         numberOfLines = 1
