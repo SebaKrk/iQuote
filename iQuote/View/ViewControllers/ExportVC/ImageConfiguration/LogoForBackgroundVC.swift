@@ -14,7 +14,7 @@ class LogoForBackground : UIViewController {
     var bottomStackView = UIStackView()
     
     let mainLogoButton = CostumTransButton(imageOne: Icons.LogoButton1, imageTwo: Icons.LogoButton1)
-    let whiteLogobutton = CostumTransButton(imageOne: Icons.LogoButton2, imageTwo: Icons.LogoButton2)
+    let whiteLogoButton = CostumTransButton(imageOne: Icons.LogoButton2, imageTwo: Icons.LogoButton2)
     let emptyLogoButton = CostumTransButton(imageOne: Icons.LogoButton3, imageTwo: Icons.LogoButton3)
     
     let cancleButton = CancleButton()
@@ -48,7 +48,7 @@ class LogoForBackground : UIViewController {
     }
 //    MARK: - StackView
     private func setupStackView() {
-        stackView = UIStackView(arrangedSubviews: [mainLogoButton,whiteLogobutton,emptyLogoButton])
+        stackView = UIStackView(arrangedSubviews: [mainLogoButton,whiteLogoButton,emptyLogoButton])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
     }
@@ -61,14 +61,17 @@ class LogoForBackground : UIViewController {
 //  MARK: - OBJC Func
     
     @objc func handleMainLogoButton() {
+        mainLogoButton.flipLikeState()
         let logoIMG = UIImage(named: Icons.LogoForBackground)
         NotificationCenter.default.post(name: .logoImgObserver, object: nil, userInfo: ["logoImg" : logoIMG!])
     }
     @objc func handleWhiteLogoButton() {
+        whiteLogoButton.flipLikeState()
         let logoIMG  = UIImage(named: Icons.LogoForBackgroundWhite)
         NotificationCenter.default.post(name: .logoImgObserver, object: nil, userInfo: ["logoImg" : logoIMG!])
     }
     @objc func handleEmptyLogoButton() {
+        emptyLogoButton.flipLikeState()
         NotificationCenter.default.post(name: .logoObserver, object: nil)
     }
     
@@ -83,7 +86,7 @@ class LogoForBackground : UIViewController {
     
     private func configureButtons() {
         mainLogoButton.addTarget(self, action: #selector(handleMainLogoButton), for: .touchUpInside)
-        whiteLogobutton.addTarget(self, action: #selector(handleWhiteLogoButton), for: .touchUpInside)
+        whiteLogoButton.addTarget(self, action: #selector(handleWhiteLogoButton), for: .touchUpInside)
         emptyLogoButton.addTarget(self, action: #selector(handleEmptyLogoButton), for: .touchUpInside)
         cancleButton.addTarget(self, action: #selector(handleCancleButton), for: .touchUpInside)
         doneButton.addTarget(self, action: #selector(handleDoneButton), for: .touchUpInside)
