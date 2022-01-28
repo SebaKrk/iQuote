@@ -2,7 +2,9 @@
 # iQuote
 
 ### Hi,
-### This is my app "iQuote" 
+### This is my app "iQuote" where you can edit and share your favorited quote
+
+<img src="https://github.com/SebaKrk/iQuote/blob/437f10faf1708ba1fa63fd39fcd5914fef4ea117/Assets/Recording_Export.gif" width="200" height="400" >
 
 ##### Main View and exp button
 <img src="Assets\01.Screenshot_MainView.png" width="200" height="400" > <img src="Assets\02.Screenshot_MenuExp.png" width="200" height="400" >
@@ -23,8 +25,8 @@
 - set the quote anywhere within the photo
 - add remove logo
 - share wherever you want
-<img src="https://github.com/SebaKrk/iQuote/blob/437f10faf1708ba1fa63fd39fcd5914fef4ea117/Assets/Recording_Export.gif" width="200" height="400" >
-
+Screenshot.Edit02
+<img src="Assets\Screenshot.Edit01.png" width="100" height="200" > <img src="Assets\Screenshot.Edit02.png" width="100" height="200" > <img src="Assets\Screenshot.Edit03.png" width="100" height="200" > <img src="Assets\Screenshot.Edit04.png" width="100" height="200" > <img src="Assets\Screenshot.Edit05.png" width="100" height="200" > <img src="Assets\Screenshot.Edit06.png" width="100" height="200" > 
 
 ##### SideMenu 
 <img src="Assets\07.Screenshot_SideMenu.png" width="200" height="400" > 
