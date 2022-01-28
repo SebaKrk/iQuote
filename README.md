@@ -25,7 +25,7 @@
 - set the quote anywhere within the photo
 - add remove logo
 - share wherever you want
-Screenshot.Edit02
+
 <img src="Assets\Screenshot.Edit01.png" width="100" height="200" > <img src="Assets\Screenshot.Edit02.png" width="100" height="200" > <img src="Assets\Screenshot.Edit03.png" width="100" height="200" > <img src="Assets\Screenshot.Edit04.png" width="100" height="200" > <img src="Assets\Screenshot.Edit05.png" width="100" height="200" > <img src="Assets\Screenshot.Edit06.png" width="100" height="200" > 
 
 ##### SideMenu 
