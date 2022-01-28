@@ -10,11 +10,10 @@
 #### Favorite Quote funcion and FavoritesList view
 <img src="Assets\03.Screenshot_Fav.png" width="200" height="400"  > <img src="Assets\04.Screenshot_FavoritesList.png" width="200" height="400" >
 
-#### Next Quote funcionality
-<img src="https://github.com/SebaKrk/iQuote/blob/799dbeb17a7970ce3c7e989b0d092f23bf723281/Assets/Recording_NextQuote.gif" width="200" height="400" >
-
-#### See details about the author on wikipedia
-<img src="https://github.com/SebaKrk/iQuote/blob/799dbeb17a7970ce3c7e989b0d092f23bf723281/Assets/Recording_SeeAuthor.gif" width="200" height="400" >
+#### Next Quote and author details funcionality
+- Next Quote 
+- See details about the author on wikipedia
+<img src="https://github.com/SebaKrk/iQuote/blob/799dbeb17a7970ce3c7e989b0d092f23bf723281/Assets/Recording_NextQuote.gif" width="200" height="400" > <img src="https://github.com/SebaKrk/iQuote/blob/799dbeb17a7970ce3c7e989b0d092f23bf723281/Assets/Recording_SeeAuthor.gif" width="200" height="400" >
 
 #### Edit photo and Share quote functionality
 - edit background photo
