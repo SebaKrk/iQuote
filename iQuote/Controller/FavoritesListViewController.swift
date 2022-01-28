@@ -73,8 +73,6 @@ class FavoritesListViewController : UIViewController {
         view.addGestureRecognizer(swipeUP)
     }
     
-    
-    
     //     MARK: - Constraints
     
     private func configureContainer() {
