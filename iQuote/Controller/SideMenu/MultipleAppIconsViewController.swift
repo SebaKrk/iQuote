@@ -12,11 +12,14 @@ class MultipleAppIconsViewController : UIViewController {
     
     private let container = UIView()
     private let swipeLine = SwipeLine()
+    private let buttonIcon = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         configureContainer()
+        configureSwipeLinie()
+        configureButtonIcon()
     }
     
     override func viewDidLayoutSubviews() {
@@ -29,6 +32,16 @@ class MultipleAppIconsViewController : UIViewController {
         tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
     }
+    
+    @objc func handleButtonIcon() {
+        UIApplication.shared.setAlternateIconName("iQuote.red") { error in
+            guard error == nil else { return }
+        }
+        presentAlertOnMainThred(title: "Succes", message: "Icon updated")
+    }
+    
+    
+    
     func configureContainer() {
         view.addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -52,6 +65,18 @@ class MultipleAppIconsViewController : UIViewController {
             swipeLine.topAnchor.constraint(equalTo: container.topAnchor, constant: 15),
             swipeLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.2)
+        ])
+    }
+    private func configureButtonIcon() {
+        container.addSubview(buttonIcon)
+        buttonIcon.translatesAutoresizingMaskIntoConstraints = false
+        
+        buttonIcon.setTitle("Icon", for: .normal)
+        buttonIcon.addTarget(self, action: #selector(handleButtonIcon), for: .touchUpInside)
+            
+        NSLayoutConstraint.activate([
+            buttonIcon.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            buttonIcon.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
 }

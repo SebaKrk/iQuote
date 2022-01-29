@@ -11,6 +11,7 @@ struct SettingsTitle {
     
     static let share = "Share"
     static let review = "Write a Review"
+    static let icon = "Change Icon"
     static let website = "Website"
     static let sugest = "Sugest a Feature"
     static let bug = "Report a Bug"
