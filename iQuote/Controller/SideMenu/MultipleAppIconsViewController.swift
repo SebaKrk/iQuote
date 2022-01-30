@@ -34,12 +34,15 @@ class MultipleAppIconsViewController : UIViewController {
     }
     
     @objc func handleButtonIcon() {
-        UIApplication.shared.setAlternateIconName("iQuote.red") { error in
-            guard error == nil else { return }
-        }
-        presentAlertOnMainThred(title: "Succes", message: "Icon updated")
+        changeAppIcon()
     }
     
+    private func changeAppIcon() {
+        UIApplication.shared.setAlternateIconName("RedAppIcon") { error in
+            guard let error = error else {return}
+            self.presentAlertOnMainThred(title: "Uppsss", message: "Something goes wrong:\(error.localizedDescription)")
+        }
+    }
     
     
     func configureContainer() {
