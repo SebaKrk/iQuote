@@ -53,10 +53,11 @@
 		93B4ED04275B388D00C6E5E9 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */; };
 		93B4ED06275B38E800C6E5E9 /* CostumeSocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED05275B38E800C6E5E9 /* CostumeSocialButton.swift */; };
 		93B4ED08275B3BB700C6E5E9 /* ImageConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */; };
-		93BBBBD727A5EB9B00363E90 /* iQuote.red.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BBBBD427A5EB9B00363E90 /* iQuote.red.png */; };
-		93BBBBD827A5EB9B00363E90 /* iQuote.purple.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BBBBD527A5EB9B00363E90 /* iQuote.purple.png */; };
-		93BBBBD927A5EB9B00363E90 /* iQuote.blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BBBBD627A5EB9B00363E90 /* iQuote.blue.png */; };
 		93BBBBDB27A5F2BA00363E90 /* MultipleAppIconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BBBBDA27A5F2BA00363E90 /* MultipleAppIconsViewController.swift */; };
+		93BBBC3A27A6DC9B00363E90 /* iconRed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BBBC3627A6DC9B00363E90 /* iconRed@3x.png */; };
+		93BBBC3B27A6DC9B00363E90 /* iconBlue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BBBC3727A6DC9B00363E90 /* iconBlue@3x.png */; };
+		93BBBC3C27A6DC9B00363E90 /* iconRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BBBC3827A6DC9B00363E90 /* iconRed@2x.png */; };
+		93BBBC3D27A6DC9B00363E90 /* iconBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BBBC3927A6DC9B00363E90 /* iconBlue@2x.png */; };
 		93BDB9C72748D44900E4B928 /* CostumQuoteLebel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDB9C62748D44900E4B928 /* CostumQuoteLebel.swift */; };
 		93BDB9CA2748DDF100E4B928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDB9C92748DDF100E4B928 /* Constants.swift */; };
 		93BF89712745A05700EF386A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89702745A05700EF386A /* AppDelegate.swift */; };
@@ -156,10 +157,11 @@
 		93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		93B4ED05275B38E800C6E5E9 /* CostumeSocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeSocialButton.swift; sourceTree = "<group>"; };
 		93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfigurationVC.swift; sourceTree = "<group>"; };
-		93BBBBD427A5EB9B00363E90 /* iQuote.red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iQuote.red.png; sourceTree = "<group>"; };
-		93BBBBD527A5EB9B00363E90 /* iQuote.purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iQuote.purple.png; sourceTree = "<group>"; };
-		93BBBBD627A5EB9B00363E90 /* iQuote.blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iQuote.blue.png; sourceTree = "<group>"; };
 		93BBBBDA27A5F2BA00363E90 /* MultipleAppIconsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAppIconsViewController.swift; sourceTree = "<group>"; };
+		93BBBC3627A6DC9B00363E90 /* iconRed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconRed@3x.png"; sourceTree = "<group>"; };
+		93BBBC3727A6DC9B00363E90 /* iconBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBlue@3x.png"; sourceTree = "<group>"; };
+		93BBBC3827A6DC9B00363E90 /* iconRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconRed@2x.png"; sourceTree = "<group>"; };
+		93BBBC3927A6DC9B00363E90 /* iconBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBlue@2x.png"; sourceTree = "<group>"; };
 		93BDB9C62748D44900E4B928 /* CostumQuoteLebel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumQuoteLebel.swift; sourceTree = "<group>"; };
 		93BDB9C92748DDF100E4B928 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		93BF896D2745A05700EF386A /* iQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -349,9 +351,10 @@
 		93BBBBD327A5EB9B00363E90 /* iQuote.Icons */ = {
 			isa = PBXGroup;
 			children = (
-				93BBBBD427A5EB9B00363E90 /* iQuote.red.png */,
-				93BBBBD527A5EB9B00363E90 /* iQuote.purple.png */,
-				93BBBBD627A5EB9B00363E90 /* iQuote.blue.png */,
+				93BBBC3927A6DC9B00363E90 /* iconBlue@2x.png */,
+				93BBBC3727A6DC9B00363E90 /* iconBlue@3x.png */,
+				93BBBC3827A6DC9B00363E90 /* iconRed@2x.png */,
+				93BBBC3627A6DC9B00363E90 /* iconRed@3x.png */,
 			);
 			path = iQuote.Icons;
 			sourceTree = "<group>";
@@ -651,21 +654,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				93BF897D2745A05A00EF386A /* LaunchScreen.storyboard in Resources */,
-				93BBBBD827A5EB9B00363E90 /* iQuote.purple.png in Resources */,
 				93BF897A2745A05A00EF386A /* Assets.xcassets in Resources */,
 				93A06504278FFC220099412D /* Roboto-LightItalic.ttf in Resources */,
 				93A06507278FFC220099412D /* Roboto-ThinItalic.ttf in Resources */,
 				93A0650A278FFC220099412D /* Roboto-Light.ttf in Resources */,
 				93A06502278FFC220099412D /* Roboto-Bold.ttf in Resources */,
 				93A064FF278FFC220099412D /* Roboto-Medium.ttf in Resources */,
+				93BBBC3D27A6DC9B00363E90 /* iconBlue@2x.png in Resources */,
 				93A06503278FFC220099412D /* Roboto-MediumItalic.ttf in Resources */,
+				93BBBC3A27A6DC9B00363E90 /* iconRed@3x.png in Resources */,
 				93A06501278FFC220099412D /* Roboto-BoldItalic.ttf in Resources */,
-				93BBBBD727A5EB9B00363E90 /* iQuote.red.png in Resources */,
 				93A06506278FFC220099412D /* Roboto-Italic.ttf in Resources */,
-				93BBBBD927A5EB9B00363E90 /* iQuote.blue.png in Resources */,
 				93A06500278FFC220099412D /* Roboto-BlackItalic.ttf in Resources */,
+				93BBBC3C27A6DC9B00363E90 /* iconRed@2x.png in Resources */,
 				93A06509278FFC220099412D /* Roboto-Regular.ttf in Resources */,
 				93A06505278FFC220099412D /* Roboto-Thin.ttf in Resources */,
+				93BBBC3B27A6DC9B00363E90 /* iconBlue@3x.png in Resources */,
 				93A06508278FFC220099412D /* Roboto-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
