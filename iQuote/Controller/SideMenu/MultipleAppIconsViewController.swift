@@ -12,19 +12,29 @@ class MultipleAppIconsViewController : UIViewController {
     
     private let container = UIView()
     private let swipeLine = SwipeLine()
-    private let buttonIcon = UIButton()
+    private var stackView = UIStackView()
+    private let titleLabel = CostumTitleLabel(textAligment: .center, fontSize: 20)
+    
+    private let purpleIcon = CostumeIconsButton(name: "iconPurple-60")
+    private let blueIcon = CostumeIconsButton(name: "iconBlue-60")
+    private let redIcon = CostumeIconsButton(name: "iconRed-60")
+    private let blackleIcon = CostumeIconsButton(name: "iconBlack-60")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupStackView()
         configureContainer()
         configureSwipeLinie()
-        configureButtonIcon()
+        configureStackView()
+        configureTitleLabel()
+        configureButtons()
     }
-    
+
     override func viewDidLayoutSubviews() {
         cardOriginYext = container.frame.origin.y
         panGestureRecognizerToHandleDragAndDissmisView(inCardView: container, cardOriginY: cardOriginYext)
+        
     }
     
     func setupView() {
@@ -33,17 +43,23 @@ class MultipleAppIconsViewController : UIViewController {
         swipeDownGestureRecognizerToDissmisView(container: container)
     }
     
-    @objc func handleButtonIcon() {
-        changeAppIcon()
+    private func setupStackView() {
+        stackView = UIStackView(arrangedSubviews: [purpleIcon,blueIcon,redIcon,blackleIcon])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
     }
     
-    private func changeAppIcon() {
-        UIApplication.shared.setAlternateIconName("RedAppIcon") { error in
+    @objc func handlePurpleIcon() { changeAppIcon(name: "PurpleAppIcon") }
+    @objc func handleBlueIcon() { changeAppIcon(name: "BlueAppIcon") }
+    @objc func handleRedIcon() { changeAppIcon(name: "RedAppIcon") }
+    @objc func handleBlackIcon() { UIApplication.shared.setAlternateIconName(nil) }
+    
+    private func changeAppIcon(name: String) {
+        UIApplication.shared.setAlternateIconName(name) { error in
             guard let error = error else {return}
             self.presentAlertOnMainThred(title: "Uppsss", message: "Something goes wrong:\(error.localizedDescription)")
         }
     }
-    
     
     func configureContainer() {
         view.addSubview(container)
@@ -70,16 +86,37 @@ class MultipleAppIconsViewController : UIViewController {
             swipeLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.2)
         ])
     }
-    private func configureButtonIcon() {
-        container.addSubview(buttonIcon)
-        buttonIcon.translatesAutoresizingMaskIntoConstraints = false
+    func configureTitleLabel() {
+        container.addSubview(titleLabel)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        buttonIcon.setTitle("Icon", for: .normal)
-        buttonIcon.addTarget(self, action: #selector(handleButtonIcon), for: .touchUpInside)
-            
+        titleLabel.textColor = .white
+        titleLabel.text = "Costum App Icon"
+        
         NSLayoutConstraint.activate([
-            buttonIcon.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            buttonIcon.centerYAnchor.constraint(equalTo: container.centerYAnchor)
+            titleLabel.topAnchor.constraint(equalTo: swipeLine.bottomAnchor, constant: 20),
+            titleLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            titleLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+
+    private func configureStackView() {
+        container.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            
+        ])
+    }
+    private func configureButtons() {
+        purpleIcon.addTarget(self, action: #selector(handlePurpleIcon), for: .touchUpInside)
+        blueIcon.addTarget(self, action: #selector(handleBlueIcon), for: .touchUpInside)
+        redIcon.addTarget(self, action: #selector(handleRedIcon), for: .touchUpInside)
+        blackleIcon.addTarget(self, action: #selector(handleBlackIcon), for: .touchUpInside)
+    }
+
 }
