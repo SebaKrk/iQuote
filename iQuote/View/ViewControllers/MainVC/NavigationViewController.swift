@@ -121,6 +121,11 @@ class NavigationViewController : UIViewController {
                     self.presentAlertOnMainThred(title: "Upss", message: Messages.emptyList.rawValue)
                 } else {
                     let desVC = FavoritesListViewController()
+                    
+                    if favorite.count <= 3 { desVC.multiplier = 0.4 }
+                    else if favorite.count >= 4 && favorite.count <= 6 { desVC.multiplier = 0.5 }
+                    else { desVC.multiplier = 0.7 }
+                    
                     desVC.modalPresentationStyle = .overFullScreen
                     desVC.modalTransitionStyle = .flipHorizontal
                     self.present(desVC, animated: false, completion: nil)
