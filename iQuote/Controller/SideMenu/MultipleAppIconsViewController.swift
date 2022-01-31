@@ -94,7 +94,7 @@ class MultipleAppIconsViewController : UIViewController {
         titleLabel.text = "Costum App Icon"
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: swipeLine.bottomAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: swipeLine.bottomAnchor, constant: 5),
             titleLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             titleLabel.heightAnchor.constraint(equalToConstant: 50)
         ])

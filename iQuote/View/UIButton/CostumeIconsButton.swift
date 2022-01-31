@@ -27,7 +27,7 @@ class CostumeIconsButton : UIButton {
     
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius = 25
+        imageView?.layer.cornerRadius = 15
         clipsToBounds = true
     }
     
