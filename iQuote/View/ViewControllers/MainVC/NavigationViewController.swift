@@ -110,32 +110,6 @@ class NavigationViewController : UIViewController {
         swipeRightGesture.direction = .right
         view.addGestureRecognizer(swipeRightGesture)
     }
-    
-    //    MARK: - Helpers
-    
-    private func checkIfFavListIsEmpty() {
-        PersistenceManager.retrieveFavorites { result in
-            switch result {
-            case .success(let favorite):
-                if favorite.isEmpty {
-                    self.presentAlertOnMainThred(title: "Upss", message: Messages.emptyList.rawValue)
-                } else {
-                    let desVC = FavoritesListViewController()
-                    
-                    if favorite.count <= 3 { desVC.multiplier = 0.4 }
-                    else if favorite.count >= 4 && favorite.count <= 6 { desVC.multiplier = 0.54 }
-                    else { desVC.multiplier = 0.7 }
-                    
-                    desVC.modalPresentationStyle = .overFullScreen
-                    desVC.modalTransitionStyle = .flipHorizontal
-                    self.present(desVC, animated: false, completion: nil)
-                }
-            case .failure:
-                break
-            }
-        }
-    }
-    
     //    MARK: - Constraints
     
     private func configureQuoteMenuContainer(){
@@ -205,7 +179,8 @@ class NavigationViewController : UIViewController {
     private func heartButtonPressed() {
         heartButton.flipLikeState()
         
-        let favorite = Quote(q: quoteToFavorites, a: authorToFavorites)
+        let favorite = Quote(q: quoteToFavorites, a: authorToFavorites, s: false)
+        
         PersistenceManager.uppdateWith(favorite: favorite, actionType: .add) { error in
             guard let error = error else {
                 self.presentAlertOnMainThred(title: "Succes!", message: Messages.sucesffulyFavorited.rawValue)
@@ -229,5 +204,29 @@ class NavigationViewController : UIViewController {
         desVC.modalPresentationStyle = .overFullScreen
         desVC.modalTransitionStyle = .coverVertical
         present(desVC, animated: true, completion: nil)
+    }
+    
+    private func checkIfFavListIsEmpty() {
+        PersistenceManager.retrieveFavorites { result in
+            switch result {
+            case .success(let favorite):
+                dump(favorite)
+                if favorite.isEmpty {
+                    self.presentAlertOnMainThred(title: "Upss", message: Messages.emptyList.rawValue)
+                } else {
+                    let desVC = FavoritesListViewController()
+                    
+                    if favorite.count <= 3 { desVC.multiplier = 0.4 }
+                    else if favorite.count >= 4 && favorite.count <= 6 { desVC.multiplier = 0.54 }
+                    else { desVC.multiplier = 0.7 }
+                    
+                    desVC.modalPresentationStyle = .overFullScreen
+                    desVC.modalTransitionStyle = .flipHorizontal
+                    self.present(desVC, animated: false, completion: nil)
+                }
+            case .failure:
+                break
+            }
+        }
     }
 }
