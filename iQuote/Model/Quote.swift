@@ -11,7 +11,7 @@ import Foundation
 struct Quote : Codable,Hashable {
     let q : String
     let a : String
-    let s : Bool?
+    var s : Bool?
 }
 
 

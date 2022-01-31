@@ -8,7 +8,7 @@
 import Foundation
 
 enum PersistenceAcatinType {
-    case add, remove
+    case add, remove, save
 }
 enum PersistenceManager {
     
@@ -31,9 +31,13 @@ enum PersistenceManager {
                         return
                     }
                     retrivedFavorites.append(favorite)
+                case .save:
+                    retrivedFavorites.removeAll {$0.q == favorite.q }
+                    retrivedFavorites.append(favorite)
                 case .remove:
                     retrivedFavorites.removeAll {$0.q == favorite.q }
                 }
+            
                 completed(save(favorites: retrivedFavorites))
             case .failure(let error):
                 completed(error)
