@@ -11,8 +11,10 @@ import UIKit
 class FavoritesListViewController : UIViewController {
     
     private let tableViewContainer = UIView()
+    private let containerTitle = CostumTitleLabel(textAligment: .center, fontSize: 24)
     private let tableView = UITableView()
     private let swipeLine = SwipeLine()
+    
     
     var favoritesItems : [Quote] = []
     
@@ -38,6 +40,7 @@ class FavoritesListViewController : UIViewController {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.7)
         configureContainer()
         configureSwipeLinie()
+        configureContainerTitle()
         configureTabeleView()
     }
     
@@ -100,12 +103,26 @@ class FavoritesListViewController : UIViewController {
         ])
     }
     
+    private func configureContainerTitle() {
+        tableViewContainer.addSubview(containerTitle)
+        containerTitle.translatesAutoresizingMaskIntoConstraints = false
+        
+        containerTitle.text = "Your Quotes list"
+        containerTitle.textColor = .black
+        
+        NSLayoutConstraint.activate([
+            containerTitle.topAnchor.constraint(equalTo: tableViewContainer.safeAreaLayoutGuide.topAnchor,constant: 10),
+            containerTitle.centerXAnchor.constraint(equalTo: tableViewContainer.centerXAnchor),
+            containerTitle.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
     private func configureTabeleView() {
         tableViewContainer.addSubview(tableView)
         tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: tableViewContainer.safeAreaLayoutGuide.topAnchor,constant: 20),
+            tableView.topAnchor.constraint(equalTo: containerTitle.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: tableViewContainer.leadingAnchor,constant: 10),
             tableView.trailingAnchor.constraint(equalTo: tableViewContainer.trailingAnchor,constant: -10),
             tableView.bottomAnchor.constraint(equalTo: swipeLine.topAnchor, constant: -40)
