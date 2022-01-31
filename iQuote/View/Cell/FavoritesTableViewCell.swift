@@ -33,8 +33,8 @@ class FavoritesTableViewCell : UITableViewCell {
         authorLabel.text = quoteData.a
         
         if quoteData.s == true {
-            quoteLabel.textColor = .red
-            authorLabel.textColor = .red
+            quoteLabel.textColor = .primaryOrange()
+            authorLabel.textColor = .primaryOrange()
         } else {
             quoteLabel.textColor = .black
             authorLabel.textColor = .black

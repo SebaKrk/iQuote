@@ -184,11 +184,10 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
                 guard let error = error  else {return}
                 self.presentAlertOnMainThred(title: "Unable to save", message: error.rawValue)
             }
-            self.presentAlertOnMainThred(title: "Succes", message: "udostepniles ten quote")
             self.tableView.reloadData()
-        
-//            NotificationCenter.default.post(name:.quoteToShare , object: nil, userInfo: ["text": quoteTextToShare!])
-//            self.present(desVC, animated: true, completion: nil)
+            
+            NotificationCenter.default.post(name:.quoteToShare , object: nil, userInfo: ["text": quoteTextToShare!])
+            self.present(desVC, animated: true, completion: nil)
         }
 
         shareItem.backgroundColor = .white

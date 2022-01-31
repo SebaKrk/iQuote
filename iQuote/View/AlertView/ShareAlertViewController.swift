@@ -18,6 +18,8 @@ class ShateAlertViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.7)
+        configureButtons()
         configureContainer()
         configureTitleLabel()
         configureMessageLabel()
@@ -30,11 +32,18 @@ class ShateAlertViewController: UIViewController {
         container.layer.cornerRadius = 15
     }
     
+    @objc func handleTrueButton() {
+        
+    }
+    @objc func handleFalseButton() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     private func configureContainer() {
         view.addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
         container.backgroundColor = .costumDarkGray()
-        container.layer.borderColor = UIColor.white.cgColor //UIColor.primaryOrange().cgColor
+        container.layer.borderColor = UIColor.white.cgColor
         container.layer.borderWidth = 0.5
         
         NSLayoutConstraint.activate([
@@ -94,6 +103,9 @@ class ShateAlertViewController: UIViewController {
             messageLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor,constant: -10)
         ])
     }
-    
+    private func configureButtons() {
+        trueButton.addTarget(self, action: #selector(handleTrueButton), for: .touchUpInside)
+        falseButton.addTarget(self, action: #selector(handleFalseButton), for: .touchUpInside)
+    }
     
 }

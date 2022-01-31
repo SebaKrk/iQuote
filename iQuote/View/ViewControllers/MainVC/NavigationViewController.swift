@@ -210,7 +210,7 @@ class NavigationViewController : UIViewController {
         PersistenceManager.retrieveFavorites { result in
             switch result {
             case .success(let favorite):
-                dump(favorite)
+                
                 if favorite.isEmpty {
                     self.presentAlertOnMainThred(title: "Upss", message: Messages.emptyList.rawValue)
                 } else {

@@ -38,8 +38,8 @@ extension UIViewController {
         alertVC.modalTransitionStyle = .crossDissolve
         present(alertVC, animated: true, completion: nil)
     }
-    
-    //    MARK: - UITapGestureRecognizer
+
+//    MARK: - UITapGestureRecognizer
     
     @objc func handleDissmisView() {
         dismiss(animated: true, completion: nil)
