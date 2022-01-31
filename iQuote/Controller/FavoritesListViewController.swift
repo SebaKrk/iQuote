@@ -170,17 +170,27 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         
         
         let shareItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
+          
             let desVC = ExportViewController()
             desVC.modalPresentationStyle = .overFullScreen
             desVC.modalTransitionStyle = .coverVertical
             
             quoteTextToShare = self.favoritesItems[indexPath.row].q
             
-            NotificationCenter.default.post(name:.quoteToShare , object: nil, userInfo: ["text": quoteTextToShare!])
+            self.favoritesItems[indexPath.row].s = true
+            let favorite = self.favoritesItems[indexPath.row]
             
-            self.present(desVC, animated: true, completion: nil)
-        }
+            PersistenceManager.uppdateWith(favorite: favorite, actionType: .save) { error in
+                guard let error = error  else {return}
+                self.presentAlertOnMainThred(title: "Unable to save", message: error.rawValue)
+            }
+            self.presentAlertOnMainThred(title: "Succes", message: "udostepniles ten quote")
+            self.tableView.reloadData()
         
+//            NotificationCenter.default.post(name:.quoteToShare , object: nil, userInfo: ["text": quoteTextToShare!])
+//            self.present(desVC, animated: true, completion: nil)
+        }
+
         shareItem.backgroundColor = .white
         shareItem.image = UIImage(named: Icons.cellExport)
         
