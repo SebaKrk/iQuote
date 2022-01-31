@@ -17,6 +17,7 @@ class FavoritesListViewController : UIViewController {
     var favoritesItems : [Quote] = []
     
     let padding : CGFloat = 20
+    var multiplier = 0.7
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +85,7 @@ class FavoritesListViewController : UIViewController {
             tableViewContainer.topAnchor.constraint(equalTo: view.topAnchor),
             tableViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             tableViewContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            tableViewContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7)
+            tableViewContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: multiplier)
         ])
         
     }
