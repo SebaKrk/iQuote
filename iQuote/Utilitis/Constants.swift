@@ -28,6 +28,7 @@ enum fontText {
     static let mainAuthorQuote = "Roboto-Medium"
     static let popupTitle = "Roboto-Bold"
     static let popupMessage = "Roboto-Regular"
+    static let favConTitle = "Roboto"
     static let listTitle  = "Roboto-Bold" // Roboto-Medium
     static let listAuthor = "Roboto-Medium"
     static let listQuote = "Baskerville"

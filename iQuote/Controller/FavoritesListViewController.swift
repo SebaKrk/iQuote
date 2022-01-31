@@ -109,6 +109,7 @@ class FavoritesListViewController : UIViewController {
         
         containerTitle.text = "Your Quotes list"
         containerTitle.textColor = .black
+        containerTitle.font = UIFont(name: fontText.favConTitle, size: 24)
         
         NSLayoutConstraint.activate([
             containerTitle.topAnchor.constraint(equalTo: tableViewContainer.safeAreaLayoutGuide.topAnchor,constant: 10),
