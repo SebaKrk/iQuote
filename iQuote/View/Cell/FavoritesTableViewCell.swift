@@ -31,6 +31,14 @@ class FavoritesTableViewCell : UITableViewCell {
     func setData(quoteData: Quote) {
         quoteLabel.text = quoteData.q
         authorLabel.text = quoteData.a
+        
+        if quoteData.s == true {
+            quoteLabel.textColor = .red
+            authorLabel.textColor = .red
+        } else {
+            quoteLabel.textColor = .black
+            authorLabel.textColor = .black
+        }
     }
     
     private func configureQuoteLabel() {
