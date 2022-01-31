@@ -150,6 +150,7 @@
 		93D228A5276C66C300D6AC18 /* CostumTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D228A4276C66C300D6AC18 /* CostumTitleLabel.swift */; };
 		93D228A7276C66F700D6AC18 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D228A6276C66F700D6AC18 /* SettingsTableViewCell.swift */; };
 		93D228A9276C6D3600D6AC18 /* AppVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D228A8276C6D3600D6AC18 /* AppVersionViewController.swift */; };
+		93D9B6C827A8342500D55655 /* ShareAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D9B6C727A8342500D55655 /* ShareAlertViewController.swift */; };
 		93E1CE32274FF73B0089ECF1 /* CostumTransButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E1CE31274FF73B0089ECF1 /* CostumTransButton.swift */; };
 		93ECBB5B2768603D00E1BB67 /* NSNotification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ECBB5A2768603D00E1BB67 /* NSNotification+Ext.swift */; };
 		93EE8D00274A4BB1000A8964 /* AuthorImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE8CFF274A4BB1000A8964 /* AuthorImageView.swift */; };
@@ -322,6 +323,7 @@
 		93D228A4276C66C300D6AC18 /* CostumTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumTitleLabel.swift; sourceTree = "<group>"; };
 		93D228A6276C66F700D6AC18 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		93D228A8276C6D3600D6AC18 /* AppVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionViewController.swift; sourceTree = "<group>"; };
+		93D9B6C727A8342500D55655 /* ShareAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAlertViewController.swift; sourceTree = "<group>"; };
 		93E1CE31274FF73B0089ECF1 /* CostumTransButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumTransButton.swift; sourceTree = "<group>"; };
 		93ECBB5A2768603D00E1BB67 /* NSNotification+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Ext.swift"; sourceTree = "<group>"; };
 		93EE8CFF274A4BB1000A8964 /* AuthorImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorImageView.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				939A3A3A2754FC680079DF97 /* AlertViewController.swift */,
+				93D9B6C727A8342500D55655 /* ShareAlertViewController.swift */,
 			);
 			path = AlertView;
 			sourceTree = "<group>";
@@ -1021,6 +1024,7 @@
 				93C3CFE92761EED0009CD963 /* TextConfigurationVC.swift in Sources */,
 				9305BA012757570F003E91F7 /* PersistenceManager.swift in Sources */,
 				9376472A2790201C00A5B4E9 /* ActionButton.swift in Sources */,
+				93D9B6C827A8342500D55655 /* ShareAlertViewController.swift in Sources */,
 				939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */,
 				93C3CFE22761E0F3009CD963 /* ImageVC.swift in Sources */,
 				93BBBCFB27A71A1A00363E90 /* CostumeIconsButton.swift in Sources */,

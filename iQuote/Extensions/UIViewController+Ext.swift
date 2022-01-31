@@ -31,6 +31,14 @@ extension UIViewController {
             self.present(alertVC, animated: true, completion: nil)
         }
     }
+    
+    func presentShareAlertVC() {
+        let alertVC = ShateAlertViewController()
+        alertVC.modalPresentationStyle = .overFullScreen
+        alertVC.modalTransitionStyle = .crossDissolve
+        present(alertVC, animated: true, completion: nil)
+    }
+    
     //    MARK: - UITapGestureRecognizer
     
     @objc func handleDissmisView() {
