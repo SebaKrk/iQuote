@@ -89,7 +89,7 @@ enum Icons {
     //Cell
     static let cellCheck = "cellCheck"
     static let cellDeleted = "cellDeleted"
-    static let cellExport = "cellExport"
+    static let cellExport = "cellExport2"
     
     //Aligment
     static let textLeft = "alignLeft1"
