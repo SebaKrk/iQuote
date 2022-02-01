@@ -2,20 +2,79 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>BlueAppIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>iconBlue-40</string>
+					<string>iconBlue-60</string>
+					<string>iconBlue-72</string>
+					<string>iconBlue-76</string>
+					<string>iconBlue-83.5</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>PurpleAppIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>iconPurple-40</string>
+					<string>iconPurple-60</string>
+					<string>iconPurple-72</string>
+					<string>iconPurple-76</string>
+					<string>iconPurple-83.5</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>RedAppIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>iconRed-40</string>
+					<string>iconRed-60</string>
+					<string>iconRed-72</string>
+					<string>iconRed-76</string>
+					<string>iconRed-83.5</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+		</dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string></string>
+			</array>
+			<key>UIPrerenderedIcon</key>
+			<false/>
+		</dict>
+		<key>UINewsstandIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string></string>
+			</array>
+			<key>UINewsstandBindingEdge</key>
+			<string>UINewsstandBindingEdgeLeft</string>
+			<key>UINewsstandBindingType</key>
+			<string>UINewsstandBindingTypeMagazine</string>
+		</dict>
+	</dict>
+	<key>CFBundleURLTypes</key>
 	<array>
-		<string>Roboto-Black.ttf</string>
-		<string>Roboto-BlackItalic.ttf</string>
-		<string>Roboto-Bold.ttf</string>
-		<string>Roboto-BoldItalic.ttf</string>
-		<string>Roboto-Italic.ttf</string>
-		<string>Roboto-Light.ttf</string>
-		<string>Roboto-LightItalic.ttf</string>
-		<string>Roboto-Medium.ttf</string>
-		<string>Roboto-MediumItalic.ttf</string>
-		<string>Roboto-Regular.ttf</string>
-		<string>Roboto-Thin.ttf</string>
-		<string>Roboto-ThinItalic.ttf</string>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fbAPP-ID</string>
+			</array>
+		</dict>
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
@@ -38,6 +97,21 @@
 		<string>instagram-stories</string>
 		<string>instagram</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Black.ttf</string>
+		<string>Roboto-BlackItalic.ttf</string>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-BoldItalic.ttf</string>
+		<string>Roboto-Italic.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-LightItalic.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-MediumItalic.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-Thin.ttf</string>
+		<string>Roboto-ThinItalic.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -57,90 +131,5 @@
 	</dict>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleDefault</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fbAPP-ID</string>
-			</array>
-		</dict>
-	</array>
-	<key>FacebookAppID</key>
-	<string>APP-ID</string>
-	<key>FacebookClientToken</key>
-	<string>CLIENT-TOKEN</string>
-	<key>FacebookDisplayName</key>
-	<string>APP-NAME</string>
-	<key>FacebookAutoLogAppEventsEnabled</key>
-	<false/>
-	<key>FacebookAdvertiserIDCLSApplicationQueriesSchemesollectionEnabled</key>
-	<string>TRUE</string>
-    
-    <key>CFBundleIcons</key>
-    <dict>
-        <key>CFBundleAlternateIcons</key>
-        <dict>
-            <key>BlueAppIcon</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>iconBlue-40</string>
-                    <string>iconBlue-60</string>
-                    <string>iconBlue-72</string>
-                    <string>iconBlue-76</string>
-                    <string>iconBlue-83.5</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
-            <key>RedAppIcon</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>iconRed-40</string>
-                    <string>iconRed-60</string>
-                    <string>iconRed-72</string>
-                    <string>iconRed-76</string>
-                    <string>iconRed-83.5</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
-            <key>PurpleAppIcon</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>iconPurple-40</string>
-                    <string>iconPurple-60</string>
-                    <string>iconPurple-72</string>
-                    <string>iconPurple-76</string>
-                    <string>iconPurple-83.5</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
-        </dict>
-        <key>CFBundlePrimaryIcon</key>
-        <dict>
-            <key>CFBundleIconFiles</key>
-            <array>
-                <string></string>
-            </array>
-            <key>UIPrerenderedIcon</key>
-            <false/>
-        </dict>
-        <key>UINewsstandIcon</key>
-        <dict>
-            <key>CFBundleIconFiles</key>
-            <array>
-                <string></string>
-            </array>
-            <key>UINewsstandBindingType</key>
-            <string>UINewsstandBindingTypeMagazine</string>
-            <key>UINewsstandBindingEdge</key>
-            <string>UINewsstandBindingEdgeLeft</string>
-        </dict>
-    </dict>
 </dict>
 </plist>

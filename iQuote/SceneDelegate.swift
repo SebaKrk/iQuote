@@ -19,12 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let desVC =
         MainViewController()
-//        AuthorViewController()
-//        QuoteViewController()
-//        NavigationViewController()
-//        SharedViewController()
-//        UnsplashCollectionVC()
-//        ImageVC()
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController =  UINavigationController(rootViewController: desVC)
         window?.makeKeyAndVisible()
