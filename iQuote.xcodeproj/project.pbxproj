@@ -18,7 +18,6 @@
 		9376472A2790201C00A5B4E9 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937647292790201C00A5B4E9 /* ActionButton.swift */; };
 		9376472C279027B200A5B4E9 /* BottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9376472B279027B200A5B4E9 /* BottomLine.swift */; };
 		9376472E279034CC00A5B4E9 /* LogoForBackgroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9376472D279034CB00A5B4E9 /* LogoForBackgroundVC.swift */; };
-		9377028D277E146100BF0AC4 /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9377028C277E146100BF0AC4 /* InstagramManager.swift */; };
 		93992734275AA60A00E95481 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93992733275AA60A00E95481 /* ExportViewController.swift */; };
 		9399B1C82764823A0035021E /* GradientConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399B1C72764823A0035021E /* GradientConfigurationVC.swift */; };
 		939A3A362754AF500079DF97 /* EmptyAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3A352754AF500079DF97 /* EmptyAuthorView.swift */; };
@@ -50,7 +49,6 @@
 		93A9FB5527536E5E00442A91 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB5427536E5E00442A91 /* Quote.swift */; };
 		93A9FB5727536F5600442A91 /* ErrorMasasge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB5627536F5600442A91 /* ErrorMasasge.swift */; };
 		93A9FB592753F7B400442A91 /* Wikipedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB582753F7B400442A91 /* Wikipedia.swift */; };
-		93B4ED04275B388D00C6E5E9 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */; };
 		93B4ED06275B38E800C6E5E9 /* CostumeSocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED05275B38E800C6E5E9 /* CostumeSocialButton.swift */; };
 		93B4ED08275B3BB700C6E5E9 /* ImageConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */; };
 		93BBBBDB27A5F2BA00363E90 /* MultipleAppIconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BBBBDA27A5F2BA00363E90 /* MultipleAppIconsViewController.swift */; };
@@ -135,10 +133,6 @@
 		93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A02745A3B400EF386A /* MainViewController.swift */; };
 		93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF89A62746220E00EF386A /* UIColor+Ext.swift */; };
 		93C10641278C170D00E4CAF8 /* EmptyAuthorView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C10640278C170D00E4CAF8 /* EmptyAuthorView2.swift */; };
-		93C2564D276B57C300AACB94 /* InstagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2564C276B57C300AACB94 /* InstagramViewController.swift */; };
-		93C2564F276B5E5400AACB94 /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2564E276B5E5400AACB94 /* FacebookViewController.swift */; };
-		93C25651276B60E000AACB94 /* TwiterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C25650276B60E000AACB94 /* TwiterViewController.swift */; };
-		93C25653276B60EE00AACB94 /* LinkedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C25652276B60EE00AACB94 /* LinkedInViewController.swift */; };
 		93C3CFE22761E0F3009CD963 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C3CFE12761E0F3009CD963 /* ImageVC.swift */; };
 		93C3CFE92761EED0009CD963 /* TextConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */; };
 		93CE1CDB274ACB0D004FD559 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */; };
@@ -190,7 +184,6 @@
 		937647292790201C00A5B4E9 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		9376472B279027B200A5B4E9 /* BottomLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLine.swift; sourceTree = "<group>"; };
 		9376472D279034CB00A5B4E9 /* LogoForBackgroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoForBackgroundVC.swift; sourceTree = "<group>"; };
-		9377028C277E146100BF0AC4 /* InstagramManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramManager.swift; sourceTree = "<group>"; };
 		93992733275AA60A00E95481 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		9399B1C72764823A0035021E /* GradientConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientConfigurationVC.swift; sourceTree = "<group>"; };
 		939A3A352754AF500079DF97 /* EmptyAuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAuthorView.swift; sourceTree = "<group>"; };
@@ -220,7 +213,6 @@
 		93A9FB5427536E5E00442A91 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		93A9FB5627536F5600442A91 /* ErrorMasasge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMasasge.swift; sourceTree = "<group>"; };
 		93A9FB582753F7B400442A91 /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
-		93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		93B4ED05275B38E800C6E5E9 /* CostumeSocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeSocialButton.swift; sourceTree = "<group>"; };
 		93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfigurationVC.swift; sourceTree = "<group>"; };
 		93BBBBDA27A5F2BA00363E90 /* MultipleAppIconsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAppIconsViewController.swift; sourceTree = "<group>"; };
@@ -309,10 +301,6 @@
 		93BF89A02745A3B400EF386A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		93BF89A62746220E00EF386A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		93C10640278C170D00E4CAF8 /* EmptyAuthorView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAuthorView2.swift; sourceTree = "<group>"; };
-		93C2564C276B57C300AACB94 /* InstagramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramViewController.swift; sourceTree = "<group>"; };
-		93C2564E276B5E5400AACB94 /* FacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
-		93C25650276B60E000AACB94 /* TwiterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiterViewController.swift; sourceTree = "<group>"; };
-		93C25652276B60EE00AACB94 /* LinkedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInViewController.swift; sourceTree = "<group>"; };
 		93C3CFE12761E0F3009CD963 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextConfigurationVC.swift; sourceTree = "<group>"; };
 		93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
@@ -388,17 +376,6 @@
 			path = ShareConfiguration;
 			sourceTree = "<group>";
 		};
-		9399B1C62763CA5A0035021E /* SocialConfigurationVC */ = {
-			isa = PBXGroup;
-			children = (
-				93C2564C276B57C300AACB94 /* InstagramViewController.swift */,
-				93C2564E276B5E5400AACB94 /* FacebookViewController.swift */,
-				93C25650276B60E000AACB94 /* TwiterViewController.swift */,
-				93C25652276B60EE00AACB94 /* LinkedInViewController.swift */,
-			);
-			path = SocialConfigurationVC;
-			sourceTree = "<group>";
-		};
 		939A3A342754AF3E0079DF97 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,7 +429,6 @@
 				93A9FB5227536D7000442A91 /* NetwokManager.swift */,
 				9305BA002757570F003E91F7 /* PersistenceManager.swift */,
 				93A064F0278ED46C0099412D /* UserDefManager.swift */,
-				9377028C277E146100BF0AC4 /* InstagramManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -475,8 +451,6 @@
 				93C3CFE72761EE85009CD963 /* ImageConfiguration */,
 				932BF73F278960020090F29A /* ShareViewController.swift */,
 				932BF741278960E00090F29A /* ShareConfiguration */,
-				93B4ED03275B388D00C6E5E9 /* SocialViewController.swift */,
-				9399B1C62763CA5A0035021E /* SocialConfigurationVC */,
 			);
 			path = ExportVC;
 			sourceTree = "<group>";
@@ -1005,7 +979,6 @@
 				93D2289D276C64F500D6AC18 /* SettingsModel.swift in Sources */,
 				93992734275AA60A00E95481 /* ExportViewController.swift in Sources */,
 				9305BA0327575D62003E91F7 /* FavoritesListViewController.swift in Sources */,
-				93C2564D276B57C300AACB94 /* InstagramViewController.swift in Sources */,
 				93B4ED08275B3BB700C6E5E9 /* ImageConfigurationVC.swift in Sources */,
 				93FAA46F2791AFE10022BF2F /* CancleButton.swift in Sources */,
 				93BBBBDB27A5F2BA00363E90 /* MultipleAppIconsViewController.swift in Sources */,
@@ -1019,7 +992,6 @@
 				93BF89732745A05700EF386A /* SceneDelegate.swift in Sources */,
 				93FF7C092746BE4700064E83 /* UIView+Ext.swift in Sources */,
 				939AD0482768D6F600F73FFE /* ImageSearchTF.swift in Sources */,
-				93B4ED04275B388D00C6E5E9 /* SocialViewController.swift in Sources */,
 				939E4A2F278CA8AE00A9A0E2 /* PhotoViewController.swift in Sources */,
 				93C3CFE92761EED0009CD963 /* TextConfigurationVC.swift in Sources */,
 				9305BA012757570F003E91F7 /* PersistenceManager.swift in Sources */,
@@ -1034,9 +1006,7 @@
 				93B4ED06275B38E800C6E5E9 /* CostumeSocialButton.swift in Sources */,
 				93D228A5276C66C300D6AC18 /* CostumTitleLabel.swift in Sources */,
 				9305BA0A2757D697003E91F7 /* CellQuoteLabel.swift in Sources */,
-				93C2564F276B5E5400AACB94 /* FacebookViewController.swift in Sources */,
 				93A064F1278ED46C0099412D /* UserDefManager.swift in Sources */,
-				93C25651276B60E000AACB94 /* TwiterViewController.swift in Sources */,
 				939AD04A27690F1000F73FFE /* UINavigationController +Ext.swift in Sources */,
 				93BDB9C72748D44900E4B928 /* CostumQuoteLebel.swift in Sources */,
 				93D228A3276C666300D6AC18 /* SideMenuViewController.swift in Sources */,
@@ -1047,9 +1017,7 @@
 				93EE8D02274A4E7C000A8964 /* CostumAuthorLabel.swift in Sources */,
 				93EE8D00274A4BB1000A8964 /* AuthorImageView.swift in Sources */,
 				93C10641278C170D00E4CAF8 /* EmptyAuthorView2.swift in Sources */,
-				93C25653276B60EE00AACB94 /* LinkedInViewController.swift in Sources */,
 				93F6B8C527465EA5005181C0 /* QuoteViewController.swift in Sources */,
-				9377028D277E146100BF0AC4 /* InstagramManager.swift in Sources */,
 				93A9FB592753F7B400442A91 /* Wikipedia.swift in Sources */,
 				93BDB9CA2748DDF100E4B928 /* Constants.swift in Sources */,
 				9305BA0C2757D6DB003E91F7 /* CellAuthorLabel.swift in Sources */,
