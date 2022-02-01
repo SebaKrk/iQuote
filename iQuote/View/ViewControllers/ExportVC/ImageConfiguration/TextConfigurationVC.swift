@@ -81,10 +81,9 @@ class TextConfigurationVC : UIViewController {
         NotificationCenter.default.post(name: .textAlignmentObserver, object: nil, userInfo: ["quoteTextAligment" : right!])
     }
     @objc func handleCancleButton() {
-        print("handleCancleButton")
+        dismiss(animated: true)
     }
     @objc func handleDoneButton() {
-        print("handleDoneButton")
         dismiss(animated: true)
     }
 //    MARK: - StackViews

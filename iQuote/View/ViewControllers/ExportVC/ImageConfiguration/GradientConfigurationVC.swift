@@ -74,10 +74,9 @@ class GradientConfigurationVC : UIViewController {
         }
     }
     @objc func handleCancleButton() {
-        print("handleCancleButton")
+        dismiss(animated: true)
     }
     @objc func handleDoneButton() {
-        print("handleDoneButton")
         dismiss(animated: true)
     }
     //    MARK: - StackViews
