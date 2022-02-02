@@ -19,6 +19,27 @@ enum Constants {
     
     static let fontArray = ["Baskerville", "Baskerville-Bold", "Baskerville-BoldItalic", "Baskerville-Italic", "Baskerville-SemiBold", "Baskerville-SemiBoldItalic", "Roboto-Black", "Roboto-BlackItalic", "Roboto-Bold", "Roboto-BoldItalic", "Roboto-Italic", "Roboto-Light", "Roboto-LightItalic", "Roboto-Medium", "Roboto-MediumItalic", "Roboto-Regular","Roboto-Thin", "Roboto-ThinItalic",]
     
+    static let fontTuples: [(name: String, fontName: String)] =
+    [("Abc","Baskerville"),
+     ("Abc","Baskerville-Bold"),
+     ("Abc","Baskerville-BoldItalic"),
+     ("Abc","Baskerville-Italic"),
+     ("Abc","Baskerville-SemiBold"),
+     ("Abc","Baskerville-SemiBoldItalic"),
+     ("Abc", "Roboto-Black"),
+     ("Abc","Roboto-BlackItalic"),
+     ("Abc","Roboto-Bold"),
+     ("Abc","Roboto-BoldItalic"),
+     ("Abc","Roboto-Italic"),
+     ("Abc","Roboto-Light"),
+     ("Abc","Roboto-LightItalic"),
+     ("Abc","Roboto-Medium"),
+     ("Abc","Roboto-MediumItalic"),
+     ("Abc","Roboto-Regular"),
+     ("Abc","Roboto-Thin"),
+     ("Abc","Roboto-ThinItalic")]
+
+    
     
     static let colorArray = ["white", "black", "red", "blue", "green", "orange"]
 }
