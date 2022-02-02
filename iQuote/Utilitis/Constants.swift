@@ -38,10 +38,14 @@ enum Constants {
      ("Abc","Roboto-Regular"),
      ("Abc","Roboto-Thin"),
      ("Abc","Roboto-ThinItalic")]
-
     
-    
-    static let colorArray = ["white", "black", "red", "blue", "green", "orange"]
+    static let colorArray: [(name: String, colorName: String)] =
+    [("white","white"),
+      ("black","black"),
+     ("red","red"),
+     ("blue","blue"),
+     ("green","green"),
+     ("orange","orange")]
 }
 enum fontText {
     
