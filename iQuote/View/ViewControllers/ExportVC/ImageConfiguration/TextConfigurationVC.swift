@@ -10,8 +10,11 @@ import UIKit
 
 class TextConfigurationVC : UIViewController {
     
-    let fontArray = Constants.fontArray
-    let colorArray = Constants.colorArray
+//    let fontArray = Constants.fontArray
+//    let colorArray = Constants.colorArray
+    
+    let fontTuples = Constants.fontTuples
+    let fontColor = Constants.colorArray
     
     let container = UIView()
     var textAligmentStack = UIStackView()
@@ -226,17 +229,44 @@ extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     
-        return component == 0 ? fontArray.count : colorArray.count
+        //return component == 0 ? fontArray.count : colorArray.count
+        return component == 0 ? fontTuples.count : fontColor.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return component == 0 ? fontArray[row] : colorArray[row]
+        //return component == 0 ? fontArray[row] : colorArray[row]
+        return component == 0 ? fontTuples[row].name : fontColor[row].name
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        component == 0 ? postFont(fontName: fontArray[row]) : postFontColor(fontColor: colorArray[row])
+        //component == 0 ? postFont(fontName: fontArray[row]) : postFontColor(fontColor: colorArray[row])
+        
+        if component == 0 {
+            let fontName = fontTuples[row].fontName
+            //titleLabel.font = UIFont(name: fontName, size: 30)
+            postFont(fontName: fontName)
+        } else {
+            let fontColor = fontColor[row].colorName
+            //titleLabel.textColor = UIColor(named: fontColor)
+            postFontColor(fontColor: fontColor)
+        }
     }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        let pickerLabel = UILabel()
+        if component == 1 {
+            pickerLabel.text = fontColor[row].name
+            pickerLabel.textAlignment = .left
+        } else {
+            pickerLabel.text = fontTuples[row].name
+            pickerLabel.textAlignment = .right
+            pickerLabel.font = UIFont(name: fontTuples[row].fontName, size: 20)
+            
+        }
+        return pickerLabel
+    }
+    
     private func postFont(fontName : String) {
         NotificationCenter.default.post(name: .fontQuote, object: nil, userInfo: ["font" : fontName])
     }
