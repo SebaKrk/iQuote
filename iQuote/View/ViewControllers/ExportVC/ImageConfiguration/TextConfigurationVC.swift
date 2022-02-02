@@ -245,11 +245,12 @@ extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
         let pickerLabel = UILabel()
         if component == 1 {
             pickerLabel.text = fontColor[row].name
-            pickerLabel.textAlignment = .left
+            pickerLabel.font = UIFont.boldSystemFont(ofSize: 20)
+            pickerLabel.textAlignment = .center
         } else {
             pickerLabel.text = fontTuples[row].name
             pickerLabel.textAlignment = .center
-            pickerLabel.font = UIFont(name: fontTuples[row].fontName, size: 30)
+            pickerLabel.font = UIFont(name: fontTuples[row].fontName, size: 20)
             
         }
         return pickerLabel
@@ -261,4 +262,5 @@ extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
     private func postFontColor(fontColor : String) {
         NotificationCenter.default.post(name: .fontColor, object: nil, userInfo: ["color" : fontColor])
     }
+    
 }

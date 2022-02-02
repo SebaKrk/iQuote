@@ -16,32 +16,29 @@ enum Constants {
     static let backgroundIMG = "BackgroundImage"
     static let halfQuoteIMG = "halfQuote"
     
-    
-    static let fontArray = ["Baskerville", "Baskerville-Bold", "Baskerville-BoldItalic", "Baskerville-Italic", "Baskerville-SemiBold", "Baskerville-SemiBoldItalic", "Roboto-Black", "Roboto-BlackItalic", "Roboto-Bold", "Roboto-BoldItalic", "Roboto-Italic", "Roboto-Light", "Roboto-LightItalic", "Roboto-Medium", "Roboto-MediumItalic", "Roboto-Regular","Roboto-Thin", "Roboto-ThinItalic",]
-    
     static let fontTuples: [(name: String, fontName: String)] =
-    [("Abc","Baskerville"),
-     ("Abc","Baskerville-Bold"),
-     ("Abc","Baskerville-BoldItalic"),
-     ("Abc","Baskerville-Italic"),
-     ("Abc","Baskerville-SemiBold"),
-     ("Abc","Baskerville-SemiBoldItalic"),
-     ("Abc", "Roboto-Black"),
-     ("Abc","Roboto-BlackItalic"),
-     ("Abc","Roboto-Bold"),
-     ("Abc","Roboto-BoldItalic"),
-     ("Abc","Roboto-Italic"),
-     ("Abc","Roboto-Light"),
-     ("Abc","Roboto-LightItalic"),
-     ("Abc","Roboto-Medium"),
-     ("Abc","Roboto-MediumItalic"),
-     ("Abc","Roboto-Regular"),
-     ("Abc","Roboto-Thin"),
-     ("Abc","Roboto-ThinItalic")]
+    [("Baskerville","Baskerville"),
+     ("B-Bold","Baskerville-Bold"),
+     ("B-BoldItalic","Baskerville-BoldItalic"),
+     ("B-Italic","Baskerville-Italic"),
+     ("B-SemiBold","Baskerville-SemiBold"),
+     ("B-SemiBoldItalic","Baskerville-SemiBoldItalic"),
+     ("Roboto", "Roboto-Black"),
+     ("R-BlackItalic","Roboto-BlackItalic"),
+     ("R-Bold","Roboto-Bold"),
+     ("R-BoldItalic","Roboto-BoldItalic"),
+     ("R-Italic","Roboto-Italic"),
+     ("R-Light","Roboto-Light"),
+     ("R-LightItalic","Roboto-LightItalic"),
+     ("R-Medium","Roboto-Medium"),
+     ("R-MediumItalic","Roboto-MediumItalic"),
+     ("R-Regular","Roboto-Regular"),
+     ("R-Thin","Roboto-Thin"),
+     ("R-ThinItalic","Roboto-ThinItalic")]
     
     static let colorArray: [(name: String, colorName: String)] =
     [("white","white"),
-      ("black","black"),
+     ("black","black"),
      ("red","red"),
      ("blue","blue"),
      ("green","green"),
