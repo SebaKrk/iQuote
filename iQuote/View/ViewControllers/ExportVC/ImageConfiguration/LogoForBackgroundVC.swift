@@ -43,8 +43,9 @@ class LogoForBackground : UIViewController {
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
-        tapGestureRecognizerToDissmisView()
+        //tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
+        tapGestureToDissmis()
     }
 //    MARK: - StackView
     private func setupStackView() {
@@ -89,7 +90,18 @@ class LogoForBackground : UIViewController {
         emptyLogoButton.addTarget(self, action: #selector(handleEmptyLogoButton), for: .touchUpInside)
         cancleButton.addTarget(self, action: #selector(handleCancleButton), for: .touchUpInside)
         doneButton.addTarget(self, action: #selector(handleDoneButton), for: .touchUpInside)
-        
+    }
+    //    MARK: - GestureRecognizer
+    
+    @objc func handleTapGesture() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    private func tapGestureToDissmis() {
+        let tap = UITapGestureRecognizer()
+        tap.addTarget(self, action: #selector(handleTapGesture))
+        tap.delegate = self
+        view.addGestureRecognizer(tap)
     }
     
     //    MARK: - Constraints
@@ -152,5 +164,15 @@ class LogoForBackground : UIViewController {
             bottomLine.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             bottomLine.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.9)
         ])
+    }
+}
+// MARK: - UIGestureRecognizerDelegate
+extension LogoForBackground : UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        if touch.view?.isDescendant(of: container) == true {
+            return false
+        }
+        return true
     }
 }

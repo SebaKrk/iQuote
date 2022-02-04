@@ -55,8 +55,9 @@ class TextConfigurationVC : UIViewController {
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
         configureButtons()
-        tapGestureRecognizerToDissmisView()
+        //tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
+        tapGestureToDissmis()
     }
     //    MARK: - OBJC
     
@@ -99,7 +100,22 @@ class TextConfigurationVC : UIViewController {
         bottomStackView.axis = .horizontal
         bottomStackView.distribution = .fillEqually
     }
-//    MARK: ConfigureButtons
+    
+    //    MARK: - GestureRecognizer
+    
+    @objc func handleTapGesture() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    private func tapGestureToDissmis() {
+        let tap = UITapGestureRecognizer()
+        tap.addTarget(self, action: #selector(handleTapGesture))
+        tap.delegate = self
+        view.addGestureRecognizer(tap)
+    }
+    
+    
+    //    MARK: - ConfigureButtons
     
     private func configureButtons() {
         textLeft.addTarget(self, action: #selector(handleTextLeft), for: .touchUpInside)
@@ -263,4 +279,14 @@ extension TextConfigurationVC : UIPickerViewDelegate, UIPickerViewDataSource {
         NotificationCenter.default.post(name: .fontColor, object: nil, userInfo: ["color" : fontColor])
     }
     
+}
+// MARK: - UIGestureRecognizerDelegate
+extension TextConfigurationVC : UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        if touch.view?.isDescendant(of: container) == true {
+            return false
+        }
+        return true
+    }
 }

@@ -53,7 +53,7 @@ extension UIViewController {
         swipeDown.direction = .down
         container.addGestureRecognizer(swipeDown)
     }
-    
+
     //   MARK: - UIPanGestureRecognizer
     
     func panGestureRecognizerToHandleDragAndDissmisView(inCardView : UIView,cardOriginY : CGFloat) {
@@ -224,6 +224,7 @@ extension UIViewController : MFMailComposeViewControllerDelegate {
         controller.dismiss(animated: true, completion: nil)
     }
 }
+// MARK: - MFMessageComposeViewControllerDelegate
 
 extension UIViewController : MFMessageComposeViewControllerDelegate {
     public func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {

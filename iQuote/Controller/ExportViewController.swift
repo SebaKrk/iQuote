@@ -12,7 +12,6 @@ class ExportViewController : UIViewController {
     
     let container = UIView()
     
-    // let socialContainer = UIView() 
     let shareContainer = UIView()
     let optionContainer = UIView()
     let imageContainer = UIView()

@@ -48,9 +48,10 @@ class GradientConfigurationVC : UIViewController {
     
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
-        tapGestureRecognizerToDissmisView()
+        //tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
         checkGradienSwitch()
+        tapGestureToDissmis()
     }
     //    MARK: - OBJC Func
     
@@ -80,20 +81,31 @@ class GradientConfigurationVC : UIViewController {
         dismiss(animated: true)
     }
     //    MARK: - StackViews
-    
-    
+
     private func setupBottomStackView() {
         bottomStackView = UIStackView(arrangedSubviews: [cancleButton,doneButton])
         bottomStackView.axis = .horizontal
         bottomStackView.distribution = .fillEqually
     }
+    //    MARK: - GestureRecognizer
+    
+    @objc func handleTapGesture() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    private func tapGestureToDissmis() {
+        let tap = UITapGestureRecognizer()
+        tap.addTarget(self, action: #selector(handleTapGesture))
+        tap.delegate = self
+        view.addGestureRecognizer(tap)
+    }
+    
     //    MARK: ConfigureButtons
     
     private func configureButtons() {
         cancleButton.addTarget(self, action: #selector(handleCancleButton), for: .touchUpInside)
         doneButton.addTarget(self, action: #selector(handleDoneButton), for: .touchUpInside)
     }
-    
     
     //    MARK: - Constraints
     
@@ -205,5 +217,15 @@ class GradientConfigurationVC : UIViewController {
         } else {
             shadowQuoteSwitch.setOn(false, animated: true)
         }
+    }
+}
+// MARK: - UIGestureRecognizerDelegate
+extension GradientConfigurationVC : UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        if touch.view?.isDescendant(of: container) == true {
+            return false
+        }
+        return true
     }
 }
