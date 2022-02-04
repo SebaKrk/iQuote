@@ -26,6 +26,7 @@ class FavoritesListViewController : UIViewController {
         setupView()
         setupTableView()
         swipeUpGesture()
+        tapGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,15 +67,23 @@ class FavoritesListViewController : UIViewController {
             }
         }
     }
-    //    MARK: SwipeGesture
+    //    MARK: GestureRecogniazer
     @objc func handleSwipeUpGesture() {
         dismiss(animated: true, completion: nil)
     }
-    
+    @objc func handleTapGesture() {
+        dismiss(animated: true, completion: nil)
+    }
     private func swipeUpGesture() {
         let swipeUP = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeUpGesture))
         swipeUP.direction = .up
         view.addGestureRecognizer(swipeUP)
+    }
+    private func tapGesture() {
+        let tap = UITapGestureRecognizer()
+        tap.addTarget(self, action: #selector(handleTapGesture))
+        tap.delegate = self
+        view.addGestureRecognizer(tap)
     }
     
     //     MARK: - Constraints
@@ -170,7 +179,7 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         
         
         let shareItem = UIContextualAction(style: .normal, title: "Share") { contextualAction, view, boolValue in
-          
+            
             let desVC = ExportViewController()
             desVC.modalPresentationStyle = .overFullScreen
             desVC.modalTransitionStyle = .coverVertical
@@ -189,12 +198,23 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
             NotificationCenter.default.post(name:.quoteToShare , object: nil, userInfo: ["text": quoteTextToShare!])
             self.present(desVC, animated: true, completion: nil)
         }
-
+        
         shareItem.backgroundColor = .white
         shareItem.image = UIImage(named: Icons.cellExport)
         
         let swipeActions = UISwipeActionsConfiguration(actions: [deletedItem, shareItem])
         
         return swipeActions
+    }
+}
+
+// MARK: - UIGestureRecognizerDelegate
+extension FavoritesListViewController : UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        if touch.view?.isDescendant(of: tableViewContainer) == true {
+            return false
+        }
+        return true
     }
 }
