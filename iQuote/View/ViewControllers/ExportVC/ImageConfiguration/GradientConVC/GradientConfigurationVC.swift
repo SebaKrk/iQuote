@@ -52,6 +52,7 @@ class GradientConfigurationVC : UIViewController {
         swipeDownGestureRecognizerToDissmisView(container: container)
         checkGradienSwitch()
         tapGestureToDissmis()
+        
     }
     //    MARK: - OBJC Func
     
@@ -92,7 +93,7 @@ class GradientConfigurationVC : UIViewController {
     @objc func handleTapGesture() {
         dismiss(animated: true, completion: nil)
     }
-    
+
     private func tapGestureToDissmis() {
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(handleTapGesture))
@@ -222,7 +223,7 @@ class GradientConfigurationVC : UIViewController {
 // MARK: - UIGestureRecognizerDelegate
 extension GradientConfigurationVC : UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        
+
         if touch.view?.isDescendant(of: container) == true {
             return false
         }

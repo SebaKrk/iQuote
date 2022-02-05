@@ -57,7 +57,6 @@ class PhotoViewController : UIViewController {
     private func setupView() {
         view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.0)
         createDissmisKeybordTapgesture()
-//        tapGestureRecognizerToDissmisView()
         swipeDownGestureRecognizerToDissmisView(container: container)
         tapGestureToDissmis()
     }
@@ -116,10 +115,8 @@ class PhotoViewController : UIViewController {
     @objc func handleDoneButton() {
         dismiss(animated: true)
     }
-    
-    @objc func handleTapGesture() {
-        dismiss(animated: true, completion: nil)
-    }
+  
+
     //    MARK: - ConfigureButtons
     
     private func configureButtons() {
@@ -130,16 +127,20 @@ class PhotoViewController : UIViewController {
     }
     
     //    MARK: - GestureRecognizer
-    
-    private func createDissmisKeybordTapgesture() {
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        container.addGestureRecognizer(tap)
+    @objc func handleTapGesture() {
+        dismiss(animated: true, completion: nil)
     }
+ 
     private func tapGestureToDissmis() {
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(handleTapGesture))
         tap.delegate = self
         view.addGestureRecognizer(tap)
+    }
+    
+    private func createDissmisKeybordTapgesture() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        container.addGestureRecognizer(tap)
     }
     //    MARK: - StackView
     
@@ -278,7 +279,7 @@ extension PhotoViewController : UnsplashIsEmptyDelegate {
 // MARK: - UIGestureRecognizerDelegate
 extension PhotoViewController : UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        
+
         if touch.view?.isDescendant(of: container) == true {
             return false
         }

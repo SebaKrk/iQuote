@@ -359,6 +359,47 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		931859DF27AE4C8900C0EB1A /* ImageVC */ = {
+			isa = PBXGroup;
+			children = (
+				93C3CFE12761E0F3009CD963 /* ImageVC.swift */,
+			);
+			path = ImageVC;
+			sourceTree = "<group>";
+		};
+		931859E027AE4CC900C0EB1A /* PhotoVC */ = {
+			isa = PBXGroup;
+			children = (
+				939E4A2E278CA8AE00A9A0E2 /* PhotoViewController.swift */,
+				932AEFEA277586B700211869 /* PhotoLab */,
+			);
+			path = PhotoVC;
+			sourceTree = "<group>";
+		};
+		931859E127AE4CE700C0EB1A /* TextConfVC */ = {
+			isa = PBXGroup;
+			children = (
+				93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */,
+			);
+			path = TextConfVC;
+			sourceTree = "<group>";
+		};
+		931859E227AE4CF800C0EB1A /* GradientConVC */ = {
+			isa = PBXGroup;
+			children = (
+				9399B1C72764823A0035021E /* GradientConfigurationVC.swift */,
+			);
+			path = GradientConVC;
+			sourceTree = "<group>";
+		};
+		931859E327AE4D0700C0EB1A /* LogoVC */ = {
+			isa = PBXGroup;
+			children = (
+				9376472D279034CB00A5B4E9 /* LogoForBackgroundVC.swift */,
+			);
+			path = LogoVC;
+			sourceTree = "<group>";
+		};
 		932AEFEA277586B700211869 /* PhotoLab */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +411,7 @@
 		932BF741278960E00090F29A /* ShareConfiguration */ = {
 			isa = PBXGroup;
 			children = (
+				932BF73F278960020090F29A /* ShareViewController.swift */,
 			);
 			path = ShareConfiguration;
 			sourceTree = "<group>";
@@ -444,10 +486,8 @@
 		93B4ED02275B36E100C6E5E9 /* ExportVC */ = {
 			isa = PBXGroup;
 			children = (
-				93C3CFE12761E0F3009CD963 /* ImageVC.swift */,
-				93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */,
+				931859DF27AE4C8900C0EB1A /* ImageVC */,
 				93C3CFE72761EE85009CD963 /* ImageConfiguration */,
-				932BF73F278960020090F29A /* ShareViewController.swift */,
 				932BF741278960E00090F29A /* ShareConfiguration */,
 			);
 			path = ExportVC;
@@ -691,11 +731,11 @@
 		93C3CFE72761EE85009CD963 /* ImageConfiguration */ = {
 			isa = PBXGroup;
 			children = (
-				939E4A2E278CA8AE00A9A0E2 /* PhotoViewController.swift */,
-				932AEFEA277586B700211869 /* PhotoLab */,
-				93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */,
-				9399B1C72764823A0035021E /* GradientConfigurationVC.swift */,
-				9376472D279034CB00A5B4E9 /* LogoForBackgroundVC.swift */,
+				93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */,
+				931859E027AE4CC900C0EB1A /* PhotoVC */,
+				931859E127AE4CE700C0EB1A /* TextConfVC */,
+				931859E227AE4CF800C0EB1A /* GradientConVC */,
+				931859E327AE4D0700C0EB1A /* LogoVC */,
 			);
 			path = ImageConfiguration;
 			sourceTree = "<group>";

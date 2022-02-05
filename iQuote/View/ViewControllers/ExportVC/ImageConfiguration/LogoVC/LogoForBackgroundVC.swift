@@ -96,7 +96,7 @@ class LogoForBackground : UIViewController {
     @objc func handleTapGesture() {
         dismiss(animated: true, completion: nil)
     }
-    
+
     private func tapGestureToDissmis() {
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(handleTapGesture))
@@ -169,7 +169,7 @@ class LogoForBackground : UIViewController {
 // MARK: - UIGestureRecognizerDelegate
 extension LogoForBackground : UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        
+
         if touch.view?.isDescendant(of: container) == true {
             return false
         }
