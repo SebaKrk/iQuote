@@ -19,6 +19,8 @@ class UnsplashCollectionVC : UIViewController {
     var unsplashCollection : UICollectionView!
     let collectionReuseIdentifier = "collectionReuseIdentifier"
     
+    let dissmisButton = UIButton()
+    
     var collectionImageArray : [Results] = []
     var category = ""
     
@@ -26,6 +28,7 @@ class UnsplashCollectionVC : UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         configureCollectionView()
+        configureDissmisButton()
         getJSON()
     }
     
@@ -62,6 +65,11 @@ class UnsplashCollectionVC : UIViewController {
         unsplashCollection.dataSource = self
         
     }
+    //    MARK: - OBJC Func
+    
+    @objc func handleDissmisButtton() {
+        dismiss(animated: true, completion: nil)
+    }
     
     //    MARK: - Constraints
     
@@ -75,6 +83,24 @@ class UnsplashCollectionVC : UIViewController {
             unsplashCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             unsplashCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             unsplashCollection.heightAnchor.constraint(equalToConstant: 250)
+        ])
+    }
+    
+    private func configureDissmisButton() {
+        view.addSubview(dissmisButton)
+        dissmisButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        let configuration = UIImage.SymbolConfiguration(scale: .large)
+        dissmisButton.tintColor = .primaryOrange()
+        dissmisButton.setImage(UIImage(systemName: "x.circle.fill")?.withConfiguration(configuration), for: .normal)
+        dissmisButton.addTarget(self, action: #selector(handleDissmisButtton), for: .touchUpInside)
+        
+        
+        NSLayoutConstraint.activate([
+            dissmisButton.bottomAnchor.constraint(equalTo: unsplashCollection.topAnchor,constant: -20),
+            dissmisButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
+            dissmisButton.heightAnchor.constraint(equalToConstant: 50),
+            dissmisButton.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
 }

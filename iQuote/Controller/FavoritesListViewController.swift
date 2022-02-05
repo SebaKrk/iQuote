@@ -210,12 +210,12 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
 
 // MARK: - UIGestureRecognizerDelegate
 
-//extension FavoritesListViewController : UIGestureRecognizerDelegate {
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-//
-//        if touch.view?.isDescendant(of: tableViewContainer) == true {
-//            return false
-//        }
-//        return true
-//    }
-//}
+extension FavoritesListViewController : UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+
+        if touch.view?.isDescendant(of: tableViewContainer) == true {
+            return false
+        }
+        return true
+    }
+}
