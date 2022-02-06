@@ -26,12 +26,9 @@ class NavigationViewController : UIViewController {
         configureQuoteMenuContainer()
         configureMainButton()
         configureMenuButtons()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         closeMenu()
     }
+    
     private func setupView() {
         view.backgroundColor = .black
     }
