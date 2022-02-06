@@ -79,8 +79,8 @@ class AuthorViewController : UIViewController {
         NSLayoutConstraint.activate([
             authorImage.centerYAnchor.constraint(equalTo: authorButton.centerYAnchor),
             authorImage.leadingAnchor.constraint(equalTo: authorButton.leadingAnchor),
-            authorImage.widthAnchor.constraint(equalToConstant: 85),
-            authorImage.heightAnchor.constraint(equalToConstant: 85)
+            authorImage.widthAnchor.constraint(equalToConstant: 65),
+            authorImage.heightAnchor.constraint(equalToConstant: 65)
         ])
     }
     private func configureAuthorLabel() {
