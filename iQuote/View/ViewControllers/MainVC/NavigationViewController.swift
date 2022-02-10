@@ -69,7 +69,6 @@ class NavigationViewController : UIViewController {
     
     private func closeMenu() {
         quoteMenuContainer.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        
         nextButton.transform = CGAffineTransform(translationX: 30, y: 0)
         exportButton.transform = CGAffineTransform(translationX: -30, y: 0)
         heartButton.transform = CGAffineTransform(translationX: 0, y: 30)

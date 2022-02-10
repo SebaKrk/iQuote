@@ -23,6 +23,7 @@ class FavoritesListViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setupView()
         setupTableView()
         swipeUpGesture()
@@ -94,7 +95,7 @@ class FavoritesListViewController : UIViewController {
         tableViewContainer.backgroundColor = .white
         
         NSLayoutConstraint.activate([
-            tableViewContainer.topAnchor.constraint(equalTo: view.topAnchor),
+            tableViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             tableViewContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             tableViewContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: multiplier)
