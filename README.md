@@ -1,4 +1,4 @@
-<img src="Assets\iQuote.01.png" width="1000" height="500">
+<img src="Assets\iQuote.01.png" width="1000" height="400">
 <br>
 <br>
 <br>
