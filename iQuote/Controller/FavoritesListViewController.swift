@@ -70,7 +70,7 @@ class FavoritesListViewController : UIViewController {
     }
     //    MARK: GestureRecogniazer
     @objc func handleSwipeUpGesture() {
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     @objc func handleTapGesture() {
         dismiss(animated: true, completion: nil)
