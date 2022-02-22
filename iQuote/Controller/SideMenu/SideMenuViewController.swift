@@ -17,7 +17,7 @@ class SideMenuViewController : UIViewController {
     private let padding : CGFloat = 10
     override func viewDidLoad() {
         
-        //        MARK: - ViewDidLoad
+        // MARK: - ViewDidLoad
         
         super.viewDidLoad()
         setupView()
@@ -117,7 +117,7 @@ extension SideMenuViewController : UITableViewDelegate, UITableViewDataSource {
             let shereSheetVC = UIActivityViewController(activityItems: [message,url], applicationActivities: nil)
             shereSheetVC.excludedActivityTypes = [.addToReadingList,.assignToContact,.copyToPasteboard,.markupAsPDF,.saveToCameraRoll]
             present(shereSheetVC, animated: true, completion: nil)
-          
+            
         case SettingsTitle.review:
             print("\(SettingsTitle.review)")
             showSafariService(with: SettingsURL.review.rawValue)
