@@ -113,7 +113,10 @@ class PhotoViewController : UIViewController {
         dismiss(animated: true)
     }
     @objc func handleDoneButton() {
-        dismiss(animated: true)
+        let desVC = UnsplashCollectionVC()
+        desVC.category = searchText.text ?? "landscapes"
+        desVC.delegate = self
+        present(desVC, animated: true, completion: nil)
     }
   
 
