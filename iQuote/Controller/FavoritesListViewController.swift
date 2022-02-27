@@ -70,10 +70,10 @@ class FavoritesListViewController : UIViewController {
     }
     //    MARK: GestureRecogniazer
     @objc func handleSwipeUpGesture() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     @objc func handleTapGesture() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     private func swipeUpGesture() {
         let swipeUP = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeUpGesture))
@@ -155,8 +155,12 @@ extension FavoritesListViewController : UITableViewDelegate, UITableViewDataSour
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         tableView.deselectRow(at: indexPath, animated: true)
+        let quoteData = favoritesItems[indexPath.row]
+        let desVC = ExpandQuoteVC()
+        desVC.quote = quoteData.q
+        desVC.modalPresentationStyle = .fullScreen
+        present(desVC, animated: false, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
