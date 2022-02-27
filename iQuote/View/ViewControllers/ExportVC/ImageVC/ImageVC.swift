@@ -104,7 +104,7 @@ class ImageVC : UIViewController {
         dragIsOn = !dragIsOn
         if dragIsOn == true {
             quoteLabel.layer.borderColor = UIColor.red.cgColor
-            quoteLabel.layer.borderWidth = 0.5
+            quoteLabel.layer.borderWidth = 2
             configurePanGestureRevognizareToMoveQuoteLabel()
             
         } else {
