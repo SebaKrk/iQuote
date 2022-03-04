@@ -18,6 +18,7 @@ class ExpandQuoteVC : UIViewController {
     
     let container = UIView()
     let quoteLabel = CostumQuoteLabel()
+    let padding : CGFloat = 30
     
     var quote = ""
     
@@ -52,8 +53,8 @@ class ExpandQuoteVC : UIViewController {
         NSLayoutConstraint.activate([
             quoteLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             quoteLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            quoteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10),
-            quoteLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -10),
+            quoteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: padding),
+            quoteLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -padding),
         ])
     }
 }
