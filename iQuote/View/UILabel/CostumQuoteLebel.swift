@@ -10,6 +10,10 @@ import UIKit
 
 class CostumQuoteLabel : UILabel {
     
+    let fontArray = ["AmericanTypewriter-Bold", "Baskerville-BoldItalic", "BradleyHandITCTT-Bold",
+                     "Copperplate", "Georgia-BoldItalic", "Marion-Bold", "SnellRoundhand-Black",
+                     "TrebuchetMS-Italic"]
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -19,21 +23,20 @@ class CostumQuoteLabel : UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     private func configure() {
-        font = UIFont(name: fontText.mainQuote, size: 36)
+        if let randomElement = fontArray.randomElement() {
+            font = UIFont(name: randomElement, size: 36)
+        }
         textColor = .white
         textAlignment = .center
         numberOfLines = 0
-//        minimumScaleFactor = 0.5
         adjustsFontSizeToFitWidth = true
         lineBreakMode = .byTruncatingTail
-     
-        // Baskerville URW
     }
 }
 
-//Baskerville
-//Baskerville-Bold
-//Baskerville-BoldItalic
-//Baskerville-Italic
-//Baskerville-SemiBold
-//Baskerville-SemiBoldItalic
+//NAZWA: Bely Display - regular
+//NAZWA: Bayon - regular
+//NAZWA: Beth Ellen - regular
+//NAZWA: Black Ops One - regular
+//NAZWA: Calistoga - regular
+//NAZWA: Chauncy Pro - bold

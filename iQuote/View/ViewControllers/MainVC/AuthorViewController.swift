@@ -11,7 +11,7 @@ import SafariServices
 
 class AuthorViewController : UIViewController {
     
-    let authorButton = UIButton() // button or pinGesture ?
+    let authorButton = UIButton()
     let authorImage = AuthorImageView(frame: .zero)
     let authorLabel = CostumAuthorLabel()
     
