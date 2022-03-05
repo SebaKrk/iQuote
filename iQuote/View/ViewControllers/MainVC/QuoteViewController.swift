@@ -5,17 +5,17 @@
 //  Created by Sebastian Sciuba on 18/11/2021.
 //
 
-import Foundation
 import UIKit
 
 class QuoteViewController : UIViewController {
     
     
-    let backgroundImage = CostumBackground(placehodler: Constants.backgroundIMG)
+    let backgroundImage = MainBackgroundIMG(frame: .zero)
     let quoteImage = CostumBackground(placehodler: Constants.halfQuoteIMG)
     let quoteLabel = CostumQuoteLabel()
     
     var quote : [Quote] = []
+
     
     let padding : CGFloat = 20
     
@@ -56,7 +56,6 @@ class QuoteViewController : UIViewController {
     private func configureBackgroundImage() {
         view.addSubview(backgroundImage)
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
-        
         
         NSLayoutConstraint.activate([
             backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
