@@ -13,7 +13,7 @@ enum Constants {
     
     static let exampleQute = "The people who are crazy enough to think they can change the world are the ones who do"
     static let exampleAuthor = "Steve Jobs"
-    static let backgroundIMG = "BackgroundImage"
+    static let backgroundIMG = "BGImg001"
     static let halfQuoteIMG = "halfQuote"
     
     static let fontTuples: [(name: String, fontName: String)] =

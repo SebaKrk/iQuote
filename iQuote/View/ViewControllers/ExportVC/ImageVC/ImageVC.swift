@@ -185,7 +185,6 @@ class ImageVC : UIViewController {
                                                name: .shareObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleCopyTextObserver(notification:)),
                                                name: .copyTextObserver, object: nil)
-        
     }
     //  MARK: - GestureRecogizare
     private func configurePanGestureRevognizareToMoveQuoteLabel() {
@@ -241,6 +240,7 @@ class ImageVC : UIViewController {
     private func configureBackgroundIMG() {
         contenToShare.addSubview(backgroundIMG)
         backgroundIMG.translatesAutoresizingMaskIntoConstraints = false
+        // przekazuje
         
         NSLayoutConstraint.activate([
             backgroundIMG.topAnchor.constraint(equalTo: contenToShare.topAnchor),
