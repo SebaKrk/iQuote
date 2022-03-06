@@ -10,9 +10,8 @@ import UIKit
 
 class CostumQuoteLabel : UILabel {
     
-    let fontArray = ["AmericanTypewriter-Bold", "Baskerville-BoldItalic", "BradleyHandITCTT-Bold",
-                     "Copperplate", "Georgia-BoldItalic", "Marion-Bold", "SnellRoundhand-Black",
-                     "TrebuchetMS-Italic"]
+    let fontArray = ["Bayon-Regular", "BethEllen-Regular", "BlackOpsOne-Regular","Roboto-Medium",
+                     "Calistoga-Regular","Roboto-Black"]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,9 +33,3 @@ class CostumQuoteLabel : UILabel {
     }
 }
 
-//NAZWA: Bely Display - regular
-//NAZWA: Bayon - regular
-//NAZWA: Beth Ellen - regular
-//NAZWA: Black Ops One - regular
-//NAZWA: Calistoga - regular
-//NAZWA: Chauncy Pro - bold

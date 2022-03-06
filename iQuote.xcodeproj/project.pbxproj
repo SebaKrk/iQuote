@@ -145,6 +145,10 @@
 		93D228A5276C66C300D6AC18 /* CostumTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D228A4276C66C300D6AC18 /* CostumTitleLabel.swift */; };
 		93D228A7276C66F700D6AC18 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D228A6276C66F700D6AC18 /* SettingsTableViewCell.swift */; };
 		93D228A9276C6D3600D6AC18 /* AppVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D228A8276C6D3600D6AC18 /* AppVersionViewController.swift */; };
+		93D8932F27D51A6700A3020C /* BlackOpsOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93D8932A27D51A6600A3020C /* BlackOpsOne-Regular.ttf */; };
+		93D8933027D51A6700A3020C /* BethEllen-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93D8932B27D51A6700A3020C /* BethEllen-Regular.ttf */; };
+		93D8933127D51A6700A3020C /* Bayon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93D8932C27D51A6700A3020C /* Bayon-Regular.ttf */; };
+		93D8933327D51A6700A3020C /* Calistoga-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93D8932E27D51A6700A3020C /* Calistoga-Regular.ttf */; };
 		93D9B6C827A8342500D55655 /* ShareAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D9B6C727A8342500D55655 /* ShareAlertViewController.swift */; };
 		93E1CE32274FF73B0089ECF1 /* CostumTransButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E1CE31274FF73B0089ECF1 /* CostumTransButton.swift */; };
 		93ECBB5B2768603D00E1BB67 /* NSNotification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ECBB5A2768603D00E1BB67 /* NSNotification+Ext.swift */; };
@@ -314,6 +318,10 @@
 		93D228A4276C66C300D6AC18 /* CostumTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumTitleLabel.swift; sourceTree = "<group>"; };
 		93D228A6276C66F700D6AC18 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		93D228A8276C6D3600D6AC18 /* AppVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionViewController.swift; sourceTree = "<group>"; };
+		93D8932A27D51A6600A3020C /* BlackOpsOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BlackOpsOne-Regular.ttf"; sourceTree = "<group>"; };
+		93D8932B27D51A6700A3020C /* BethEllen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BethEllen-Regular.ttf"; sourceTree = "<group>"; };
+		93D8932C27D51A6700A3020C /* Bayon-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bayon-Regular.ttf"; sourceTree = "<group>"; };
+		93D8932E27D51A6700A3020C /* Calistoga-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calistoga-Regular.ttf"; sourceTree = "<group>"; };
 		93D9B6C727A8342500D55655 /* ShareAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAlertViewController.swift; sourceTree = "<group>"; };
 		93E1CE31274FF73B0089ECF1 /* CostumTransButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumTransButton.swift; sourceTree = "<group>"; };
 		93ECBB5A2768603D00E1BB67 /* NSNotification+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Ext.swift"; sourceTree = "<group>"; };
@@ -471,6 +479,10 @@
 				93A064FD278FFC220099412D /* Roboto-Regular.ttf */,
 				93A064F9278FFC220099412D /* Roboto-Thin.ttf */,
 				93A064FB278FFC220099412D /* Roboto-ThinItalic.ttf */,
+				93D8932C27D51A6700A3020C /* Bayon-Regular.ttf */,
+				93D8932B27D51A6700A3020C /* BethEllen-Regular.ttf */,
+				93D8932A27D51A6600A3020C /* BlackOpsOne-Regular.ttf */,
+				93D8932E27D51A6700A3020C /* Calistoga-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -908,6 +920,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D8932F27D51A6700A3020C /* BlackOpsOne-Regular.ttf in Resources */,
 				93BBBD3327A7ADCB00363E90 /* iconBlack-40.png in Resources */,
 				93BBBCEC27A70E5E00363E90 /* iconPurple-40@3x.png in Resources */,
 				93BBBCEB27A70E5E00363E90 /* iconPurple-83.5@2x.png in Resources */,
@@ -932,7 +945,9 @@
 				93BBBD4027A7ADCB00363E90 /* iconBlack-83.5@2x.png in Resources */,
 				93A06507278FFC220099412D /* Roboto-ThinItalic.ttf in Resources */,
 				93BBBCCC27A70CAC00363E90 /* iconRed-40.png in Resources */,
+				93D8933127D51A6700A3020C /* Bayon-Regular.ttf in Resources */,
 				93A0650A278FFC220099412D /* Roboto-Light.ttf in Resources */,
+				93D8933327D51A6700A3020C /* Calistoga-Regular.ttf in Resources */,
 				93BBBCC927A70CAC00363E90 /* iconRed.png in Resources */,
 				93BBBCB327A70A2F00363E90 /* iconBlue-small@2x.png in Resources */,
 				93A06502278FFC220099412D /* Roboto-Bold.ttf in Resources */,
@@ -958,6 +973,7 @@
 				93BBBCF327A70E5E00363E90 /* iconPurple-72.png in Resources */,
 				93BBBCE927A70E5E00363E90 /* iconPurple@2x.png in Resources */,
 				93BBBCCB27A70CAC00363E90 /* iconRed-40@2x.png in Resources */,
+				93D8933027D51A6700A3020C /* BethEllen-Regular.ttf in Resources */,
 				93BBBCB227A70A2F00363E90 /* iconBlue-60@3x.png in Resources */,
 				93A06506278FFC220099412D /* Roboto-Italic.ttf in Resources */,
 				93BBBD3827A7ADCB00363E90 /* iconBlack-small-50.png in Resources */,

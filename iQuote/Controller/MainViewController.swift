@@ -52,11 +52,15 @@ class MainViewController : UIViewController {
     @objc func handleNextQuoteObserver(notofication: NSNotification) {
         getJasonData()
     }
+    @objc func handleBackgroundImgObserver(notification: NSNotification) {
+        print("cos")
+    }
     //    MARK: - QuotTextObserver
     
     func setupObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleTextObserver(notofication:)), name: .quoteToShare, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleNextQuoteObserver(notofication:)), name: .nextQuote, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleBackgroundImgObserver(notification:)), name: .backgroundImgObserver, object: nil)
     }
     
     //    MARK: - Navigation Item

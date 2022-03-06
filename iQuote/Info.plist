@@ -111,6 +111,11 @@
 		<string>Roboto-Regular.ttf</string>
 		<string>Roboto-Thin.ttf</string>
 		<string>Roboto-ThinItalic.ttf</string>
+		<string>Bayon-Regular.ttf</string>
+		<string>BethEllen-Regular.ttf</string>
+		<string>BlackOpsOne-Regular.ttf</string>
+		<string>Calistoga-Regular.ttf</string>
+		<string>FontsFree-Net-Bely-Display-W00-Regular</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
