@@ -64,7 +64,6 @@ class MainViewController : UIViewController {
         let fontName = notification.userInfo?["fontName"] as? String
         guard let fontName = fontName else {return}
         fontQuoteToShare = fontName
-        print(fontName)
     }
 
     //    MARK: - QuotTextObserver
