@@ -119,42 +119,35 @@ extension SideMenuViewController : UITableViewDelegate, UITableViewDataSource {
             present(shereSheetVC, animated: true, completion: nil)
             
         case SettingsTitle.review:
-            print("\(SettingsTitle.review)")
             showSafariService(with: SettingsURL.review.rawValue)
             // handle appstore review website
+            
         case SettingsTitle.icon:
-            print("\(SettingsTitle.icon)")
             let vc = MultipleAppIconsViewController()
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
             
         case SettingsTitle.website:
-            print("\(SettingsTitle.website)")
             showSafariService(with: SettingsURL.website.rawValue)
             
         case SettingsTitle.sugest:
-            print("\(SettingsTitle.sugest)")
             showMailMassageUI(subject: SettingsTitle.sugest,
                               message: SettingsMessage.sugest.rawValue,
                               url: SettingsURL.safai.rawValue)
             
         case SettingsTitle.bug:
-            print("\(SettingsTitle.bug)")
             showMailMassageUI(subject: SettingsTitle.bug,
                               message: SettingsMessage.bug.rawValue,
                               url: SettingsURL.safai.rawValue)
             
         case SettingsTitle.privacyPolicy:
-            print("\(SettingsTitle.privacyPolicy)")
             showSafariService(with: SettingsURL.privacyPolicy.rawValue)
             
         case SettingsTitle.appSettings:
-            print("\(SettingsTitle.appSettings)")
             guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {return}
             UIApplication.shared.open(settingsURL)
             
         case SettingsTitle.appVersion:
-            print("\(SettingsTitle.appVersion)")
             let vc = AppVersionViewController()
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)

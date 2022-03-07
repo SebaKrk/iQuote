@@ -24,14 +24,14 @@ struct SettingsTitle {
 enum SettingsMessage : String {
     
     case share = "Hi, this is super Quote App , I want to shere with you ..."
-    case sugest = "Hi Sebastian and Mati,\nI just want to sugest ..."
-    case bug =  "Hi Sebastian and Mati,\nI just want to report the bug ..."
+    case sugest = "Hi Sebastian,\nI just want to sugest ..."
+    case bug =  "Hi Sebastian,\nI just want to report the bug ..."
 }
 
 enum SettingsURL : String {
-    case share = "https://github.com/SebaKrk/iQuote"
+    case share = "https://testflight.apple.com/join/mC1o9G14"
     case review = "https://github.com"
-    case website = "https://github.com/SebaKrk"
+    case website = "https://github.com/SebaKrk/iQuote"
     case privacyPolicy = "https://premium.zenquotes.io/privacy-policy/"
     case safai = "https://www.google.com"
 }
