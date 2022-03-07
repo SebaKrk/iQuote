@@ -17,7 +17,11 @@ enum Constants {
     static let halfQuoteIMG = "halfQuote"
     
     static let fontTuples: [(name: String, fontName: String)] =
-    [("Baskerville","Baskerville"),
+    [("Bayon","Bayon-Regular"),
+     ("BethEllen","BethEllen-Regular"),
+     ("BlackOpsOne","BlackOpsOne-Regular"),
+     ("Calistoga","Calistoga-Regular"),
+     ("Baskerville","Baskerville"),
      ("B-Bold","Baskerville-Bold"),
      ("B-BoldItalic","Baskerville-BoldItalic"),
      ("B-Italic","Baskerville-Italic"),
