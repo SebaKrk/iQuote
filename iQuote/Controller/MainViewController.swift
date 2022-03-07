@@ -11,7 +11,7 @@ import SideMenu
 var quoteToFavorites = ""
 var authorToFavorites = ""
 var quoteTextToShare : String? = ""
-// fontQuoteToShare
+var fontQuoteToShare : String? = ""
 var randomPhotoName : String? = ""
 
 
@@ -60,6 +60,12 @@ class MainViewController : UIViewController {
         guard let photoName = photoName else {return}
         randomPhotoName = photoName
     }
+    @objc func handlefontQuoteObserver(notification: NSNotification) {
+        let fontName = notification.userInfo?["fontName"] as? String
+        guard let fontName = fontName else {return}
+        fontQuoteToShare = fontName
+        print(fontName)
+    }
 
     //    MARK: - QuotTextObserver
     
@@ -67,6 +73,7 @@ class MainViewController : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleTextObserver(notofication:)), name: .quoteToShare, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleNextQuoteObserver(notofication:)), name: .nextQuote, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleBackgroundImgObserver(notification:)), name: .backgroundImgObserver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handlefontQuoteObserver(notification:)), name: .fontQuoteObserver, object: nil)
     }
     
     //    MARK: - Navigation Item

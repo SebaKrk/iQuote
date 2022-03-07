@@ -266,11 +266,13 @@ class ImageVC : UIViewController {
         
         quoteLabel.numberOfLines = 0
         quoteLabel.text =  quoteTextToShare
+        quoteLabel.font = UIFont(name: fontQuoteToShare!, size: 32)
         
         NSLayoutConstraint.activate([
             quoteLabel.centerYAnchor.constraint(equalTo: quoteContainer.centerYAnchor),
             quoteLabel.centerXAnchor.constraint(equalTo: quoteContainer.centerXAnchor),
-            quoteLabel.widthAnchor.constraint(equalTo: quoteContainer.widthAnchor, multiplier: 0.8)
+            quoteLabel.widthAnchor.constraint(equalTo: quoteContainer.widthAnchor, multiplier: 0.8),
+            quoteLabel.heightAnchor.constraint(equalTo: quoteContainer.heightAnchor, multiplier: 0.8)
         ])
     }
     private func configureQuoteLogo() {

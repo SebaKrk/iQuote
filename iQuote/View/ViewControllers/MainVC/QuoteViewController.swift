@@ -12,7 +12,7 @@ class QuoteViewController : UIViewController {
     
     let backgroundImage = MainBackgroundIMG(frame: .zero)
     let quoteImage = CostumBackground(placehodler: Constants.halfQuoteIMG)
-    let quoteLabel = CostumQuoteLabel()
+    let quoteLabel = MainQuoteLabel()
     
     var quote : [Quote] = []
 

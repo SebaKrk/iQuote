@@ -49,6 +49,7 @@
 		93A9FB5527536E5E00442A91 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB5427536E5E00442A91 /* Quote.swift */; };
 		93A9FB5727536F5600442A91 /* ErrorMasasge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB5627536F5600442A91 /* ErrorMasasge.swift */; };
 		93A9FB592753F7B400442A91 /* Wikipedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9FB582753F7B400442A91 /* Wikipedia.swift */; };
+		93B4BA1027D5DEAB00EBB0F7 /* MainQuoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4BA0F27D5DEAB00EBB0F7 /* MainQuoteLabel.swift */; };
 		93B4ED06275B38E800C6E5E9 /* CostumeSocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED05275B38E800C6E5E9 /* CostumeSocialButton.swift */; };
 		93B4ED08275B3BB700C6E5E9 /* ImageConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */; };
 		93BA998F27D3CFE50051D5B4 /* MainBackgroundIMG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA998E27D3CFE50051D5B4 /* MainBackgroundIMG.swift */; };
@@ -219,6 +220,7 @@
 		93A9FB5427536E5E00442A91 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		93A9FB5627536F5600442A91 /* ErrorMasasge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMasasge.swift; sourceTree = "<group>"; };
 		93A9FB582753F7B400442A91 /* Wikipedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wikipedia.swift; sourceTree = "<group>"; };
+		93B4BA0F27D5DEAB00EBB0F7 /* MainQuoteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuoteLabel.swift; sourceTree = "<group>"; };
 		93B4ED05275B38E800C6E5E9 /* CostumeSocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeSocialButton.swift; sourceTree = "<group>"; };
 		93B4ED07275B3BB700C6E5E9 /* ImageConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfigurationVC.swift; sourceTree = "<group>"; };
 		93BA998E27D3CFE50051D5B4 /* MainBackgroundIMG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackgroundIMG.swift; sourceTree = "<group>"; };
@@ -630,6 +632,7 @@
 				9305BA092757D696003E91F7 /* CellQuoteLabel.swift */,
 				9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */,
 				93BDB9C62748D44900E4B928 /* CostumQuoteLebel.swift */,
+				93B4BA0F27D5DEAB00EBB0F7 /* MainQuoteLabel.swift */,
 				93EE8D01274A4E7C000A8964 /* CostumAuthorLabel.swift */,
 				93D228A4276C66C300D6AC18 /* CostumTitleLabel.swift */,
 			);
@@ -1038,6 +1041,7 @@
 				9399B1C82764823A0035021E /* GradientConfigurationVC.swift in Sources */,
 				939A3A382754CF010079DF97 /* UIViewController+Ext.swift in Sources */,
 				93A59884275CA7CE00FCC32B /* CollectionCell.swift in Sources */,
+				93B4BA1027D5DEAB00EBB0F7 /* MainQuoteLabel.swift in Sources */,
 				93A59882275CA77500FCC32B /* CollectionCellmageView.swift in Sources */,
 				93CE1CDB274ACB0D004FD559 /* NavigationViewController.swift in Sources */,
 				93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */,

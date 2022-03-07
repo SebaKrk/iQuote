@@ -46,7 +46,7 @@ enum Constants {
 }
 enum fontText {
     
-    static let mainQuote = "Black Ops One - regular"
+    static let mainQuote = "Roboto-Bold"
     static let mainAuthorQuote = "Roboto-Medium"
     static let popupTitle = "Roboto-Bold"
     static let popupMessage = "Roboto-Regular"
