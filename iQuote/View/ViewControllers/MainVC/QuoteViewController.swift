@@ -46,7 +46,9 @@ class QuoteViewController : UIViewController {
         configureQuoteImage()
         configureQuoteLabel()
     }
+    
     //     MARK: - UI Element
+    
     func configureUiElements() {
         quoteLabel.text = quote[0].q
     }

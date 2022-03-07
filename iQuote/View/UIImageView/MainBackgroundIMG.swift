@@ -20,13 +20,15 @@ class MainBackgroundIMG : UIImageView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func configure() {
         if let randomElement = backgroundImageArry.randomElement() {
             let image = UIImage(named: randomElement)
             guard let image = image else {return}
             self.image = image
             contentMode = .scaleAspectFill
+            
+            NotificationCenter.default.post(name: .backgroundImgObserver, object: nil, userInfo: ["photoName" : randomElement])
         }
     }
 }

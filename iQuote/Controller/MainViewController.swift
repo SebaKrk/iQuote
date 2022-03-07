@@ -11,6 +11,9 @@ import SideMenu
 var quoteToFavorites = ""
 var authorToFavorites = ""
 var quoteTextToShare : String? = ""
+// fontQuoteToShare
+var randomPhotoName : String? = ""
+
 
 class MainViewController : UIViewController {
     
@@ -53,8 +56,11 @@ class MainViewController : UIViewController {
         getJasonData()
     }
     @objc func handleBackgroundImgObserver(notification: NSNotification) {
-        print("cos")
+        let photoName = notification.userInfo?["photoName"] as? String
+        guard let photoName = photoName else {return}
+        randomPhotoName = photoName
     }
+
     //    MARK: - QuotTextObserver
     
     func setupObservers() {

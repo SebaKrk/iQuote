@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import Social
 import MessageUI
 
 enum gradientState {
@@ -20,7 +19,7 @@ class ImageVC : UIViewController {
     let contenToShare = UIView()
     let quoteContainer = UIView()
     
-    let backgroundIMG = CostumBackground(placehodler: Constants.backgroundIMG)
+    let backgroundIMG = CostumBackground(placehodler: randomPhotoName!)
     let quoteLabel = CostumQuoteLabel()
     let quoteLogo = UIImageView()
     
@@ -66,7 +65,6 @@ class ImageVC : UIViewController {
     @objc func handleChooseImgObserver(notification: NSNotification) {
         dismiss(animated: true, completion: nil)
     }
-    
     // Font Size Color
     @objc func handleFontQuoteObserver(notification : NSNotification) {
         let fontQuoteName = notification.userInfo?["font"] as? String
@@ -178,7 +176,7 @@ class ImageVC : UIViewController {
                                                name: .imgPickerObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleChooseImgObserver(notification:)),
                                                name: .chooseImgObserver, object: nil)
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(handleMessageObserver(notification:)),
                                                name: .iMessageObserver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleShareObserver(notification:)),
