@@ -14,6 +14,7 @@
 		9305BA0A2757D697003E91F7 /* CellQuoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA092757D696003E91F7 /* CellQuoteLabel.swift */; };
 		9305BA0C2757D6DB003E91F7 /* CellAuthorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */; };
 		932BF740278960020090F29A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932BF73F278960020090F29A /* ShareViewController.swift */; };
+		9347D66727D66D83001AD31B /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9347D66627D66D83001AD31B /* PrivacyPolicyViewController.swift */; };
 		936606F927CB37EF0094D960 /* ExpandQuoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936606F827CB37EF0094D960 /* ExpandQuoteVC.swift */; };
 		93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */; };
 		9376472A2790201C00A5B4E9 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937647292790201C00A5B4E9 /* ActionButton.swift */; };
@@ -186,6 +187,7 @@
 		9305BA092757D696003E91F7 /* CellQuoteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellQuoteLabel.swift; sourceTree = "<group>"; };
 		9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAuthorLabel.swift; sourceTree = "<group>"; };
 		932BF73F278960020090F29A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		9347D66627D66D83001AD31B /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		936606F827CB37EF0094D960 /* ExpandQuoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandQuoteVC.swift; sourceTree = "<group>"; };
 		93761BA5274A2D8300DF12B6 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		937647292790201C00A5B4E9 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
@@ -784,6 +786,7 @@
 			isa = PBXGroup;
 			children = (
 				93D228A2276C666300D6AC18 /* SideMenuViewController.swift */,
+				9347D66627D66D83001AD31B /* PrivacyPolicyViewController.swift */,
 				93D228A8276C6D3600D6AC18 /* AppVersionViewController.swift */,
 				93BBBBDA27A5F2BA00363E90 /* MultipleAppIconsViewController.swift */,
 			);
@@ -1054,6 +1057,7 @@
 				93FAA46F2791AFE10022BF2F /* CancleButton.swift in Sources */,
 				93BBBBDB27A5F2BA00363E90 /* MultipleAppIconsViewController.swift in Sources */,
 				93BF89A72746220E00EF386A /* UIColor+Ext.swift in Sources */,
+				9347D66727D66D83001AD31B /* PrivacyPolicyViewController.swift in Sources */,
 				93D228A7276C66F700D6AC18 /* SettingsTableViewCell.swift in Sources */,
 				9305BA08275760CB003E91F7 /* FavoritesTableViewCell.swift in Sources */,
 				9376472C279027B200A5B4E9 /* BottomLine.swift in Sources */,

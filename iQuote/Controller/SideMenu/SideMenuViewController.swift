@@ -141,7 +141,10 @@ extension SideMenuViewController : UITableViewDelegate, UITableViewDataSource {
                               url: SettingsURL.safai.rawValue)
             
         case SettingsTitle.privacyPolicy:
-            showSafariService(with: SettingsURL.privacyPolicy.rawValue)
+            let vc = PrivacyPolicyViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+            //showSafariService(with: SettingsURL.privacyPolicy.rawValue)
             
         case SettingsTitle.appSettings:
             guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {return}
