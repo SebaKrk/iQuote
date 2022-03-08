@@ -32,6 +32,13 @@ enum SettingsURL : String {
     case share = "https://testflight.apple.com/join/mC1o9G14"
     case review = "https://github.com"
     case website = "https://github.com/SebaKrk/iQuote"
-    case privacyPolicy = "https://premium.zenquotes.io/privacy-policy/"
     case safai = "https://www.google.com"
+    
+    case privacyPolicy = "https://premium.zenquotes.io/privacy-policy"
+    
+    case iQuotePrivacyPolicy = "https://github.com/SebaKrk/"
+    
+    case zenQuotePrivacyPolicy = "https://premium.zenquotes.io/privacy-policy/"
+    case wikipediaPrivacyPolicy = "https://www.mediawiki.org/wiki/MediaWiki"
+    case unsplashPrivacyPolicy = "https://api.unsplash.com"
 }
