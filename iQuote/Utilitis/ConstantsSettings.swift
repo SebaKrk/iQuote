@@ -9,15 +9,15 @@ import Foundation
 
 struct SettingsTitle {
     
-    static let share = "Share"
-    static let review = "Write a Review"
-    static let icon = "Change Icon"
-    static let website = "Website"
-    static let sugest = "Sugest a Feature"
-    static let bug = "Report a Bug"
-    static let privacyPolicy = "Privacy Policy"
-    static let appSettings = "App Settings"
-    static let appVersion = "App Version"
+    static let share = "Share".localized
+    static let review = "Write a Review".localized
+    static let icon = "Change Icon".localized
+    static let website = "Website".localized
+    static let sugest = "Sugest a Feature".localized
+    static let bug = "Report a Bug".localized
+    static let privacyPolicy = "Privacy Policy".localized
+    static let appSettings = "App Settings".localized
+    static let appVersion = "App Version".localized
     
 }
 
