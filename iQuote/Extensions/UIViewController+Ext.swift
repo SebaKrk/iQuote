@@ -15,6 +15,14 @@ fileprivate var containerView : UIView!
 
 extension UIViewController {
     
+    func removeChild() {
+        self.children.forEach {
+            $0.willMove(toParent: nil)
+            $0.view.removeFromSuperview()
+            $0.removeFromParent()
+        }
+    }
+        
     func showEmptyStateAuthor(with authorName: String, in view: UIView) {
         DispatchQueue.main.async {
             let emptyStateView = EmptyAuthorView2(name: authorName)
@@ -38,8 +46,8 @@ extension UIViewController {
         alertVC.modalTransitionStyle = .crossDissolve
         present(alertVC, animated: true, completion: nil)
     }
-
-//    MARK: - UITapGestureRecognizer
+    
+    //    MARK: - UITapGestureRecognizer
     
     @objc func handleDissmisView() {
         dismiss(animated: true, completion: nil)
@@ -53,7 +61,7 @@ extension UIViewController {
         swipeDown.direction = .down
         container.addGestureRecognizer(swipeDown)
     }
-
+    
     //   MARK: - UIPanGestureRecognizer
     
     func panGestureRecognizerToHandleDragAndDissmisView(inCardView : UIView,cardOriginY : CGFloat) {

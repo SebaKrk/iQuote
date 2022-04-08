@@ -1,0 +1,45 @@
+/* 
+  Localized.strings
+  iQuote
+
+  Created by Sebastian Sciuba on 22/03/2022.
+  
+*/
+
+//// ZenQuoteError
+//"Unable to completed your request. Please check your internet connection"
+//"Invalid response from server. Please try again."
+//"The data received from the server was invalid. Please try again."
+//"There was an error favoriting this Quote. Please try again."
+//"You've allredy favorited this Quote. You must very like it!"
+//
+//
+//// WikiError
+//"Unable to completed your request. Please check your internet connection"
+//"Invalid response from server. Please try again."
+//"The data received from the server was invalid. Please try again."
+//
+//
+//// Messages
+//"You've successfully favorited this Quote"
+//"You've allredy favorited this Quote. You must very like it!"
+//"Your List is empty.\nYou haven't added anything yet"
+//
+//
+//// ErrorMassage
+//"Unable to completed your request. Please check your internet connection"
+//"Invalid response from server. Please try again."
+//"The data received from the server was invalid. Please try again."
+//"Please enter text. We need to know what to look for"
+//"The data entered for the search are incorrect. Please try again"
+//
+//
+//// iMessage
+//"Unable to completed your request. Please check your internet connection"
+//"Something goes wrong. We can't send iMessage"
+//"You've successfully send this Quote"
+//
+//
+//// shareMessage
+//"You've successfully copy this Quote"
+
