@@ -22,6 +22,13 @@ extension UIViewController {
             $0.removeFromParent()
         }
     }
+    
+    func hideContentController(content: UIViewController) {
+        print("remove")
+        content.willMove(toParent: nil)
+        content.view.removeFromSuperview()
+        content.removeFromParent()
+    }
         
     func showEmptyStateAuthor(with authorName: String, in view: UIView) {
         DispatchQueue.main.async {

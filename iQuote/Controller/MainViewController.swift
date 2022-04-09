@@ -31,6 +31,7 @@ class MainViewController : UIViewController {
         super.viewDidLayoutSubviews()
     }
     
+    
     //    MARK: - SetupView
     
     private func setupView() {
@@ -38,6 +39,7 @@ class MainViewController : UIViewController {
         getJasonData()
         add(childVC: NavigationViewController(), to: navigationContainer)
         UserDefManager.clearUserData()
+        
     }
     
     //    MARK: - OBJC Func
@@ -65,7 +67,7 @@ class MainViewController : UIViewController {
         guard let fontName = fontName else {return}
         fontQuoteToShare = fontName
     }
-
+    
     //    MARK: - QuotTextObserver
     
     func setupObservers() {
@@ -161,15 +163,4 @@ class MainViewController : UIViewController {
         childVC.view.frame = containerView.bounds
         childVC.didMove(toParent: self)
     }
-    
-//    func removeChild() {
-//        if self.childViewControllers.count > 0 {
-//               let viewControllers:[UIViewController] = self.childViewControllers
-//               for viewContoller in viewControllers{
-//                   viewContoller.willMove(toParentViewController: nil)
-//                   viewContoller.view.removeFromSuperview()
-//                   viewContoller.removeFromParentViewController()
-//               }
-//           }
-//    }
 }
