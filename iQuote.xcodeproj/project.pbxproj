@@ -314,8 +314,6 @@
 		93BF89A02745A3B400EF386A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		93BF89A62746220E00EF386A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		93C10640278C170D00E4CAF8 /* EmptyAuthorView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAuthorView2.swift; sourceTree = "<group>"; };
-		93C1653B27EA65A3000D1EC2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		93C1653F27EA65ED000D1EC2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localized.strings; sourceTree = "<group>"; };
 		93C1654127EA65F1000D1EC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		93C1654227EA686D000D1EC2 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		93C3CFE12761E0F3009CD963 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
@@ -911,7 +909,6 @@
 			knownRegions = (
 				en,
 				Base,
-				pl,
 			);
 			mainGroup = 93BF89642745A05700EF386A;
 			packageReferences = (
@@ -1149,7 +1146,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				93BF897C2745A05A00EF386A /* Base */,
-				93C1653B27EA65A3000D1EC2 /* pl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1157,7 +1153,6 @@
 		93C1654027EA65ED000D1EC2 /* Localized.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				93C1653F27EA65ED000D1EC2 /* pl */,
 				93C1654127EA65F1000D1EC2 /* en */,
 			);
 			name = Localized.strings;
