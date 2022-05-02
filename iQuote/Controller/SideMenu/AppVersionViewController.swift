@@ -13,7 +13,7 @@ class AppVersionViewController : UIViewController {
     private let container = UIView()
     private let swipeLine = SwipeLine()
     
-    private let appVersion = Constants.appVersion
+    private let appVersion = Secrets.appVersion
     private let padding : CGFloat = 10
     
     override func viewDidLoad() {

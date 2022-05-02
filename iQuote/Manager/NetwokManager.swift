@@ -26,7 +26,7 @@ class NetworkManager {
 //    MARK: - ZenQuote API
     
     func getRandomQuote(completed: @escaping (Result<[Quote],ZenQuoteError>) -> Void ) {
-        let endpoint = baseURL + Constants.apiKey
+        let endpoint = baseURL + Secrets.apiKey
         
         guard let url = URL(string: endpoint) else {
             completed(.failure(.unableToCompleted))
@@ -98,7 +98,7 @@ class NetworkManager {
     
     func getUnsplashImages(category: String, completed: @escaping (Result<[Results],ErrorMassage>) -> Void) {
         guard let urlString = category.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
-        let endpoint = unsplashURL + urlString + "&client_id=" + Constants.accessKey
+        let endpoint = unsplashURL + urlString + "&client_id=" + Secrets.accessKey
         
         guard let url = URL(string: endpoint) else {
             completed(.failure(.unableToCompleted))
