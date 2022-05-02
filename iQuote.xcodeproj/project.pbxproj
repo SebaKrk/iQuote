@@ -650,6 +650,7 @@
 		93BDB9C82748DDDA00E4B928 /* Utilitis */ = {
 			isa = PBXGroup;
 			children = (
+				93132430281FB76B004C5BDD /* Secrets.swift */,
 				93BDB9C92748DDF100E4B928 /* Constants.swift */,
 				93A9FB5627536F5600442A91 /* ErrorMasasge.swift */,
 				93D2289A276C649400D6AC18 /* ConstantsSettings.swift */,
@@ -682,7 +683,6 @@
 			children = (
 				93BF89702745A05700EF386A /* AppDelegate.swift */,
 				93BF89722745A05700EF386A /* SceneDelegate.swift */,
-				93132430281FB76B004C5BDD /* Secrets.swift */,
 				93BDB9C82748DDDA00E4B928 /* Utilitis */,
 				93BF89A52745A54900EF386A /* Extensions */,
 				93A9FB5127536D5F00442A91 /* Manager */,
