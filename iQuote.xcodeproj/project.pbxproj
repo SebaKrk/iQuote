@@ -13,7 +13,6 @@
 		9305BA08275760CB003E91F7 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA07275760CB003E91F7 /* FavoritesTableViewCell.swift */; };
 		9305BA0A2757D697003E91F7 /* CellQuoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA092757D696003E91F7 /* CellQuoteLabel.swift */; };
 		9305BA0C2757D6DB003E91F7 /* CellAuthorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */; };
-		9313242F281FAF58004C5BDD /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9313242E281FAF58004C5BDD /* Secrets.swift */; };
 		932BF740278960020090F29A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932BF73F278960020090F29A /* ShareViewController.swift */; };
 		9347D66727D66D83001AD31B /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9347D66627D66D83001AD31B /* PrivacyPolicyViewController.swift */; };
 		936606F927CB37EF0094D960 /* ExpandQuoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936606F827CB37EF0094D960 /* ExpandQuoteVC.swift */; };
@@ -189,7 +188,6 @@
 		9305BA07275760CB003E91F7 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		9305BA092757D696003E91F7 /* CellQuoteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellQuoteLabel.swift; sourceTree = "<group>"; };
 		9305BA0B2757D6DB003E91F7 /* CellAuthorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAuthorLabel.swift; sourceTree = "<group>"; };
-		9313242E281FAF58004C5BDD /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		932BF73F278960020090F29A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		9347D66627D66D83001AD31B /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		936606F827CB37EF0094D960 /* ExpandQuoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandQuoteVC.swift; sourceTree = "<group>"; };
@@ -651,7 +649,6 @@
 			isa = PBXGroup;
 			children = (
 				93BDB9C92748DDF100E4B928 /* Constants.swift */,
-				9313242E281FAF58004C5BDD /* Secrets.swift */,
 				93A9FB5627536F5600442A91 /* ErrorMasasge.swift */,
 				93D2289A276C649400D6AC18 /* ConstantsSettings.swift */,
 			);
@@ -1047,7 +1044,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				93D2289B276C649400D6AC18 /* ConstantsSettings.swift in Sources */,
-				9313242F281FAF58004C5BDD /* Secrets.swift in Sources */,
 				9305BA0527575FCF003E91F7 /* SwipeLine.swift in Sources */,
 				93BF89A12745A3B400EF386A /* MainViewController.swift in Sources */,
 				93A9FB5327536D7000442A91 /* NetwokManager.swift in Sources */,
