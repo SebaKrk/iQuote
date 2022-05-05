@@ -63,7 +63,7 @@ class AlertViewController : UIViewController {
             container.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             container.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             container.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.68),
-            container.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35)
+            container.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.40)
         ])
     }
     private func configureTitleLabel() {
@@ -101,8 +101,14 @@ class AlertViewController : UIViewController {
         
         messageLabel.font = UIFont(name: fontText.popupMessage, size: 24)
         messageLabel.textColor = .white
-        messageLabel.numberOfLines = 4
+        messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
+        messageLabel.adjustsFontSizeToFitWidth = true
+        messageLabel.minimumScaleFactor = 0.7
+
+
+        
+        
         
         
         NSLayoutConstraint.activate([
