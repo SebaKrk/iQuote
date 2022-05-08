@@ -85,6 +85,7 @@
       "size" : "29x29"
     },
     {
+      "filename" : "iconBlack-58x58.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
@@ -96,6 +97,7 @@
       "size" : "40x40"
     },
     {
+      "filename" : "iconBlack-80x80.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
@@ -107,11 +109,13 @@
       "size" : "76x76"
     },
     {
+      "filename" : "iconBlack-152x152.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
+      "filename" : "iconBlack-167x167.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"

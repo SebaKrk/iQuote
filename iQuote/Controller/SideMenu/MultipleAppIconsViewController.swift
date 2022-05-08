@@ -57,6 +57,7 @@ class MultipleAppIconsViewController : UIViewController {
     private func changeAppIcon(name: String) {
         UIApplication.shared.setAlternateIconName(name) { error in
             guard let error = error else {return}
+            print(error)
             self.presentAlertOnMainThred(title: "Uppsss", message: "Something goes wrong:\n\(error.localizedDescription)")
         }
     }
