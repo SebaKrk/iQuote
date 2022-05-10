@@ -122,10 +122,10 @@ extension SideMenuViewController : UITableViewDelegate, UITableViewDataSource {
             showSafariService(with: SettingsURL.review.rawValue)
             // handle appstore review website
             
-        case SettingsTitle.icon:
-            let vc = MultipleAppIconsViewController()
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true, completion: nil)
+        // case SettingsTitle.icon:
+        //    let vc = MultipleAppIconsViewController()
+        //    vc.modalPresentationStyle = .fullScreen
+        //    present(vc, animated: true, completion: nil)
             
         case SettingsTitle.website:
             showSafariService(with: SettingsURL.website.rawValue)

@@ -11,7 +11,7 @@ struct SettingsTitle {
     
     static let share = "Share".localized
     static let review = "Write a Review".localized
-    static let icon = "Change Icon".localized
+    // static let icon = "Change Icon".localized
     static let website = "Website".localized
     static let sugest = "Sugest a Feature".localized
     static let bug = "Report a Bug".localized
