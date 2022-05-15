@@ -29,15 +29,14 @@ enum SettingsMessage : String {
 }
 
 enum SettingsURL : String {
-    case share = "https://testflight.apple.com/join/mC1o9G14"
-    case review = "https://github.com"
-    case website = "https://github.com/SebaKrk/iQuote"
-    case safai = "https://sebakrk.github.io/iQuote/"
+    case share = "https://apps.apple.com/pl/app/iquote/id1611155951?l"
+    case review =  "https://apps.apple.com/pl/app/iquote/id1611155951?action=write-review"
+    case website = "https://apps.apple.com/pl/app/iquote/id1611155951"
+    case safai =  "https://github.com/SebaKrk/iQuote"
     
     case privacyPolicy = "https://premium.zenquotes.io/privacy-policy"
     
     case iQuotePrivacyPolicy = "https://github.com/SebaKrk/"
-    
     case zenQuotePrivacyPolicy = "https://premium.zenquotes.io/privacy-policy/"
     case wikipediaPrivacyPolicy = "https://www.mediawiki.org/wiki/MediaWiki"
     case unsplashPrivacyPolicy = "https://api.unsplash.com"
