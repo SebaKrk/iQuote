@@ -184,7 +184,7 @@ extension UIViewController {
     }
     //    MARK: - MessageUI
     
-    func showMailMassageUI (subject: String, message: String, url: String) {
+    func showMailMassageUI (subject: String, message: String) {
         if MFMailComposeViewController.canSendMail() {
             let mailVC = MFMailComposeViewController()
             mailVC.mailComposeDelegate = self
@@ -193,7 +193,8 @@ extension UIViewController {
             mailVC.setMessageBody(message, isHTML: false)
             present(mailVC, animated: true, completion: nil)
         } else {
-            showSafariService(with: url)
+            presentAlertOnMainThred(title: "Upss", message: "Something went wrong, \nplease try again later")
+            
         }
     }
     // MARK: - iMassage

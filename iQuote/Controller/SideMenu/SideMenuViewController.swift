@@ -120,7 +120,6 @@ extension SideMenuViewController : UITableViewDelegate, UITableViewDataSource {
             
         case SettingsTitle.review:
             showSafariService(with: SettingsURL.review.rawValue)
-            // handle appstore review website
             
         // case SettingsTitle.icon:
         //    let vc = MultipleAppIconsViewController()
@@ -132,13 +131,11 @@ extension SideMenuViewController : UITableViewDelegate, UITableViewDataSource {
             
         case SettingsTitle.sugest:
             showMailMassageUI(subject: SettingsTitle.sugest,
-                              message: SettingsMessage.sugest.rawValue,
-                              url: SettingsURL.safai.rawValue)
+                              message: SettingsMessage.sugest.rawValue)
             
         case SettingsTitle.bug:
             showMailMassageUI(subject: SettingsTitle.bug,
-                              message: SettingsMessage.bug.rawValue,
-                              url: SettingsURL.safai.rawValue)
+                              message: SettingsMessage.bug.rawValue)
             
         case SettingsTitle.privacyPolicy:
             let vc = PrivacyPolicyViewController()
