@@ -203,7 +203,7 @@ extension UIViewController {
         if MFMessageComposeViewController.canSendText() {
             let messageVC = MFMessageComposeViewController()
             messageVC.body = "Check out this amazing quote that I create on this awesome app!"
-            messageVC.recipients = ["Enter recipients here"]
+            //messageVC.recipients = ["Enter recipients here"]
             
             if let imgData = contenToShare.asImage()?.pngData() {
                 messageVC.addAttachmentData(imgData, typeIdentifier: "public.data", filename: "quoteToShare.png")
