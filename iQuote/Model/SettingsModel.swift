@@ -22,7 +22,7 @@ struct Options {
 struct IconImages {
     static let share = UIImage(systemName: "square.and.arrow.up", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
     static let review = UIImage(systemName: "pencil.and.outline", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
-    // static let icons = UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
+    static let icons = UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
     static let website = UIImage(systemName: "network", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
     static let sugestFeature = UIImage(systemName: "star.circle",withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
     static let bug = UIImage(systemName: "ladybug.fill",withConfiguration: UIImage.SymbolConfiguration(weight: .regular))
@@ -35,8 +35,8 @@ func configureSettings() -> [SettingsModel] {
     
     let modelOne = SettingsModel(title: "", option: [
         Options(icon: IconImages.share, title: "Share"),
-        Options(icon: IconImages.review , title: "Write a Review")])
-        // Options(icon: IconImages.icons , title: "Change Icon")])
+        Options(icon: IconImages.review , title: "Write a Review"),
+        Options(icon: IconImages.icons , title: "Change Icon")])
     
     let modelTwo = SettingsModel(title: "SOURCE", option: [
         Options(icon: IconImages.website, title:  "Website" ),
