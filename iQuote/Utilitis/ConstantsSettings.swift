@@ -24,8 +24,8 @@ struct SettingsTitle {
 enum SettingsMessage : String {
     
     case share = "Hi, this is super Quote App , I want to shere with you ..."
-    case sugest = "Hi Sebastian,\nI just want to sugest ..."
-    case bug =  "Hi Sebastian,\nI just want to report the bug ..."
+    case sugest = "Hi team iQuote,\nI just want to sugest ..."
+    case bug =  "Hi team iQuote,\nI just want to report the bug ..."
 }
 
 enum SettingsURL : String {
