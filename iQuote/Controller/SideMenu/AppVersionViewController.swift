@@ -10,11 +10,13 @@ import UIKit
 class AppVersionViewController : UIViewController {
     
     private let appVersionLabel = CostumTitleLabel(textAligment: .center, fontSize: 20)
+    private let appAuthorsLabel = CostumTitleLabel(textAligment: .center, fontSize: 16)
     private let container = UIView()
     private let swipeLine = SwipeLine()
     
     private let appVersion = Secrets.appVersion
-    private let padding : CGFloat = 10
+    private let appAuthors = Secrets.appAuthors
+    private let padding : CGFloat = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,7 @@ class AppVersionViewController : UIViewController {
         configureContainer()
         configureSwipeLinie()
         configureAppVersionLabel()
+        configureAppAuthorsLabel()
     }
     override func viewDidLayoutSubviews() {
         cardOriginYext = container.frame.origin.y
@@ -68,9 +71,22 @@ class AppVersionViewController : UIViewController {
         appVersionLabel.text = "App Version \(appVersion)"
         
         NSLayoutConstraint.activate([
-            appVersionLabel.topAnchor.constraint(equalTo: swipeLine.bottomAnchor, constant: padding),
+            appVersionLabel.topAnchor.constraint(equalTo: swipeLine.bottomAnchor, constant: padding * 2),
             appVersionLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            appVersionLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    
+    func configureAppAuthorsLabel() {
+        container.addSubview(appAuthorsLabel)
+        appAuthorsLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        appAuthorsLabel.textColor = .white
+        appAuthorsLabel.text = "Author: \(appAuthors)"
+        
+        NSLayoutConstraint.activate([
+            appAuthorsLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -padding * 2),
+            appAuthorsLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor)
+        ])
+    }
+    
 }
