@@ -101,14 +101,9 @@ class ImageVC : UIViewController {
     @objc func handleDragLabel(notification: NSNotification) {
         dragIsOn = !dragIsOn
         if dragIsOn == true {
-            quoteLabel.layer.borderColor = UIColor.red.cgColor
-            quoteLabel.layer.borderWidth = 2
-            configurePanGestureRevognizareToMoveQuoteLabel()
-            
+            createBorderColor()
         } else {
-            quoteLabel.layer.borderColor = UIColor.clear.cgColor
-            quoteLabel.layer.borderWidth = 0.0
-            quoteContainer.gestureRecognizers?.forEach(quoteContainer.removeGestureRecognizer)
+            removeBorderColor()
         }
     }
     
@@ -128,6 +123,11 @@ class ImageVC : UIViewController {
     // Share
     
     @objc func handleMessageObserver(notification: NSNotification) {
+        if dragIsOn == true {
+            removeBorderColor()
+            dragIsOn = false
+        }
+        
         sendMessage(contenToShare: contenToShare)
     }
     @objc func handleShareObserver(notification: NSNotification) {
@@ -135,9 +135,7 @@ class ImageVC : UIViewController {
         guard let image = image else {return}
         
         if dragIsOn == true {
-            quoteLabel.layer.borderColor = UIColor.clear.cgColor
-            quoteLabel.layer.borderWidth = 0.0
-            quoteContainer.gestureRecognizers?.forEach(quoteContainer.removeGestureRecognizer)
+            removeBorderColor()
             dragIsOn = false
         }
         
@@ -211,6 +209,7 @@ class ImageVC : UIViewController {
             break
         }
     }
+    
     //    func dragQuoteLabel() {
     //        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(sender:)))
     //        quoteContainer.addGestureRecognizer(pan)
@@ -306,5 +305,16 @@ class ImageVC : UIViewController {
         case .off:
             backgroundIMG.removeSublayer(backgroundIMG, layerIndex: 1)
         }
+    }
+    
+    func createBorderColor() {
+        quoteLabel.layer.borderColor = UIColor.red.cgColor
+        quoteLabel.layer.borderWidth = 2
+        configurePanGestureRevognizareToMoveQuoteLabel()
+    }
+    func removeBorderColor() {
+        quoteLabel.layer.borderColor = UIColor.clear.cgColor
+        quoteLabel.layer.borderWidth = 0.0
+        quoteContainer.gestureRecognizers?.forEach(quoteContainer.removeGestureRecognizer)
     }
 }
