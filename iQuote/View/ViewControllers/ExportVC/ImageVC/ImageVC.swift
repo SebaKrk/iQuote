@@ -133,6 +133,14 @@ class ImageVC : UIViewController {
     @objc func handleShareObserver(notification: NSNotification) {
         let image = contenToShare.asImage()
         guard let image = image else {return}
+        
+        if dragIsOn == true {
+            quoteLabel.layer.borderColor = UIColor.clear.cgColor
+            quoteLabel.layer.borderWidth = 0.0
+            quoteContainer.gestureRecognizers?.forEach(quoteContainer.removeGestureRecognizer)
+            dragIsOn = false
+        }
+        
         let shareVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         shareVC.excludedActivityTypes = [.addToReadingList,.assignToContact,.copyToPasteboard,.markupAsPDF,.saveToCameraRoll, .message]
         present(shareVC,animated: true)
