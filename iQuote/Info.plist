@@ -16,6 +16,16 @@
 					<string>iconBlue-76</string>
 					<string>iconBlue-83.5</string>
 				</array>
+				<key>CFBundleIcons~ipad</key>
+				<array>
+					<string>iconBlue-20x20</string>
+					<string>iconBlue-40</string>
+					<string>iconBlue-29x29</string>
+					<string>iconBlue-58x58</string>
+					<string>iconBlue-76x76</string>
+					<string>iconBlue-80x80</string>
+					<string>iconBlue-152x152</string>
+				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
@@ -29,6 +39,16 @@
 					<string>iconPurple-76</string>
 					<string>iconPurple-83.5</string>
 				</array>
+				<key>CFBundleIcons~ipad</key>
+				<array>
+					<string>iconPurple-20x20</string>
+					<string>iconPurple-29x29</string>
+					<string>iconPurple-40</string>
+					<string>iconPurple-58x58</string>
+					<string>iconPurple-76x76</string>
+					<string>iconPurple-80x80</string>
+					<string>iconPurple-152x152</string>
+				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
@@ -41,7 +61,15 @@
 					<string>iconRed-72</string>
 					<string>iconRed-76</string>
 					<string>iconRed-83.5</string>
-					<string>iconRed-152x152@2x~ipad</string>
+				</array>
+				<key>CFBundleIcons~ipad</key>
+				<array>
+					<string>iconRed-20x20</string>
+					<string>iconRed-40x40</string>
+					<string>iconRed-29x29</string>
+					<string>iconRed-58x58</string>
+					<string>iconRed-80x80</string>
+					<string>iconRed-76x76</string>
 					<string>iconRed-152x152</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
