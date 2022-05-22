@@ -65,7 +65,7 @@
 				<key>CFBundleIcons~ipad</key>
 				<array>
 					<string>iconRed-20x20</string>
-					<string>iconRed-40x40</string>
+					<string>iconRed-40</string>
 					<string>iconRed-29x29</string>
 					<string>iconRed-58x58</string>
 					<string>iconRed-80x80</string>
