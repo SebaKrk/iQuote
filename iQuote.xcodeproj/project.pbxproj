@@ -181,6 +181,7 @@
 		93C3CFE92761EED0009CD963 /* TextConfigurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */; };
 		93CE1CDB274ACB0D004FD559 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */; };
 		93CE1CDE274ACC0A004FD559 /* CostumQuoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE1CDD274ACC0A004FD559 /* CostumQuoteButton.swift */; };
+		93D1918C283C1FB500695445 /* OnboardingStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1918B283C1FB500695445 /* OnboardingStart.swift */; };
 		93D2289B276C649400D6AC18 /* ConstantsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2289A276C649400D6AC18 /* ConstantsSettings.swift */; };
 		93D2289D276C64F500D6AC18 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2289C276C64F500D6AC18 /* SettingsModel.swift */; };
 		93D228A0276C662300D6AC18 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 93D2289F276C662300D6AC18 /* SideMenu */; };
@@ -398,6 +399,7 @@
 		93C3CFE82761EED0009CD963 /* TextConfigurationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextConfigurationVC.swift; sourceTree = "<group>"; };
 		93CE1CDA274ACB0D004FD559 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		93CE1CDD274ACC0A004FD559 /* CostumQuoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumQuoteButton.swift; sourceTree = "<group>"; };
+		93D1918B283C1FB500695445 /* OnboardingStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStart.swift; sourceTree = "<group>"; };
 		93D2289A276C649400D6AC18 /* ConstantsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsSettings.swift; sourceTree = "<group>"; };
 		93D2289C276C64F500D6AC18 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		93D228A2276C666300D6AC18 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -905,6 +907,14 @@
 			path = UIButton;
 			sourceTree = "<group>";
 		};
+		93D1918A283C1BD200695445 /* Onbording */ = {
+			isa = PBXGroup;
+			children = (
+				93D1918B283C1FB500695445 /* OnboardingStart.swift */,
+			);
+			path = Onbording;
+			sourceTree = "<group>";
+		};
 		93D228A1276C665400D6AC18 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -919,6 +929,7 @@
 		93F6B8C327465E93005181C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				93D1918A283C1BD200695445 /* Onbording */,
 				93B4ED01275B36B400C6E5E9 /* MainVC */,
 				936606F727CB37970094D960 /* FavoritesListVC */,
 				93B4ED02275B36E100C6E5E9 /* ExportVC */,
@@ -1213,6 +1224,7 @@
 				93761BA6274A2D8300DF12B6 /* AuthorViewController.swift in Sources */,
 				9376472E279034CC00A5B4E9 /* LogoForBackgroundVC.swift in Sources */,
 				93CE1CDE274ACC0A004FD559 /* CostumQuoteButton.swift in Sources */,
+				93D1918C283C1FB500695445 /* OnboardingStart.swift in Sources */,
 				93D2289D276C64F500D6AC18 /* SettingsModel.swift in Sources */,
 				93992734275AA60A00E95481 /* ExportViewController.swift in Sources */,
 				9305BA0327575D62003E91F7 /* FavoritesListViewController.swift in Sources */,
