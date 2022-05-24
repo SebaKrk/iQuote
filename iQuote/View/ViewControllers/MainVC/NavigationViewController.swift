@@ -182,7 +182,7 @@ class NavigationViewController : UIViewController {
                 self.presentAlertOnMainThred(title: "Succes!", message: Messages.sucesffulyFavorited.rawValue)
                 return
             }
-            self.presentAlertOnMainThred(title: "Upss", message: error.rawValue)
+            self.presentAlertOnMainThred(title: "Upsss...", message: error.rawValue)
         }
     }
     private func listButtonPressed() {
@@ -208,7 +208,7 @@ class NavigationViewController : UIViewController {
             case .success(let favorite):
                 
                 if favorite.isEmpty {
-                    self.presentAlertOnMainThred(title: "Upss", message: Messages.emptyList.rawValue)
+                    self.presentAlertOnMainThred(title: "Upsss...", message: Messages.emptyList.rawValue)
                 } else {
                     let desVC = FavoritesListViewController()
                     

@@ -193,7 +193,7 @@ extension UIViewController {
             mailVC.setMessageBody(message, isHTML: false)
             present(mailVC, animated: true, completion: nil)
         } else {
-            presentAlertOnMainThred(title: "Upss", message: "Something went wrong, \nplease try again later")
+            presentAlertOnMainThred(title: "Upsss...", message: "Something went wrong, \nplease try again later")
             
         }
     }
@@ -211,7 +211,7 @@ extension UIViewController {
             messageVC.messageComposeDelegate = self
             self.present(messageVC, animated: true, completion: nil)
         } else  {
-            self.presentAlertOnMainThred(title: "Upss", message: iMessage.cantSendTextMessage.rawValue)
+            self.presentAlertOnMainThred(title: "Upsss...", message: iMessage.cantSendTextMessage.rawValue)
         }
     }
     
@@ -252,7 +252,7 @@ extension UIViewController : MFMessageComposeViewControllerDelegate {
             self.presentAlertOnMainThred(title: "Succes!", message: iMessage.sucesffulySend.rawValue)
         case .failed:
             dismiss(animated: true)
-            self.presentAlertOnMainThred(title: "Upsss!", message: iMessage.unableToCompleted.rawValue)
+            self.presentAlertOnMainThred(title: "Upsss...", message: iMessage.unableToCompleted.rawValue)
         default:
             break
         }

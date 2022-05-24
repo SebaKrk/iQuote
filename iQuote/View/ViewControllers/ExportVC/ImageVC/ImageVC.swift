@@ -145,7 +145,7 @@ class ImageVC : UIViewController {
     }
     @objc func handleCopyTextObserver(notification: NSNotification) {
         UIPasteboard.general.string = quoteLabel.text
-        presentAlertOnMainThred(title: "Sucess!", message: shareMessage.sucesffulyCopy.rawValue)
+        presentAlertOnMainThred(title: "Success!", message: shareMessage.sucesffulyCopy.rawValue)
     }
     
     //    MARK: - addObserver

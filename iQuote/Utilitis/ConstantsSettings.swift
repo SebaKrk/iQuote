@@ -13,7 +13,7 @@ struct SettingsTitle {
     static let review = "Write a Review".localized
     static let icon = "Change Icon".localized
     static let website = "Website".localized
-    static let sugest = "Sugest a Feature".localized
+    static let sugest = "Suggest a Feature".localized
     static let bug = "Report a Bug".localized
     static let privacyPolicy = "Privacy Policy".localized
     static let appSettings = "App Settings".localized

@@ -48,7 +48,7 @@ class UnsplashCollectionVC : UIViewController {
                     self.unsplashCollection.reloadData()
                 }
             case .failure( let error):
-                self.presentAlertOnMainThred(title: "Upsss", message: error.rawValue)
+                self.presentAlertOnMainThred(title: "Upsss...", message: error.rawValue)
             }
         }
     }

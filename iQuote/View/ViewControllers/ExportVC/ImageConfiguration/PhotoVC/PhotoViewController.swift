@@ -98,7 +98,7 @@ class PhotoViewController : UIViewController {
     
     func unsplashSearch() {
         guard isSearchTextFieldIsEmpty else {
-            self.presentAlertOnMainThred(title: "Upss", message: ErrorMassage.invalidText.rawValue)
+            self.presentAlertOnMainThred(title: "Upsss...", message: ErrorMassage.invalidText.rawValue)
             return
         }
         unsplashButton.flipLikeState()
@@ -274,7 +274,7 @@ extension PhotoViewController : UnsplashIsEmptyDelegate {
     func arrayIsEmpty() {
         DispatchQueue.main.async {
             self.dismiss(animated: true) {
-                self.presentAlertOnMainThred(title: "Upsss", message: ErrorMassage.wrongString.rawValue)
+                self.presentAlertOnMainThred(title: "Upsss...", message: ErrorMassage.wrongString.rawValue)
             }
         }
     }
