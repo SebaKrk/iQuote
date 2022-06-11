@@ -106,11 +106,6 @@ class AlertViewController : UIViewController {
         messageLabel.adjustsFontSizeToFitWidth = true
         messageLabel.minimumScaleFactor = 0.7
 
-
-        
-        
-        
-        
         NSLayoutConstraint.activate([
             messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             messageLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
